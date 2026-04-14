@@ -1,0 +1,1382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Danish Practice Tool</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f4efe4;
+      --panel: rgba(255, 252, 246, 0.88);
+      --panel-strong: #fffaf1;
+      --text: #1c1d1f;
+      --muted: #5f625d;
+      --accent: #24544f;
+      --accent-2: #8a5a2b;
+      --success: #1f7a4f;
+      --danger: #a33a3a;
+      --border: rgba(28, 29, 31, 0.12);
+      --shadow: 0 22px 60px rgba(20, 28, 24, 0.16);
+      --radius: 24px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: Georgia, "Times New Roman", serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(36, 84, 79, 0.18), transparent 35%),
+        radial-gradient(circle at right top, rgba(138, 90, 43, 0.16), transparent 30%),
+        linear-gradient(180deg, #f8f3e9 0%, #efe7d8 100%);
+    }
+
+    .shell {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 16px;
+    }
+
+    .hero {
+      display: grid;
+      gap: 14px;
+      margin-bottom: 16px;
+    }
+
+    .title-block {
+      padding: 22px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.82), rgba(255, 250, 241, 0.94));
+      box-shadow: var(--shadow);
+    }
+
+    .eyebrow {
+      margin: 0 0 8px;
+      font-family: ui-sans-serif, system-ui, sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      font-size: 0.74rem;
+      color: var(--accent-2);
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2.1rem, 8vw, 4rem);
+      line-height: 0.95;
+      letter-spacing: -0.04em;
+    }
+
+    .summary {
+      margin: 10px 0 0;
+      color: var(--muted);
+      font-family: ui-sans-serif, system-ui, sans-serif;
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .stat {
+      padding: 16px 16px 14px;
+      border-radius: 20px;
+      border: 1px solid var(--border);
+      background: rgba(255, 255, 255, 0.74);
+      box-shadow: var(--shadow);
+    }
+
+    .stat span {
+      display: block;
+      font-family: ui-sans-serif, system-ui, sans-serif;
+      color: var(--muted);
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      margin-bottom: 8px;
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 1.55rem;
+      letter-spacing: -0.04em;
+    }
+
+    .controls,
+    .translator,
+    .quiz,
+    .bank {
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--panel);
+      box-shadow: var(--shadow);
+    }
+
+    .translator {
+      padding: 14px;
+      display: grid;
+      gap: 10px;
+      align-content: start;
+    }
+
+    .translator-header {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .translator-header h2 {
+      margin: 0;
+      font-size: 1rem;
+      letter-spacing: -0.03em;
+    }
+
+    .translate-tabs {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 8px;
+    }
+
+    .translate-tab {
+      border: 1px solid rgba(28, 29, 31, 0.14);
+      border-radius: 999px;
+      padding: 9px 10px;
+      background: rgba(255, 255, 255, 0.9);
+      color: var(--muted);
+      font-family: ui-sans-serif, system-ui, sans-serif;
+      font-size: 0.78rem;
+      text-align: center;
+    }
+
+    .translate-tab.active {
+      background: #1f2a29;
+      color: #fff;
+      border-color: #1f2a29;
+    }
+
+    .translator-output {
+      padding: 14px 16px;
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.78);
+      border: 1px solid rgba(28, 29, 31, 0.08);
+      min-height: 56px;
+      font-family: ui-sans-serif, system-ui, sans-serif;
+      line-height: 1.45;
+    }
+
+    .controls {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+      padding: 16px;
+      margin-bottom: 14px;
+    }
+
+    .field {
+      display: grid;
+      gap: 7px;
+    }
+
+    .field label {
+      font-family: ui-sans-serif, system-ui, sans-serif;
+      font-size: 0.83rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--muted);
+    }
+
+    input,
+    select,
+    button {
+      font: inherit;
+    }
+
+    input,
+    select {
+      width: 100%;
+      padding: 13px 14px;
+      border-radius: 16px;
+      border: 1px solid rgba(28, 29, 31, 0.14);
+      background: rgba(255, 255, 255, 0.92);
+      color: var(--text);
+    }
+
+    input:focus,
+    select:focus,
+    button:focus {
+      outline: 3px solid rgba(36, 84, 79, 0.18);
+      outline-offset: 2px;
+    }
+
+    .actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      align-items: end;
+      grid-column: 1 / -1;
+      padding-top: 4px;
+    }
+
+    button {
+      border: 0;
+      border-radius: 999px;
+      padding: 13px 18px;
+      cursor: pointer;
+      transition: transform 120ms ease, box-shadow 120ms ease, opacity 120ms ease;
+    }
+
+    button:hover {
+      transform: translateY(-1px);
+    }
+
+    .primary {
+      background: var(--accent);
+      color: white;
+      box-shadow: 0 12px 28px rgba(36, 84, 79, 0.22);
+    }
+
+    .secondary {
+      background: rgba(138, 90, 43, 0.11);
+      color: var(--accent-2);
+    }
+
+    .ghost {
+      background: transparent;
+      color: var(--muted);
+      border: 1px solid var(--border);
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+    }
+
+    .quiz,
+    .bank {
+      padding: 18px;
+    }
+
+    .quiz-header {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      align-items: center;
+      margin-bottom: 16px;
+    }
+
+    .quiz-header h2,
+    .bank h2 {
+      margin: 0;
+      font-size: 1.2rem;
+      letter-spacing: -0.03em;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(36, 84, 79, 0.08);
+      color: var(--accent);
+      font-family: ui-sans-serif, system-ui, sans-serif;
+      font-size: 0.82rem;
+      white-space: nowrap;
+    }
+
+    .prompt {
+      padding: 18px;
+      border-radius: 18px;
+      background: var(--panel-strong);
+      border: 1px solid rgba(28, 29, 31, 0.08);
+      margin-bottom: 14px;
+    }
+
+    .prompt .kind {
+      display: block;
+      font-family: ui-sans-serif, system-ui, sans-serif;
+      color: var(--accent-2);
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      font-size: 0.72rem;
+      margin-bottom: 8px;
+    }
+
+    .prompt .text {
+      font-size: clamp(1.35rem, 6vw, 1.7rem);
+      line-height: 1.25;
+      letter-spacing: -0.03em;
+    }
+
+    .answer-row,
+    .choice-list,
+    .table-grid {
+      display: grid;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+
+    .answer-row {
+      grid-template-columns: 1fr;
+    }
+
+    .choice-list {
+      grid-template-columns: 1fr;
+    }
+
+    .choice-button {
+      width: 100%;
+      text-align: left;
+      border: 1px solid rgba(28, 29, 31, 0.14);
+      background: rgba(255, 255, 255, 0.88);
+      color: var(--text);
+      padding: 14px 16px;
+      border-radius: 18px;
+    }
+
+    .choice-button.selected {
+      border-color: rgba(36, 84, 79, 0.45);
+      background: rgba(36, 84, 79, 0.1);
+    }
+
+    .choice-button.correct {
+      border-color: rgba(31, 122, 79, 0.5);
+      background: rgba(31, 122, 79, 0.12);
+    }
+
+    .choice-button.wrong {
+      border-color: rgba(163, 58, 58, 0.5);
+      background: rgba(163, 58, 58, 0.08);
+    }
+
+    .table-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .table-card {
+      padding: 16px;
+      border-radius: 18px;
+      border: 1px solid rgba(28, 29, 31, 0.08);
+      background: rgba(255, 255, 255, 0.72);
+    }
+
+    .table-card .mini-title {
+      display: block;
+      color: var(--accent-2);
+      font-family: ui-sans-serif, system-ui, sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-size: 0.7rem;
+      margin-bottom: 6px;
+    }
+
+    .table-row {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    .feedback {
+      min-height: 1.5rem;
+      font-family: ui-sans-serif, system-ui, sans-serif;
+      font-size: 0.96rem;
+      margin-bottom: 14px;
+    }
+
+    .feedback.good {
+      color: var(--success);
+    }
+
+    .feedback.bad {
+      color: var(--danger);
+    }
+
+    .progress {
+      font-family: ui-sans-serif, system-ui, sans-serif;
+      color: var(--muted);
+      font-size: 0.92rem;
+      margin-top: 10px;
+    }
+
+    .bank-list {
+      display: grid;
+      gap: 10px;
+      margin-top: 16px;
+      max-height: none;
+      overflow: auto;
+      padding-right: 4px;
+    }
+
+    .card {
+      padding: 14px 15px;
+      border-radius: 16px;
+      border: 1px solid rgba(28, 29, 31, 0.09);
+      background: rgba(255, 255, 255, 0.72);
+    }
+
+    .card strong {
+      display: block;
+      margin-bottom: 5px;
+      font-size: 1rem;
+    }
+
+    .card small {
+      display: block;
+      color: var(--muted);
+      font-family: ui-sans-serif, system-ui, sans-serif;
+      line-height: 1.45;
+    }
+
+    .footer-note {
+      margin-top: 18px;
+      color: var(--muted);
+      font-family: ui-sans-serif, system-ui, sans-serif;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 960px) {
+      .controls {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .actions {
+        grid-column: 1 / -1;
+      }
+    }
+
+    @media (min-width: 961px) {
+      .hero {
+        grid-template-columns: 1.45fr 0.75fr;
+        align-items: start;
+      }
+
+      .layout {
+        grid-template-columns: 1.1fr 0.9fr;
+      }
+
+      .controls {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+
+      .stats {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .bank-list {
+        max-height: 620px;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .shell {
+        padding: 16px;
+      }
+
+      .stats {
+        grid-template-columns: 1fr;
+      }
+
+      .answer-row {
+        grid-template-columns: 1fr;
+      }
+
+      .quiz-header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .controls {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <section class="hero">
+      <div class="title-block">
+        <p class="eyebrow">Danish practice tool</p>
+        <h1>Shuffle, drill, and repeat.</h1>
+        <p class="summary">Practice Danish vocabulary with guided exercises and quick translation help.</p>
+        <p class="summary">Choose a category, run a quiz mode, and build your fluency one session at a time.</p>
+        <div class="stats" aria-label="practice summary">
+          <div class="stat">
+            <span>Question bank</span>
+            <strong id="statBank">0</strong>
+          </div>
+          <div class="stat">
+            <span>Session score</span>
+            <strong id="statScore">0 / 0</strong>
+          </div>
+          <div class="stat">
+            <span>Current set</span>
+            <strong id="statSet">All</strong>
+          </div>
+        </div>
+      </div>
+
+      <aside class="translator" aria-label="quick translation lookup">
+        <div class="translator-header">
+          <h2>Quick Google Translate</h2>
+          <div class="badge">EN ⇄ DA</div>
+        </div>
+        <div class="field">
+          <label for="translateInput">Word or short phrase</label>
+          <input id="translateInput" type="text" placeholder="Type English or Danish text" autocomplete="off" />
+        </div>
+        <div class="field">
+          <label>Detect mode</label>
+          <div class="translate-tabs" id="translateTabs">
+            <button type="button" class="translate-tab active" data-mode="auto">Auto</button>
+            <button type="button" class="translate-tab" data-mode="en-da">EN → DA</button>
+            <button type="button" class="translate-tab" data-mode="da-en">DA → EN</button>
+          </div>
+        </div>
+        <div class="actions" style="padding-top: 0;">
+          <button class="primary" id="translateBtn">Translate</button>
+          <button class="ghost" id="translateClearBtn">Clear</button>
+        </div>
+        <div class="translator-output" id="translateOutput">Translation appears here.</div>
+        <div class="feedback" id="translateStatus"></div>
+      </aside>
+    </section>
+
+    <section class="controls" aria-label="quiz controls">
+      <div class="field">
+        <label for="category">Category</label>
+        <select id="category">
+          <option value="all">All</option>
+          <option value="verbs">Verbs</option>
+          <option value="nouns">Nouns</option>
+          <option value="adjectives">Adjectives</option>
+          <option value="adverbs">Adverbs</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="count">Questions</label>
+        <input id="count" type="number" min="1" max="100" value="12" />
+      </div>
+      <div class="field">
+        <label for="seed">Seed</label>
+        <input id="seed" type="text" placeholder="Optional" />
+      </div>
+      <div class="field">
+        <label for="mode">Exercise type</label>
+        <select id="mode">
+          <option value="random">Mixed</option>
+          <option value="translation">Translation</option>
+          <option value="forms">Form practice</option>
+          <option value="table">Verb table</option>
+          <option value="multiple-choice">Multiple choice</option>
+        </select>
+      </div>
+      <div class="actions">
+        <button class="primary" id="startBtn">Start quiz</button>
+        <button class="secondary" id="showBankBtn">Hide bank</button>
+        <button class="ghost" id="resetBtn">Reset session</button>
+        <button class="ghost" id="loadGeneratedBtn">Load generated data</button>
+        <button class="ghost" id="importFileBtn">Import JSON file</button>
+      </div>
+      <input id="importFileInput" type="file" accept="application/json,.json" hidden />
+      <div class="feedback" id="importStatus"></div>
+    </section>
+
+    <section class="layout">
+      <article class="quiz">
+        <div class="quiz-header">
+          <h2>Quiz</h2>
+          <div class="badge" id="quizBadge">Ready to start</div>
+        </div>
+
+        <div class="prompt">
+          <span class="kind" id="promptKind">Prompt</span>
+          <div class="text" id="promptText">Choose a category and start the quiz.</div>
+          <div class="table-grid" id="tableGrid" hidden></div>
+        </div>
+
+        <div class="answer-row">
+          <input id="answerInput" type="text" placeholder="Type your answer here" autocomplete="off" />
+          <button class="primary" id="submitBtn">Submit</button>
+        </div>
+
+        <div class="choice-list" id="choiceList" hidden></div>
+
+        <div class="feedback" id="feedback"></div>
+
+        <div class="actions" style="padding-top: 0;">
+          <button class="secondary" id="nextBtn">Next question</button>
+          <button class="ghost" id="revealBtn">Reveal answer</button>
+        </div>
+
+        <div class="progress" id="progress">No session running.</div>
+      </article>
+
+      <aside class="bank" id="bankPanel">
+        <h2>Word bank</h2>
+        <div class="footer-note">
+          Use this as a quick reference while you practice. The same data powers the quiz prompts.
+        </div>
+        <div class="bank-list" id="bankList"></div>
+      </aside>
+    </section>
+  </div>
+
+  <script>
+    let vocabulary = {
+      verbs: [
+        { infinitive: "at være", english: "to be", imperative: "vær", past: "var", present_perfect: "har været", past_perfect: "havde været" },
+        { infinitive: "at have", english: "to have", imperative: "hav", past: "havde", present_perfect: "har haft", past_perfect: "havde haft" },
+        { infinitive: "at gå", english: "to go / walk", imperative: "gå", past: "gik", present_perfect: "har gået", past_perfect: "havde gået" },
+        { infinitive: "at gøre", english: "to do / make", imperative: "gør", past: "gjorde", present_perfect: "har gjort", past_perfect: "havde gjort" },
+        { infinitive: "at spise", english: "to eat", imperative: "spis", past: "spiste", present_perfect: "har spist", past_perfect: "havde spist" },
+        { infinitive: "at se", english: "to see", imperative: "se", past: "så", present_perfect: "har set", past_perfect: "havde set" },
+        { infinitive: "at tage", english: "to take", imperative: "tag", past: "tog", present_perfect: "har taget", past_perfect: "havde taget" },
+        { infinitive: "at komme", english: "to come", imperative: "kom", past: "kom", present_perfect: "har kommet", past_perfect: "havde kommet" },
+        { infinitive: "at sige", english: "to say", imperative: "sig", past: "sagde", present_perfect: "har sagt", past_perfect: "havde sagt" },
+        { infinitive: "at læse", english: "to read", imperative: "læs", past: "læste", present_perfect: "har læst", past_perfect: "havde læst" }
+      ],
+      nouns: [
+        { gender: "en", singular_indefinite: "en bog", singular_definite: "bogen", plural_indefinite: "bøger", plural_definite: "bøgerne", english: "book" },
+        { gender: "en", singular_indefinite: "en bil", singular_definite: "bilen", plural_indefinite: "biler", plural_definite: "bilerne", english: "car" },
+        { gender: "et", singular_indefinite: "et hus", singular_definite: "huset", plural_indefinite: "huse", plural_definite: "husene", english: "house" },
+        { gender: "en", singular_indefinite: "en lærer", singular_definite: "læreren", plural_indefinite: "lærere", plural_definite: "lærerne", english: "teacher" },
+        { gender: "en", singular_indefinite: "en dag", singular_definite: "dagen", plural_indefinite: "dage", plural_definite: "dagene", english: "day" },
+        { gender: "et", singular_indefinite: "et barn", singular_definite: "barnet", plural_indefinite: "børn", plural_definite: "børnene", english: "child" },
+        { gender: "et", singular_indefinite: "et æble", singular_definite: "æblet", plural_indefinite: "æbler", plural_definite: "æblerne", english: "apple" },
+        { gender: "en", singular_indefinite: "en stol", singular_definite: "stolen", plural_indefinite: "stole", plural_definite: "stolene", english: "chair" },
+        { gender: "et", singular_indefinite: "et bord", singular_definite: "bordet", plural_indefinite: "borde", plural_definite: "bordene", english: "table" },
+        { gender: "en", singular_indefinite: "en ven", singular_definite: "vennen", plural_indefinite: "venner", plural_definite: "vennerne", english: "friend" }
+      ],
+      adjectives: [
+        { base: "god", common: "god", neuter: "godt", plural: "gode", definite: "gode", comparative: "bedre", superlative: "bedst", english: "good" },
+        { base: "stor", common: "stor", neuter: "stort", plural: "store", definite: "store", comparative: "større", superlative: "størst", english: "big" },
+        { base: "lille", common: "lille", neuter: "lille", plural: "små", definite: "små", comparative: "mindre", superlative: "mindst", english: "small" },
+        { base: "ny", common: "ny", neuter: "nyt", plural: "nye", definite: "nye", comparative: "nyere", superlative: "nyest", english: "new" },
+        { base: "gammel", common: "gammel", neuter: "gammelt", plural: "gamle", definite: "gamle", comparative: "ældre", superlative: "ældst", english: "old" },
+        { base: "lang", common: "lang", neuter: "langt", plural: "lange", definite: "lange", comparative: "længere", superlative: "længst", english: "long" },
+        { base: "høj", common: "høj", neuter: "højt", plural: "høje", definite: "høje", comparative: "højere", superlative: "højest", english: "tall / high" },
+        { base: "varm", common: "varm", neuter: "varmt", plural: "varme", definite: "varme", comparative: "varmere", superlative: "varmest", english: "warm" }
+      ],
+      adverbs: [
+        { base: "hurtigt", comparative: "hurtigere", superlative: "hurtigst", english: "quickly" },
+        { base: "langsomt", comparative: "langsommere", superlative: "langsomst", english: "slowly" },
+        { base: "ofte", english: "often" },
+        { base: "altid", english: "always" },
+        { base: "aldrig", english: "never" },
+        { base: "måske", english: "maybe / perhaps" }
+      ]
+    };
+
+    const ui = {
+      category: document.getElementById("category"),
+      count: document.getElementById("count"),
+      seed: document.getElementById("seed"),
+      mode: document.getElementById("mode"),
+      translateInput: document.getElementById("translateInput"),
+      translateTabs: document.querySelectorAll(".translate-tab"),
+      translateBtn: document.getElementById("translateBtn"),
+      translateClearBtn: document.getElementById("translateClearBtn"),
+      translateOutput: document.getElementById("translateOutput"),
+      translateStatus: document.getElementById("translateStatus"),
+      loadGeneratedBtn: document.getElementById("loadGeneratedBtn"),
+      importFileBtn: document.getElementById("importFileBtn"),
+      importFileInput: document.getElementById("importFileInput"),
+      importStatus: document.getElementById("importStatus"),
+      startBtn: document.getElementById("startBtn"),
+      showBankBtn: document.getElementById("showBankBtn"),
+      resetBtn: document.getElementById("resetBtn"),
+      submitBtn: document.getElementById("submitBtn"),
+      nextBtn: document.getElementById("nextBtn"),
+      revealBtn: document.getElementById("revealBtn"),
+      answerInput: document.getElementById("answerInput"),
+      promptKind: document.getElementById("promptKind"),
+      promptText: document.getElementById("promptText"),
+      tableGrid: document.getElementById("tableGrid"),
+      choiceList: document.getElementById("choiceList"),
+      feedback: document.getElementById("feedback"),
+      progress: document.getElementById("progress"),
+      quizBadge: document.getElementById("quizBadge"),
+      bankList: document.getElementById("bankList"),
+      bankPanel: document.getElementById("bankPanel"),
+      statBank: document.getElementById("statBank"),
+      statScore: document.getElementById("statScore"),
+      statSet: document.getElementById("statSet")
+    };
+
+    const state = {
+      exercises: [],
+      currentIndex: -1,
+      answered: false,
+      score: 0,
+      prompt: null,
+      bankVisible: true,
+      translateMode: "auto"
+    };
+
+    const CHOICE_COUNT = 4;
+
+    function normalize(text) {
+      return String(text)
+        .trim()
+        .toLowerCase()
+        .replaceAll("æ", "ae")
+        .replaceAll("ø", "oe")
+        .replaceAll("å", "aa")
+        .replace(/[\s\-]+/g, " ")
+        .replace(/[.!?,;:]+$/g, "");
+    }
+
+    function shuffle(items, rng = Math.random) {
+      const output = items.slice();
+      for (let index = output.length - 1; index > 0; index -= 1) {
+        const swapIndex = Math.floor(rng() * (index + 1));
+        [output[index], output[swapIndex]] = [output[swapIndex], output[index]];
+      }
+      return output;
+    }
+
+    function mulberry32(seed) {
+      let value = seed >>> 0;
+      return function rng() {
+        value += 0x6D2B79F5;
+        let t = value;
+        t = Math.imul(t ^ t >>> 15, t | 1);
+        t ^= t + Math.imul(t ^ t >>> 7, t | 61);
+        return ((t ^ t >>> 14) >>> 0) / 4294967296;
+      };
+    }
+
+    function titleCase(text) {
+      return text.charAt(0).toUpperCase() + text.slice(1);
+    }
+
+    function escapeHtml(text) {
+      return String(text)
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;")
+        .replaceAll("'", "&#39;");
+    }
+
+    function pickRandom(items, rng, count, exclude = []) {
+      const pool = items.filter((item) => !exclude.includes(item));
+      return shuffle(pool, rng).slice(0, count);
+    }
+
+    async function googleTranslate(text, targetLanguage) {
+      const url = new URL("https://translate.googleapis.com/translate_a/single");
+      url.searchParams.set("client", "gtx");
+      url.searchParams.set("sl", "auto");
+      url.searchParams.set("tl", targetLanguage);
+      url.searchParams.set("dt", "t");
+      url.searchParams.set("q", text);
+
+      const response = await fetch(url.toString(), { mode: "cors" });
+      if (!response.ok) {
+        throw new Error(`Translation request failed with status ${response.status}`);
+      }
+
+      const data = await response.json();
+      const translated = Array.isArray(data?.[0])
+        ? data[0].map((part) => part?.[0] ?? "").join("")
+        : "";
+      const detectedSource = data?.[2] || "";
+
+      return { translated, detectedSource };
+    }
+
+    function setTranslateOutput(translatedText) {
+      ui.translateOutput.textContent = translatedText || "No translation returned.";
+    }
+
+    function setTranslateMode(mode) {
+      state.translateMode = mode;
+      ui.translateTabs.forEach((tab) => {
+        tab.classList.toggle("active", tab.dataset.mode === mode);
+      });
+    }
+
+    function normalizeLexiconShape(payload) {
+      const normalized = {
+        verbs: Array.isArray(payload?.verbs) ? payload.verbs : [],
+        nouns: Array.isArray(payload?.nouns) ? payload.nouns : [],
+        adjectives: Array.isArray(payload?.adjectives) ? payload.adjectives : [],
+        adverbs: Array.isArray(payload?.adverbs) ? payload.adverbs : []
+      };
+
+      const hasCoreData = normalized.verbs.length || normalized.nouns.length || normalized.adjectives.length;
+      if (!hasCoreData) {
+        throw new Error("JSON does not look like a valid lexicon.");
+      }
+
+      return normalized;
+    }
+
+    function setImportStatus(text, tone = "") {
+      ui.importStatus.textContent = text;
+      ui.importStatus.className = `feedback ${tone}`.trim();
+    }
+
+    function applyImportedLexicon(lexicon) {
+      vocabulary = lexicon;
+      resetSession();
+      renderBank();
+      updateStats();
+      setImportStatus(
+        `Loaded data: ${lexicon.verbs.length} verbs, ${lexicon.adjectives.length} adjectives, ${lexicon.nouns.length} nouns, ${lexicon.adverbs.length} adverbs.`,
+        "good"
+      );
+    }
+
+    async function loadGeneratedLexicon() {
+      ui.loadGeneratedBtn.disabled = true;
+      setImportStatus("Loading generated lexicon...", "");
+      try {
+        const response = await fetch("../data/lexicon.generated.json", { cache: "no-store" });
+        if (!response.ok) {
+          throw new Error(`HTTP ${response.status}`);
+        }
+        const payload = await response.json();
+        applyImportedLexicon(normalizeLexiconShape(payload));
+      } catch (error) {
+        setImportStatus(
+          "Could not load ../data/lexicon.generated.json automatically. Use 'Import JSON file' instead.",
+          "bad"
+        );
+      } finally {
+        ui.loadGeneratedBtn.disabled = false;
+      }
+    }
+
+    async function handleImportFileSelection(event) {
+      const file = event.target.files?.[0];
+      if (!file) {
+        return;
+      }
+
+      try {
+        const text = await file.text();
+        const payload = JSON.parse(text);
+        applyImportedLexicon(normalizeLexiconShape(payload));
+      } catch (error) {
+        setImportStatus(`Import failed: ${error.message}`, "bad");
+      } finally {
+        ui.importFileInput.value = "";
+      }
+    }
+
+    function flattenExercises(category, mode) {
+      const sourceCategories = category === "all" ? ["verbs", "nouns", "adjectives", "adverbs"] : [category];
+      const exercises = [];
+
+      for (const group of sourceCategories) {
+        for (const item of vocabulary[group]) {
+          if (group === "verbs") {
+            exercises.push(
+              { group, kind: "Form", prompt: `English -> Danish infinitive for '${item.english}'`, answers: [item.infinitive, item.infinitive.startsWith("at ") ? item.infinitive.slice(3) : item.infinitive] },
+              { group, kind: "Form", prompt: `English -> imperative for '${item.english}'`, answers: [item.imperative] },
+              { group, kind: "Form", prompt: `English -> past tense for '${item.english}'`, answers: [item.past] },
+              { group, kind: "Form", prompt: `English -> present perfect for '${item.english}'`, answers: [item.present_perfect] },
+              { group, kind: "Form", prompt: `English -> past perfect for '${item.english}'`, answers: [item.past_perfect] },
+              { group, kind: "Translation", prompt: `Danish infinitive -> English for '${item.infinitive}'`, answers: [item.english] }
+            );
+
+            exercises.push({
+              group,
+              kind: "Table",
+              prompt: `Verb table for '${item.english}'`,
+              table: {
+                label: item.english,
+                given: { field: "infinitive", value: item.infinitive },
+                fields: [
+                  { field: "imperative", label: "Imperative", answer: item.imperative },
+                  { field: "past", label: "Past", answer: item.past },
+                  { field: "present_perfect", label: "Present perfect", answer: item.present_perfect },
+                  { field: "past_perfect", label: "Past perfect", answer: item.past_perfect }
+                ]
+              },
+              answers: [item.imperative, item.past, item.present_perfect, item.past_perfect]
+            });
+          }
+
+          if (group === "nouns") {
+            exercises.push(
+              { group, kind: "Form", prompt: `English -> Danish noun for '${item.english}'`, answers: [item.singular_indefinite] },
+              { group, kind: "Form", prompt: `English -> definite singular for '${item.english}'`, answers: [item.singular_definite] },
+              { group, kind: "Form", prompt: `English -> plural for '${item.english}'`, answers: [item.plural_indefinite] },
+              { group, kind: "Form", prompt: `English -> definite plural for '${item.english}'`, answers: [item.plural_definite] },
+              { group, kind: "Form", prompt: `English -> gender article for '${item.english}'`, answers: [item.gender] },
+              { group, kind: "Translation", prompt: `Danish noun -> English for '${item.singular_indefinite}'`, answers: [item.english] }
+            );
+          }
+
+          if (group === "adjectives") {
+            exercises.push(
+              { group, kind: "Form", prompt: `English -> base adjective for '${item.english}'`, answers: [item.base] },
+              { group, kind: "Form", prompt: `English -> common form for '${item.english}'`, answers: [item.common] },
+              { group, kind: "Form", prompt: `English -> neuter form for '${item.english}'`, answers: [item.neuter] },
+              { group, kind: "Form", prompt: `English -> plural/definite form for '${item.english}'`, answers: [item.plural] },
+              { group, kind: "Form", prompt: `English -> comparative form for '${item.english}'`, answers: [item.comparative] },
+              { group, kind: "Form", prompt: `English -> superlative form for '${item.english}'`, answers: [item.superlative] },
+              { group, kind: "Translation", prompt: `Danish adjective -> English for '${item.base}'`, answers: [item.english] }
+            );
+          }
+
+          if (group === "adverbs") {
+            exercises.push(
+              { group, kind: "Translation", prompt: `English -> Danish adverb for '${item.english}'`, answers: [item.base] },
+              { group, kind: "Translation", prompt: `Danish adverb -> English for '${item.base}'`, answers: [item.english] }
+            );
+            if (item.comparative) {
+              exercises.push({ group, kind: "Form", prompt: `English -> comparative form for '${item.english}'`, answers: [item.comparative] });
+            }
+            if (item.superlative) {
+              exercises.push({ group, kind: "Form", prompt: `English -> superlative form for '${item.english}'`, answers: [item.superlative] });
+            }
+          }
+        }
+      }
+
+      if (mode === "translation") {
+        return exercises.filter((exercise) => exercise.kind === "Translation");
+      }
+
+      if (mode === "forms") {
+        return exercises.filter((exercise) => exercise.kind === "Form");
+      }
+
+      if (mode === "table") {
+        return exercises.filter((exercise) => exercise.kind === "Table");
+      }
+
+      if (mode === "multiple-choice") {
+        return exercises.filter((exercise) => exercise.kind === "Translation" || exercise.kind === "Form");
+      }
+
+      return exercises;
+    }
+
+    function buildChoiceExercise(exercise, rng) {
+      const pool = [];
+      for (const group of Object.values(vocabulary)) {
+        for (const item of group) {
+          if (item.english) {
+            pool.push(item.english);
+          }
+          if (item.infinitive) {
+            pool.push(item.infinitive);
+          }
+          if (item.singular_indefinite) {
+            pool.push(item.singular_indefinite);
+          }
+          if (item.base) {
+            pool.push(item.base);
+          }
+        }
+      }
+
+      const correct = exercise.answers[0];
+      const choices = pickRandom(pool, rng, CHOICE_COUNT - 1, [correct]);
+      choices.push(correct);
+      return { ...exercise, kind: "MultipleChoice", choices: shuffle(choices, rng) };
+    }
+
+    function renderBank() {
+      const items = [];
+      for (const [group, records] of Object.entries(vocabulary)) {
+        for (const record of records) {
+          if (group === "verbs") {
+            items.push({ title: record.infinitive, detail: `${record.english} · ${record.imperative} / ${record.past} / ${record.present_perfect} / ${record.past_perfect}` });
+          } else if (group === "nouns") {
+            items.push({ title: record.singular_indefinite, detail: `${record.english} · ${record.singular_definite} · ${record.plural_indefinite} · ${record.plural_definite}` });
+          } else if (group === "adjectives") {
+            items.push({ title: record.base, detail: `${record.english} · ${record.common} / ${record.neuter} / ${record.plural} / ${record.comparative} / ${record.superlative}` });
+          } else {
+            items.push({ title: record.base, detail: `${record.english}${record.comparative ? ` · ${record.comparative}` : ""}${record.superlative ? ` · ${record.superlative}` : ""}` });
+          }
+        }
+      }
+
+      ui.bankList.innerHTML = items.map((item) => `
+        <article class="card">
+          <strong>${item.title}</strong>
+          <small>${item.detail}</small>
+        </article>
+      `).join("");
+
+      ui.statBank.textContent = String(items.length);
+    }
+
+    function updateStats() {
+      ui.statScore.textContent = `${state.score} / ${state.exercises.length}`;
+      ui.statSet.textContent = titleCase(ui.category.value === "all" ? "all categories" : ui.category.value);
+    }
+
+    function setFeedback(text, tone = "") {
+      ui.feedback.textContent = text;
+      ui.feedback.className = `feedback ${tone}`.trim();
+    }
+
+    function currentExercise() {
+      return state.exercises[state.currentIndex] ?? null;
+    }
+
+    function renderCurrent() {
+      const exercise = currentExercise();
+      if (!exercise) {
+        ui.promptKind.textContent = "Prompt";
+        ui.promptText.textContent = "Choose a category and start the quiz.";
+        ui.quizBadge.textContent = "Ready to start";
+        ui.progress.textContent = "No session running.";
+        ui.answerInput.value = "";
+        ui.answerInput.placeholder = "Type your answer here";
+        ui.answerInput.disabled = true;
+        ui.submitBtn.disabled = true;
+        ui.nextBtn.disabled = true;
+        ui.revealBtn.disabled = true;
+        ui.tableGrid.hidden = true;
+        ui.choiceList.hidden = true;
+        setFeedback("");
+        updateStats();
+        return;
+      }
+
+      ui.promptKind.textContent = exercise.kind;
+      ui.promptText.textContent = exercise.prompt;
+      ui.quizBadge.textContent = `${state.currentIndex + 1} of ${state.exercises.length}`;
+      ui.progress.textContent = `Question ${state.currentIndex + 1} of ${state.exercises.length}. Score: ${state.score} correct.`;
+      ui.nextBtn.disabled = false;
+      ui.revealBtn.disabled = false;
+      ui.tableGrid.hidden = true;
+      ui.choiceList.hidden = true;
+
+      if (exercise.kind === "Table") {
+        renderTableExercise(exercise);
+        ui.answerInput.disabled = true;
+        ui.submitBtn.disabled = true;
+      } else if (exercise.kind === "MultipleChoice") {
+        renderMultipleChoice(exercise);
+        ui.answerInput.disabled = true;
+        ui.submitBtn.disabled = true;
+      } else {
+        ui.answerInput.disabled = false;
+        ui.submitBtn.disabled = false;
+        ui.answerInput.focus();
+      }
+      updateStats();
+    }
+
+    function renderTableExercise(exercise) {
+      const rows = exercise.table.fields.map((field) => `
+        <div class="table-card">
+          <span class="mini-title">${field.label}</span>
+          <strong>_____</strong>
+        </div>
+      `).join("");
+
+      ui.tableGrid.innerHTML = `
+        <div class="table-card">
+          <span class="mini-title">Given</span>
+          <strong>${exercise.table.given.value}</strong>
+        </div>
+        ${rows}
+      `;
+      ui.tableGrid.hidden = false;
+      ui.promptText.textContent = `Fill the verb table for '${exercise.table.label}'.`;
+      setFeedback("Use the answer box to type the missing forms separated by commas, or reveal to check.");
+      ui.answerInput.placeholder = "imperative, past, present perfect, past perfect";
+      ui.answerInput.value = "";
+      ui.answerInput.disabled = false;
+      ui.submitBtn.disabled = false;
+      ui.answerInput.focus();
+    }
+
+    function renderMultipleChoice(exercise) {
+      const choices = exercise.choices ?? [exercise.answers[0]];
+      ui.choiceList.innerHTML = choices.map((choice, index) => `
+        <button class="choice-button" type="button" data-choice="${index}">${choice}</button>
+      `).join("");
+      ui.choiceList.hidden = false;
+      ui.promptText.textContent = exercise.prompt;
+      ui.feedback.textContent = "Tap a choice to answer.";
+      ui.feedback.className = "feedback";
+      ui.answerInput.disabled = true;
+      ui.answerInput.placeholder = "Type your answer here";
+      ui.submitBtn.disabled = true;
+      ui.choiceList.querySelectorAll(".choice-button").forEach((button) => {
+        button.addEventListener("click", () => submitChoice(button.textContent ?? ""));
+      });
+    }
+
+    function buildSession() {
+      const seedText = ui.seed.value.trim();
+      const seed = seedText ? Array.from(seedText).reduce((sum, char) => sum + char.charCodeAt(0), 0) : null;
+      const rng = seed === null ? Math.random : mulberry32(seed);
+      const rawExercises = shuffle(flattenExercises(ui.category.value, ui.mode.value), rng);
+      const exercises = ui.mode.value === "multiple-choice"
+        ? rawExercises.map((exercise) => ({ ...buildChoiceExercise(exercise, rng), solved: false, revealed: false }))
+        : rawExercises.map((exercise) => ({ ...exercise, solved: false, revealed: false }));
+      const count = Math.max(1, Math.min(parseInt(ui.count.value, 10) || 1, exercises.length));
+      state.exercises = exercises.slice(0, count).map((exercise) => ({ ...exercise, solved: false, revealed: false }));
+      state.currentIndex = 0;
+      state.score = 0;
+      state.answered = false;
+      renderCurrent();
+      setFeedback("Session started. Type your answer and press Enter.");
+      ui.answerInput.value = "";
+      ui.answerInput.disabled = false;
+      ui.submitBtn.disabled = false;
+      ui.nextBtn.disabled = false;
+      ui.revealBtn.disabled = false;
+      ui.quizBadge.textContent = `${state.currentIndex + 1} of ${state.exercises.length}`;
+    }
+
+    function submitChoice(choice) {
+      const exercise = currentExercise();
+      if (!exercise || state.answered) {
+        return;
+      }
+
+      const accepted = exercise.answers.some((item) => normalize(item) === normalize(choice));
+      if (accepted) {
+        state.score += 1;
+        exercise.solved = true;
+        setFeedback(`Correct. ${choice}`, "good");
+      } else {
+        setFeedback(`Not quite. Accepted answer(s): ${exercise.answers.join(", ")}`, "bad");
+      }
+
+      state.answered = true;
+      ui.choiceList.querySelectorAll(".choice-button").forEach((button) => {
+        const isCorrect = exercise.answers.some((item) => normalize(item) === normalize(button.textContent ?? ""));
+        button.classList.toggle("correct", isCorrect);
+        button.classList.toggle("wrong", !isCorrect && button.textContent === choice);
+        button.disabled = true;
+      });
+      ui.progress.textContent = `Question ${state.currentIndex + 1} of ${state.exercises.length}. Score: ${state.score} correct.`;
+      updateStats();
+    }
+
+    function revealAnswer() {
+      const exercise = currentExercise();
+      if (!exercise) {
+        return;
+      }
+      if (exercise.kind === "Table") {
+        setFeedback(`Fill the missing verb forms: ${exercise.answers.join(", ")}`, "bad");
+      } else {
+        setFeedback(`Accepted answer(s): ${exercise.answers.join(", ")}`, "bad");
+      }
+      exercise.revealed = true;
+      state.answered = true;
+    }
+
+    function submitAnswer() {
+      const exercise = currentExercise();
+      if (!exercise || state.answered) {
+        return;
+      }
+
+      const answer = ui.answerInput.value;
+      if (exercise.kind === "Table") {
+        const parts = answer.split(",").map((part) => part.trim()).filter(Boolean);
+        const accepted = exercise.answers.every((item) => parts.some((part) => normalize(part) === normalize(item)));
+        if (accepted) {
+          state.score += 1;
+          exercise.solved = true;
+          setFeedback("Correct table completion.", "good");
+        } else {
+          setFeedback(`Not quite. Fill these forms: ${exercise.answers.join(", ")}`, "bad");
+        }
+
+        state.answered = true;
+        ui.submitBtn.disabled = true;
+        ui.answerInput.disabled = true;
+        ui.progress.textContent = `Question ${state.currentIndex + 1} of ${state.exercises.length}. Score: ${state.score} correct.`;
+        updateStats();
+        return;
+      }
+
+      const accepted = exercise.answers.some((item) => normalize(item) === normalize(answer));
+      if (accepted) {
+        state.score += 1;
+        exercise.solved = true;
+        setFeedback("Correct.", "good");
+      } else {
+        setFeedback(`Not quite. Accepted answer(s): ${exercise.answers.join(", ")}`, "bad");
+      }
+
+      state.answered = true;
+      ui.submitBtn.disabled = true;
+      ui.answerInput.disabled = true;
+      ui.progress.textContent = `Question ${state.currentIndex + 1} of ${state.exercises.length}. Score: ${state.score} correct.`;
+      updateStats();
+    }
+
+    function nextQuestion() {
+      if (!state.exercises.length) {
+        return;
+      }
+
+      if (state.currentIndex < state.exercises.length - 1) {
+        state.currentIndex += 1;
+        state.answered = false;
+        ui.answerInput.value = "";
+        ui.submitBtn.disabled = false;
+        ui.answerInput.disabled = false;
+        setFeedback("");
+        renderCurrent();
+      } else {
+        const total = state.exercises.length;
+        ui.quizBadge.textContent = "Session complete";
+        ui.promptKind.textContent = "Done";
+        ui.promptText.textContent = `You finished ${total} question(s). Final score: ${state.score} / ${total}.`;
+        ui.answerInput.value = "";
+        ui.answerInput.disabled = true;
+        ui.submitBtn.disabled = true;
+        ui.nextBtn.disabled = true;
+        ui.revealBtn.disabled = true;
+        setFeedback("Start a new session to shuffle a fresh set.", "good");
+        ui.progress.textContent = `Finished ${total} question(s).`;
+        updateStats();
+      }
+    }
+
+    function resetSession() {
+      state.exercises = [];
+      state.currentIndex = -1;
+      state.answered = false;
+      state.score = 0;
+      renderCurrent();
+      setFeedback("Session reset.");
+      ui.answerInput.value = "";
+      ui.answerInput.placeholder = "Type your answer here";
+      ui.tableGrid.hidden = true;
+      ui.choiceList.hidden = true;
+      ui.choiceList.innerHTML = "";
+      ui.tableGrid.innerHTML = "";
+    }
+
+    function toggleBankVisibility() {
+      state.bankVisible = !state.bankVisible;
+      ui.bankPanel.style.display = state.bankVisible ? "block" : "none";
+      ui.showBankBtn.textContent = state.bankVisible ? "Hide bank" : "Show bank";
+    }
+
+    async function runTranslationLookup() {
+      const text = ui.translateInput.value.trim();
+      const mode = state.translateMode;
+
+      if (!text) {
+        ui.translateStatus.textContent = "Enter a word or short phrase first.";
+        ui.translateStatus.className = "feedback bad";
+        return;
+      }
+
+      ui.translateBtn.disabled = true;
+      ui.translateStatus.textContent = "Translating through Google...";
+      ui.translateStatus.className = "feedback";
+
+      try {
+        let sourceLang = "auto";
+        let targetLang = "da";
+        let result = null;
+
+        if (mode === "en-da") {
+          targetLang = "da";
+          result = await googleTranslate(text, targetLang);
+          sourceLang = result.detectedSource || "en";
+        } else if (mode === "da-en") {
+          targetLang = "en";
+          result = await googleTranslate(text, targetLang);
+          sourceLang = result.detectedSource || "da";
+        } else {
+          const firstPass = await googleTranslate(text, "da");
+          sourceLang = firstPass.detectedSource || "auto";
+          if (sourceLang.startsWith("da")) {
+            targetLang = "en";
+            result = await googleTranslate(text, targetLang);
+          } else {
+            targetLang = "da";
+            result = firstPass;
+          }
+        }
+
+        setTranslateOutput(result.translated);
+        ui.translateStatus.textContent = `Detected ${sourceLang || "unknown"}.`;
+        ui.translateStatus.className = "feedback good";
+      } catch (error) {
+        ui.translateStatus.textContent = `Translation failed: ${error.message}`;
+        ui.translateStatus.className = "feedback bad";
+      } finally {
+        ui.translateBtn.disabled = false;
+      }
+    }
+
+    ui.startBtn.addEventListener("click", buildSession);
+    ui.submitBtn.addEventListener("click", submitAnswer);
+    ui.nextBtn.addEventListener("click", nextQuestion);
+    ui.revealBtn.addEventListener("click", revealAnswer);
+    ui.resetBtn.addEventListener("click", resetSession);
+    ui.showBankBtn.addEventListener("click", toggleBankVisibility);
+    ui.translateBtn.addEventListener("click", runTranslationLookup);
+    ui.translateTabs.forEach((tab) => {
+      tab.addEventListener("click", () => {
+        setTranslateMode(tab.dataset.mode || "auto");
+      });
+    });
+    ui.translateClearBtn.addEventListener("click", () => {
+      ui.translateInput.value = "";
+      ui.translateOutput.textContent = "Translation appears here.";
+      ui.translateStatus.textContent = "";
+      ui.translateStatus.className = "feedback";
+    });
+    ui.translateInput.addEventListener("keydown", (event) => {
+      if (event.key === "Enter") {
+        runTranslationLookup();
+      }
+    });
+    ui.loadGeneratedBtn.addEventListener("click", loadGeneratedLexicon);
+    ui.importFileBtn.addEventListener("click", () => {
+      ui.importFileInput.click();
+    });
+    ui.importFileInput.addEventListener("change", handleImportFileSelection);
+    ui.answerInput.addEventListener("keydown", (event) => {
+      if (event.key === "Enter") {
+        if (!state.answered) {
+          submitAnswer();
+        } else {
+          nextQuestion();
+        }
+      }
+    });
+
+    ui.category.addEventListener("change", () => {
+      ui.statSet.textContent = titleCase(ui.category.value === "all" ? "all categories" : ui.category.value);
+    });
+
+    ui.mode.addEventListener("change", () => {
+      const mode = ui.mode.value;
+      ui.promptKind.textContent = mode === "table" ? "Table" : mode === "multiple-choice" ? "Multiple choice" : "Prompt";
+    });
+
+    renderBank();
+    renderCurrent();
+    updateStats();
+  </script>
+</body>
+</html>

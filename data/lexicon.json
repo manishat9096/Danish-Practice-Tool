@@ -1,0 +1,278 @@
+{
+  "verbs": [
+    {
+      "infinitive": "at være",
+      "english": "to be",
+      "imperative": "vær",
+      "past": "var",
+      "present_perfect": "har været",
+      "past_perfect": "havde været"
+    },
+    {
+      "infinitive": "at have",
+      "english": "to have",
+      "imperative": "hav",
+      "past": "havde",
+      "present_perfect": "har haft",
+      "past_perfect": "havde haft"
+    },
+    {
+      "infinitive": "at gå",
+      "english": "to go / walk",
+      "imperative": "gå",
+      "past": "gik",
+      "present_perfect": "har gået",
+      "past_perfect": "havde gået"
+    },
+    {
+      "infinitive": "at gøre",
+      "english": "to do / make",
+      "imperative": "gør",
+      "past": "gjorde",
+      "present_perfect": "har gjort",
+      "past_perfect": "havde gjort"
+    },
+    {
+      "infinitive": "at spise",
+      "english": "to eat",
+      "imperative": "spis",
+      "past": "spiste",
+      "present_perfect": "har spist",
+      "past_perfect": "havde spist"
+    },
+    {
+      "infinitive": "at se",
+      "english": "to see",
+      "imperative": "se",
+      "past": "så",
+      "present_perfect": "har set",
+      "past_perfect": "havde set"
+    },
+    {
+      "infinitive": "at tage",
+      "english": "to take",
+      "imperative": "tag",
+      "past": "tog",
+      "present_perfect": "har taget",
+      "past_perfect": "havde taget"
+    },
+    {
+      "infinitive": "at komme",
+      "english": "to come",
+      "imperative": "kom",
+      "past": "kom",
+      "present_perfect": "har kommet",
+      "past_perfect": "havde kommet"
+    },
+    {
+      "infinitive": "at sige",
+      "english": "to say",
+      "imperative": "sig",
+      "past": "sagde",
+      "present_perfect": "har sagt",
+      "past_perfect": "havde sagt"
+    },
+    {
+      "infinitive": "at læse",
+      "english": "to read",
+      "imperative": "læs",
+      "past": "læste",
+      "present_perfect": "har læst",
+      "past_perfect": "havde læst"
+    }
+  ],
+  "nouns": [
+    {
+      "gender": "en",
+      "singular_indefinite": "en bog",
+      "singular_definite": "bogen",
+      "plural_indefinite": "bøger",
+      "plural_definite": "bøgerne",
+      "english": "book"
+    },
+    {
+      "gender": "en",
+      "singular_indefinite": "en bil",
+      "singular_definite": "bilen",
+      "plural_indefinite": "biler",
+      "plural_definite": "bilerne",
+      "english": "car"
+    },
+    {
+      "gender": "et",
+      "singular_indefinite": "et hus",
+      "singular_definite": "huset",
+      "plural_indefinite": "huse",
+      "plural_definite": "husene",
+      "english": "house"
+    },
+    {
+      "gender": "en",
+      "singular_indefinite": "en lærer",
+      "singular_definite": "læreren",
+      "plural_indefinite": "lærere",
+      "plural_definite": "lærerne",
+      "english": "teacher"
+    },
+    {
+      "gender": "en",
+      "singular_indefinite": "en dag",
+      "singular_definite": "dagen",
+      "plural_indefinite": "dage",
+      "plural_definite": "dagene",
+      "english": "day"
+    },
+    {
+      "gender": "et",
+      "singular_indefinite": "et barn",
+      "singular_definite": "barnet",
+      "plural_indefinite": "børn",
+      "plural_definite": "børnene",
+      "english": "child"
+    },
+    {
+      "gender": "et",
+      "singular_indefinite": "et æble",
+      "singular_definite": "æblet",
+      "plural_indefinite": "æbler",
+      "plural_definite": "æblerne",
+      "english": "apple"
+    },
+    {
+      "gender": "en",
+      "singular_indefinite": "en stol",
+      "singular_definite": "stolen",
+      "plural_indefinite": "stole",
+      "plural_definite": "stolene",
+      "english": "chair"
+    },
+    {
+      "gender": "et",
+      "singular_indefinite": "et bord",
+      "singular_definite": "bordet",
+      "plural_indefinite": "borde",
+      "plural_definite": "bordene",
+      "english": "table"
+    },
+    {
+      "gender": "en",
+      "singular_indefinite": "en ven",
+      "singular_definite": "vennen",
+      "plural_indefinite": "venner",
+      "plural_definite": "vennerne",
+      "english": "friend"
+    }
+  ],
+  "adjectives": [
+    {
+      "base": "god",
+      "common": "god",
+      "neuter": "godt",
+      "plural": "gode",
+      "definite": "gode",
+      "comparative": "bedre",
+      "superlative": "bedst",
+      "english": "good"
+    },
+    {
+      "base": "stor",
+      "common": "stor",
+      "neuter": "stort",
+      "plural": "store",
+      "definite": "store",
+      "comparative": "større",
+      "superlative": "størst",
+      "english": "big"
+    },
+    {
+      "base": "lille",
+      "common": "lille",
+      "neuter": "lille",
+      "plural": "små",
+      "definite": "små",
+      "comparative": "mindre",
+      "superlative": "mindst",
+      "english": "small"
+    },
+    {
+      "base": "ny",
+      "common": "ny",
+      "neuter": "nyt",
+      "plural": "nye",
+      "definite": "nye",
+      "comparative": "nyere",
+      "superlative": "nyest",
+      "english": "new"
+    },
+    {
+      "base": "gammel",
+      "common": "gammel",
+      "neuter": "gammelt",
+      "plural": "gamle",
+      "definite": "gamle",
+      "comparative": "ældre",
+      "superlative": "ældst",
+      "english": "old"
+    },
+    {
+      "base": "lang",
+      "common": "lang",
+      "neuter": "langt",
+      "plural": "lange",
+      "definite": "lange",
+      "comparative": "længere",
+      "superlative": "længst",
+      "english": "long"
+    },
+    {
+      "base": "høj",
+      "common": "høj",
+      "neuter": "højt",
+      "plural": "høje",
+      "definite": "høje",
+      "comparative": "højere",
+      "superlative": "højest",
+      "english": "tall / high"
+    },
+    {
+      "base": "varm",
+      "common": "varm",
+      "neuter": "varmt",
+      "plural": "varme",
+      "definite": "varme",
+      "comparative": "varmere",
+      "superlative": "varmest",
+      "english": "warm"
+    }
+  ],
+  "adverbs": [
+    {
+      "base": "hurtigt",
+      "comparative": "hurtigere",
+      "superlative": "hurtigst",
+      "english": "quickly"
+    },
+    {
+      "base": "langsomt",
+      "comparative": "langsommere",
+      "superlative": "langsomst",
+      "english": "slowly"
+    },
+    {
+      "base": "ofte",
+      "english": "often"
+    },
+    {
+      "base": "altid",
+      "english": "always"
+    },
+    {
+      "base": "aldrig",
+      "english": "never"
+    },
+    {
+      "base": "måske",
+      "english": "maybe / perhaps"
+    }
+  ]
+}
