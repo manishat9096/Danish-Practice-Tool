@@ -79,6 +79,166 @@
       "past": "læste",
       "present_perfect": "har læst",
       "past_perfect": "havde læst"
+    },
+    {
+      "infinitive": "at skrive",
+      "english": "to write",
+      "imperative": "skriv",
+      "past": "skrev",
+      "present_perfect": "har skrevet",
+      "past_perfect": "havde skrevet"
+    },
+    {
+      "infinitive": "at bo",
+      "english": "to live (reside)",
+      "imperative": "bo",
+      "past": "boede",
+      "present_perfect": "har boet",
+      "past_perfect": "havde boet"
+    },
+    {
+      "infinitive": "at arbejde",
+      "english": "to work",
+      "imperative": "arbejd",
+      "past": "arbejdede",
+      "present_perfect": "har arbejdet",
+      "past_perfect": "havde arbejdet"
+    },
+    {
+      "infinitive": "at købe",
+      "english": "to buy",
+      "imperative": "køb",
+      "past": "købte",
+      "present_perfect": "har købt",
+      "past_perfect": "havde købt"
+    },
+    {
+      "infinitive": "at sælge",
+      "english": "to sell",
+      "imperative": "sælg",
+      "past": "solgte",
+      "present_perfect": "har solgt",
+      "past_perfect": "havde solgt"
+    },
+    {
+      "infinitive": "at finde",
+      "english": "to find",
+      "imperative": "find",
+      "past": "fandt",
+      "present_perfect": "har fundet",
+      "past_perfect": "havde fundet"
+    },
+    {
+      "infinitive": "at give",
+      "english": "to give",
+      "imperative": "giv",
+      "past": "gav",
+      "present_perfect": "har givet",
+      "past_perfect": "havde givet"
+    },
+    {
+      "infinitive": "at få",
+      "english": "to get",
+      "imperative": "få",
+      "past": "fik",
+      "present_perfect": "har fået",
+      "past_perfect": "havde fået"
+    },
+    {
+      "infinitive": "at vide",
+      "english": "to know",
+      "imperative": "vid",
+      "past": "vidste",
+      "present_perfect": "har vidst",
+      "past_perfect": "havde vidst"
+    },
+    {
+      "infinitive": "at tro",
+      "english": "to believe",
+      "imperative": "tro",
+      "past": "troede",
+      "present_perfect": "har troet",
+      "past_perfect": "havde troet"
+    },
+    {
+      "infinitive": "at høre",
+      "english": "to hear",
+      "imperative": "hør",
+      "past": "hørte",
+      "present_perfect": "har hørt",
+      "past_perfect": "havde hørt"
+    },
+    {
+      "infinitive": "at lære",
+      "english": "to learn",
+      "imperative": "lær",
+      "past": "lærte",
+      "present_perfect": "har lært",
+      "past_perfect": "havde lært"
+    },
+    {
+      "infinitive": "at drikke",
+      "english": "to drink",
+      "imperative": "drik",
+      "past": "drak",
+      "present_perfect": "har drukket",
+      "past_perfect": "havde drukket"
+    },
+    {
+      "infinitive": "at åbne",
+      "english": "to open",
+      "imperative": "åbn",
+      "past": "åbnede",
+      "present_perfect": "har åbnet",
+      "past_perfect": "havde åbnet"
+    },
+    {
+      "infinitive": "at lukke",
+      "english": "to close",
+      "imperative": "luk",
+      "past": "lukkede",
+      "present_perfect": "har lukket",
+      "past_perfect": "havde lukket"
+    },
+    {
+      "infinitive": "at vente",
+      "english": "to wait",
+      "imperative": "vent",
+      "past": "ventede",
+      "present_perfect": "har ventet",
+      "past_perfect": "havde ventet"
+    },
+    {
+      "infinitive": "at hjælpe",
+      "english": "to help",
+      "imperative": "hjælp",
+      "past": "hjalp",
+      "present_perfect": "har hjulpet",
+      "past_perfect": "havde hjulpet"
+    },
+    {
+      "infinitive": "at ringe",
+      "english": "to call",
+      "imperative": "ring",
+      "past": "ringede",
+      "present_perfect": "har ringet",
+      "past_perfect": "havde ringet"
+    },
+    {
+      "infinitive": "at rejse",
+      "english": "to travel",
+      "imperative": "rejs",
+      "past": "rejste",
+      "present_perfect": "har rejst",
+      "past_perfect": "havde rejst"
+    },
+    {
+      "infinitive": "at forstå",
+      "english": "to understand",
+      "imperative": "forstå",
+      "past": "forstod",
+      "present_perfect": "har forstået",
+      "past_perfect": "havde forstået"
     }
   ],
   "nouns": [
@@ -161,6 +321,166 @@
       "plural_indefinite": "venner",
       "plural_definite": "vennerne",
       "english": "friend"
+    },
+    {
+      "gender": "en",
+      "singular_indefinite": "en by",
+      "singular_definite": "byen",
+      "plural_indefinite": "byer",
+      "plural_definite": "byerne",
+      "english": "city"
+    },
+    {
+      "gender": "et",
+      "singular_indefinite": "et land",
+      "singular_definite": "landet",
+      "plural_indefinite": "lande",
+      "plural_definite": "landene",
+      "english": "country"
+    },
+    {
+      "gender": "en",
+      "singular_indefinite": "en skole",
+      "singular_definite": "skolen",
+      "plural_indefinite": "skoler",
+      "plural_definite": "skolerne",
+      "english": "school"
+    },
+    {
+      "gender": "et",
+      "singular_indefinite": "et arbejde",
+      "singular_definite": "arbejdet",
+      "plural_indefinite": "arbejder",
+      "plural_definite": "arbejderne",
+      "english": "job / work"
+    },
+    {
+      "gender": "en",
+      "singular_indefinite": "en dør",
+      "singular_definite": "døren",
+      "plural_indefinite": "døre",
+      "plural_definite": "dørene",
+      "english": "door"
+    },
+    {
+      "gender": "et",
+      "singular_indefinite": "et vindue",
+      "singular_definite": "vinduet",
+      "plural_indefinite": "vinduer",
+      "plural_definite": "vinduerne",
+      "english": "window"
+    },
+    {
+      "gender": "en",
+      "singular_indefinite": "en gade",
+      "singular_definite": "gaden",
+      "plural_indefinite": "gader",
+      "plural_definite": "gaderne",
+      "english": "street"
+    },
+    {
+      "gender": "et",
+      "singular_indefinite": "et spørgsmål",
+      "singular_definite": "spørgsmålet",
+      "plural_indefinite": "spørgsmål",
+      "plural_definite": "spørgsmålene",
+      "english": "question"
+    },
+    {
+      "gender": "et",
+      "singular_indefinite": "et svar",
+      "singular_definite": "svaret",
+      "plural_indefinite": "svar",
+      "plural_definite": "svarene",
+      "english": "answer"
+    },
+    {
+      "gender": "en",
+      "singular_indefinite": "en morgen",
+      "singular_definite": "morgenen",
+      "plural_indefinite": "morgener",
+      "plural_definite": "morgenerne",
+      "english": "morning"
+    },
+    {
+      "gender": "en",
+      "singular_indefinite": "en aften",
+      "singular_definite": "aftenen",
+      "plural_indefinite": "aftener",
+      "plural_definite": "aftenerne",
+      "english": "evening"
+    },
+    {
+      "gender": "en",
+      "singular_indefinite": "en uge",
+      "singular_definite": "ugen",
+      "plural_indefinite": "uger",
+      "plural_definite": "ugerne",
+      "english": "week"
+    },
+    {
+      "gender": "et",
+      "singular_indefinite": "et år",
+      "singular_definite": "året",
+      "plural_indefinite": "år",
+      "plural_definite": "årene",
+      "english": "year"
+    },
+    {
+      "gender": "en",
+      "singular_indefinite": "en måned",
+      "singular_definite": "måneden",
+      "plural_indefinite": "måneder",
+      "plural_definite": "månederne",
+      "english": "month"
+    },
+    {
+      "gender": "et",
+      "singular_indefinite": "et minut",
+      "singular_definite": "minuttet",
+      "plural_indefinite": "minutter",
+      "plural_definite": "minutterne",
+      "english": "minute"
+    },
+    {
+      "gender": "en",
+      "singular_indefinite": "en time",
+      "singular_definite": "timen",
+      "plural_indefinite": "timer",
+      "plural_definite": "timerne",
+      "english": "hour"
+    },
+    {
+      "gender": "en",
+      "singular_indefinite": "en familie",
+      "singular_definite": "familien",
+      "plural_indefinite": "familier",
+      "plural_definite": "familierne",
+      "english": "family"
+    },
+    {
+      "gender": "et",
+      "singular_indefinite": "et nummer",
+      "singular_definite": "nummeret",
+      "plural_indefinite": "numre",
+      "plural_definite": "numrene",
+      "english": "number"
+    },
+    {
+      "gender": "en",
+      "singular_indefinite": "en telefon",
+      "singular_definite": "telefonen",
+      "plural_indefinite": "telefoner",
+      "plural_definite": "telefonerne",
+      "english": "telephone"
+    },
+    {
+      "gender": "et",
+      "singular_indefinite": "et sprog",
+      "singular_definite": "sproget",
+      "plural_indefinite": "sprog",
+      "plural_definite": "sprogene",
+      "english": "language"
     }
   ],
   "adjectives": [
@@ -243,6 +563,126 @@
       "comparative": "varmere",
       "superlative": "varmest",
       "english": "warm"
+    },
+    {
+      "base": "kold",
+      "common": "kold",
+      "neuter": "koldt",
+      "plural": "kolde",
+      "definite": "kolde",
+      "comparative": "koldere",
+      "superlative": "koldest",
+      "english": "cold"
+    },
+    {
+      "base": "hurtig",
+      "common": "hurtig",
+      "neuter": "hurtigt",
+      "plural": "hurtige",
+      "definite": "hurtige",
+      "comparative": "hurtigere",
+      "superlative": "hurtigst",
+      "english": "fast"
+    },
+    {
+      "base": "langsom",
+      "common": "langsom",
+      "neuter": "langsomt",
+      "plural": "langsomme",
+      "definite": "langsomme",
+      "comparative": "langsommere",
+      "superlative": "langsomst",
+      "english": "slow"
+    },
+    {
+      "base": "smuk",
+      "common": "smuk",
+      "neuter": "smukt",
+      "plural": "smukke",
+      "definite": "smukke",
+      "comparative": "smukkere",
+      "superlative": "smukkest",
+      "english": "beautiful"
+    },
+    {
+      "base": "dyr",
+      "common": "dyr",
+      "neuter": "dyrt",
+      "plural": "dyre",
+      "definite": "dyre",
+      "comparative": "dyrere",
+      "superlative": "dyrest",
+      "english": "expensive"
+    },
+    {
+      "base": "billig",
+      "common": "billig",
+      "neuter": "billigt",
+      "plural": "billige",
+      "definite": "billige",
+      "comparative": "billigere",
+      "superlative": "billigst",
+      "english": "cheap"
+    },
+    {
+      "base": "stærk",
+      "common": "stærk",
+      "neuter": "stærkt",
+      "plural": "stærke",
+      "definite": "stærke",
+      "comparative": "stærkere",
+      "superlative": "stærkest",
+      "english": "strong"
+    },
+    {
+      "base": "svag",
+      "common": "svag",
+      "neuter": "svagt",
+      "plural": "svage",
+      "definite": "svage",
+      "comparative": "svagere",
+      "superlative": "svagest",
+      "english": "weak"
+    },
+    {
+      "base": "vigtig",
+      "common": "vigtig",
+      "neuter": "vigtigt",
+      "plural": "vigtige",
+      "definite": "vigtige",
+      "comparative": "vigtigere",
+      "superlative": "vigtigst",
+      "english": "important"
+    },
+    {
+      "base": "nem",
+      "common": "nem",
+      "neuter": "nemt",
+      "plural": "nemme",
+      "definite": "nemme",
+      "comparative": "nemmere",
+      "superlative": "nemmest",
+      "english": "easy"
+    },
+    {
+      "base": "svær",
+      "common": "svær",
+      "neuter": "svært",
+      "plural": "svære",
+      "definite": "svære",
+      "comparative": "sværere",
+      "superlative": "sværest",
+      "english": "difficult"
+    },
+    {
+      "base": "glad",
+      "common": "glad",
+      "neuter": "gladt",
+      "plural": "glade",
+      "definite": "glade",
+      "comparative": "gladere",
+      "superlative": "gladest",
+      "english": "happy"
     }
   ],
   "adverbs": [
@@ -273,6 +713,56 @@
     {
       "base": "måske",
       "english": "maybe / perhaps"
+    },
+    {
+      "base": "gerne",
+      "comparative": "hellere",
+      "superlative": "helst",
+      "english": "gladly / preferably"
+    },
+    {
+      "base": "tidligt",
+      "comparative": "tidligere",
+      "superlative": "tidligst",
+      "english": "early"
+    },
+    {
+      "base": "sent",
+      "comparative": "senere",
+      "superlative": "senest",
+      "english": "late"
+    },
+    {
+      "base": "meget",
+      "comparative": "mere",
+      "superlative": "mest",
+      "english": "much / very"
+    },
+    {
+      "base": "lidt",
+      "comparative": "mindre",
+      "superlative": "mindst",
+      "english": "a little"
+    },
+    {
+      "base": "hjemme",
+      "english": "at home"
+    },
+    {
+      "base": "ude",
+      "english": "outside"
+    },
+    {
+      "base": "sammen",
+      "english": "together"
+    },
+    {
+      "base": "her",
+      "english": "here"
+    },
+    {
+      "base": "der",
+      "english": "there"
     }
   ]
 }

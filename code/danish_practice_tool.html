@@ -372,6 +372,11 @@
       background: rgba(255, 255, 255, 0.72);
     }
 
+    .table-card.blank-card {
+      display: grid;
+      gap: 8px;
+    }
+
     .table-card .mini-title {
       display: block;
       color: var(--accent-2);
@@ -380,6 +385,33 @@
       letter-spacing: 0.12em;
       font-size: 0.7rem;
       margin-bottom: 6px;
+    }
+
+    .table-input {
+      width: 100%;
+      border-radius: 14px;
+      border: 1px solid rgba(28, 29, 31, 0.14);
+      background: rgba(255, 255, 255, 0.96);
+      padding: 12px 13px;
+      font-family: ui-sans-serif, system-ui, sans-serif;
+      font-size: 0.98rem;
+    }
+
+    .table-input.correct {
+      border-color: rgba(31, 122, 79, 0.55);
+      background: rgba(31, 122, 79, 0.08);
+    }
+
+    .table-input.wrong {
+      border-color: rgba(163, 58, 58, 0.55);
+      background: rgba(163, 58, 58, 0.08);
+    }
+
+    .table-note {
+      color: var(--muted);
+      font-family: ui-sans-serif, system-ui, sans-serif;
+      font-size: 0.85rem;
+      margin: 0;
     }
 
     .table-row {
@@ -607,7 +639,7 @@
           <div class="table-grid" id="tableGrid" hidden></div>
         </div>
 
-        <div class="answer-row">
+        <div class="answer-row" id="answerRow">
           <input id="answerInput" type="text" placeholder="Type your answer here" autocomplete="off" />
           <button class="primary" id="submitBtn">Submit</button>
         </div>
@@ -635,50 +667,22 @@
   </div>
 
   <script>
-    let vocabulary = {
+    const fallbackVocabulary = {
       verbs: [
-        { infinitive: "at være", english: "to be", imperative: "vær", past: "var", present_perfect: "har været", past_perfect: "havde været" },
-        { infinitive: "at have", english: "to have", imperative: "hav", past: "havde", present_perfect: "har haft", past_perfect: "havde haft" },
-        { infinitive: "at gå", english: "to go / walk", imperative: "gå", past: "gik", present_perfect: "har gået", past_perfect: "havde gået" },
-        { infinitive: "at gøre", english: "to do / make", imperative: "gør", past: "gjorde", present_perfect: "har gjort", past_perfect: "havde gjort" },
-        { infinitive: "at spise", english: "to eat", imperative: "spis", past: "spiste", present_perfect: "har spist", past_perfect: "havde spist" },
-        { infinitive: "at se", english: "to see", imperative: "se", past: "så", present_perfect: "har set", past_perfect: "havde set" },
-        { infinitive: "at tage", english: "to take", imperative: "tag", past: "tog", present_perfect: "har taget", past_perfect: "havde taget" },
-        { infinitive: "at komme", english: "to come", imperative: "kom", past: "kom", present_perfect: "har kommet", past_perfect: "havde kommet" },
-        { infinitive: "at sige", english: "to say", imperative: "sig", past: "sagde", present_perfect: "har sagt", past_perfect: "havde sagt" },
-        { infinitive: "at læse", english: "to read", imperative: "læs", past: "læste", present_perfect: "har læst", past_perfect: "havde læst" }
+        { infinitive: "at være", english: "to be", imperative: "vær", past: "var", present_perfect: "har været", past_perfect: "havde været" }
       ],
       nouns: [
-        { gender: "en", singular_indefinite: "en bog", singular_definite: "bogen", plural_indefinite: "bøger", plural_definite: "bøgerne", english: "book" },
-        { gender: "en", singular_indefinite: "en bil", singular_definite: "bilen", plural_indefinite: "biler", plural_definite: "bilerne", english: "car" },
-        { gender: "et", singular_indefinite: "et hus", singular_definite: "huset", plural_indefinite: "huse", plural_definite: "husene", english: "house" },
-        { gender: "en", singular_indefinite: "en lærer", singular_definite: "læreren", plural_indefinite: "lærere", plural_definite: "lærerne", english: "teacher" },
-        { gender: "en", singular_indefinite: "en dag", singular_definite: "dagen", plural_indefinite: "dage", plural_definite: "dagene", english: "day" },
-        { gender: "et", singular_indefinite: "et barn", singular_definite: "barnet", plural_indefinite: "børn", plural_definite: "børnene", english: "child" },
-        { gender: "et", singular_indefinite: "et æble", singular_definite: "æblet", plural_indefinite: "æbler", plural_definite: "æblerne", english: "apple" },
-        { gender: "en", singular_indefinite: "en stol", singular_definite: "stolen", plural_indefinite: "stole", plural_definite: "stolene", english: "chair" },
-        { gender: "et", singular_indefinite: "et bord", singular_definite: "bordet", plural_indefinite: "borde", plural_definite: "bordene", english: "table" },
-        { gender: "en", singular_indefinite: "en ven", singular_definite: "vennen", plural_indefinite: "venner", plural_definite: "vennerne", english: "friend" }
+        { gender: "en", singular_indefinite: "en bog", singular_definite: "bogen", plural_indefinite: "bøger", plural_definite: "bøgerne", english: "book" }
       ],
       adjectives: [
-        { base: "god", common: "god", neuter: "godt", plural: "gode", definite: "gode", comparative: "bedre", superlative: "bedst", english: "good" },
-        { base: "stor", common: "stor", neuter: "stort", plural: "store", definite: "store", comparative: "større", superlative: "størst", english: "big" },
-        { base: "lille", common: "lille", neuter: "lille", plural: "små", definite: "små", comparative: "mindre", superlative: "mindst", english: "small" },
-        { base: "ny", common: "ny", neuter: "nyt", plural: "nye", definite: "nye", comparative: "nyere", superlative: "nyest", english: "new" },
-        { base: "gammel", common: "gammel", neuter: "gammelt", plural: "gamle", definite: "gamle", comparative: "ældre", superlative: "ældst", english: "old" },
-        { base: "lang", common: "lang", neuter: "langt", plural: "lange", definite: "lange", comparative: "længere", superlative: "længst", english: "long" },
-        { base: "høj", common: "høj", neuter: "højt", plural: "høje", definite: "høje", comparative: "højere", superlative: "højest", english: "tall / high" },
-        { base: "varm", common: "varm", neuter: "varmt", plural: "varme", definite: "varme", comparative: "varmere", superlative: "varmest", english: "warm" }
+        { base: "god", common: "god", neuter: "godt", plural: "gode", definite: "gode", comparative: "bedre", superlative: "bedst", english: "good" }
       ],
       adverbs: [
-        { base: "hurtigt", comparative: "hurtigere", superlative: "hurtigst", english: "quickly" },
-        { base: "langsomt", comparative: "langsommere", superlative: "langsomst", english: "slowly" },
-        { base: "ofte", english: "often" },
-        { base: "altid", english: "always" },
-        { base: "aldrig", english: "never" },
-        { base: "måske", english: "maybe / perhaps" }
+        { base: "ofte", english: "often" }
       ]
     };
+
+    let vocabulary = JSON.parse(JSON.stringify(fallbackVocabulary));
 
     const ui = {
       category: document.getElementById("category"),
@@ -699,6 +703,7 @@
       showBankBtn: document.getElementById("showBankBtn"),
       resetBtn: document.getElementById("resetBtn"),
       submitBtn: document.getElementById("submitBtn"),
+      answerRow: document.getElementById("answerRow"),
       nextBtn: document.getElementById("nextBtn"),
       revealBtn: document.getElementById("revealBtn"),
       answerInput: document.getElementById("answerInput"),
@@ -831,38 +836,94 @@
       ui.importStatus.className = `feedback ${tone}`.trim();
     }
 
-    function applyImportedLexicon(lexicon) {
+    function applyImportedLexicon(lexicon, options = {}) {
+      const { silent = false, message = null, tone = "good" } = options;
       vocabulary = lexicon;
       resetSession();
       renderBank();
       updateStats();
-      setImportStatus(
-        `Loaded data: ${lexicon.verbs.length} verbs, ${lexicon.adjectives.length} adjectives, ${lexicon.nouns.length} nouns, ${lexicon.adverbs.length} adverbs.`,
-        "good"
-      );
+      if (!silent) {
+        setImportStatus(
+          message || `Loaded data: ${lexicon.verbs.length} verbs, ${lexicon.adjectives.length} adjectives, ${lexicon.nouns.length} nouns, ${lexicon.adverbs.length} adverbs.`,
+          tone
+        );
+      }
+    }
+
+    function buildDataCandidatePaths(fileName) {
+      const pathName = window.location.pathname || "";
+      const codeIndex = pathName.indexOf("/code/");
+      const repoBase = codeIndex >= 0 ? pathName.slice(0, codeIndex) : "";
+      const rawCandidates = [
+        `../data/${fileName}`,
+        `./data/${fileName}`,
+        `${repoBase}/data/${fileName}`,
+        `/data/${fileName}`
+      ];
+
+      const unique = [];
+      for (const candidate of rawCandidates) {
+        if (candidate && !unique.includes(candidate)) {
+          unique.push(candidate);
+        }
+      }
+      return unique;
+    }
+
+    async function fetchLexiconFile(fileName) {
+      const candidates = buildDataCandidatePaths(fileName);
+      for (const candidate of candidates) {
+        try {
+          const response = await fetch(candidate, { cache: "no-store" });
+          if (response.ok) {
+            const payload = await response.json();
+            return { payload, source: candidate };
+          }
+        } catch (error) {
+          // Continue trying alternative paths.
+        }
+      }
+      return null;
+    }
+
+    async function loadBaseLexiconOnStartup() {
+      const result = await fetchLexiconFile("lexicon.json");
+      if (!result) {
+        setImportStatus("Using built-in fallback dataset. Base lexicon file could not be loaded.", "bad");
+        return;
+      }
+      try {
+        const normalized = normalizeLexiconShape(result.payload);
+        applyImportedLexicon(normalized, {
+          message: `Loaded base lexicon from ${result.source}`,
+          tone: "good"
+        });
+      } catch (error) {
+        setImportStatus("Base lexicon file was found but not valid JSON shape. Using fallback dataset.", "bad");
+      }
     }
 
     async function loadGeneratedLexicon() {
       ui.loadGeneratedBtn.disabled = true;
       setImportStatus("Loading generated lexicon...", "");
       try {
-        let response = await fetch("../data/lexicon.generated.json", { cache: "no-store" });
-        let sourceName = "generated";
-        if (!response.ok) {
-          response = await fetch("../data/lexicon.json", { cache: "no-store" });
-          sourceName = "base";
+        const generated = await fetchLexiconFile("lexicon.generated.json");
+        if (generated) {
+          applyImportedLexicon(normalizeLexiconShape(generated.payload), {
+            message: `Loaded generated dataset from ${generated.source}`,
+            tone: "good"
+          });
+          return;
         }
-        if (!response.ok) {
-          throw new Error(`HTTP ${response.status}`);
+
+        const base = await fetchLexiconFile("lexicon.json");
+        if (!base) {
+          throw new Error("No dataset files found.");
         }
-        const payload = await response.json();
-        applyImportedLexicon(normalizeLexiconShape(payload));
-        setImportStatus(
-          sourceName === "generated"
-            ? "Loaded generated dataset."
-            : "Generated file was missing, so the app loaded the base lexicon instead.",
-          sourceName === "generated" ? "good" : "bad"
-        );
+        applyImportedLexicon(normalizeLexiconShape(base.payload), {
+          message: `Generated file not found. Loaded base lexicon from ${base.source}`,
+          tone: "bad"
+        });
       } catch (error) {
         setImportStatus("Could not load data automatically. Use 'Import JSON file' instead.", "bad");
       } finally {
@@ -1050,6 +1111,7 @@
         ui.promptText.textContent = "Choose a category and start the quiz.";
         ui.quizBadge.textContent = "Ready to start";
         ui.progress.textContent = "No session running.";
+        ui.answerRow.hidden = true;
         ui.answerInput.value = "";
         ui.answerInput.placeholder = "Type your answer here";
         ui.answerInput.disabled = true;
@@ -1069,6 +1131,7 @@
       ui.progress.textContent = `Question ${state.currentIndex + 1} of ${state.exercises.length}. Score: ${state.score} correct.`;
       ui.nextBtn.disabled = false;
       ui.revealBtn.disabled = false;
+      ui.answerRow.hidden = exercise.kind === "Table" || exercise.kind === "MultipleChoice";
       ui.tableGrid.hidden = true;
       ui.choiceList.hidden = true;
 
@@ -1089,10 +1152,16 @@
     }
 
     function renderTableExercise(exercise) {
-      const rows = exercise.table.fields.map((field) => `
-        <div class="table-card">
+      const rows = exercise.table.fields.map((field, index) => `
+        <div class="table-card blank-card">
           <span class="mini-title">${field.label}</span>
-          <strong>_____</strong>
+          <input
+            class="table-input"
+            type="text"
+            data-table-answer="${index}"
+            placeholder="Type the ${field.label.toLowerCase()} form"
+            autocomplete="off"
+          />
         </div>
       `).join("");
 
@@ -1105,12 +1174,12 @@
       `;
       ui.tableGrid.hidden = false;
       ui.promptText.textContent = `Fill the verb table for '${exercise.table.label}'.`;
-      setFeedback("Use the answer box to type the missing forms separated by commas, or reveal to check.");
-      ui.answerInput.placeholder = "imperative, past, present perfect, past perfect";
+      setFeedback("Type one answer into each blank, then press Submit.");
+      ui.answerInput.disabled = true;
       ui.answerInput.value = "";
-      ui.answerInput.disabled = false;
       ui.submitBtn.disabled = false;
-      ui.answerInput.focus();
+      const firstInput = ui.tableGrid.querySelector(".table-input");
+      firstInput?.focus();
     }
 
     function renderMultipleChoice(exercise) {
@@ -1199,25 +1268,33 @@
         return;
       }
 
-      const answer = ui.answerInput.value;
       if (exercise.kind === "Table") {
-        const parts = answer.split(",").map((part) => part.trim()).filter(Boolean);
-        const accepted = exercise.answers.every((item) => parts.some((part) => normalize(part) === normalize(item)));
+        const inputs = Array.from(ui.tableGrid.querySelectorAll(".table-input"));
+        const accepted = inputs.length === exercise.answers.length && inputs.every((input, index) => normalize(input.value) === normalize(exercise.answers[index]));
+
+        inputs.forEach((input, index) => {
+          const isCorrect = normalize(input.value) === normalize(exercise.answers[index]);
+          input.classList.toggle("correct", isCorrect);
+          input.classList.toggle("wrong", !isCorrect);
+          input.disabled = true;
+        });
+
         if (accepted) {
           state.score += 1;
           exercise.solved = true;
           setFeedback("Correct table completion.", "good");
         } else {
-          setFeedback(`Not quite. Fill these forms: ${exercise.answers.join(", ")}`, "bad");
+          setFeedback(`Not quite. Correct order: ${exercise.answers.join(", ")}`, "bad");
         }
 
         state.answered = true;
         ui.submitBtn.disabled = true;
-        ui.answerInput.disabled = true;
         ui.progress.textContent = `Question ${state.currentIndex + 1} of ${state.exercises.length}. Score: ${state.score} correct.`;
         updateStats();
         return;
       }
+
+      const answer = ui.answerInput.value;
 
       const accepted = exercise.answers.some((item) => normalize(item) === normalize(answer));
       if (accepted) {
@@ -1270,6 +1347,7 @@
       state.answered = false;
       state.score = 0;
       renderCurrent();
+      ui.answerRow.hidden = true;
       setFeedback("Session reset.");
       ui.answerInput.value = "";
       ui.answerInput.placeholder = "Type your answer here";
@@ -1382,9 +1460,14 @@
       ui.promptKind.textContent = mode === "table" ? "Table" : mode === "multiple-choice" ? "Multiple choice" : "Prompt";
     });
 
-    renderBank();
-    renderCurrent();
-    updateStats();
+    async function initializeApp() {
+      renderBank();
+      renderCurrent();
+      updateStats();
+      await loadBaseLexiconOnStartup();
+    }
+
+    initializeApp();
   </script>
 </body>
 </html>
