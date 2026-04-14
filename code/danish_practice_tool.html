@@ -846,17 +846,25 @@
       ui.loadGeneratedBtn.disabled = true;
       setImportStatus("Loading generated lexicon...", "");
       try {
-        const response = await fetch("../data/lexicon.generated.json", { cache: "no-store" });
+        let response = await fetch("../data/lexicon.generated.json", { cache: "no-store" });
+        let sourceName = "generated";
+        if (!response.ok) {
+          response = await fetch("../data/lexicon.json", { cache: "no-store" });
+          sourceName = "base";
+        }
         if (!response.ok) {
           throw new Error(`HTTP ${response.status}`);
         }
         const payload = await response.json();
         applyImportedLexicon(normalizeLexiconShape(payload));
-      } catch (error) {
         setImportStatus(
-          "Could not load ../data/lexicon.generated.json automatically. Use 'Import JSON file' instead.",
-          "bad"
+          sourceName === "generated"
+            ? "Loaded generated dataset."
+            : "Generated file was missing, so the app loaded the base lexicon instead.",
+          sourceName === "generated" ? "good" : "bad"
         );
+      } catch (error) {
+        setImportStatus("Could not load data automatically. Use 'Import JSON file' instead.", "bad");
       } finally {
         ui.loadGeneratedBtn.disabled = false;
       }
