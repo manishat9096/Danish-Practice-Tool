@@ -4,9 +4,9 @@ This workspace now contains a small offline practice tool for Danish vocabulary 
 
 ## What it does
 
-- Quizzes you on Danish verbs, nouns, adjectives, and adverbs.
+- Quizzes you on Danish verbs, nouns, adjectives, adverbs, and common phrases.
 - Randomizes prompts so you can practice translation and forms.
-- Uses a JSON lexicon file so you can keep adding your own words.
+- Uses split JSON files so you can manage each category independently.
 
 ## Run it
 
@@ -17,61 +17,91 @@ The page works locally without a build step.
 
 If you want a Windows app later, the simplest route is to wrap the same HTML in a WebView2 or Electron shell. For now, the browser version is the lightest local option.
 
-## Data file
+## Data files
 
-Edit [data/lexicon.json](data/lexicon.json) to add more vocabulary. The browser app uses the same underlying structure, so you can keep the data in sync easily.
+The project now supports split lexicon files in `data/`:
+
+- [data/verbs.json](data/verbs.json)
+- [data/nouns.json](data/nouns.json)
+- [data/adjectives.json](data/adjectives.json)
+- [data/adverbs.json](data/adverbs.json)
+- [data/common_phrases.json](data/common_phrases.json)
+
+A combined file [data/lexicon.json](data/lexicon.json) is still kept for compatibility.
+
+You can edit category files directly, or append uploaded JSON into an existing category.
 
 - Verbs: `infinitive`, `english`, `imperative`, `past`, `present_perfect`, `past_perfect`
 - Nouns: `gender`, `singular_indefinite`, `singular_definite`, `plural_indefinite`, `plural_definite`, `english`
 - Adjectives: `base`, `common`, `neuter`, `plural`, `definite`, `comparative`, `superlative`, `english`
 - Adverbs: `base`, `english`, and optional `comparative` / `superlative`
+- Common phrases: `danish`, `english`
 
-## Automatic data expansion
+## Import and append workflow
 
-You can auto-generate a much larger word bank (hundreds of verbs/adjectives and many nouns) from Kaikki/Wiktextract Danish data.
+In the browser tool:
 
-### One-command refresh
+- Use `Import category` to choose where the uploaded file should go.
+- Use `Append JSON file` to upload a JSON array for that category.
+- Duplicate entries are skipped automatically.
+
+## CLI data management
+
+Use [code/manage_lexicon.py](code/manage_lexicon.py) for split/merge/append operations.
+
+### Append uploaded category file
+
+```powershell
+python code/manage_lexicon.py append --category verbs --input C:\path\to\my_verbs.json --data-dir data
+```
+
+If Python is not available, use the PowerShell helper:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File code/append_lexicon_category.ps1 -Category verbs -InputFile C:\path\to\my_verbs.json
+```
+
+### Split combined file into category files
+
+```powershell
+python code/manage_lexicon.py split --source data/lexicon.json --data-dir data
+```
+
+### Merge category files back to combined file
+
+```powershell
+python code/manage_lexicon.py merge --data-dir data --output data/lexicon.json
+```
+
+### Validate schema
+
+```powershell
+python code/validate_lexicon.py --data-dir data --file data/lexicon.json
+```
+
+### Refresh helper
 
 From the project root:
 
 ```powershell
-powershell -ExecutionPolicy Bypass -File code/refresh_lexicon.ps1 -Verbs 250 -Adjectives 200 -Nouns 600
+powershell -ExecutionPolicy Bypass -File code/refresh_lexicon.ps1
 ```
 
 This workflow:
 
-- Downloads the Danish JSONL source to `data/cache/` (if a local source file is not provided).
-- Builds `data/lexicon.generated.json` with the requested counts.
-- Merges unique items into `data/lexicon.json`.
+- Merges split files into `data/lexicon.json`.
 - Validates schema consistency.
 
-### Load generated data inside the app
+## Note on Kaikki extraction
 
-After you generate data, open the HTML tool and use:
-
-- `Load generated data`: tries to load `../data/lexicon.generated.json` automatically.
-- `Import JSON file`: manual fallback if browser file permissions block automatic loading.
-
-The app then refreshes the word bank and quiz data immediately.
-
-### Direct builder command
-
-```bash
-python code/build_lexicon.py --verbs 220 --adjectives 220 --nouns 450
-python code/validate_lexicon.py --file data/lexicon.json
-```
-
-### Notes
-
-- The importer prioritizes quality and complete forms over raw quantity.
-- Free online lexical sources can have gaps; not every entry has all Danish forms.
-- Generated data should still be spot-checked for learning quality.
+Automatic Kaikki extraction is no longer part of the default refresh workflow.
 
 ## Current exercise types
 
 - Mixed: random blend of the available drill styles.
 - Translation: Danish to English and English to Danish prompts.
 - Form practice: single-form prompts for verbs, nouns, adjectives, and adverbs.
+- Common phrase translation: English phrase to Danish and Danish phrase to English.
 - Verb table: one verb form is given and you fill the remaining forms.
 - Multiple choice: pick the correct answer from four options.
 

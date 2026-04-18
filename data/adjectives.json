@@ -1,0 +1,2092 @@
+[
+  {
+    "base": "god",
+    "common": "god",
+    "neuter": "godt",
+    "plural": "gode",
+    "definite": "gode",
+    "comparative": "bedre",
+    "superlative": "bedst",
+    "english": "good"
+  },
+  {
+    "base": "stor",
+    "common": "stor",
+    "neuter": "stort",
+    "plural": "store",
+    "definite": "store",
+    "comparative": "større",
+    "superlative": "størst",
+    "english": "big"
+  },
+  {
+    "base": "lille",
+    "common": "lille",
+    "neuter": "lille",
+    "plural": "små",
+    "definite": "små",
+    "comparative": "mindre",
+    "superlative": "mindst",
+    "english": "small"
+  },
+  {
+    "base": "ny",
+    "common": "ny",
+    "neuter": "nyt",
+    "plural": "nye",
+    "definite": "nye",
+    "comparative": "nyere",
+    "superlative": "nyest",
+    "english": "new"
+  },
+  {
+    "base": "gammel",
+    "common": "gammel",
+    "neuter": "gammelt",
+    "plural": "gamle",
+    "definite": "gamle",
+    "comparative": "ældre",
+    "superlative": "ældst",
+    "english": "old"
+  },
+  {
+    "base": "lang",
+    "common": "lang",
+    "neuter": "langt",
+    "plural": "lange",
+    "definite": "lange",
+    "comparative": "længere",
+    "superlative": "længst",
+    "english": "long"
+  },
+  {
+    "base": "høj",
+    "common": "høj",
+    "neuter": "højt",
+    "plural": "høje",
+    "definite": "høje",
+    "comparative": "højere",
+    "superlative": "højest",
+    "english": "tall / high"
+  },
+  {
+    "base": "varm",
+    "common": "varm",
+    "neuter": "varmt",
+    "plural": "varme",
+    "definite": "varme",
+    "comparative": "varmere",
+    "superlative": "varmest",
+    "english": "warm"
+  },
+  {
+    "base": "kold",
+    "common": "kold",
+    "neuter": "koldt",
+    "plural": "kolde",
+    "definite": "kolde",
+    "comparative": "koldere",
+    "superlative": "koldest",
+    "english": "cold"
+  },
+  {
+    "base": "hurtig",
+    "common": "hurtig",
+    "neuter": "hurtigt",
+    "plural": "hurtige",
+    "definite": "hurtige",
+    "comparative": "hurtigere",
+    "superlative": "hurtigst",
+    "english": "fast"
+  },
+  {
+    "base": "langsom",
+    "common": "langsom",
+    "neuter": "langsomt",
+    "plural": "langsomme",
+    "definite": "langsomme",
+    "comparative": "langsommere",
+    "superlative": "langsomst",
+    "english": "slow"
+  },
+  {
+    "base": "smuk",
+    "common": "smuk",
+    "neuter": "smukt",
+    "plural": "smukke",
+    "definite": "smukke",
+    "comparative": "smukkere",
+    "superlative": "smukkest",
+    "english": "beautiful"
+  },
+  {
+    "base": "dyr",
+    "common": "dyr",
+    "neuter": "dyrt",
+    "plural": "dyre",
+    "definite": "dyre",
+    "comparative": "dyrere",
+    "superlative": "dyrest",
+    "english": "expensive"
+  },
+  {
+    "base": "billig",
+    "common": "billig",
+    "neuter": "billigt",
+    "plural": "billige",
+    "definite": "billige",
+    "comparative": "billigere",
+    "superlative": "billigst",
+    "english": "cheap"
+  },
+  {
+    "base": "stærk",
+    "common": "stærk",
+    "neuter": "stærkt",
+    "plural": "stærke",
+    "definite": "stærke",
+    "comparative": "stærkere",
+    "superlative": "stærkest",
+    "english": "strong"
+  },
+  {
+    "base": "svag",
+    "common": "svag",
+    "neuter": "svagt",
+    "plural": "svage",
+    "definite": "svage",
+    "comparative": "svagere",
+    "superlative": "svagest",
+    "english": "weak"
+  },
+  {
+    "base": "vigtig",
+    "common": "vigtig",
+    "neuter": "vigtigt",
+    "plural": "vigtige",
+    "definite": "vigtige",
+    "comparative": "vigtigere",
+    "superlative": "vigtigst",
+    "english": "important"
+  },
+  {
+    "base": "nem",
+    "common": "nem",
+    "neuter": "nemt",
+    "plural": "nemme",
+    "definite": "nemme",
+    "comparative": "nemmere",
+    "superlative": "nemmest",
+    "english": "easy"
+  },
+  {
+    "base": "svær",
+    "common": "svær",
+    "neuter": "svært",
+    "plural": "svære",
+    "definite": "svære",
+    "comparative": "sværere",
+    "superlative": "sværest",
+    "english": "difficult"
+  },
+  {
+    "base": "glad",
+    "common": "glad",
+    "neuter": "gladt",
+    "plural": "glade",
+    "definite": "glade",
+    "comparative": "gladere",
+    "superlative": "gladest",
+    "english": "happy"
+  },
+  {
+    "base": "dårlig",
+    "neuter": "dårligt",
+    "plural": "dårlige",
+    "definite": "dårlige",
+    "comparative": "værre",
+    "superlative": "værst",
+    "english": "bad",
+    "common": ""
+  },
+  {
+    "base": "grim",
+    "neuter": "grimt",
+    "plural": "grimme",
+    "definite": "grimme",
+    "comparative": "grimmere",
+    "superlative": "grimmest",
+    "english": "ugly",
+    "common": ""
+  },
+  {
+    "base": "hed",
+    "neuter": "hedt",
+    "plural": "hede",
+    "definite": "hede",
+    "comparative": "hedere",
+    "superlative": "hedest",
+    "english": "hot",
+    "common": ""
+  },
+  {
+    "base": "kølig",
+    "neuter": "køligt",
+    "plural": "kølige",
+    "definite": "kølige",
+    "comparative": "køligere",
+    "superlative": "køligst",
+    "english": "cool",
+    "common": ""
+  },
+  {
+    "base": "rig",
+    "neuter": "rigt",
+    "plural": "rige",
+    "definite": "rige",
+    "comparative": "rigere",
+    "superlative": "rigest",
+    "english": "rich",
+    "common": ""
+  },
+  {
+    "base": "fattig",
+    "neuter": "fattigt",
+    "plural": "fattige",
+    "definite": "fattige",
+    "comparative": "fattigere",
+    "superlative": "fattigst",
+    "english": "poor",
+    "common": ""
+  },
+  {
+    "base": "ren",
+    "neuter": "rent",
+    "plural": "rene",
+    "definite": "rene",
+    "comparative": "renere",
+    "superlative": "renest",
+    "english": "clean",
+    "common": ""
+  },
+  {
+    "base": "beskidt",
+    "neuter": "beskidt",
+    "plural": "beskidte",
+    "definite": "beskidte",
+    "comparative": "mere beskidt",
+    "superlative": "mest beskidt",
+    "english": "dirty",
+    "common": ""
+  },
+  {
+    "base": "tør",
+    "neuter": "tørt",
+    "plural": "tørre",
+    "definite": "tørre",
+    "comparative": "tørre",
+    "superlative": "tørrest",
+    "english": "dry",
+    "common": ""
+  },
+  {
+    "base": "våd",
+    "neuter": "vådt",
+    "plural": "våde",
+    "definite": "våde",
+    "comparative": "vådere",
+    "superlative": "vådest",
+    "english": "wet",
+    "common": ""
+  },
+  {
+    "base": "let",
+    "neuter": "let",
+    "plural": "lette",
+    "definite": "lette",
+    "comparative": "lettere",
+    "superlative": "lettest",
+    "english": "light / easy",
+    "common": ""
+  },
+  {
+    "base": "tung",
+    "neuter": "tungt",
+    "plural": "tunge",
+    "definite": "tunge",
+    "comparative": "tungere",
+    "superlative": "tungest",
+    "english": "heavy",
+    "common": ""
+  },
+  {
+    "base": "rigelig",
+    "neuter": "rigeligt",
+    "plural": "rigelige",
+    "definite": "rigelige",
+    "comparative": "rigeligere",
+    "superlative": "rigeligst",
+    "english": "plentiful",
+    "common": ""
+  },
+  {
+    "base": "tom",
+    "neuter": "tomt",
+    "plural": "tomme",
+    "definite": "tomme",
+    "comparative": "mere tom",
+    "superlative": "mest tom",
+    "english": "empty",
+    "common": ""
+  },
+  {
+    "base": "fuld",
+    "neuter": "fuldt",
+    "plural": "fulde",
+    "definite": "fulde",
+    "comparative": "fyldigere",
+    "superlative": "fyldigst",
+    "english": "full",
+    "common": ""
+  },
+  {
+    "base": "åben",
+    "neuter": "åbent",
+    "plural": "åbne",
+    "definite": "åbne",
+    "comparative": "mere åben",
+    "superlative": "mest åben",
+    "english": "open",
+    "common": ""
+  },
+  {
+    "base": "lukket",
+    "neuter": "lukket",
+    "plural": "lukkede",
+    "definite": "lukkede",
+    "comparative": "mere lukket",
+    "superlative": "mest lukket",
+    "english": "closed",
+    "common": ""
+  },
+  {
+    "base": "trist",
+    "neuter": "trist",
+    "plural": "triste",
+    "definite": "triste",
+    "comparative": "tristere",
+    "superlative": "tristest",
+    "english": "sad",
+    "common": ""
+  },
+  {
+    "base": "sød",
+    "neuter": "sødt",
+    "plural": "søde",
+    "definite": "søde",
+    "comparative": "sødere",
+    "superlative": "sødest",
+    "english": "sweet",
+    "common": ""
+  },
+  {
+    "base": "sur",
+    "neuter": "surt",
+    "plural": "sure",
+    "definite": "sure",
+    "comparative": "surere",
+    "superlative": "surest",
+    "english": "angry / sour",
+    "common": ""
+  },
+  {
+    "base": "venlig",
+    "neuter": "venligt",
+    "plural": "venlige",
+    "definite": "venlige",
+    "comparative": "venligere",
+    "superlative": "venligst",
+    "english": "friendly",
+    "common": ""
+  },
+  {
+    "base": "uvenlig",
+    "neuter": "uvenligt",
+    "plural": "uvenlige",
+    "definite": "uvenlige",
+    "comparative": "mere uvenlig",
+    "superlative": "mest uvenlig",
+    "english": "unfriendly",
+    "common": ""
+  },
+  {
+    "base": "klog",
+    "neuter": "klogt",
+    "plural": "kloge",
+    "definite": "kloge",
+    "comparative": "klogere",
+    "superlative": "klogest",
+    "english": "smart",
+    "common": ""
+  },
+  {
+    "base": "dum",
+    "neuter": "dumt",
+    "plural": "dumme",
+    "definite": "dumme",
+    "comparative": "dummere",
+    "superlative": "dummest",
+    "english": "stupid",
+    "common": ""
+  },
+  {
+    "base": "rolig",
+    "neuter": "roligt",
+    "plural": "rolige",
+    "definite": "rolige",
+    "comparative": "roligere",
+    "superlative": "roligst",
+    "english": "calm",
+    "common": ""
+  },
+  {
+    "base": "travl",
+    "neuter": "travlt",
+    "plural": "travle",
+    "definite": "travle",
+    "comparative": "travlere",
+    "superlative": "travlest",
+    "english": "busy",
+    "common": ""
+  },
+  {
+    "base": "fri",
+    "neuter": "frit",
+    "plural": "frie",
+    "definite": "frie",
+    "comparative": "friere",
+    "superlative": "friest",
+    "english": "free",
+    "common": ""
+  },
+  {
+    "base": "stram",
+    "neuter": "stramt",
+    "plural": "stramme",
+    "definite": "stramme",
+    "comparative": "strammere",
+    "superlative": "strammest",
+    "english": "tight",
+    "common": ""
+  },
+  {
+    "base": "løs",
+    "neuter": "løst",
+    "plural": "løse",
+    "definite": "løse",
+    "comparative": "løsere",
+    "superlative": "løsest",
+    "english": "loose",
+    "common": ""
+  },
+  {
+    "base": "bred",
+    "neuter": "bredt",
+    "plural": "brede",
+    "definite": "brede",
+    "comparative": "bredere",
+    "superlative": "bredest",
+    "english": "wide",
+    "common": ""
+  },
+  {
+    "base": "smal",
+    "neuter": "smalt",
+    "plural": "smalle",
+    "definite": "smalle",
+    "comparative": "smallere",
+    "superlative": "smallest",
+    "english": "narrow",
+    "common": ""
+  },
+  {
+    "base": "lav",
+    "neuter": "lavt",
+    "plural": "lave",
+    "definite": "lave",
+    "comparative": "lavere",
+    "superlative": "lavest",
+    "english": "low / short",
+    "common": ""
+  },
+  {
+    "base": "ung",
+    "neuter": "ungt",
+    "plural": "unge",
+    "definite": "unge",
+    "comparative": "yngre",
+    "superlative": "yngst",
+    "english": "young",
+    "common": ""
+  },
+  {
+    "base": "ældre",
+    "neuter": "ældre",
+    "plural": "ældre",
+    "definite": "ældre",
+    "comparative": "ældre",
+    "superlative": "ældst",
+    "english": "elder / older",
+    "common": ""
+  },
+  {
+    "base": "interessant",
+    "neuter": "interessant",
+    "plural": "interessante",
+    "definite": "interessante",
+    "comparative": "mere interessant",
+    "superlative": "mest interessant",
+    "english": "interesting",
+    "common": ""
+  },
+  {
+    "base": "kedelig",
+    "neuter": "kedeligt",
+    "plural": "kedelige",
+    "definite": "kedelige",
+    "comparative": "mere kedelig",
+    "superlative": "mest kedelig",
+    "english": "boring",
+    "common": ""
+  },
+  {
+    "base": "almindelig",
+    "neuter": "almindeligt",
+    "plural": "almindelige",
+    "definite": "almindelige",
+    "comparative": "mere almindelig",
+    "superlative": "mest almindelig",
+    "english": "common",
+    "common": ""
+  },
+  {
+    "base": "speciel",
+    "neuter": "specielt",
+    "plural": "specielle",
+    "definite": "specielle",
+    "comparative": "mere speciel",
+    "superlative": "mest speciel",
+    "english": "special",
+    "common": ""
+  },
+  {
+    "base": "forskellig",
+    "neuter": "forskelligt",
+    "plural": "forskellige",
+    "definite": "forskellige",
+    "comparative": "mere forskellig",
+    "superlative": "mest forskellig",
+    "english": "different",
+    "common": ""
+  },
+  {
+    "base": "ens",
+    "neuter": "ens",
+    "plural": "ens",
+    "definite": "ens",
+    "comparative": "mere ens",
+    "superlative": "mest ens",
+    "english": "same",
+    "common": ""
+  },
+  {
+    "base": "kendt",
+    "neuter": "kendt",
+    "plural": "kendte",
+    "definite": "kendte",
+    "comparative": "mere kendt",
+    "superlative": "mest kendt",
+    "english": "known",
+    "common": ""
+  },
+  {
+    "base": "ukendt",
+    "neuter": "ukendt",
+    "plural": "ukendte",
+    "definite": "ukendte",
+    "comparative": "mere ukendt",
+    "superlative": "mest ukendt",
+    "english": "unknown",
+    "common": ""
+  },
+  {
+    "base": "blød",
+    "neuter": "blødt",
+    "plural": "bløde",
+    "definite": "bløde",
+    "comparative": "blødere",
+    "superlative": "blødest",
+    "english": "soft",
+    "common": ""
+  },
+  {
+    "base": "hård",
+    "neuter": "hårdt",
+    "plural": "hårde",
+    "definite": "hårde",
+    "comparative": "hårdere",
+    "superlative": "hårdest",
+    "english": "hard",
+    "common": ""
+  },
+  {
+    "base": "frisk",
+    "neuter": "friskt",
+    "plural": "friske",
+    "definite": "friske",
+    "comparative": "friskere",
+    "superlative": "friskest",
+    "english": "fresh",
+    "common": ""
+  },
+  {
+    "base": "moderne",
+    "neuter": "moderne",
+    "plural": "moderne",
+    "definite": "moderne",
+    "comparative": "mere moderne",
+    "superlative": "mest moderne",
+    "english": "modern",
+    "common": ""
+  },
+  {
+    "base": "traditionel",
+    "neuter": "traditionelt",
+    "plural": "traditionelle",
+    "definite": "traditionelle",
+    "comparative": "mere traditionel",
+    "superlative": "mest traditionel",
+    "english": "traditional",
+    "common": ""
+  },
+  {
+    "base": "populær",
+    "neuter": "populært",
+    "plural": "populære",
+    "definite": "populære",
+    "comparative": "mere populær",
+    "superlative": "mest populær",
+    "english": "popular",
+    "common": ""
+  },
+  {
+    "base": "upopulær",
+    "neuter": "upopulært",
+    "plural": "upopulære",
+    "definite": "upopulære",
+    "comparative": "mere upopulær",
+    "superlative": "mest upopulær",
+    "english": "unpopular",
+    "common": ""
+  },
+  {
+    "base": "korrekt",
+    "neuter": "korrekt",
+    "plural": "korrekte",
+    "definite": "korrekte",
+    "comparative": "mere korrekt",
+    "superlative": "mest korrekt",
+    "english": "correct",
+    "common": ""
+  },
+  {
+    "base": "forkert",
+    "neuter": "forkert",
+    "plural": "forkerte",
+    "definite": "forkerte",
+    "comparative": "mere forkert",
+    "superlative": "mest forkert",
+    "english": "wrong",
+    "common": ""
+  },
+  {
+    "base": "sand",
+    "neuter": "sandt",
+    "plural": "sande",
+    "definite": "sande",
+    "comparative": "mere sand",
+    "superlative": "mest sand",
+    "english": "true",
+    "common": ""
+  },
+  {
+    "base": "falsk",
+    "neuter": "falskt",
+    "plural": "falske",
+    "definite": "falske",
+    "comparative": "mere falsk",
+    "superlative": "mest falsk",
+    "english": "false",
+    "common": ""
+  },
+  {
+    "base": "rød",
+    "neuter": "rødt",
+    "plural": "røde",
+    "definite": "røde",
+    "comparative": "mere rød",
+    "superlative": "mest rød",
+    "english": "red",
+    "common": ""
+  },
+  {
+    "base": "blå",
+    "neuter": "blåt",
+    "plural": "blå",
+    "definite": "blå",
+    "comparative": "mere blå",
+    "superlative": "mest blå",
+    "english": "blue",
+    "common": ""
+  },
+  {
+    "base": "grøn",
+    "neuter": "grønt",
+    "plural": "grønne",
+    "definite": "grønne",
+    "comparative": "mere grøn",
+    "superlative": "mest grøn",
+    "english": "green",
+    "common": ""
+  },
+  {
+    "base": "gul",
+    "neuter": "gult",
+    "plural": "gule",
+    "definite": "gule",
+    "comparative": "mere gul",
+    "superlative": "mest gul",
+    "english": "yellow",
+    "common": ""
+  },
+  {
+    "base": "sort",
+    "neuter": "sort",
+    "plural": "sorte",
+    "definite": "sorte",
+    "comparative": "mere sort",
+    "superlative": "mest sort",
+    "english": "black",
+    "common": ""
+  },
+  {
+    "base": "hvid",
+    "neuter": "hvidt",
+    "plural": "hvide",
+    "definite": "hvide",
+    "comparative": "mere hvid",
+    "superlative": "mest hvid",
+    "english": "white",
+    "common": ""
+  },
+  {
+    "base": "grå",
+    "neuter": "gråt",
+    "plural": "grå",
+    "definite": "grå",
+    "comparative": "mere grå",
+    "superlative": "mest grå",
+    "english": "grey",
+    "common": ""
+  },
+  {
+    "base": "brun",
+    "neuter": "brunt",
+    "plural": "brune",
+    "definite": "brune",
+    "comparative": "mere brun",
+    "superlative": "mest brun",
+    "english": "brown",
+    "common": ""
+  },
+  {
+    "base": "orange",
+    "neuter": "orange",
+    "plural": "orange",
+    "definite": "orange",
+    "comparative": "mere orange",
+    "superlative": "mest orange",
+    "english": "orange",
+    "common": ""
+  },
+  {
+    "base": "pink",
+    "neuter": "pink",
+    "plural": "pink",
+    "definite": "pink",
+    "comparative": "mere pink",
+    "superlative": "mest pink",
+    "english": "pink",
+    "common": ""
+  },
+  {
+    "base": "lilla",
+    "neuter": "lilla",
+    "plural": "lilla",
+    "definite": "lilla",
+    "comparative": "mere lilla",
+    "superlative": "mest lilla",
+    "english": "purple",
+    "common": ""
+  },
+  {
+    "base": "gratis",
+    "neuter": "gratis",
+    "plural": "gratis",
+    "definite": "gratis",
+    "comparative": "gratis",
+    "superlative": "gratis",
+    "english": "free",
+    "common": ""
+  },
+  {
+    "base": "sikker",
+    "neuter": "sikkert",
+    "plural": "sikre",
+    "definite": "sikre",
+    "comparative": "sikrere",
+    "superlative": "sikrest",
+    "english": "safe",
+    "common": ""
+  },
+  {
+    "base": "farlig",
+    "neuter": "farligt",
+    "plural": "farlige",
+    "definite": "farlige",
+    "comparative": "farligere",
+    "superlative": "farligst",
+    "english": "dangerous",
+    "common": ""
+  },
+  {
+    "base": "sund",
+    "neuter": "sundt",
+    "plural": "sunde",
+    "definite": "sunde",
+    "comparative": "sundere",
+    "superlative": "sundest",
+    "english": "healthy",
+    "common": ""
+  },
+  {
+    "base": "syg",
+    "neuter": "sygt",
+    "plural": "syge",
+    "definite": "syge",
+    "comparative": "sygere",
+    "superlative": "sygest",
+    "english": "sick",
+    "common": ""
+  },
+  {
+    "base": "klar",
+    "neuter": "klart",
+    "plural": "klare",
+    "definite": "klare",
+    "comparative": "klarere",
+    "superlative": "klarest",
+    "english": "clear",
+    "common": ""
+  },
+  {
+    "base": "uklar",
+    "neuter": "uklart",
+    "plural": "uklare",
+    "definite": "uklare",
+    "comparative": "mere uklar",
+    "superlative": "mest uklar",
+    "english": "unclear",
+    "common": ""
+  },
+  {
+    "base": "mulig",
+    "neuter": "muligt",
+    "plural": "mulige",
+    "definite": "mulige",
+    "comparative": "mere mulig",
+    "superlative": "mest mulig",
+    "english": "possible",
+    "common": ""
+  },
+  {
+    "base": "umulig",
+    "neuter": "umuligt",
+    "plural": "umulige",
+    "definite": "umulige",
+    "comparative": "mere umulig",
+    "superlative": "mest umulig",
+    "english": "impossible",
+    "common": ""
+  },
+  {
+    "base": "ligegyldig",
+    "neuter": "ligegyldigt",
+    "plural": "ligegyldige",
+    "definite": "ligegyldige",
+    "comparative": "mere ligegyldig",
+    "superlative": "mest ligegyldig",
+    "english": "irrelevant / indifferent",
+    "common": ""
+  },
+  {
+    "base": "nyttig",
+    "neuter": "nyttigt",
+    "plural": "nyttige",
+    "definite": "nyttige",
+    "comparative": "mere nyttig",
+    "superlative": "mest nyttig",
+    "english": "useful",
+    "common": ""
+  },
+  {
+    "base": "unyttig",
+    "neuter": "unyttigt",
+    "plural": "unyttige",
+    "definite": "unyttige",
+    "comparative": "mere unyttig",
+    "superlative": "mest unyttig",
+    "english": "useless",
+    "common": ""
+  },
+  {
+    "base": "ærlig",
+    "neuter": "ærligt",
+    "plural": "ærlige",
+    "definite": "ærlige",
+    "comparative": "mere ærlig",
+    "superlative": "mest ærlig",
+    "english": "honest",
+    "common": ""
+  },
+  {
+    "base": "uærlig",
+    "neuter": "uærligt",
+    "plural": "uærlige",
+    "definite": "uærlige",
+    "comparative": "mere uærlig",
+    "superlative": "mest uærlig",
+    "english": "dishonest",
+    "common": ""
+  },
+  {
+    "base": "aktiv",
+    "neuter": "aktivt",
+    "plural": "aktive",
+    "definite": "aktive",
+    "comparative": "mere aktiv",
+    "superlative": "mest aktiv",
+    "english": "active",
+    "common": ""
+  },
+  {
+    "base": "passiv",
+    "neuter": "passivt",
+    "plural": "passive",
+    "definite": "passive",
+    "comparative": "mere passiv",
+    "superlative": "mest passiv",
+    "english": "passive",
+    "common": ""
+  },
+  {
+    "base": "tæt",
+    "neuter": "tæt",
+    "plural": "tætte",
+    "definite": "tætte",
+    "comparative": "tættere",
+    "superlative": "tættest",
+    "english": "close / dense",
+    "common": ""
+  },
+  {
+    "base": "åbenlys",
+    "neuter": "åbenlyst",
+    "plural": "åbenlyse",
+    "definite": "åbenlyse",
+    "comparative": "mere åbenlys",
+    "superlative": "mest åbenlys",
+    "english": "obvious",
+    "common": ""
+  },
+  {
+    "base": "skjult",
+    "neuter": "skjult",
+    "plural": "skjulte",
+    "definite": "skjulte",
+    "comparative": "mere skjult",
+    "superlative": "mest skjult",
+    "english": "hidden",
+    "common": ""
+  },
+  {
+    "base": "renlig",
+    "neuter": "renligt",
+    "plural": "renlige",
+    "definite": "renlige",
+    "comparative": "renligere",
+    "superlative": "renligst",
+    "english": "cleanly / tidy",
+    "common": ""
+  },
+  {
+    "base": "modig",
+    "neuter": "modigt",
+    "plural": "modige",
+    "definite": "modige",
+    "comparative": "mere modig",
+    "superlative": "mest modig",
+    "english": "brave",
+    "common": ""
+  },
+  {
+    "base": "fej",
+    "neuter": "fejt",
+    "plural": "feje",
+    "definite": "feje",
+    "comparative": "mere fej",
+    "superlative": "mest fej",
+    "english": "cowardly",
+    "common": ""
+  },
+  {
+    "base": "intelligent",
+    "neuter": "intelligent",
+    "plural": "intelligente",
+    "definite": "intelligente",
+    "comparative": "mere intelligent",
+    "superlative": "mest intelligent",
+    "english": "intelligent",
+    "common": ""
+  },
+  {
+    "base": "smart",
+    "neuter": "smart",
+    "plural": "smarte",
+    "definite": "smarte",
+    "comparative": "smartere",
+    "superlative": "smartest",
+    "english": "smart",
+    "common": ""
+  },
+  {
+    "base": "slank",
+    "neuter": "slankt",
+    "plural": "slanke",
+    "definite": "slanke",
+    "comparative": "slankere",
+    "superlative": "slankest",
+    "english": "slim",
+    "common": ""
+  },
+  {
+    "base": "tyk",
+    "neuter": "tykt",
+    "plural": "tykke",
+    "definite": "tykke",
+    "comparative": "tykkere",
+    "superlative": "tykkest",
+    "english": "thick / fat",
+    "common": ""
+  },
+  {
+    "base": "storladen",
+    "neuter": "storladent",
+    "plural": "storladne",
+    "definite": "storladne",
+    "comparative": "mere storladen",
+    "superlative": "mest storladen",
+    "english": "grandiose",
+    "common": ""
+  },
+  {
+    "base": "beskeden",
+    "neuter": "beskedent",
+    "plural": "beskedne",
+    "definite": "beskedne",
+    "comparative": "mere beskeden",
+    "superlative": "mest beskeden",
+    "english": "modest",
+    "common": ""
+  },
+  {
+    "base": "arrogant",
+    "neuter": "arrogant",
+    "plural": "arrogante",
+    "definite": "arrogante",
+    "comparative": "mere arrogant",
+    "superlative": "mest arrogant",
+    "english": "arrogant",
+    "common": ""
+  },
+  {
+    "base": "stolt",
+    "neuter": "stolt",
+    "plural": "stolte",
+    "definite": "stolte",
+    "comparative": "mere stolt",
+    "superlative": "mest stolt",
+    "english": "proud",
+    "common": ""
+  },
+  {
+    "base": "flov",
+    "neuter": "flovt",
+    "plural": "flove",
+    "definite": "flove",
+    "comparative": "mere flov",
+    "superlative": "mest flov",
+    "english": "embarrassed",
+    "common": ""
+  },
+  {
+    "base": "generøs",
+    "neuter": "generøst",
+    "plural": "generøse",
+    "definite": "generøse",
+    "comparative": "mere generøs",
+    "superlative": "mest generøs",
+    "english": "generous",
+    "common": ""
+  },
+  {
+    "base": "nærig",
+    "neuter": "nærigt",
+    "plural": "nærige",
+    "definite": "nærige",
+    "comparative": "mere nærig",
+    "superlative": "mest nærig",
+    "english": "stingy",
+    "common": ""
+  },
+  {
+    "base": "optimistisk",
+    "neuter": "optimistisk",
+    "plural": "optimistiske",
+    "definite": "optimistiske",
+    "comparative": "mere optimistisk",
+    "superlative": "mest optimistisk",
+    "english": "optimistic",
+    "common": ""
+  },
+  {
+    "base": "pessimistisk",
+    "neuter": "pessimistisk",
+    "plural": "pessimistiske",
+    "definite": "pessimistiske",
+    "comparative": "mere pessimistisk",
+    "superlative": "mest pessimistisk",
+    "english": "pessimistic",
+    "common": ""
+  },
+  {
+    "base": "energisk",
+    "neuter": "energisk",
+    "plural": "energiske",
+    "definite": "energiske",
+    "comparative": "mere energisk",
+    "superlative": "mest energisk",
+    "english": "energetic",
+    "common": ""
+  },
+  {
+    "base": "træt",
+    "neuter": "træt",
+    "plural": "trætte",
+    "definite": "trætte",
+    "comparative": "trættere",
+    "superlative": "trættest",
+    "english": "tired",
+    "common": ""
+  },
+  {
+    "base": "udhvilet",
+    "neuter": "udhvilet",
+    "plural": "udhvilede",
+    "definite": "udhvilede",
+    "comparative": "mere udhvilet",
+    "superlative": "mest udhvilet",
+    "english": "rested",
+    "common": ""
+  },
+  {
+    "base": "stresset",
+    "neuter": "stresset",
+    "plural": "stressede",
+    "definite": "stressede",
+    "comparative": "mere stresset",
+    "superlative": "mest stresset",
+    "english": "stressed",
+    "common": ""
+  },
+  {
+    "base": "afslappet",
+    "neuter": "afslappet",
+    "plural": "afslappede",
+    "definite": "afslappede",
+    "comparative": "mere afslappet",
+    "superlative": "mest afslappet",
+    "english": "relaxed",
+    "common": ""
+  },
+  {
+    "base": "vild",
+    "neuter": "vildt",
+    "plural": "vilde",
+    "definite": "vilde",
+    "comparative": "vildere",
+    "superlative": "vildest",
+    "english": "wild",
+    "common": ""
+  },
+  {
+    "base": "tam",
+    "neuter": "tamt",
+    "plural": "tamme",
+    "definite": "tamme",
+    "comparative": "mere tam",
+    "superlative": "mest tam",
+    "english": "tame",
+    "common": ""
+  },
+  {
+    "base": "kaotisk",
+    "neuter": "kaotisk",
+    "plural": "kaotiske",
+    "definite": "kaotiske",
+    "comparative": "mere kaotisk",
+    "superlative": "mest kaotisk",
+    "english": "chaotic",
+    "common": ""
+  },
+  {
+    "base": "organiseret",
+    "neuter": "organiseret",
+    "plural": "organiserede",
+    "definite": "organiserede",
+    "comparative": "mere organiseret",
+    "superlative": "mest organiseret",
+    "english": "organized",
+    "common": ""
+  },
+  {
+    "base": "uorganiseret",
+    "neuter": "uorganiseret",
+    "plural": "uorganiserede",
+    "definite": "uorganiserede",
+    "comparative": "mere uorganiseret",
+    "superlative": "mest uorganiseret",
+    "english": "disorganized",
+    "common": ""
+  },
+  {
+    "base": "stabil",
+    "neuter": "stabilt",
+    "plural": "stabile",
+    "definite": "stabile",
+    "comparative": "mere stabil",
+    "superlative": "mest stabil",
+    "english": "stable",
+    "common": ""
+  },
+  {
+    "base": "ustabil",
+    "neuter": "ustabilt",
+    "plural": "ustabile",
+    "definite": "ustabile",
+    "comparative": "mere ustabil",
+    "superlative": "mest ustabil",
+    "english": "unstable",
+    "common": ""
+  },
+  {
+    "base": "kraftig",
+    "neuter": "kraftigt",
+    "plural": "kraftige",
+    "definite": "kraftige",
+    "comparative": "kraftigere",
+    "superlative": "kraftigst",
+    "english": "powerful",
+    "common": ""
+  },
+  {
+    "base": "gammeldags",
+    "neuter": "gammeldags",
+    "plural": "gammeldags",
+    "definite": "gammeldags",
+    "comparative": "mere gammeldags",
+    "superlative": "mest gammeldags",
+    "english": "old-fashioned",
+    "common": ""
+  },
+  {
+    "base": "rådden",
+    "neuter": "råddent",
+    "plural": "rådne",
+    "definite": "rådne",
+    "comparative": "mere rådden",
+    "superlative": "mest rådden",
+    "english": "rotten",
+    "common": ""
+  },
+  {
+    "base": "tydelig",
+    "neuter": "tydeligt",
+    "plural": "tydelige",
+    "definite": "tydelige",
+    "comparative": "tydeligere",
+    "superlative": "tydeligst",
+    "english": "clear / evident",
+    "common": ""
+  },
+  {
+    "base": "stille",
+    "neuter": "stille",
+    "plural": "stille",
+    "definite": "stille",
+    "comparative": "mere stille",
+    "superlative": "mest stille",
+    "english": "quiet",
+    "common": ""
+  },
+  {
+    "base": "højlydt",
+    "neuter": "højlydt",
+    "plural": "højlydte",
+    "definite": "højlydte",
+    "comparative": "mere højlydt",
+    "superlative": "mest højlydt",
+    "english": "loud",
+    "common": ""
+  },
+  {
+    "base": "mild",
+    "neuter": "mildt",
+    "plural": "milde",
+    "definite": "milde",
+    "comparative": "mildere",
+    "superlative": "mildest",
+    "english": "mild",
+    "common": ""
+  },
+  {
+    "base": "fair",
+    "neuter": "fair",
+    "plural": "fair",
+    "definite": "fair",
+    "comparative": "mere fair",
+    "superlative": "mest fair",
+    "english": "fair",
+    "common": ""
+  },
+  {
+    "base": "uretfærdig",
+    "neuter": "uretfærdigt",
+    "plural": "uretfærdige",
+    "definite": "uretfærdige",
+    "comparative": "mere uretfærdig",
+    "superlative": "mest uretfærdig",
+    "english": "unfair",
+    "common": ""
+  },
+  {
+    "base": "komfortabel",
+    "neuter": "komfortabelt",
+    "plural": "komfortable",
+    "definite": "komfortable",
+    "comparative": "mere komfortabel",
+    "superlative": "mest komfortabel",
+    "english": "comfortable",
+    "common": ""
+  },
+  {
+    "base": "ubehagelig",
+    "neuter": "ubehageligt",
+    "plural": "ubehagelige",
+    "definite": "ubehagelige",
+    "comparative": "mere ubehagelig",
+    "superlative": "mest ubehagelig",
+    "english": "uncomfortable",
+    "common": ""
+  },
+  {
+    "base": "fantastisk",
+    "neuter": "fantastisk",
+    "plural": "fantastiske",
+    "definite": "fantastiske",
+    "comparative": "mere fantastisk",
+    "superlative": "mest fantastisk",
+    "english": "fantastic",
+    "common": ""
+  },
+  {
+    "base": "forfærdelig",
+    "neuter": "forfærdeligt",
+    "plural": "forfærdelige",
+    "definite": "forfærdelige",
+    "comparative": "værre",
+    "superlative": "værst",
+    "english": "terrible",
+    "common": ""
+  },
+  {
+    "base": "dejlig",
+    "neuter": "dejligt",
+    "plural": "dejlige",
+    "definite": "dejlige",
+    "comparative": "dejligere",
+    "superlative": "dejligst",
+    "english": "lovely",
+    "common": ""
+  },
+  {
+    "base": "frygtelig",
+    "neuter": "frygteligt",
+    "plural": "frygtelige",
+    "definite": "frygtelige",
+    "comparative": "mere frygtelig",
+    "superlative": "mest frygtelig",
+    "english": "horrible",
+    "common": ""
+  },
+  {
+    "base": "spændende",
+    "neuter": "spændende",
+    "plural": "spændende",
+    "definite": "spændende",
+    "comparative": "mere spændende",
+    "superlative": "mest spændende",
+    "english": "exciting",
+    "common": ""
+  },
+  {
+    "base": "kreativ",
+    "neuter": "kreativt",
+    "plural": "kreative",
+    "definite": "kreative",
+    "comparative": "mere kreativ",
+    "superlative": "mest kreativ",
+    "english": "creative",
+    "common": ""
+  },
+  {
+    "base": "logisk",
+    "neuter": "logisk",
+    "plural": "logiske",
+    "definite": "logiske",
+    "comparative": "mere logisk",
+    "superlative": "mest logisk",
+    "english": "logical",
+    "common": ""
+  },
+  {
+    "base": "illogisk",
+    "neuter": "illogisk",
+    "plural": "illogiske",
+    "definite": "illogiske",
+    "comparative": "mere illogisk",
+    "superlative": "mest illogisk",
+    "english": "illogical",
+    "common": ""
+  },
+  {
+    "base": "praktisk",
+    "neuter": "praktisk",
+    "plural": "praktiske",
+    "definite": "praktiske",
+    "comparative": "mere praktisk",
+    "superlative": "mest praktisk",
+    "english": "practical",
+    "common": ""
+  },
+  {
+    "base": "teoretisk",
+    "neuter": "teoretisk",
+    "plural": "teoretiske",
+    "definite": "teoretiske",
+    "comparative": "mere teoretisk",
+    "superlative": "mest teoretisk",
+    "english": "theoretical",
+    "common": ""
+  },
+  {
+    "base": "realistisk",
+    "neuter": "realistisk",
+    "plural": "realistiske",
+    "definite": "realistiske",
+    "comparative": "mere realistisk",
+    "superlative": "mest realistisk",
+    "english": "realistic",
+    "common": ""
+  },
+  {
+    "base": "urealistisk",
+    "neuter": "urealistisk",
+    "plural": "urealistiske",
+    "definite": "urealistiske",
+    "comparative": "mere urealistisk",
+    "superlative": "mest urealistisk",
+    "english": "unrealistic",
+    "common": ""
+  },
+  {
+    "base": "følsom",
+    "neuter": "følsomt",
+    "plural": "følsomme",
+    "definite": "følsomme",
+    "comparative": "mere følsom",
+    "superlative": "mest følsom",
+    "english": "sensitive",
+    "common": ""
+  },
+  {
+    "base": "ufølsom",
+    "neuter": "ufølsomt",
+    "plural": "ufølsomme",
+    "definite": "ufølsomme",
+    "comparative": "mere ufølsom",
+    "superlative": "mest ufølsom",
+    "english": "insensitive",
+    "common": ""
+  },
+  {
+    "base": "tålmodig",
+    "neuter": "tålmodigt",
+    "plural": "tålmodige",
+    "definite": "tålmodige",
+    "comparative": "mere tålmodig",
+    "superlative": "mest tålmodig",
+    "english": "patient",
+    "common": ""
+  },
+  {
+    "base": "utålmodig",
+    "neuter": "utålmodigt",
+    "plural": "utålmodige",
+    "definite": "utålmodige",
+    "comparative": "mere utålmodig",
+    "superlative": "mest utålmodig",
+    "english": "impatient",
+    "common": ""
+  },
+  {
+    "base": "æstetisk",
+    "neuter": "æstetisk",
+    "plural": "æstetiske",
+    "definite": "æstetiske",
+    "comparative": "mere æstetisk",
+    "superlative": "mest æstetisk",
+    "english": "aesthetic",
+    "common": ""
+  },
+  {
+    "base": "troværdig",
+    "neuter": "troværdigt",
+    "plural": "troværdige",
+    "definite": "troværdige",
+    "comparative": "mere troværdig",
+    "superlative": "mest troværdig",
+    "english": "credible",
+    "common": ""
+  },
+  {
+    "base": "utroværdig",
+    "neuter": "utroværdigt",
+    "plural": "utroværdige",
+    "definite": "utroværdige",
+    "comparative": "mere utroværdig",
+    "superlative": "mest utroværdig",
+    "english": "incredible / not credible",
+    "common": ""
+  },
+  {
+    "base": "ansvarlig",
+    "neuter": "ansvarligt",
+    "plural": "ansvarlige",
+    "definite": "ansvarlige",
+    "comparative": "mere ansvarlig",
+    "superlative": "mest ansvarlig",
+    "english": "responsible",
+    "common": ""
+  },
+  {
+    "base": "uansvarlig",
+    "neuter": "uansvarligt",
+    "plural": "uansvarlige",
+    "definite": "uansvarlige",
+    "comparative": "mere uansvarlig",
+    "superlative": "mest uansvarlig",
+    "english": "irresponsible",
+    "common": ""
+  },
+  {
+    "base": "ædel",
+    "neuter": "ædelt",
+    "plural": "ædle",
+    "definite": "ædle",
+    "comparative": "mere ædel",
+    "superlative": "mest ædel",
+    "english": "noble",
+    "common": ""
+  },
+  {
+    "base": "ond",
+    "neuter": "ondt",
+    "plural": "onde",
+    "definite": "onde",
+    "comparative": "ondere",
+    "superlative": "ondest",
+    "english": "evil",
+    "common": ""
+  },
+  {
+    "base": "godhjertet",
+    "neuter": "godhjertet",
+    "plural": "godhjertede",
+    "definite": "godhjertede",
+    "comparative": "mere godhjertet",
+    "superlative": "mest godhjertet",
+    "english": "kind-hearted",
+    "common": ""
+  },
+  {
+    "base": "hjerteløs",
+    "neuter": "hjerteløst",
+    "plural": "hjerteløse",
+    "definite": "hjerteløse",
+    "comparative": "mere hjerteløs",
+    "superlative": "mest hjerteløs",
+    "english": "heartless",
+    "common": ""
+  },
+  {
+    "base": "charmerende",
+    "neuter": "charmerende",
+    "plural": "charmerende",
+    "definite": "charmerende",
+    "comparative": "mere charmerende",
+    "superlative": "mest charmerende",
+    "english": "charming",
+    "common": ""
+  },
+  {
+    "base": "irriterende",
+    "neuter": "irriterende",
+    "plural": "irriterende",
+    "definite": "irriterende",
+    "comparative": "mere irriterende",
+    "superlative": "mest irriterende",
+    "english": "annoying",
+    "common": ""
+  },
+  {
+    "base": "voldsom",
+    "neuter": "voldsomt",
+    "plural": "voldsomme",
+    "definite": "voldsomme",
+    "comparative": "voldsommere",
+    "superlative": "voldsomst",
+    "english": "violent / intense",
+    "common": ""
+  },
+  {
+    "base": "lykkelig",
+    "neuter": "lykkeligt",
+    "plural": "lykkelige",
+    "definite": "lykkelige",
+    "comparative": "mere lykkelig",
+    "superlative": "mest lykkelig",
+    "english": "happy",
+    "common": ""
+  },
+  {
+    "base": "ulykkelig",
+    "neuter": "ulykkeligt",
+    "plural": "ulykkelige",
+    "definite": "ulykkelige",
+    "comparative": "mere ulykkelig",
+    "superlative": "mest ulykkelig",
+    "english": "unhappy",
+    "common": ""
+  },
+  {
+    "base": "dygtig",
+    "neuter": "dygtigt",
+    "plural": "dygtige",
+    "definite": "dygtige",
+    "comparative": "dygtigere",
+    "superlative": "dygtigst",
+    "english": "skilled",
+    "common": ""
+  },
+  {
+    "base": "inkompetent",
+    "neuter": "inkompetent",
+    "plural": "inkompetente",
+    "definite": "inkompetente",
+    "comparative": "mere inkompetent",
+    "superlative": "mest inkompetent",
+    "english": "incompetent",
+    "common": ""
+  },
+  {
+    "base": "samarbejdsvillig",
+    "neuter": "samarbejdsvilligt",
+    "plural": "samarbejdsvillige",
+    "definite": "samarbejdsvillige",
+    "comparative": "mere samarbejdsvillig",
+    "superlative": "mest samarbejdsvillig",
+    "english": "cooperative",
+    "common": ""
+  },
+  {
+    "base": "egenrådig",
+    "neuter": "egenrådigt",
+    "plural": "egenrådige",
+    "definite": "egenrådige",
+    "comparative": "mere egenrådig",
+    "superlative": "mest egenrådig",
+    "english": "stubborn",
+    "common": ""
+  },
+  {
+    "base": "skrøbelig",
+    "neuter": "skrøbeligt",
+    "plural": "skrøbelige",
+    "definite": "skrøbelige",
+    "comparative": "mere skrøbelig",
+    "superlative": "mest skrøbelig",
+    "english": "fragile",
+    "common": ""
+  },
+  {
+    "base": "fremragende",
+    "neuter": "fremragende",
+    "plural": "fremragende",
+    "definite": "fremragende",
+    "comparative": "mere fremragende",
+    "superlative": "mest fremragende",
+    "english": "excellent",
+    "common": ""
+  },
+  {
+    "base": "middelmådig",
+    "neuter": "middelmådigt",
+    "plural": "middelmådige",
+    "definite": "middelmådige",
+    "comparative": "mere middelmådig",
+    "superlative": "mest middelmådig",
+    "english": "mediocre",
+    "common": ""
+  },
+  {
+    "base": "sjælden",
+    "neuter": "sjældent",
+    "plural": "sjældne",
+    "definite": "sjældne",
+    "comparative": "mere sjælden",
+    "superlative": "mest sjælden",
+    "english": "rare",
+    "common": ""
+  },
+  {
+    "base": "teknisk",
+    "neuter": "teknisk",
+    "plural": "tekniske",
+    "definite": "tekniske",
+    "comparative": "mere teknisk",
+    "superlative": "mest teknisk",
+    "english": "technical",
+    "common": ""
+  },
+  {
+    "base": "videnskabelig",
+    "neuter": "videnskabeligt",
+    "plural": "videnskabelige",
+    "definite": "videnskabelige",
+    "comparative": "mere videnskabelig",
+    "superlative": "mest videnskabelig",
+    "english": "scientific",
+    "common": ""
+  },
+  {
+    "base": "historisk",
+    "neuter": "historisk",
+    "plural": "historiske",
+    "definite": "historiske",
+    "comparative": "mere historisk",
+    "superlative": "mest historisk",
+    "english": "historical",
+    "common": ""
+  },
+  {
+    "base": "politisk",
+    "neuter": "politisk",
+    "plural": "politiske",
+    "definite": "politiske",
+    "comparative": "mere politisk",
+    "superlative": "mest politisk",
+    "english": "political",
+    "common": ""
+  },
+  {
+    "base": "økonomisk",
+    "neuter": "økonomisk",
+    "plural": "økonomiske",
+    "definite": "økonomiske",
+    "comparative": "mere økonomisk",
+    "superlative": "mest økonomisk",
+    "english": "economic",
+    "common": ""
+  },
+  {
+    "base": "social",
+    "neuter": "socialt",
+    "plural": "sociale",
+    "definite": "sociale",
+    "comparative": "mere social",
+    "superlative": "mest social",
+    "english": "social",
+    "common": ""
+  },
+  {
+    "base": "kulturel",
+    "neuter": "kulturelt",
+    "plural": "kulturelle",
+    "definite": "kulturelle",
+    "comparative": "mere kulturel",
+    "superlative": "mest kulturel",
+    "english": "cultural",
+    "common": ""
+  },
+  {
+    "base": "miljøvenlig",
+    "neuter": "miljøvenligt",
+    "plural": "miljøvenlige",
+    "definite": "miljøvenlige",
+    "comparative": "mere miljøvenlig",
+    "superlative": "mest miljøvenlig",
+    "english": "environmentally friendly",
+    "common": ""
+  },
+  {
+    "base": "bæredygtig",
+    "neuter": "bæredygtigt",
+    "plural": "bæredygtige",
+    "definite": "bæredygtige",
+    "comparative": "mere bæredygtig",
+    "superlative": "mest bæredygtig",
+    "english": "sustainable",
+    "common": ""
+  },
+  {
+    "base": "effektiv",
+    "neuter": "effektivt",
+    "plural": "effektive",
+    "definite": "effektive",
+    "comparative": "mere effektiv",
+    "superlative": "mest effektiv",
+    "english": "efficient",
+    "common": ""
+  },
+  {
+    "base": "ineffektiv",
+    "neuter": "ineffektivt",
+    "plural": "ineffektive",
+    "definite": "ineffektive",
+    "comparative": "mere ineffektiv",
+    "superlative": "mest ineffektiv",
+    "english": "inefficient",
+    "common": ""
+  },
+  {
+    "base": "langsommelig",
+    "neuter": "langsommelig",
+    "plural": "langsomme",
+    "definite": "langsomme",
+    "comparative": "mere langsommelig",
+    "superlative": "mest langsommelig",
+    "english": "slow-moving",
+    "common": ""
+  },
+  {
+    "base": "intens",
+    "neuter": "intenst",
+    "plural": "intense",
+    "definite": "intense",
+    "comparative": "mere intens",
+    "superlative": "mest intens",
+    "english": "intense",
+    "common": ""
+  },
+  {
+    "base": "kraftfuld",
+    "neuter": "kraftfuldt",
+    "plural": "kraftfulde",
+    "definite": "kraftfulde",
+    "comparative": "mere kraftfuld",
+    "superlative": "mest kraftfuld",
+    "english": "powerful",
+    "common": ""
+  },
+  {
+    "base": "passioneret",
+    "neuter": "passioneret",
+    "plural": "passionerede",
+    "definite": "passionerede",
+    "comparative": "mere passioneret",
+    "superlative": "mest passioneret",
+    "english": "passionate",
+    "common": ""
+  },
+  {
+    "base": "koldblodig",
+    "neuter": "koldblodigt",
+    "plural": "koldblodige",
+    "definite": "koldblodige",
+    "comparative": "mere koldblodig",
+    "superlative": "mest koldblodig",
+    "english": "cold-blooded",
+    "common": ""
+  },
+  {
+    "base": "varmhjertet",
+    "neuter": "varmhjertet",
+    "plural": "varmhjertede",
+    "definite": "varmhjertede",
+    "comparative": "mere varmhjertet",
+    "superlative": "mest varmhjertet",
+    "english": "warm-hearted",
+    "common": ""
+  },
+  {
+    "base": "koldhjertet",
+    "neuter": "koldhjertet",
+    "plural": "koldhjertede",
+    "definite": "koldhjertede",
+    "comparative": "mere koldhjertet",
+    "superlative": "mest koldhjertet",
+    "english": "cold-hearted",
+    "common": ""
+  },
+  {
+    "base": "humoristisk",
+    "neuter": "humoristisk",
+    "plural": "humoristiske",
+    "definite": "humoristiske",
+    "comparative": "mere humoristisk",
+    "superlative": "mest humoristisk",
+    "english": "humorous",
+    "common": ""
+  },
+  {
+    "base": "alvorlig",
+    "neuter": "alvorligt",
+    "plural": "alvorlige",
+    "definite": "alvorlige",
+    "comparative": "mere alvorlig",
+    "superlative": "mest alvorlig",
+    "english": "serious",
+    "common": ""
+  },
+  {
+    "base": "sjov",
+    "neuter": "sjovt",
+    "plural": "sjove",
+    "definite": "sjove",
+    "comparative": "sjovere",
+    "superlative": "sjovest",
+    "english": "funny",
+    "common": ""
+  },
+  {
+    "base": "kærlig",
+    "neuter": "kærligt",
+    "plural": "kærlige",
+    "definite": "kærlige",
+    "comparative": "mere kærlig",
+    "superlative": "mest kærlig",
+    "english": "loving",
+    "common": ""
+  },
+  {
+    "base": "lys",
+    "neuter": "lyst",
+    "plural": "lyse",
+    "definite": "lyse",
+    "comparative": "lysere",
+    "superlative": "lystest",
+    "english": "bright",
+    "common": ""
+  },
+  {
+    "base": "mørk",
+    "neuter": "mørkt",
+    "plural": "mørke",
+    "definite": "mørke",
+    "comparative": "mørkere",
+    "superlative": "mørkest",
+    "english": "dark",
+    "common": ""
+  },
+  {
+    "base": "respektfuld",
+    "neuter": "respektfuldt",
+    "plural": "respektfulde",
+    "definite": "respektfulde",
+    "comparative": "mere respektfuld",
+    "superlative": "mest respektfuld",
+    "english": "respectful",
+    "common": ""
+  },
+  {
+    "base": "respektløs",
+    "neuter": "respektløst",
+    "plural": "respektløse",
+    "definite": "respektløse",
+    "comparative": "mere respektløs",
+    "superlative": "mest respektløs",
+    "english": "disrespectful",
+    "common": ""
+  },
+  {
+    "base": "emotionel",
+    "neuter": "emotionelt",
+    "plural": "emotionelle",
+    "definite": "emotionelle",
+    "comparative": "mere emotionel",
+    "superlative": "mest emotionel",
+    "english": "emotional",
+    "common": ""
+  },
+  {
+    "base": "rodet",
+    "neuter": "rodet",
+    "plural": "rodede",
+    "definite": "rodede",
+    "comparative": "mere rodet",
+    "superlative": "mest rodet",
+    "english": "messy",
+    "common": ""
+  },
+  {
+    "base": "ordentlig",
+    "neuter": "ordentligt",
+    "plural": "ordentlige",
+    "definite": "ordentlige",
+    "comparative": "mere ordentlig",
+    "superlative": "mest ordentlig",
+    "english": "tidy",
+    "common": ""
+  }
+]

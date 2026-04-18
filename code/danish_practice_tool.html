@@ -37,19 +37,65 @@
     }
 
     .shell {
-      max-width: 980px;
-      margin: 0 auto;
-      padding: 16px;
+      max-width: none;
+      width: 100%;
+      margin: 0;
+      padding: 10px 14px 16px;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(340px, 380px);
+      grid-template-areas:
+        "hero upload"
+        "controls translator"
+        "quiz translator"
+        "bank bank";
+      gap: 10px 12px;
     }
 
     .hero {
+      grid-area: hero;
       display: grid;
-      gap: 14px;
-      margin-bottom: 16px;
+      gap: 10px;
+      margin: 0;
+    }
+
+    .controls {
+      grid-area: controls;
+      margin: 0;
+      width: 100%;
+    }
+
+    .quiz {
+      grid-area: quiz;
+      width: 100%;
+    }
+
+    .translator {
+      grid-area: translator;
+      width: 100%;
+      align-self: start;
+      position: sticky;
+      top: 12px;
+      max-height: calc(100vh - 24px);
+      overflow: auto;
+    }
+
+    .upload-manager-corner {
+      grid-area: upload;
+      width: 100%;
+      align-self: start;
+    }
+
+    .bank {
+      grid-area: bank;
+      width: 100%;
+    }
+
+    .practice-zone {
+      display: contents;
     }
 
     .title-block {
-      padding: 22px;
+      padding: 18px;
       border: 1px solid var(--border);
       border-radius: var(--radius);
       background: linear-gradient(135deg, rgba(255, 255, 255, 0.82), rgba(255, 250, 241, 0.94));
@@ -73,23 +119,23 @@
     }
 
     .summary {
-      margin: 10px 0 0;
+      margin: 8px 0 0;
       color: var(--muted);
       font-family: ui-sans-serif, system-ui, sans-serif;
-      font-size: 0.95rem;
-      line-height: 1.5;
+      font-size: 0.9rem;
+      line-height: 1.4;
     }
 
     .stats {
       display: grid;
       grid-template-columns: 1fr;
-      gap: 10px;
-      margin-top: 14px;
+      gap: 8px;
+      margin-top: 12px;
     }
 
     .stat {
-      padding: 16px 16px 14px;
-      border-radius: 20px;
+      padding: 12px 12px 10px;
+      border-radius: 16px;
       border: 1px solid var(--border);
       background: rgba(255, 255, 255, 0.74);
       box-shadow: var(--shadow);
@@ -102,16 +148,17 @@
       font-size: 0.78rem;
       text-transform: uppercase;
       letter-spacing: 0.12em;
-      margin-bottom: 8px;
+      margin-bottom: 6px;
     }
 
     .stat strong {
       display: block;
-      font-size: 1.55rem;
+      font-size: 1.25rem;
       letter-spacing: -0.04em;
     }
 
     .controls,
+    .upload-manager,
     .translator,
     .quiz,
     .bank {
@@ -119,6 +166,7 @@
       border-radius: var(--radius);
       background: var(--panel);
       box-shadow: var(--shadow);
+      min-width: 0;
     }
 
     .translator {
@@ -178,9 +226,46 @@
     .controls {
       display: grid;
       grid-template-columns: 1fr;
+      gap: 10px;
+      padding: 12px;
+      margin-bottom: 0;
+    }
+
+    .upload-manager {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 10px;
+      padding: 12px;
+      margin-bottom: 0;
+      width: 100%;
+    }
+
+    .upload-manager .actions {
+      width: 100%;
+    }
+
+    .upload-manager .actions button {
+      flex: 1 1 0;
+      min-width: 0;
+    }
+
+    .upload-manager .field,
+    .upload-manager .feedback {
+      width: 100%;
+    }
+
+    .upload-header {
+      display: flex;
+      justify-content: space-between;
       gap: 12px;
-      padding: 16px;
-      margin-bottom: 14px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .upload-header h2 {
+      margin: 0;
+      font-size: 0.98rem;
+      letter-spacing: -0.03em;
     }
 
     .field {
@@ -205,8 +290,8 @@
     input,
     select {
       width: 100%;
-      padding: 13px 14px;
-      border-radius: 16px;
+      padding: 10px 12px;
+      border-radius: 14px;
       border: 1px solid rgba(28, 29, 31, 0.14);
       background: rgba(255, 255, 255, 0.92);
       color: var(--text);
@@ -231,7 +316,7 @@
     button {
       border: 0;
       border-radius: 999px;
-      padding: 13px 18px;
+      padding: 10px 14px;
       cursor: pointer;
       transition: transform 120ms ease, box-shadow 120ms ease, opacity 120ms ease;
     }
@@ -263,9 +348,48 @@
       gap: 14px;
     }
 
+    .bank-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 8px;
+      margin-top: 12px;
+      max-height: none;
+      overflow: visible;
+    }
+
+    .bank-pagination {
+      margin-top: 10px;
+    }
+
+    .bank-page-button {
+      padding: 7px 10px;
+      font-size: 0.78rem;
+    }
+
+    .feedback {
+      font-size: 0.9rem;
+      margin-bottom: 10px;
+    }
+
+    .translate-tabs {
+      gap: 6px;
+    }
+
+    .translate-tab {
+      padding: 8px 8px;
+      font-size: 0.75rem;
+    }
+
+    .translator-output {
+      padding: 11px 12px;
+      border-radius: 14px;
+      min-height: 48px;
+      font-size: 0.92rem;
+    }
+
     .quiz,
     .bank {
-      padding: 18px;
+      padding: 14px;
     }
 
     .quiz-header {
@@ -273,13 +397,13 @@
       justify-content: space-between;
       gap: 12px;
       align-items: center;
-      margin-bottom: 16px;
+      margin-bottom: 12px;
     }
 
     .quiz-header h2,
     .bank h2 {
       margin: 0;
-      font-size: 1.2rem;
+      font-size: 1.05rem;
       letter-spacing: -0.03em;
     }
 
@@ -297,8 +421,8 @@
     }
 
     .prompt {
-      padding: 18px;
-      border-radius: 18px;
+      padding: 14px;
+      border-radius: 16px;
       background: var(--panel-strong);
       border: 1px solid rgba(28, 29, 31, 0.08);
       margin-bottom: 14px;
@@ -315,7 +439,7 @@
     }
 
     .prompt .text {
-      font-size: clamp(1.35rem, 6vw, 1.7rem);
+      font-size: clamp(1.2rem, 5vw, 1.5rem);
       line-height: 1.25;
       letter-spacing: -0.03em;
     }
@@ -452,24 +576,63 @@
       padding-right: 4px;
     }
 
+    .bank-toolbar {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      align-items: end;
+      flex-wrap: wrap;
+    }
+
+    .bank-pagination {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 14px;
+    }
+
+    .bank-page-button {
+      border: 1px solid rgba(28, 29, 31, 0.12);
+      background: rgba(255, 255, 255, 0.84);
+      color: var(--muted);
+      padding: 9px 12px;
+      border-radius: 999px;
+      font-family: ui-sans-serif, system-ui, sans-serif;
+      font-size: 0.82rem;
+    }
+
+    .bank-page-button.active {
+      background: var(--accent);
+      color: #fff;
+      border-color: var(--accent);
+    }
+
+    .bank-page-summary {
+      margin-top: 10px;
+      color: var(--muted);
+      font-family: ui-sans-serif, system-ui, sans-serif;
+      font-size: 0.88rem;
+    }
+
     .card {
-      padding: 14px 15px;
-      border-radius: 16px;
+      padding: 10px 12px;
+      border-radius: 14px;
       border: 1px solid rgba(28, 29, 31, 0.09);
       background: rgba(255, 255, 255, 0.72);
     }
 
     .card strong {
       display: block;
-      margin-bottom: 5px;
-      font-size: 1rem;
+      margin-bottom: 4px;
+      font-size: 0.95rem;
     }
 
     .card small {
       display: block;
       color: var(--muted);
       font-family: ui-sans-serif, system-ui, sans-serif;
-      line-height: 1.45;
+      line-height: 1.35;
+      font-size: 0.8rem;
     }
 
     .footer-note {
@@ -484,22 +647,21 @@
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
 
+      .upload-manager {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
       .actions {
         grid-column: 1 / -1;
       }
     }
 
     @media (min-width: 961px) {
-      .hero {
-        grid-template-columns: 1.45fr 0.75fr;
-        align-items: start;
-      }
-
-      .layout {
-        grid-template-columns: 1.1fr 0.9fr;
-      }
-
       .controls {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+
+      .upload-manager {
         grid-template-columns: repeat(4, minmax(0, 1fr));
       }
 
@@ -512,9 +674,42 @@
       }
     }
 
+    @media (max-width: 1200px) {
+      .shell {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+          "hero"
+          "upload"
+          "controls"
+          "translator"
+          "quiz"
+          "bank";
+      }
+
+      .upload-manager {
+        width: 100%;
+      }
+
+      .translator {
+        position: static;
+        top: auto;
+        max-height: none;
+        overflow: visible;
+      }
+
+      .bank-list {
+        max-height: none;
+        overflow: visible;
+      }
+
+      .practice-zone {
+        display: contents;
+      }
+    }
+
     @media (max-width: 720px) {
       .shell {
-        padding: 16px;
+        padding: 14px;
       }
 
       .stats {
@@ -532,6 +727,14 @@
 
       .controls {
         grid-template-columns: 1fr;
+      }
+
+      .upload-manager {
+        grid-template-columns: 1fr;
+      }
+
+      .bank-toolbar {
+        align-items: stretch;
       }
     }
   </style>
@@ -559,31 +762,6 @@
           </div>
         </div>
       </div>
-
-      <aside class="translator" aria-label="quick translation lookup">
-        <div class="translator-header">
-          <h2>Quick Google Translate</h2>
-          <div class="badge">EN ⇄ DA</div>
-        </div>
-        <div class="field">
-          <label for="translateInput">Word or short phrase</label>
-          <input id="translateInput" type="text" placeholder="Type English or Danish text" autocomplete="off" />
-        </div>
-        <div class="field">
-          <label>Detect mode</label>
-          <div class="translate-tabs" id="translateTabs">
-            <button type="button" class="translate-tab active" data-mode="auto">Auto</button>
-            <button type="button" class="translate-tab" data-mode="en-da">EN → DA</button>
-            <button type="button" class="translate-tab" data-mode="da-en">DA → EN</button>
-          </div>
-        </div>
-        <div class="actions" style="padding-top: 0;">
-          <button class="primary" id="translateBtn">Translate</button>
-          <button class="ghost" id="translateClearBtn">Clear</button>
-        </div>
-        <div class="translator-output" id="translateOutput">Translation appears here.</div>
-        <div class="feedback" id="translateStatus"></div>
-      </aside>
     </section>
 
     <section class="controls" aria-label="quiz controls">
@@ -595,6 +773,7 @@
           <option value="nouns">Nouns</option>
           <option value="adjectives">Adjectives</option>
           <option value="adverbs">Adverbs</option>
+          <option value="common_phrases">Common phrases</option>
         </select>
       </div>
       <div class="field">
@@ -617,16 +796,12 @@
       </div>
       <div class="actions">
         <button class="primary" id="startBtn">Start quiz</button>
-        <button class="secondary" id="showBankBtn">Hide bank</button>
         <button class="ghost" id="resetBtn">Reset session</button>
-        <button class="ghost" id="loadGeneratedBtn">Load generated data</button>
-        <button class="ghost" id="importFileBtn">Import JSON file</button>
+        <button class="ghost" id="loadGeneratedBtn">Reload data files</button>
       </div>
-      <input id="importFileInput" type="file" accept="application/json,.json" hidden />
-      <div class="feedback" id="importStatus"></div>
     </section>
 
-    <section class="layout">
+    <section class="practice-zone">
       <article class="quiz">
         <div class="quiz-header">
           <h2>Quiz</h2>
@@ -656,15 +831,80 @@
         <div class="progress" id="progress">No session running.</div>
       </article>
 
-      <aside class="bank" id="bankPanel">
-        <h2>Word bank</h2>
-        <div class="footer-note">
-          Use this as a quick reference while you practice. The same data powers the quiz prompts.
+      <aside class="translator" aria-label="quick translation lookup">
+        <div class="translator-header">
+          <h2>Quick Google Translate</h2>
+          <div class="badge">EN ⇄ DA</div>
         </div>
-        <div class="bank-list" id="bankList"></div>
+        <div class="field">
+          <label for="translateInput">Word or short phrase</label>
+          <input id="translateInput" type="text" placeholder="Type English or Danish text" autocomplete="off" />
+        </div>
+        <div class="field">
+          <label>Detect mode</label>
+          <div class="translate-tabs" id="translateTabs">
+            <button type="button" class="translate-tab active" data-mode="auto">Auto</button>
+            <button type="button" class="translate-tab" data-mode="en-da">EN → DA</button>
+            <button type="button" class="translate-tab" data-mode="da-en">DA → EN</button>
+          </div>
+        </div>
+        <div class="actions" style="padding-top: 0;">
+          <button class="primary" id="translateBtn">Translate</button>
+          <button class="ghost" id="translateClearBtn">Clear</button>
+        </div>
+        <div class="translator-output" id="translateOutput">Translation appears here.</div>
+        <div class="feedback" id="translateStatus"></div>
       </aside>
     </section>
+
+    <aside class="bank" id="bankPanel">
+      <div class="quiz-header">
+        <h2>Word bank</h2>
+        <div class="field" style="min-width: 220px;">
+          <label for="bankCategory">Readup category</label>
+          <select id="bankCategory">
+            <option value="all">All categories</option>
+            <option value="verbs">Verbs</option>
+            <option value="nouns">Nouns</option>
+            <option value="adjectives">Adjectives</option>
+            <option value="adverbs">Adverbs</option>
+            <option value="common_phrases">Common phrases</option>
+          </select>
+        </div>
+      </div>
+      <div class="footer-note">
+        Read and review by category here while your quiz settings stay focused above.
+      </div>
+      <div class="bank-list" id="bankList"></div>
+      <div class="bank-page-summary" id="bankPageSummary"></div>
+      <div class="bank-pagination" id="bankPagination"></div>
+    </aside>
   </div>
+
+  <aside class="upload-manager-corner" aria-label="json upload manager">
+    <section class="upload-manager">
+      <div class="upload-header">
+        <h2>JSON Upload Manager</h2>
+        <div class="badge">Append by category</div>
+      </div>
+      <div class="field">
+        <label for="importCategory">Category</label>
+        <select id="importCategory">
+          <option value="nouns">Nouns</option>
+          <option value="verbs">Verbs</option>
+          <option value="adverbs">Adverbs</option>
+          <option value="adjectives">Adjectives</option>
+          <option value="common_phrases">Common phrases</option>
+        </select>
+      </div>
+      <div class="actions">
+        <button class="primary" id="importFileBtn">Upload & append JSON</button>
+        <button class="ghost" id="connectDataDirBtn">Connect data folder</button>
+      </div>
+      <input id="importFileInput" type="file" accept="application/json,.json" hidden />
+      <div class="feedback" id="importStatus"></div>
+    </section>
+  </aside>
 
   <script>
     const fallbackVocabulary = {
@@ -679,6 +919,9 @@
       ],
       adverbs: [
         { base: "ofte", english: "often" }
+      ],
+      common_phrases: [
+        { danish: "Hvordan går det?", english: "How are you?" }
       ]
     };
 
@@ -689,6 +932,8 @@
       count: document.getElementById("count"),
       seed: document.getElementById("seed"),
       mode: document.getElementById("mode"),
+      importCategory: document.getElementById("importCategory"),
+      connectDataDirBtn: document.getElementById("connectDataDirBtn"),
       translateInput: document.getElementById("translateInput"),
       translateTabs: document.querySelectorAll(".translate-tab"),
       translateBtn: document.getElementById("translateBtn"),
@@ -700,7 +945,6 @@
       importFileInput: document.getElementById("importFileInput"),
       importStatus: document.getElementById("importStatus"),
       startBtn: document.getElementById("startBtn"),
-      showBankBtn: document.getElementById("showBankBtn"),
       resetBtn: document.getElementById("resetBtn"),
       submitBtn: document.getElementById("submitBtn"),
       answerRow: document.getElementById("answerRow"),
@@ -716,6 +960,9 @@
       quizBadge: document.getElementById("quizBadge"),
       bankList: document.getElementById("bankList"),
       bankPanel: document.getElementById("bankPanel"),
+      bankCategory: document.getElementById("bankCategory"),
+      bankPageSummary: document.getElementById("bankPageSummary"),
+      bankPagination: document.getElementById("bankPagination"),
       statBank: document.getElementById("statBank"),
       statScore: document.getElementById("statScore"),
       statSet: document.getElementById("statSet")
@@ -727,11 +974,37 @@
       answered: false,
       score: 0,
       prompt: null,
-      bankVisible: true,
-      translateMode: "auto"
+      translateMode: "auto",
+      dataDirHandle: null,
+      bankPage: 0,
+      bankItems: []
     };
 
     const CHOICE_COUNT = 4;
+    const BANK_PAGE_SIZE = 12;
+    const CATEGORY_FILES = {
+      verbs: "verbs.json",
+      nouns: "nouns.json",
+      adjectives: "adjectives.json",
+      adverbs: "adverbs.json",
+      common_phrases: "common_phrases.json"
+    };
+
+    const UNIQUE_KEYS = {
+      verbs: "infinitive",
+      nouns: "danish",
+      adjectives: "base",
+      adverbs: "base",
+      common_phrases: "danish"
+    };
+
+    const REQUIRED_CATEGORY_FIELDS = {
+      verbs: ["infinitive", "english", "past", "present_perfect", "past_perfect"],
+      nouns: ["danish", "singular_indefinite", "singular_definite", "plural_indefinite", "plural_definite", "english"],
+      adjectives: ["base", "neuter", "plural", "english"],
+      adverbs: ["base", "english"],
+      common_phrases: ["danish", "english"]
+    };
 
     function normalize(text) {
       return String(text)
@@ -742,6 +1015,209 @@
         .replaceAll("å", "aa")
         .replace(/[\s\-]+/g, " ")
         .replace(/[.!?,;:]+$/g, "");
+    }
+
+    function inferNounGender(item) {
+      const explicit = String(item?.gender || "").trim().toLowerCase();
+      if (explicit === "en" || explicit === "et") {
+        return explicit;
+      }
+
+      const singular = String(item?.singular_indefinite || "").trim().toLowerCase();
+      if (singular.startsWith("en ")) {
+        return "en";
+      }
+      if (singular.startsWith("et ")) {
+        return "et";
+      }
+      return "";
+    }
+
+    function inferNounDanishKey(item) {
+      const explicit = String(item?.danish || "").trim();
+      if (explicit) {
+        return explicit;
+      }
+
+      const singular = String(item?.singular_indefinite || "").trim();
+      if (!singular) {
+        return "";
+      }
+
+      return singular.replace(/^(en|et)\s+/i, "").trim();
+    }
+
+    function inferVerbInfinitiveKey(item) {
+      const infinitive = String(item?.infinitive || "").trim().toLowerCase();
+      return infinitive.replace(/^at\s+/i, "").trim();
+    }
+
+    function normalizeVerbInfinitive(value) {
+      const trimmed = String(value || "").trim();
+      if (!trimmed) {
+        return "";
+      }
+      return /^at\s+/i.test(trimmed) ? trimmed : `at ${trimmed}`;
+    }
+
+    function getUniqueMarker(category, entry) {
+      if (category === "verbs") {
+        return inferVerbInfinitiveKey(entry);
+      }
+
+      if (category === "nouns") {
+        return inferNounDanishKey(entry).toLowerCase();
+      }
+
+      const uniqueKey = UNIQUE_KEYS[category];
+      return String(entry?.[uniqueKey] || "").trim().toLowerCase();
+    }
+
+    function normalizeIncomingEntries(category, entries) {
+      return entries.map((entry) => {
+        if (category === "verbs") {
+          const normalizedInfinitive = normalizeVerbInfinitive(entry?.infinitive);
+          return {
+            ...entry,
+            infinitive: normalizedInfinitive,
+            english: String(entry?.english || "").trim() || normalizedInfinitive,
+            imperative: String(entry?.imperative || "").trim(),
+            present_perfect: String(entry?.present_perfect || entry?.perfect || "").trim(),
+            past_perfect: String(entry?.past_perfect || entry?.pastperfect || "").trim()
+          };
+        }
+
+        if (category === "adjectives") {
+          return {
+            ...entry,
+            base: String(entry?.base || entry?.danish || "").trim(),
+            common: String(entry?.common || "").trim(),
+            neuter: String(entry?.neuter || "").trim(),
+            plural: String(entry?.plural || entry?.definite || "").trim(),
+            definite: String(entry?.definite || entry?.plural || "").trim(),
+            comparative: String(entry?.comparative || "").trim(),
+            superlative: String(entry?.superlative || "").trim(),
+            english: String(entry?.english || "").trim()
+          };
+        }
+
+        if (category === "adverbs") {
+          return {
+            ...entry,
+            base: String(entry?.base || entry?.danish || "").trim(),
+            comparative: String(entry?.comparative || "").trim(),
+            superlative: String(entry?.superlative || "").trim(),
+            english: String(entry?.english || "").trim()
+          };
+        }
+
+        if (category !== "nouns") {
+          return entry;
+        }
+
+        const danish = inferNounDanishKey(entry);
+        return {
+          ...entry,
+          danish
+        };
+      });
+    }
+
+    function formatBankValue(value) {
+      if (Array.isArray(value)) {
+        return value.filter((item) => String(item || "").trim()).join(", ");
+      }
+
+      return String(value || "").trim();
+    }
+
+    function getBankTitle(group, record) {
+      if (group === "verbs") {
+        return record.infinitive || record.english || "";
+      }
+      if (group === "nouns") {
+        return record.danish || record.singular_indefinite || record.english || "";
+      }
+      if (group === "adjectives") {
+        return record.base || record.english || "";
+      }
+      if (group === "adverbs") {
+        return record.base || record.english || "";
+      }
+      if (group === "common_phrases") {
+        return record.danish || record.english || "";
+      }
+      return record.english || record.base || record.danish || "";
+    }
+
+    function getBankDetail(group, record) {
+      const title = getBankTitle(group, record);
+      const parts = [];
+
+      for (const [key, value] of Object.entries(record)) {
+        const text = formatBankValue(value);
+        if (!text || key === "tags") {
+          continue;
+        }
+        if (text === title) {
+          continue;
+        }
+        parts.push(text);
+      }
+
+      return parts.join(" - ");
+    }
+
+    function getBankItemSeed(items) {
+      const sample = items.slice(0, 40).map((item) => `${item.group}|${item.title}|${item.detail}`).join("|");
+      let seed = 0;
+      for (const char of sample) {
+        seed = (seed + char.charCodeAt(0)) >>> 0;
+      }
+      return seed;
+    }
+
+    function buildBankItems() {
+      const selectedCategory = ui.bankCategory?.value || "all";
+      const groups = selectedCategory === "all" ? Object.keys(vocabulary) : [selectedCategory];
+      const items = [];
+
+      for (const group of groups) {
+        const records = Array.isArray(vocabulary[group]) ? vocabulary[group] : [];
+        for (const record of records) {
+          items.push({
+            group,
+            title: getBankTitle(group, record),
+            detail: getBankDetail(group, record)
+          });
+        }
+      }
+
+      if (selectedCategory === "all") {
+        return shuffle(items, mulberry32(getBankItemSeed(items)));
+      }
+
+      return items;
+    }
+
+    function renderBankPagination(totalPages) {
+      if (totalPages <= 1) {
+        ui.bankPagination.innerHTML = "";
+        return;
+      }
+
+      ui.bankPagination.innerHTML = Array.from({ length: totalPages }, (_, index) => {
+        const pageNumber = index + 1;
+        const active = index === state.bankPage ? "active" : "";
+        return `<button class="bank-page-button ${active}" type="button" data-bank-page="${index}">${pageNumber}</button>`;
+      }).join("");
+
+      ui.bankPagination.querySelectorAll("[data-bank-page]").forEach((button) => {
+        button.addEventListener("click", () => {
+          state.bankPage = Number(button.dataset.bankPage || 0);
+          renderBank();
+        });
+      });
     }
 
     function shuffle(items, rng = Math.random) {
@@ -766,6 +1242,14 @@
 
     function titleCase(text) {
       return text.charAt(0).toUpperCase() + text.slice(1);
+    }
+
+    function labelCase(text) {
+      return String(text)
+        .split(/[_\s]+/)
+        .filter(Boolean)
+        .map((part) => part.charAt(0).toUpperCase() + part.slice(1))
+        .join(" ");
     }
 
     function escapeHtml(text) {
@@ -820,15 +1304,141 @@
         verbs: Array.isArray(payload?.verbs) ? payload.verbs : [],
         nouns: Array.isArray(payload?.nouns) ? payload.nouns : [],
         adjectives: Array.isArray(payload?.adjectives) ? payload.adjectives : [],
-        adverbs: Array.isArray(payload?.adverbs) ? payload.adverbs : []
+        adverbs: Array.isArray(payload?.adverbs) ? payload.adverbs : [],
+        common_phrases: Array.isArray(payload?.common_phrases) ? payload.common_phrases : []
       };
 
-      const hasCoreData = normalized.verbs.length || normalized.nouns.length || normalized.adjectives.length;
-      if (!hasCoreData) {
+      const hasAnyData = Object.values(normalized).some((entries) => entries.length);
+      if (!hasAnyData) {
         throw new Error("JSON does not look like a valid lexicon.");
       }
 
       return normalized;
+    }
+
+    function normalizeCategoryEntries(payload, category) {
+      if (Array.isArray(payload)) {
+        return payload.filter((item) => item && typeof item === "object");
+      }
+      if (payload && typeof payload === "object" && Array.isArray(payload[category])) {
+        return payload[category].filter((item) => item && typeof item === "object");
+      }
+      return [];
+    }
+
+    function appendCategoryEntries(category, incoming) {
+      const existing = Array.isArray(vocabulary[category]) ? vocabulary[category] : [];
+      const seen = new Set(
+        existing
+          .map((item) => getUniqueMarker(category, item))
+          .filter(Boolean)
+      );
+
+      let appended = 0;
+      let skipped = 0;
+
+      for (const entry of incoming) {
+        const marker = getUniqueMarker(category, entry);
+        if (!marker) {
+          skipped += 1;
+          continue;
+        }
+
+        if (seen.has(marker)) {
+          skipped += 1;
+          continue;
+        }
+
+        existing.push(entry);
+        seen.add(marker);
+        appended += 1;
+      }
+
+      vocabulary[category] = existing;
+      return { appended, skipped, total: incoming.length };
+    }
+
+    function validateCategoryEntries(category, entries) {
+      const requiredFields = REQUIRED_CATEGORY_FIELDS[category] || [];
+      for (let index = 0; index < entries.length; index += 1) {
+        const entry = entries[index];
+        const missing = requiredFields.filter((field) => !String(entry?.[field] || "").trim());
+        if (missing.length) {
+          throw new Error(`Entry ${index + 1} is missing required fields: ${missing.join(", ")}`);
+        }
+      }
+    }
+
+    async function ensureDataDirectoryHandle() {
+      if (!("showDirectoryPicker" in window)) {
+        return null;
+      }
+
+      if (state.dataDirHandle) {
+        return state.dataDirHandle;
+      }
+
+      state.dataDirHandle = await window.showDirectoryPicker({ mode: "readwrite" });
+      return state.dataDirHandle;
+    }
+
+    async function persistCategoryToDataFile(category) {
+      if (!("showDirectoryPicker" in window)) {
+        return {
+          persisted: false,
+          reason: "Browser file-write API is unavailable. Data is appended in app memory only."
+        };
+      }
+
+      try {
+        const dirHandle = await ensureDataDirectoryHandle();
+        if (!dirHandle) {
+          return {
+            persisted: false,
+            reason: "No writable data folder selected."
+          };
+        }
+
+        const fileName = CATEGORY_FILES[category];
+        const fileHandle = await dirHandle.getFileHandle(fileName, { create: true });
+
+        // Merge with existing on-disk content to guarantee append behavior.
+        let diskEntries = [];
+        try {
+          const existingFile = await fileHandle.getFile();
+          const existingText = await existingFile.text();
+          const parsed = JSON.parse(existingText || "[]");
+          diskEntries = normalizeCategoryEntries(parsed, category);
+        } catch (error) {
+          diskEntries = [];
+        }
+
+        const merged = diskEntries.slice();
+        const seen = new Set(merged.map((item) => getUniqueMarker(category, item)).filter(Boolean));
+        for (const entry of vocabulary[category]) {
+          const marker = getUniqueMarker(category, entry);
+          if (!marker || seen.has(marker)) {
+            continue;
+          }
+          merged.push(entry);
+          seen.add(marker);
+        }
+        vocabulary[category] = merged;
+
+        const writable = await fileHandle.createWritable();
+        await writable.write(JSON.stringify(merged, null, 2));
+        await writable.close();
+
+        return {
+          persisted: true,
+          fileName
+        };
+      } catch (error) {
+        return {
+          persisted: false,
+          reason: `Could not write file: ${error.message}`
+        };
+      }
     }
 
     function setImportStatus(text, tone = "") {
@@ -844,10 +1454,36 @@
       updateStats();
       if (!silent) {
         setImportStatus(
-          message || `Loaded data: ${lexicon.verbs.length} verbs, ${lexicon.adjectives.length} adjectives, ${lexicon.nouns.length} nouns, ${lexicon.adverbs.length} adverbs.`,
+          message || `Loaded data: ${lexicon.verbs.length} verbs, ${lexicon.adjectives.length} adjectives, ${lexicon.nouns.length} nouns, ${lexicon.adverbs.length} adverbs, ${lexicon.common_phrases.length} phrases.`,
           tone
         );
       }
+    }
+
+    async function loadSplitLexiconFiles() {
+      const merged = {
+        verbs: [],
+        nouns: [],
+        adjectives: [],
+        adverbs: [],
+        common_phrases: []
+      };
+      const loadedSources = [];
+
+      for (const [category, fileName] of Object.entries(CATEGORY_FILES)) {
+        const result = await fetchLexiconFile(fileName);
+        if (!result) {
+          continue;
+        }
+        merged[category] = normalizeCategoryEntries(result.payload, category);
+        loadedSources.push(`${fileName} (${result.source})`);
+      }
+
+      if (!loadedSources.length) {
+        return null;
+      }
+
+      return { lexicon: merged, sources: loadedSources };
     }
 
     function buildDataCandidatePaths(fileName) {
@@ -887,30 +1523,39 @@
     }
 
     async function loadBaseLexiconOnStartup() {
-      const result = await fetchLexiconFile("lexicon.json");
-      if (!result) {
-        setImportStatus("Using built-in fallback dataset. Base lexicon file could not be loaded.", "bad");
-        return;
-      }
       try {
+        const splitResult = await loadSplitLexiconFiles();
+        if (splitResult) {
+          applyImportedLexicon(splitResult.lexicon, {
+            message: `Loaded split data files (${splitResult.sources.length} category file(s)).`,
+            tone: "good"
+          });
+          return;
+        }
+
+        const result = await fetchLexiconFile("lexicon.json");
+        if (!result) {
+          return;
+        }
+
         const normalized = normalizeLexiconShape(result.payload);
         applyImportedLexicon(normalized, {
-          message: `Loaded base lexicon from ${result.source}`,
+          message: `Loaded combined lexicon from ${result.source}`,
           tone: "good"
         });
       } catch (error) {
-        setImportStatus("Base lexicon file was found but not valid JSON shape. Using fallback dataset.", "bad");
+        setImportStatus("Could not load a valid data file. Using fallback data.", "bad");
       }
     }
 
     async function loadGeneratedLexicon() {
       ui.loadGeneratedBtn.disabled = true;
-      setImportStatus("Loading generated lexicon...", "");
+      setImportStatus("Reloading data files...", "");
       try {
-        const generated = await fetchLexiconFile("lexicon.generated.json");
-        if (generated) {
-          applyImportedLexicon(normalizeLexiconShape(generated.payload), {
-            message: `Loaded generated dataset from ${generated.source}`,
+        const splitResult = await loadSplitLexiconFiles();
+        if (splitResult) {
+          applyImportedLexicon(splitResult.lexicon, {
+            message: `Reloaded split data files (${splitResult.sources.length} category file(s)).`,
             tone: "good"
           });
           return;
@@ -921,7 +1566,7 @@
           throw new Error("No dataset files found.");
         }
         applyImportedLexicon(normalizeLexiconShape(base.payload), {
-          message: `Generated file not found. Loaded base lexicon from ${base.source}`,
+          message: `Split files not found. Loaded combined lexicon from ${base.source}`,
           tone: "bad"
         });
       } catch (error) {
@@ -940,7 +1585,30 @@
       try {
         const text = await file.text();
         const payload = JSON.parse(text);
-        applyImportedLexicon(normalizeLexiconShape(payload));
+        const category = ui.importCategory.value;
+        const entries = normalizeIncomingEntries(category, normalizeCategoryEntries(payload, category));
+        if (!entries.length) {
+          throw new Error(`No '${category}' entries found in uploaded JSON.`);
+        }
+        validateCategoryEntries(category, entries);
+
+        const result = appendCategoryEntries(category, entries);
+        const persistResult = await persistCategoryToDataFile(category);
+        resetSession();
+        renderBank();
+        updateStats();
+
+        if (persistResult.persisted) {
+          setImportStatus(
+            `Appended to ${labelCase(category)}: ${result.appended} new, ${result.skipped} skipped duplicate/invalid, from ${result.total} uploaded entries. Saved to data/${persistResult.fileName}.`,
+            result.appended > 0 ? "good" : "bad"
+          );
+        } else {
+          setImportStatus(
+            `Appended to ${labelCase(category)} in app memory: ${result.appended} new, ${result.skipped} skipped. ${persistResult.reason}`,
+            result.appended > 0 ? "good" : "bad"
+          );
+        }
       } catch (error) {
         setImportStatus(`Import failed: ${error.message}`, "bad");
       } finally {
@@ -949,19 +1617,34 @@
     }
 
     function flattenExercises(category, mode) {
-      const sourceCategories = category === "all" ? ["verbs", "nouns", "adjectives", "adverbs"] : [category];
+      const sourceCategories = category === "all" ? ["verbs", "nouns", "adjectives", "adverbs", "common_phrases"] : [category];
       const exercises = [];
 
       for (const group of sourceCategories) {
         for (const item of vocabulary[group]) {
           if (group === "verbs") {
-            exercises.push(
+            const verbForms = [
               { group, kind: "Form", prompt: `English -> Danish infinitive for '${item.english}'`, answers: [item.infinitive, item.infinitive.startsWith("at ") ? item.infinitive.slice(3) : item.infinitive] },
-              { group, kind: "Form", prompt: `English -> imperative for '${item.english}'`, answers: [item.imperative] },
               { group, kind: "Form", prompt: `English -> past tense for '${item.english}'`, answers: [item.past] },
               { group, kind: "Form", prompt: `English -> present perfect for '${item.english}'`, answers: [item.present_perfect] },
               { group, kind: "Form", prompt: `English -> past perfect for '${item.english}'`, answers: [item.past_perfect] },
               { group, kind: "Translation", prompt: `Danish infinitive -> English for '${item.infinitive}'`, answers: [item.english] }
+            ];
+
+            if (String(item.imperative || "").trim()) {
+              verbForms.splice(1, 0, { group, kind: "Form", prompt: `English -> imperative for '${item.english}'`, answers: [item.imperative] });
+            }
+
+            exercises.push(...verbForms);
+
+            const tableFields = [];
+            if (String(item.imperative || "").trim()) {
+              tableFields.push({ field: "imperative", label: "Imperative", answer: item.imperative });
+            }
+            tableFields.push(
+              { field: "past", label: "Past", answer: item.past },
+              { field: "present_perfect", label: "Present perfect", answer: item.present_perfect },
+              { field: "past_perfect", label: "Past perfect", answer: item.past_perfect }
             );
 
             exercises.push({
@@ -971,38 +1654,47 @@
               table: {
                 label: item.english,
                 given: { field: "infinitive", value: item.infinitive },
-                fields: [
-                  { field: "imperative", label: "Imperative", answer: item.imperative },
-                  { field: "past", label: "Past", answer: item.past },
-                  { field: "present_perfect", label: "Present perfect", answer: item.present_perfect },
-                  { field: "past_perfect", label: "Past perfect", answer: item.past_perfect }
-                ]
+                fields: tableFields
               },
-              answers: [item.imperative, item.past, item.present_perfect, item.past_perfect]
+              answers: tableFields.map((field) => field.answer)
             });
           }
 
           if (group === "nouns") {
+            const nounGender = inferNounGender(item);
             exercises.push(
               { group, kind: "Form", prompt: `English -> Danish noun for '${item.english}'`, answers: [item.singular_indefinite] },
               { group, kind: "Form", prompt: `English -> definite singular for '${item.english}'`, answers: [item.singular_definite] },
               { group, kind: "Form", prompt: `English -> plural for '${item.english}'`, answers: [item.plural_indefinite] },
               { group, kind: "Form", prompt: `English -> definite plural for '${item.english}'`, answers: [item.plural_definite] },
-              { group, kind: "Form", prompt: `English -> gender article for '${item.english}'`, answers: [item.gender] },
               { group, kind: "Translation", prompt: `Danish noun -> English for '${item.singular_indefinite}'`, answers: [item.english] }
             );
+
+            if (nounGender) {
+              exercises.push({ group, kind: "Form", prompt: `English -> gender article for '${item.english}'`, answers: [nounGender] });
+            }
           }
 
           if (group === "adjectives") {
-            exercises.push(
+            const adjectiveForms = [
               { group, kind: "Form", prompt: `English -> base adjective for '${item.english}'`, answers: [item.base] },
-              { group, kind: "Form", prompt: `English -> common form for '${item.english}'`, answers: [item.common] },
               { group, kind: "Form", prompt: `English -> neuter form for '${item.english}'`, answers: [item.neuter] },
-              { group, kind: "Form", prompt: `English -> plural/definite form for '${item.english}'`, answers: [item.plural] },
-              { group, kind: "Form", prompt: `English -> comparative form for '${item.english}'`, answers: [item.comparative] },
-              { group, kind: "Form", prompt: `English -> superlative form for '${item.english}'`, answers: [item.superlative] },
-              { group, kind: "Translation", prompt: `Danish adjective -> English for '${item.base}'`, answers: [item.english] }
-            );
+              { group, kind: "Form", prompt: `English -> plural/definite form for '${item.english}'`, answers: [item.plural] }
+            ];
+
+            if (String(item.common || "").trim()) {
+              adjectiveForms.splice(1, 0, { group, kind: "Form", prompt: `English -> common form for '${item.english}'`, answers: [item.common] });
+            }
+
+            if (String(item.comparative || "").trim()) {
+              adjectiveForms.push({ group, kind: "Form", prompt: `English -> comparative form for '${item.english}'`, answers: [item.comparative] });
+            }
+            if (String(item.superlative || "").trim()) {
+              adjectiveForms.push({ group, kind: "Form", prompt: `English -> superlative form for '${item.english}'`, answers: [item.superlative] });
+            }
+
+            adjectiveForms.push({ group, kind: "Translation", prompt: `Danish adjective -> English for '${item.base}'`, answers: [item.english] });
+            exercises.push(...adjectiveForms);
           }
 
           if (group === "adverbs") {
@@ -1016,6 +1708,13 @@
             if (item.superlative) {
               exercises.push({ group, kind: "Form", prompt: `English -> superlative form for '${item.english}'`, answers: [item.superlative] });
             }
+          }
+
+          if (group === "common_phrases") {
+            exercises.push(
+              { group, kind: "Translation", prompt: `English -> Danish phrase for '${item.english}'`, answers: [item.danish] },
+              { group, kind: "Translation", prompt: `Danish phrase -> English for '${item.danish}'`, answers: [item.english] }
+            );
           }
         }
       }
@@ -1055,6 +1754,9 @@
           if (item.base) {
             pool.push(item.base);
           }
+          if (item.danish) {
+            pool.push(item.danish);
+          }
         }
       }
 
@@ -1065,22 +1767,19 @@
     }
 
     function renderBank() {
-      const items = [];
-      for (const [group, records] of Object.entries(vocabulary)) {
-        for (const record of records) {
-          if (group === "verbs") {
-            items.push({ title: record.infinitive, detail: `${record.english} · ${record.imperative} / ${record.past} / ${record.present_perfect} / ${record.past_perfect}` });
-          } else if (group === "nouns") {
-            items.push({ title: record.singular_indefinite, detail: `${record.english} · ${record.singular_definite} · ${record.plural_indefinite} · ${record.plural_definite}` });
-          } else if (group === "adjectives") {
-            items.push({ title: record.base, detail: `${record.english} · ${record.common} / ${record.neuter} / ${record.plural} / ${record.comparative} / ${record.superlative}` });
-          } else {
-            items.push({ title: record.base, detail: `${record.english}${record.comparative ? ` · ${record.comparative}` : ""}${record.superlative ? ` · ${record.superlative}` : ""}` });
-          }
-        }
+      const items = buildBankItems();
+      state.bankItems = items;
+
+      const totalPages = Math.max(1, Math.ceil(items.length / BANK_PAGE_SIZE));
+      if (state.bankPage >= totalPages) {
+        state.bankPage = totalPages - 1;
       }
 
-      ui.bankList.innerHTML = items.map((item) => `
+      const startIndex = state.bankPage * BANK_PAGE_SIZE;
+      const pageItems = items.slice(startIndex, startIndex + BANK_PAGE_SIZE);
+      const endIndex = Math.min(startIndex + pageItems.length, items.length);
+
+      ui.bankList.innerHTML = pageItems.map((item) => `
         <article class="card">
           <strong>${item.title}</strong>
           <small>${item.detail}</small>
@@ -1088,11 +1787,15 @@
       `).join("");
 
       ui.statBank.textContent = String(items.length);
+      ui.bankPageSummary.textContent = items.length
+        ? `Showing ${startIndex + 1}-${endIndex} of ${items.length} entries.`
+        : "No entries available.";
+      renderBankPagination(totalPages);
     }
 
     function updateStats() {
       ui.statScore.textContent = `${state.score} / ${state.exercises.length}`;
-      ui.statSet.textContent = titleCase(ui.category.value === "all" ? "all categories" : ui.category.value);
+      ui.statSet.textContent = labelCase(ui.category.value === "all" ? "all categories" : ui.category.value);
     }
 
     function setFeedback(text, tone = "") {
@@ -1357,12 +2060,6 @@
       ui.tableGrid.innerHTML = "";
     }
 
-    function toggleBankVisibility() {
-      state.bankVisible = !state.bankVisible;
-      ui.bankPanel.style.display = state.bankVisible ? "block" : "none";
-      ui.showBankBtn.textContent = state.bankVisible ? "Hide bank" : "Show bank";
-    }
-
     async function runTranslationLookup() {
       const text = ui.translateInput.value.trim();
       const mode = state.translateMode;
@@ -1418,7 +2115,6 @@
     ui.nextBtn.addEventListener("click", nextQuestion);
     ui.revealBtn.addEventListener("click", revealAnswer);
     ui.resetBtn.addEventListener("click", resetSession);
-    ui.showBankBtn.addEventListener("click", toggleBankVisibility);
     ui.translateBtn.addEventListener("click", runTranslationLookup);
     ui.translateTabs.forEach((tab) => {
       tab.addEventListener("click", () => {
@@ -1440,6 +2136,18 @@
     ui.importFileBtn.addEventListener("click", () => {
       ui.importFileInput.click();
     });
+    ui.connectDataDirBtn.addEventListener("click", async () => {
+      try {
+        const handle = await ensureDataDirectoryHandle();
+        if (!handle) {
+          setImportStatus("Could not connect to data folder.", "bad");
+          return;
+        }
+        setImportStatus("Data folder connected. Uploads will be saved to matching category files.", "good");
+      } catch (error) {
+        setImportStatus(`Folder connection failed: ${error.message}`, "bad");
+      }
+    });
     ui.importFileInput.addEventListener("change", handleImportFileSelection);
     ui.answerInput.addEventListener("keydown", (event) => {
       if (event.key === "Enter") {
@@ -1452,7 +2160,12 @@
     });
 
     ui.category.addEventListener("change", () => {
-      ui.statSet.textContent = titleCase(ui.category.value === "all" ? "all categories" : ui.category.value);
+      ui.statSet.textContent = labelCase(ui.category.value === "all" ? "all categories" : ui.category.value);
+    });
+
+    ui.bankCategory.addEventListener("change", () => {
+      state.bankPage = 0;
+      renderBank();
     });
 
     ui.mode.addEventListener("change", () => {

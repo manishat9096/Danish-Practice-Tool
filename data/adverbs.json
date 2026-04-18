@@ -1,0 +1,600 @@
+[
+  {
+    "base": "hurtigt",
+    "comparative": "hurtigere",
+    "superlative": "hurtigst",
+    "english": "quickly"
+  },
+  {
+    "base": "langsomt",
+    "comparative": "langsommere",
+    "superlative": "langsomst",
+    "english": "slowly"
+  },
+  {
+    "base": "ofte",
+    "english": "often"
+  },
+  {
+    "base": "altid",
+    "english": "always"
+  },
+  {
+    "base": "aldrig",
+    "english": "never"
+  },
+  {
+    "base": "måske",
+    "english": "maybe / perhaps"
+  },
+  {
+    "base": "gerne",
+    "comparative": "hellere",
+    "superlative": "helst",
+    "english": "gladly / preferably"
+  },
+  {
+    "base": "tidligt",
+    "comparative": "tidligere",
+    "superlative": "tidligst",
+    "english": "early"
+  },
+  {
+    "base": "sent",
+    "comparative": "senere",
+    "superlative": "senest",
+    "english": "late"
+  },
+  {
+    "base": "meget",
+    "comparative": "mere",
+    "superlative": "mest",
+    "english": "much / very"
+  },
+  {
+    "base": "lidt",
+    "comparative": "mindre",
+    "superlative": "mindst",
+    "english": "a little"
+  },
+  {
+    "base": "hjemme",
+    "english": "at home"
+  },
+  {
+    "base": "ude",
+    "english": "outside"
+  },
+  {
+    "base": "sammen",
+    "english": "together"
+  },
+  {
+    "base": "her",
+    "english": "here"
+  },
+  {
+    "base": "der",
+    "english": "there"
+  },
+  {
+    "base": "nu",
+    "english": "now",
+    "category": "time",
+    "central": true,
+    "comparative": "",
+    "superlative": ""
+  },
+  {
+    "base": "sjældent",
+    "english": "rarely",
+    "category": "frequency",
+    "central": true,
+    "comparative": "",
+    "superlative": ""
+  },
+  {
+    "base": "nogle gange",
+    "english": "sometimes",
+    "category": "frequency",
+    "central": true,
+    "comparative": "",
+    "superlative": ""
+  },
+  {
+    "base": "lige",
+    "english": "just / right now",
+    "category": "time",
+    "central": true,
+    "comparative": "",
+    "superlative": ""
+  },
+  {
+    "base": "stadig",
+    "english": "still",
+    "category": "time",
+    "central": true,
+    "comparative": "",
+    "superlative": ""
+  },
+  {
+    "base": "allerede",
+    "english": "already",
+    "category": "time",
+    "central": true,
+    "comparative": "",
+    "superlative": ""
+  },
+  {
+    "base": "senere",
+    "english": "later",
+    "category": "time",
+    "central": true,
+    "comparative": "",
+    "superlative": ""
+  },
+  {
+    "base": "ind",
+    "english": "in",
+    "category": "direction",
+    "central": true,
+    "comparative": "",
+    "superlative": ""
+  },
+  {
+    "base": "ud",
+    "english": "out",
+    "category": "direction",
+    "central": true,
+    "comparative": "",
+    "superlative": ""
+  },
+  {
+    "base": "op",
+    "english": "up",
+    "category": "direction",
+    "central": true,
+    "comparative": "",
+    "superlative": ""
+  },
+  {
+    "base": "ned",
+    "english": "down",
+    "category": "direction",
+    "central": true,
+    "comparative": "",
+    "superlative": ""
+  },
+  {
+    "base": "temmelig",
+    "english": "quite",
+    "category": "degree",
+    "central": true,
+    "comparative": "",
+    "superlative": ""
+  },
+  {
+    "base": "ret",
+    "english": "quite / fairly",
+    "category": "degree",
+    "central": true,
+    "comparative": "",
+    "superlative": ""
+  },
+  {
+    "base": "virkelig",
+    "english": "really",
+    "category": "degree",
+    "central": true,
+    "comparative": "",
+    "superlative": ""
+  },
+  {
+    "base": "så",
+    "english": "so",
+    "category": "degree",
+    "central": true,
+    "comparative": "",
+    "superlative": ""
+  },
+  {
+    "base": "godt",
+    "english": "well",
+    "category": "manner",
+    "central": true,
+    "comparative": "bedre",
+    "superlative": "bedst"
+  },
+  {
+    "base": "dårligt",
+    "english": "badly",
+    "category": "manner",
+    "central": true,
+    "comparative": "værre",
+    "superlative": "værst"
+  },
+  {
+    "base": "lige nu",
+    "english": "right now",
+    "category": "time",
+    "central": true,
+    "comparative": "",
+    "superlative": ""
+  },
+  {
+    "base": "snart",
+    "english": "soon",
+    "category": "time",
+    "central": true,
+    "comparative": "",
+    "superlative": ""
+  },
+  {
+    "base": "pludselig",
+    "english": "suddenly",
+    "category": "time",
+    "central": true,
+    "comparative": "",
+    "superlative": ""
+  },
+  {
+    "base": "endnu",
+    "english": "still / yet",
+    "category": "time",
+    "central": true,
+    "comparative": "",
+    "superlative": ""
+  },
+  {
+    "base": "før",
+    "english": "before",
+    "category": "time",
+    "central": true,
+    "comparative": "",
+    "superlative": ""
+  },
+  {
+    "base": "efter",
+    "english": "after",
+    "category": "time",
+    "central": true,
+    "comparative": "",
+    "superlative": ""
+  },
+  {
+    "base": "derefter",
+    "english": "afterwards",
+    "category": "time",
+    "central": true,
+    "comparative": "",
+    "superlative": ""
+  },
+  {
+    "base": "herfra",
+    "english": "from here",
+    "category": "place",
+    "central": true,
+    "comparative": "",
+    "superlative": ""
+  },
+  {
+    "base": "derfra",
+    "english": "from there",
+    "category": "place",
+    "central": true,
+    "comparative": "",
+    "superlative": ""
+  },
+  {
+    "base": "videre",
+    "english": "further / onward",
+    "category": "direction",
+    "central": true,
+    "comparative": "",
+    "superlative": ""
+  },
+  {
+    "base": "tilbage",
+    "english": "back",
+    "category": "direction",
+    "central": true,
+    "comparative": "",
+    "superlative": ""
+  },
+  {
+    "base": "hen",
+    "english": "over (towards)",
+    "category": "direction",
+    "central": true,
+    "comparative": "",
+    "superlative": ""
+  },
+  {
+    "base": "oppe",
+    "english": "up / upstairs",
+    "category": "place",
+    "central": true,
+    "comparative": "",
+    "superlative": ""
+  },
+  {
+    "base": "nede",
+    "english": "down / downstairs",
+    "category": "place",
+    "central": true,
+    "comparative": "",
+    "superlative": ""
+  },
+  {
+    "base": "næsten",
+    "english": "almost",
+    "category": "degree",
+    "central": true,
+    "comparative": "",
+    "superlative": ""
+  },
+  {
+    "base": "helt",
+    "english": "completely",
+    "category": "degree",
+    "central": true,
+    "comparative": "",
+    "superlative": ""
+  },
+  {
+    "base": "fuldstændig",
+    "english": "completely / entirely",
+    "category": "degree",
+    "central": true,
+    "comparative": "",
+    "superlative": ""
+  },
+  {
+    "base": "slet ikke",
+    "english": "not at all",
+    "category": "negation",
+    "central": true,
+    "comparative": "",
+    "superlative": ""
+  },
+  {
+    "base": "sandsynligvis",
+    "english": "probably",
+    "category": "certainty",
+    "central": true,
+    "comparative": "",
+    "superlative": ""
+  },
+  {
+    "base": "muligvis",
+    "english": "possibly",
+    "category": "certainty",
+    "central": true,
+    "comparative": "",
+    "superlative": ""
+  },
+  {
+    "base": "selvfølgelig",
+    "english": "of course",
+    "category": "certainty",
+    "central": true,
+    "comparative": "",
+    "superlative": ""
+  },
+  {
+    "base": "langsommere",
+    "english": "more slowly",
+    "category": "manner",
+    "central": true,
+    "comparative": "langsommere",
+    "superlative": "langsommest"
+  },
+  {
+    "base": "bedre",
+    "english": "better",
+    "category": "manner",
+    "central": true,
+    "comparative": "bedre",
+    "superlative": "bedst"
+  },
+  {
+    "base": "værre",
+    "english": "worse",
+    "category": "manner",
+    "central": true,
+    "comparative": "værre",
+    "superlative": "værst"
+  },
+  {
+    "base": "forsigtigt",
+    "english": "carefully",
+    "category": "manner",
+    "central": true,
+    "comparative": "",
+    "superlative": ""
+  },
+  {
+    "base": "nemt",
+    "english": "easily",
+    "category": "manner",
+    "central": true,
+    "comparative": "nemmere",
+    "superlative": "nemmest"
+  },
+  {
+    "base": "dog",
+    "english": "however / nevertheless",
+    "category": "contrast",
+    "central": true,
+    "comparative": "",
+    "superlative": ""
+  },
+  {
+    "base": "alligevel",
+    "english": "anyway / still",
+    "category": "contrast",
+    "central": true,
+    "comparative": "",
+    "superlative": ""
+  },
+  {
+    "base": "derimod",
+    "english": "on the other hand",
+    "category": "contrast",
+    "central": true,
+    "comparative": "",
+    "superlative": ""
+  },
+  {
+    "base": "desuden",
+    "english": "besides / furthermore",
+    "category": "addition",
+    "central": true,
+    "comparative": "",
+    "superlative": ""
+  },
+  {
+    "base": "også",
+    "english": "also / too",
+    "category": "addition",
+    "central": true,
+    "comparative": "",
+    "superlative": ""
+  },
+  {
+    "base": "endda",
+    "english": "even",
+    "category": "emphasis",
+    "central": true,
+    "comparative": "",
+    "superlative": ""
+  },
+  {
+    "base": "kun",
+    "english": "only",
+    "category": "limitation",
+    "central": true,
+    "comparative": "",
+    "superlative": ""
+  },
+  {
+    "base": "netop",
+    "english": "exactly / precisely",
+    "category": "emphasis",
+    "central": true,
+    "comparative": "",
+    "superlative": ""
+  },
+  {
+    "base": "præcis",
+    "english": "precisely",
+    "category": "emphasis",
+    "central": true,
+    "comparative": "",
+    "superlative": ""
+  },
+  {
+    "base": "især",
+    "english": "especially",
+    "category": "focus",
+    "central": true,
+    "comparative": "",
+    "superlative": ""
+  },
+  {
+    "base": "blandt andet",
+    "english": "among other things",
+    "category": "reference",
+    "central": true,
+    "comparative": "",
+    "superlative": ""
+  },
+  {
+    "base": "i hvert fald",
+    "english": "in any case / at least",
+    "category": "certainty",
+    "central": true,
+    "comparative": "",
+    "superlative": ""
+  },
+  {
+    "base": "tilsyneladende",
+    "english": "apparently",
+    "category": "certainty",
+    "central": true,
+    "comparative": "",
+    "superlative": ""
+  },
+  {
+    "base": "åbenbart",
+    "english": "obviously / apparently",
+    "category": "certainty",
+    "central": true,
+    "comparative": "",
+    "superlative": ""
+  },
+  {
+    "base": "efterhånden",
+    "english": "gradually / over time",
+    "category": "time",
+    "central": true,
+    "comparative": "",
+    "superlative": ""
+  },
+  {
+    "base": "igen",
+    "english": "again",
+    "category": "repetition",
+    "central": true,
+    "comparative": "",
+    "superlative": ""
+  },
+  {
+    "base": "stadigvæk",
+    "english": "still",
+    "category": "time",
+    "central": true,
+    "comparative": "",
+    "superlative": ""
+  },
+  {
+    "base": "pludseligt",
+    "english": "suddenly",
+    "category": "time",
+    "central": true,
+    "comparative": "",
+    "superlative": ""
+  },
+  {
+    "base": "hver især",
+    "english": "each individually",
+    "category": "distribution",
+    "central": true,
+    "comparative": "",
+    "superlative": ""
+  },
+  {
+    "base": "ligeledes",
+    "english": "likewise",
+    "category": "formal",
+    "central": true,
+    "comparative": "",
+    "superlative": ""
+  },
+  {
+    "base": "således",
+    "english": "thus / in this way",
+    "category": "formal",
+    "central": true,
+    "comparative": "",
+    "superlative": ""
+  },
+  {
+    "base": "derfor",
+    "english": "therefore",
+    "category": "cause",
+    "central": true,
+    "comparative": "",
+    "superlative": ""
+  }
+]

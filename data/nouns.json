@@ -1,0 +1,2956 @@
+[
+  {
+    "gender": "en",
+    "singular_indefinite": "en bog",
+    "singular_definite": "bogen",
+    "plural_indefinite": "bøger",
+    "plural_definite": "bøgerne",
+    "english": "book"
+  },
+  {
+    "danish": "hjemme",
+    "english": "home (state)",
+    "difficulty": "A1",
+    "singular_indefinite": "et hjem",
+    "singular_definite": "hjemmet",
+    "plural_indefinite": "hjem",
+    "plural_definite": "hjemmene",
+    "tags": [
+      "home",
+      "abstract"
+    ]
+  },
+  {
+    "danish": "køkken",
+    "english": "kitchen",
+    "difficulty": "A1",
+    "singular_indefinite": "et køkken",
+    "singular_definite": "køkkenet",
+    "plural_indefinite": "køkkener",
+    "plural_definite": "køkkenerne",
+    "tags": [
+      "home"
+    ]
+  },
+  {
+    "danish": "bad",
+    "english": "bathroom",
+    "difficulty": "A1",
+    "singular_indefinite": "et bad",
+    "singular_definite": "badet",
+    "plural_indefinite": "bade",
+    "plural_definite": "badene",
+    "tags": [
+      "home"
+    ]
+  },
+  {
+    "danish": "seng",
+    "english": "bed",
+    "difficulty": "A1",
+    "singular_indefinite": "en seng",
+    "singular_definite": "sengen",
+    "plural_indefinite": "senge",
+    "plural_definite": "sengene",
+    "tags": [
+      "home",
+      "furniture"
+    ]
+  },
+  {
+    "danish": "lampe",
+    "english": "lamp",
+    "difficulty": "A1",
+    "singular_indefinite": "en lampe",
+    "singular_definite": "lampen",
+    "plural_indefinite": "lamper",
+    "plural_definite": "lamperne",
+    "tags": [
+      "home",
+      "object"
+    ]
+  },
+  {
+    "danish": "computer",
+    "english": "computer",
+    "difficulty": "A1",
+    "singular_indefinite": "en computer",
+    "singular_definite": "computeren",
+    "plural_indefinite": "computere",
+    "plural_definite": "computerne",
+    "tags": [
+      "technology"
+    ]
+  },
+  {
+    "danish": "telefon",
+    "english": "phone",
+    "difficulty": "A1",
+    "singular_indefinite": "en telefon",
+    "singular_definite": "telefonen",
+    "plural_indefinite": "telefoner",
+    "plural_definite": "telefonerne",
+    "tags": [
+      "technology"
+    ]
+  },
+  {
+    "danish": "internet",
+    "english": "internet",
+    "difficulty": "A1",
+    "singular_indefinite": "internettet",
+    "singular_definite": "internettet",
+    "plural_indefinite": "-",
+    "plural_definite": "-",
+    "tags": [
+      "technology",
+      "abstract"
+    ]
+  },
+  {
+    "danish": "butik",
+    "english": "shop",
+    "difficulty": "A1",
+    "singular_indefinite": "en butik",
+    "singular_definite": "butikken",
+    "plural_indefinite": "butikker",
+    "plural_definite": "butikkerne",
+    "tags": [
+      "place",
+      "shopping"
+    ]
+  },
+  {
+    "danish": "supermarked",
+    "english": "supermarket",
+    "difficulty": "A1",
+    "singular_indefinite": "et supermarked",
+    "singular_definite": "supermarkedet",
+    "plural_indefinite": "supermarkeder",
+    "plural_definite": "supermarkederne",
+    "tags": [
+      "place",
+      "shopping",
+      "food"
+    ]
+  },
+  {
+    "danish": "bus",
+    "english": "bus",
+    "difficulty": "A1",
+    "singular_indefinite": "en bus",
+    "singular_definite": "bussen",
+    "plural_indefinite": "busser",
+    "plural_definite": "busserne",
+    "tags": [
+      "transport"
+    ]
+  },
+  {
+    "danish": "tog",
+    "english": "train",
+    "difficulty": "A1",
+    "singular_indefinite": "et tog",
+    "singular_definite": "toget",
+    "plural_indefinite": "tog",
+    "plural_definite": "togene",
+    "tags": [
+      "transport"
+    ]
+  },
+  {
+    "danish": "cykel",
+    "english": "bicycle",
+    "difficulty": "A1",
+    "singular_indefinite": "en cykel",
+    "singular_definite": "cyklen",
+    "plural_indefinite": "cykler",
+    "plural_definite": "cyklerne",
+    "tags": [
+      "transport"
+    ]
+  },
+  {
+    "danish": "regn",
+    "english": "rain",
+    "difficulty": "A1",
+    "singular_indefinite": "regn",
+    "singular_definite": "regnen",
+    "plural_indefinite": "-",
+    "plural_definite": "-",
+    "tags": [
+      "nature",
+      "weather"
+    ]
+  },
+  {
+    "danish": "sol",
+    "english": "sun",
+    "difficulty": "A1",
+    "singular_indefinite": "en sol",
+    "singular_definite": "solen",
+    "plural_indefinite": "sole",
+    "plural_definite": "solene",
+    "tags": [
+      "nature"
+    ]
+  },
+  {
+    "danish": "vind",
+    "english": "wind",
+    "difficulty": "A1",
+    "singular_indefinite": "vind",
+    "singular_definite": "vinden",
+    "plural_indefinite": "-",
+    "plural_definite": "-",
+    "tags": [
+      "nature",
+      "weather"
+    ]
+  },
+  {
+    "danish": "hund",
+    "english": "dog",
+    "difficulty": "A1",
+    "singular_indefinite": "en hund",
+    "singular_definite": "hunden",
+    "plural_indefinite": "hunde",
+    "plural_definite": "hundene",
+    "tags": [
+      "animals"
+    ]
+  },
+  {
+    "danish": "kat",
+    "english": "cat",
+    "difficulty": "A1",
+    "singular_indefinite": "en kat",
+    "singular_definite": "katten",
+    "plural_indefinite": "katte",
+    "plural_definite": "kattene",
+    "tags": [
+      "animals"
+    ]
+  },
+  {
+    "danish": "fugl",
+    "english": "bird",
+    "difficulty": "A1",
+    "singular_indefinite": "en fugl",
+    "singular_definite": "fuglen",
+    "plural_indefinite": "fugle",
+    "plural_definite": "fuglene",
+    "tags": [
+      "animals"
+    ]
+  },
+  {
+    "danish": "krop",
+    "english": "body",
+    "difficulty": "A1",
+    "singular_indefinite": "en krop",
+    "singular_definite": "kroppen",
+    "plural_indefinite": "kroppe",
+    "plural_definite": "kroppene",
+    "tags": [
+      "body"
+    ]
+  },
+  {
+    "danish": "hår",
+    "english": "hair",
+    "difficulty": "A1",
+    "singular_indefinite": "hår",
+    "singular_definite": "håret",
+    "plural_indefinite": "-",
+    "plural_definite": "-",
+    "tags": [
+      "body"
+    ]
+  },
+  {
+    "danish": "hud",
+    "english": "skin",
+    "difficulty": "A2",
+    "singular_indefinite": "hud",
+    "singular_definite": "huden",
+    "plural_indefinite": "-",
+    "plural_definite": "-",
+    "tags": [
+      "body"
+    ]
+  },
+  {
+    "danish": "idé",
+    "english": "idea",
+    "difficulty": "A2",
+    "singular_indefinite": "en idé",
+    "singular_definite": "idéen",
+    "plural_indefinite": "idéer",
+    "plural_definite": "idéerne",
+    "tags": [
+      "abstract"
+    ]
+  },
+  {
+    "danish": "plan",
+    "english": "plan",
+    "difficulty": "A2",
+    "singular_indefinite": "en plan",
+    "singular_definite": "planen",
+    "plural_indefinite": "planer",
+    "plural_definite": "planerne",
+    "tags": [
+      "abstract"
+    ]
+  },
+  {
+    "danish": "mål",
+    "english": "goal",
+    "difficulty": "A2",
+    "singular_indefinite": "et mål",
+    "singular_definite": "målet",
+    "plural_indefinite": "mål",
+    "plural_definite": "målene",
+    "tags": [
+      "abstract"
+    ]
+  },
+  {
+    "danish": "historie",
+    "english": "story",
+    "difficulty": "A2",
+    "singular_indefinite": "en historie",
+    "singular_definite": "historien",
+    "plural_indefinite": "historier",
+    "plural_definite": "historierne",
+    "tags": [
+      "communication"
+    ]
+  },
+  {
+    "danish": "besked",
+    "english": "message",
+    "difficulty": "A2",
+    "singular_indefinite": "en besked",
+    "singular_definite": "beskeden",
+    "plural_indefinite": "beskeder",
+    "plural_definite": "beskederne",
+    "tags": [
+      "communication"
+    ]
+  },
+  {
+    "danish": "ferie",
+    "english": "holiday",
+    "difficulty": "A1",
+    "singular_indefinite": "en ferie",
+    "singular_definite": "ferien",
+    "plural_indefinite": "ferier",
+    "plural_definite": "ferierne",
+    "tags": [
+      "leisure",
+      "time"
+    ]
+  },
+  {
+    "danish": "rejse",
+    "english": "trip",
+    "difficulty": "A1",
+    "singular_indefinite": "en rejse",
+    "singular_definite": "rejsen",
+    "plural_indefinite": "rejser",
+    "plural_definite": "rejserne",
+    "tags": [
+      "travel"
+    ]
+  },
+  {
+    "danish": "hotel",
+    "english": "hotel",
+    "difficulty": "A1",
+    "singular_indefinite": "et hotel",
+    "singular_definite": "hotellet",
+    "plural_indefinite": "hoteller",
+    "plural_definite": "hotellerne",
+    "tags": [
+      "travel",
+      "place"
+    ]
+  },
+  {
+    "danish": "hus",
+    "english": "house",
+    "difficulty": "A1",
+    "singular_indefinite": "et hus",
+    "singular_definite": "huset",
+    "plural_indefinite": "huse",
+    "plural_definite": "husene",
+    "tags": [
+      "home",
+      "object",
+      "basic"
+    ]
+  },
+  {
+    "danish": "bil",
+    "english": "car",
+    "difficulty": "A1",
+    "singular_indefinite": "en bil",
+    "singular_definite": "bilen",
+    "plural_indefinite": "biler",
+    "plural_definite": "bilerne",
+    "tags": [
+      "transport",
+      "object"
+    ]
+  },
+  {
+    "danish": "bord",
+    "english": "table",
+    "difficulty": "A1",
+    "singular_indefinite": "et bord",
+    "singular_definite": "bordet",
+    "plural_indefinite": "borde",
+    "plural_definite": "bordene",
+    "tags": [
+      "home",
+      "furniture"
+    ]
+  },
+  {
+    "danish": "stol",
+    "english": "chair",
+    "difficulty": "A1",
+    "singular_indefinite": "en stol",
+    "singular_definite": "stolen",
+    "plural_indefinite": "stole",
+    "plural_definite": "stolene",
+    "tags": [
+      "home",
+      "furniture"
+    ]
+  },
+  {
+    "danish": "mand",
+    "english": "man",
+    "difficulty": "A1",
+    "singular_indefinite": "en mand",
+    "singular_definite": "manden",
+    "plural_indefinite": "mænd",
+    "plural_definite": "mændene",
+    "tags": [
+      "people"
+    ]
+  },
+  {
+    "danish": "kvinde",
+    "english": "woman",
+    "difficulty": "A1",
+    "singular_indefinite": "en kvinde",
+    "singular_definite": "kvinden",
+    "plural_indefinite": "kvinder",
+    "plural_definite": "kvinderne",
+    "tags": [
+      "people"
+    ]
+  },
+  {
+    "danish": "barn",
+    "english": "child",
+    "difficulty": "A1",
+    "singular_indefinite": "et barn",
+    "singular_definite": "barnet",
+    "plural_indefinite": "børn",
+    "plural_definite": "børnene",
+    "tags": [
+      "people",
+      "family"
+    ]
+  },
+  {
+    "danish": "dag",
+    "english": "day",
+    "difficulty": "A1",
+    "singular_indefinite": "en dag",
+    "singular_definite": "dagen",
+    "plural_indefinite": "dage",
+    "plural_definite": "dagene",
+    "tags": [
+      "time"
+    ]
+  },
+  {
+    "danish": "år",
+    "english": "year",
+    "difficulty": "A1",
+    "singular_indefinite": "et år",
+    "singular_definite": "året",
+    "plural_indefinite": "år",
+    "plural_definite": "årene",
+    "tags": [
+      "time"
+    ]
+  },
+  {
+    "danish": "tid",
+    "english": "time",
+    "difficulty": "A1",
+    "singular_indefinite": "en tid",
+    "singular_definite": "tiden",
+    "plural_indefinite": "tider",
+    "plural_definite": "tiderne",
+    "tags": [
+      "abstract",
+      "time"
+    ]
+  },
+  {
+    "danish": "vej",
+    "english": "road",
+    "difficulty": "A1",
+    "singular_indefinite": "en vej",
+    "singular_definite": "vejen",
+    "plural_indefinite": "veje",
+    "plural_definite": "vejene",
+    "tags": [
+      "transport",
+      "place"
+    ]
+  },
+  {
+    "danish": "sted",
+    "english": "place",
+    "difficulty": "A1",
+    "singular_indefinite": "et sted",
+    "singular_definite": "stedet",
+    "plural_indefinite": "steder",
+    "plural_definite": "stederne",
+    "tags": [
+      "place"
+    ]
+  },
+  {
+    "danish": "arbejde",
+    "english": "work",
+    "difficulty": "A2",
+    "singular_indefinite": "et arbejde",
+    "singular_definite": "arbejdet",
+    "plural_indefinite": "arbejder",
+    "plural_definite": "arbejderne",
+    "tags": [
+      "work",
+      "abstract"
+    ]
+  },
+  {
+    "danish": "liv",
+    "english": "life",
+    "difficulty": "A2",
+    "singular_indefinite": "et liv",
+    "singular_definite": "livet",
+    "plural_indefinite": "liv",
+    "plural_definite": "livene",
+    "tags": [
+      "abstract"
+    ]
+  },
+  {
+    "danish": "verden",
+    "english": "world",
+    "difficulty": "A2",
+    "singular_indefinite": "en verden",
+    "singular_definite": "verdenen",
+    "plural_indefinite": "verdener",
+    "plural_definite": "verdenerne",
+    "tags": [
+      "place",
+      "abstract"
+    ]
+  },
+  {
+    "danish": "ting",
+    "english": "thing",
+    "difficulty": "A1",
+    "singular_indefinite": "en ting",
+    "singular_definite": "tingen",
+    "plural_indefinite": "ting",
+    "plural_definite": "tingene",
+    "tags": [
+      "generic"
+    ]
+  },
+  {
+    "danish": "problem",
+    "english": "problem",
+    "difficulty": "A2",
+    "singular_indefinite": "et problem",
+    "singular_definite": "problemet",
+    "plural_indefinite": "problemer",
+    "plural_definite": "problemerne",
+    "tags": [
+      "abstract"
+    ]
+  },
+  {
+    "danish": "spørgsmål",
+    "english": "question",
+    "difficulty": "A2",
+    "singular_indefinite": "et spørgsmål",
+    "singular_definite": "spørgsmålet",
+    "plural_indefinite": "spørgsmål",
+    "plural_definite": "spørgsmålene",
+    "tags": [
+      "communication"
+    ]
+  },
+  {
+    "danish": "svar",
+    "english": "answer",
+    "difficulty": "A2",
+    "singular_indefinite": "et svar",
+    "singular_definite": "svaret",
+    "plural_indefinite": "svar",
+    "plural_definite": "svarene",
+    "tags": [
+      "communication"
+    ]
+  },
+  {
+    "danish": "skov",
+    "english": "forest",
+    "difficulty": "A2",
+    "singular_indefinite": "en skov",
+    "singular_definite": "skoven",
+    "plural_indefinite": "skove",
+    "plural_definite": "skovene",
+    "tags": [
+      "nature",
+      "place"
+    ]
+  },
+  {
+    "danish": "strand",
+    "english": "beach",
+    "difficulty": "A2",
+    "singular_indefinite": "en strand",
+    "singular_definite": "stranden",
+    "plural_indefinite": "strande",
+    "plural_definite": "strandene",
+    "tags": [
+      "nature",
+      "place"
+    ]
+  },
+  {
+    "danish": "bjerg",
+    "english": "mountain",
+    "difficulty": "A2",
+    "singular_indefinite": "et bjerg",
+    "singular_definite": "bjerget",
+    "plural_indefinite": "bjerge",
+    "plural_definite": "bjergene",
+    "tags": [
+      "nature"
+    ]
+  },
+  {
+    "danish": "sø",
+    "english": "lake",
+    "difficulty": "A2",
+    "singular_indefinite": "en sø",
+    "singular_definite": "søen",
+    "plural_indefinite": "søer",
+    "plural_definite": "søerne",
+    "tags": [
+      "nature"
+    ]
+  },
+  {
+    "danish": "hav",
+    "english": "sea",
+    "difficulty": "A2",
+    "singular_indefinite": "et hav",
+    "singular_definite": "havet",
+    "plural_indefinite": "have",
+    "plural_definite": "havene",
+    "tags": [
+      "nature"
+    ]
+  },
+  {
+    "danish": "butikscenter",
+    "english": "shopping mall",
+    "difficulty": "B1",
+    "singular_indefinite": "et butikscenter",
+    "singular_definite": "butikscenteret",
+    "plural_indefinite": "butikscentre",
+    "plural_definite": "butikscentrene",
+    "tags": [
+      "shopping",
+      "place"
+    ]
+  },
+  {
+    "danish": "restaurant",
+    "english": "restaurant",
+    "difficulty": "A1",
+    "singular_indefinite": "en restaurant",
+    "singular_definite": "restauranten",
+    "plural_indefinite": "restauranter",
+    "plural_definite": "restauranterne",
+    "tags": [
+      "food",
+      "place"
+    ]
+  },
+  {
+    "danish": "menu",
+    "english": "menu",
+    "difficulty": "A1",
+    "singular_indefinite": "en menu",
+    "singular_definite": "menuen",
+    "plural_indefinite": "menuer",
+    "plural_definite": "menuerne",
+    "tags": [
+      "food"
+    ]
+  },
+  {
+    "danish": "ret",
+    "english": "dish (food)",
+    "difficulty": "A1",
+    "singular_indefinite": "en ret",
+    "singular_definite": "retten",
+    "plural_indefinite": "retter",
+    "plural_definite": "retterne",
+    "tags": [
+      "food"
+    ]
+  },
+  {
+    "danish": "smag",
+    "english": "taste",
+    "difficulty": "A2",
+    "singular_indefinite": "en smag",
+    "singular_definite": "smagen",
+    "plural_indefinite": "smage",
+    "plural_definite": "smagene",
+    "tags": [
+      "food",
+      "abstract"
+    ]
+  },
+  {
+    "danish": "film",
+    "english": "movie",
+    "difficulty": "A1",
+    "singular_indefinite": "en film",
+    "singular_definite": "filmen",
+    "plural_indefinite": "film",
+    "plural_definite": "filmene",
+    "tags": [
+      "media",
+      "leisure"
+    ]
+  },
+  {
+    "danish": "musik",
+    "english": "music",
+    "difficulty": "A1",
+    "singular_indefinite": "musik",
+    "singular_definite": "musikken",
+    "plural_indefinite": "-",
+    "plural_definite": "-",
+    "tags": [
+      "media"
+    ]
+  },
+  {
+    "danish": "sang",
+    "english": "song",
+    "difficulty": "A1",
+    "singular_indefinite": "en sang",
+    "singular_definite": "sangen",
+    "plural_indefinite": "sange",
+    "plural_definite": "sangene",
+    "tags": [
+      "media"
+    ]
+  },
+  {
+    "danish": "spil",
+    "english": "game",
+    "difficulty": "A1",
+    "singular_indefinite": "et spil",
+    "singular_definite": "spillet",
+    "plural_indefinite": "spil",
+    "plural_definite": "spillene",
+    "tags": [
+      "leisure"
+    ]
+  },
+  {
+    "danish": "sport",
+    "english": "sport",
+    "difficulty": "A1",
+    "singular_indefinite": "sport",
+    "singular_definite": "sporten",
+    "plural_indefinite": "sportsgrene",
+    "plural_definite": "sportsgrenene",
+    "tags": [
+      "leisure"
+    ]
+  },
+  {
+    "danish": "kærlighed",
+    "english": "love",
+    "difficulty": "A2",
+    "singular_indefinite": "kærlighed",
+    "singular_definite": "kærligheden",
+    "plural_indefinite": "-",
+    "plural_definite": "-",
+    "tags": [
+      "abstract",
+      "emotion"
+    ]
+  },
+  {
+    "danish": "glæde",
+    "english": "joy",
+    "difficulty": "A2",
+    "singular_indefinite": "glæde",
+    "singular_definite": "glæden",
+    "plural_indefinite": "-",
+    "plural_definite": "-",
+    "tags": [
+      "emotion"
+    ]
+  },
+  {
+    "danish": "sorg",
+    "english": "sorrow",
+    "difficulty": "B1",
+    "singular_indefinite": "sorg",
+    "singular_definite": "sorgen",
+    "plural_indefinite": "sorger",
+    "plural_definite": "sorgerne",
+    "tags": [
+      "emotion"
+    ]
+  },
+  {
+    "danish": "frygt",
+    "english": "fear",
+    "difficulty": "B1",
+    "singular_indefinite": "frygt",
+    "singular_definite": "frygten",
+    "plural_indefinite": "-",
+    "plural_definite": "-",
+    "tags": [
+      "emotion"
+    ]
+  },
+  {
+    "danish": "håb",
+    "english": "hope",
+    "difficulty": "A2",
+    "singular_indefinite": "et håb",
+    "singular_definite": "håbet",
+    "plural_indefinite": "håb",
+    "plural_definite": "håbene",
+    "tags": [
+      "abstract",
+      "emotion"
+    ]
+  },
+  {
+    "danish": "regel",
+    "english": "rule",
+    "difficulty": "A2",
+    "singular_indefinite": "en regel",
+    "singular_definite": "reglen",
+    "plural_indefinite": "regler",
+    "plural_definite": "reglerne",
+    "tags": [
+      "abstract"
+    ]
+  },
+  {
+    "danish": "lov",
+    "english": "law",
+    "difficulty": "A2",
+    "singular_indefinite": "en lov",
+    "singular_definite": "loven",
+    "plural_indefinite": "love",
+    "plural_definite": "lovene",
+    "tags": [
+      "society",
+      "politics"
+    ]
+  },
+  {
+    "danish": "retssystem",
+    "english": "legal system",
+    "difficulty": "B1",
+    "singular_indefinite": "et retssystem",
+    "singular_definite": "retssystemet",
+    "plural_indefinite": "retssystemer",
+    "plural_definite": "retssystemerne",
+    "tags": [
+      "society"
+    ]
+  },
+  {
+    "danish": "energi",
+    "english": "energy",
+    "difficulty": "A2",
+    "singular_indefinite": "energi",
+    "singular_definite": "energien",
+    "plural_indefinite": "-",
+    "plural_definite": "-",
+    "tags": [
+      "science"
+    ]
+  },
+  {
+    "danish": "kraft",
+    "english": "power/force",
+    "difficulty": "A2",
+    "singular_indefinite": "en kraft",
+    "singular_definite": "kraften",
+    "plural_indefinite": "kræfter",
+    "plural_definite": "kræfterne",
+    "tags": [
+      "science"
+    ]
+  },
+  {
+    "danish": "temperatur",
+    "english": "temperature",
+    "difficulty": "A2",
+    "singular_indefinite": "en temperatur",
+    "singular_definite": "temperaturen",
+    "plural_indefinite": "temperaturer",
+    "plural_definite": "temperaturerne",
+    "tags": [
+      "science"
+    ]
+  },
+  {
+    "danish": "billede",
+    "english": "picture",
+    "difficulty": "A1",
+    "singular_indefinite": "et billede",
+    "singular_definite": "billedet",
+    "plural_indefinite": "billeder",
+    "plural_definite": "billederne",
+    "tags": [
+      "media"
+    ]
+  },
+  {
+    "danish": "farve",
+    "english": "color",
+    "difficulty": "A1",
+    "singular_indefinite": "en farve",
+    "singular_definite": "farven",
+    "plural_indefinite": "farver",
+    "plural_definite": "farverne",
+    "tags": [
+      "basic"
+    ]
+  },
+  {
+    "danish": "form",
+    "english": "shape",
+    "difficulty": "A2",
+    "singular_indefinite": "en form",
+    "singular_definite": "formen",
+    "plural_indefinite": "former",
+    "plural_definite": "formerne",
+    "tags": [
+      "basic"
+    ]
+  },
+  {
+    "danish": "lys",
+    "english": "light",
+    "difficulty": "A1",
+    "singular_indefinite": "et lys",
+    "singular_definite": "lyset",
+    "plural_indefinite": "lys",
+    "plural_definite": "lysene",
+    "tags": [
+      "nature",
+      "basic"
+    ]
+  },
+  {
+    "danish": "mørke",
+    "english": "darkness",
+    "difficulty": "A2",
+    "singular_indefinite": "mørke",
+    "singular_definite": "mørket",
+    "plural_indefinite": "-",
+    "plural_definite": "-",
+    "tags": [
+      "abstract"
+    ]
+  },
+  {
+    "danish": "erfaring",
+    "english": "experience",
+    "difficulty": "B1",
+    "singular_indefinite": "en erfaring",
+    "singular_definite": "erfaringen",
+    "plural_indefinite": "erfaringer",
+    "plural_definite": "erfaringerne",
+    "tags": [
+      "abstract"
+    ]
+  },
+  {
+    "danish": "mulighed",
+    "english": "possibility",
+    "difficulty": "B1",
+    "singular_indefinite": "en mulighed",
+    "singular_definite": "muligheden",
+    "plural_indefinite": "muligheder",
+    "plural_definite": "mulighederne",
+    "tags": [
+      "abstract"
+    ]
+  },
+  {
+    "danish": "resultat",
+    "english": "result",
+    "difficulty": "A2",
+    "singular_indefinite": "et resultat",
+    "singular_definite": "resultatet",
+    "plural_indefinite": "resultater",
+    "plural_definite": "resultaterne",
+    "tags": [
+      "abstract"
+    ]
+  },
+  {
+    "danish": "forsøg",
+    "english": "attempt",
+    "difficulty": "B1",
+    "singular_indefinite": "et forsøg",
+    "singular_definite": "forsøget",
+    "plural_indefinite": "forsøg",
+    "plural_definite": "forsøgene",
+    "tags": [
+      "abstract"
+    ]
+  },
+  {
+    "danish": "fejl",
+    "english": "mistake",
+    "difficulty": "A2",
+    "singular_indefinite": "en fejl",
+    "singular_definite": "fejlen",
+    "plural_indefinite": "fejl",
+    "plural_definite": "fejlene",
+    "tags": [
+      "abstract"
+    ]
+  },
+  {
+    "danish": "valg",
+    "english": "choice/election",
+    "difficulty": "A2",
+    "singular_indefinite": "et valg",
+    "singular_definite": "valget",
+    "plural_indefinite": "valg",
+    "plural_definite": "valgene",
+    "tags": [
+      "abstract",
+      "politics"
+    ]
+  },
+  {
+    "danish": "stemning",
+    "english": "mood/atmosphere",
+    "difficulty": "B1",
+    "singular_indefinite": "en stemning",
+    "singular_definite": "stemningen",
+    "plural_indefinite": "stemninger",
+    "plural_definite": "stemningerne",
+    "tags": [
+      "abstract",
+      "emotion"
+    ]
+  },
+  {
+    "danish": "situation",
+    "english": "situation",
+    "difficulty": "A2",
+    "singular_indefinite": "en situation",
+    "singular_definite": "situationen",
+    "plural_indefinite": "situationer",
+    "plural_definite": "situationerne",
+    "tags": [
+      "abstract"
+    ]
+  },
+  {
+    "danish": "chance",
+    "english": "chance",
+    "difficulty": "A2",
+    "singular_indefinite": "en chance",
+    "singular_definite": "chancen",
+    "plural_indefinite": "chancer",
+    "plural_definite": "chancerne",
+    "tags": [
+      "abstract"
+    ]
+  },
+  {
+    "danish": "risiko",
+    "english": "risk",
+    "difficulty": "B1",
+    "singular_indefinite": "en risiko",
+    "singular_definite": "risikoen",
+    "plural_indefinite": "risici",
+    "plural_definite": "risiciene",
+    "tags": [
+      "abstract"
+    ]
+  },
+  {
+    "danish": "uddannelse",
+    "english": "education",
+    "difficulty": "A2",
+    "singular_indefinite": "en uddannelse",
+    "singular_definite": "uddannelsen",
+    "plural_indefinite": "uddannelser",
+    "plural_definite": "uddannelserne",
+    "tags": [
+      "education"
+    ]
+  },
+  {
+    "danish": "kursus",
+    "english": "course",
+    "difficulty": "A2",
+    "singular_indefinite": "et kursus",
+    "singular_definite": "kurset",
+    "plural_indefinite": "kurser",
+    "plural_definite": "kurserne",
+    "tags": [
+      "education"
+    ]
+  },
+  {
+    "danish": "eksamen",
+    "english": "exam",
+    "difficulty": "A1",
+    "singular_indefinite": "en eksamen",
+    "singular_definite": "eksamenen",
+    "plural_indefinite": "eksamener",
+    "plural_definite": "eksamenerne",
+    "tags": [
+      "education"
+    ]
+  },
+  {
+    "danish": "karakter",
+    "english": "grade",
+    "difficulty": "A2",
+    "singular_indefinite": "en karakter",
+    "singular_definite": "karakteren",
+    "plural_indefinite": "karakterer",
+    "plural_definite": "karaktererne",
+    "tags": [
+      "education"
+    ]
+  },
+  {
+    "danish": "viden",
+    "english": "knowledge",
+    "difficulty": "A2",
+    "singular_indefinite": "viden",
+    "singular_definite": "viden",
+    "plural_indefinite": "-",
+    "plural_definite": "-",
+    "tags": [
+      "abstract",
+      "education"
+    ]
+  },
+  {
+    "danish": "arbejdsplads",
+    "english": "workplace",
+    "difficulty": "A2",
+    "singular_indefinite": "en arbejdsplads",
+    "singular_definite": "arbejdspladsen",
+    "plural_indefinite": "arbejdspladser",
+    "plural_definite": "arbejdspladserne",
+    "tags": [
+      "work",
+      "place"
+    ]
+  },
+  {
+    "danish": "opgave",
+    "english": "task",
+    "difficulty": "A1",
+    "singular_indefinite": "en opgave",
+    "singular_definite": "opgaven",
+    "plural_indefinite": "opgaver",
+    "plural_definite": "opgaverne",
+    "tags": [
+      "work"
+    ]
+  },
+  {
+    "danish": "projekt",
+    "english": "project",
+    "difficulty": "A1",
+    "singular_indefinite": "et projekt",
+    "singular_definite": "projektet",
+    "plural_indefinite": "projekter",
+    "plural_definite": "projekterne",
+    "tags": [
+      "work"
+    ]
+  },
+  {
+    "danish": "ansvar",
+    "english": "responsibility",
+    "difficulty": "A2",
+    "singular_indefinite": "et ansvar",
+    "singular_definite": "ansvaret",
+    "plural_indefinite": "ansvar",
+    "plural_definite": "ansvarene",
+    "tags": [
+      "work",
+      "abstract"
+    ]
+  },
+  {
+    "danish": "leder",
+    "english": "leader",
+    "difficulty": "A2",
+    "singular_indefinite": "en leder",
+    "singular_definite": "lederen",
+    "plural_indefinite": "ledere",
+    "plural_definite": "lederne",
+    "tags": [
+      "work",
+      "people"
+    ]
+  },
+  {
+    "danish": "udvikling",
+    "english": "development",
+    "difficulty": "B1",
+    "singular_indefinite": "en udvikling",
+    "singular_definite": "udviklingen",
+    "plural_indefinite": "udviklinger",
+    "plural_definite": "udviklingerne",
+    "tags": [
+      "abstract"
+    ]
+  },
+  {
+    "danish": "forandring",
+    "english": "change",
+    "difficulty": "B1",
+    "singular_indefinite": "en forandring",
+    "singular_definite": "forandringen",
+    "plural_indefinite": "forandringer",
+    "plural_definite": "forandringerne",
+    "tags": [
+      "abstract"
+    ]
+  },
+  {
+    "danish": "forbedring",
+    "english": "improvement",
+    "difficulty": "B1",
+    "singular_indefinite": "en forbedring",
+    "singular_definite": "forbedringen",
+    "plural_indefinite": "forbedringer",
+    "plural_definite": "forbedringerne",
+    "tags": [
+      "abstract"
+    ]
+  },
+  {
+    "danish": "løsning",
+    "english": "solution",
+    "difficulty": "A2",
+    "singular_indefinite": "en løsning",
+    "singular_definite": "løsningen",
+    "plural_indefinite": "løsninger",
+    "plural_definite": "løsningerne",
+    "tags": [
+      "abstract"
+    ]
+  },
+  {
+    "danish": "beslutning",
+    "english": "decision",
+    "difficulty": "A2",
+    "singular_indefinite": "en beslutning",
+    "singular_definite": "beslutningen",
+    "plural_indefinite": "beslutninger",
+    "plural_definite": "beslutningerne",
+    "tags": [
+      "abstract"
+    ]
+  },
+  {
+    "danish": "artikel",
+    "english": "article",
+    "difficulty": "A2",
+    "singular_indefinite": "en artikel",
+    "singular_definite": "artiklen",
+    "plural_indefinite": "artikler",
+    "plural_definite": "artiklerne",
+    "tags": [
+      "media"
+    ]
+  },
+  {
+    "danish": "avis",
+    "english": "newspaper",
+    "difficulty": "A1",
+    "singular_indefinite": "en avis",
+    "singular_definite": "avisen",
+    "plural_indefinite": "aviser",
+    "plural_definite": "aviserne",
+    "tags": [
+      "media"
+    ]
+  },
+  {
+    "danish": "nyhed",
+    "english": "news item",
+    "difficulty": "A1",
+    "singular_indefinite": "en nyhed",
+    "singular_definite": "nyheden",
+    "plural_indefinite": "nyheder",
+    "plural_definite": "nyhederne",
+    "tags": [
+      "media"
+    ]
+  },
+  {
+    "danish": "medie",
+    "english": "media",
+    "difficulty": "A2",
+    "singular_indefinite": "et medie",
+    "singular_definite": "mediet",
+    "plural_indefinite": "medier",
+    "plural_definite": "medierne",
+    "tags": [
+      "media"
+    ]
+  },
+  {
+    "danish": "sundhed",
+    "english": "health",
+    "difficulty": "A2",
+    "singular_indefinite": "sundhed",
+    "singular_definite": "sundheden",
+    "plural_indefinite": "-",
+    "plural_definite": "-",
+    "tags": [
+      "health"
+    ]
+  },
+  {
+    "danish": "sygdom",
+    "english": "disease",
+    "difficulty": "A2",
+    "singular_indefinite": "en sygdom",
+    "singular_definite": "sygdommen",
+    "plural_indefinite": "sygdomme",
+    "plural_definite": "sygdommene",
+    "tags": [
+      "health"
+    ]
+  },
+  {
+    "danish": "læge",
+    "english": "doctor",
+    "difficulty": "A1",
+    "singular_indefinite": "en læge",
+    "singular_definite": "lægen",
+    "plural_indefinite": "læger",
+    "plural_definite": "lægerne",
+    "tags": [
+      "health",
+      "people"
+    ]
+  },
+  {
+    "danish": "patient",
+    "english": "patient",
+    "difficulty": "A1",
+    "singular_indefinite": "en patient",
+    "singular_definite": "patienten",
+    "plural_indefinite": "patienter",
+    "plural_definite": "patienterne",
+    "tags": [
+      "health",
+      "people"
+    ]
+  },
+  {
+    "danish": "analyse",
+    "english": "analysis",
+    "difficulty": "B1",
+    "singular_indefinite": "en analyse",
+    "singular_definite": "analysen",
+    "plural_indefinite": "analyser",
+    "plural_definite": "analyserne",
+    "tags": [
+      "academic",
+      "abstract"
+    ]
+  },
+  {
+    "danish": "metode",
+    "english": "method",
+    "difficulty": "B1",
+    "singular_indefinite": "en metode",
+    "singular_definite": "metoden",
+    "plural_indefinite": "metoder",
+    "plural_definite": "metoderne",
+    "tags": [
+      "academic"
+    ]
+  },
+  {
+    "danish": "teori",
+    "english": "theory",
+    "difficulty": "B1",
+    "singular_indefinite": "en teori",
+    "singular_definite": "teorien",
+    "plural_indefinite": "teorier",
+    "plural_definite": "teorierne",
+    "tags": [
+      "academic"
+    ]
+  },
+  {
+    "danish": "model",
+    "english": "model",
+    "difficulty": "B1",
+    "singular_indefinite": "en model",
+    "singular_definite": "modellen",
+    "plural_indefinite": "modeller",
+    "plural_definite": "modellerne",
+    "tags": [
+      "academic"
+    ]
+  },
+  {
+    "danish": "data",
+    "english": "data",
+    "difficulty": "B1",
+    "singular_indefinite": "data",
+    "singular_definite": "dataene",
+    "plural_indefinite": "-",
+    "plural_definite": "-",
+    "tags": [
+      "technology",
+      "academic"
+    ]
+  },
+  {
+    "danish": "forskning",
+    "english": "research",
+    "difficulty": "B1",
+    "singular_indefinite": "forskning",
+    "singular_definite": "forskningen",
+    "plural_indefinite": "-",
+    "plural_definite": "-",
+    "tags": [
+      "academic"
+    ]
+  },
+  {
+    "danish": "rapport",
+    "english": "report",
+    "difficulty": "A2",
+    "singular_indefinite": "en rapport",
+    "singular_definite": "rapporten",
+    "plural_indefinite": "rapporter",
+    "plural_definite": "rapporterne",
+    "tags": [
+      "work",
+      "academic"
+    ]
+  },
+  {
+    "danish": "konklusion",
+    "english": "conclusion",
+    "difficulty": "B1",
+    "singular_indefinite": "en konklusion",
+    "singular_definite": "konklusionen",
+    "plural_indefinite": "konklusioner",
+    "plural_definite": "konklusionerne",
+    "tags": [
+      "academic"
+    ]
+  },
+  {
+    "danish": "argument",
+    "english": "argument",
+    "difficulty": "B1",
+    "singular_indefinite": "et argument",
+    "singular_definite": "argumentet",
+    "plural_indefinite": "argumenter",
+    "plural_definite": "argumenterne",
+    "tags": [
+      "communication",
+      "academic"
+    ]
+  },
+  {
+    "danish": "diskussion",
+    "english": "discussion",
+    "difficulty": "B1",
+    "singular_indefinite": "en diskussion",
+    "singular_definite": "diskussionen",
+    "plural_indefinite": "diskussioner",
+    "plural_definite": "diskussionerne",
+    "tags": [
+      "communication"
+    ]
+  },
+  {
+    "danish": "organisation",
+    "english": "organization",
+    "difficulty": "A2",
+    "singular_indefinite": "en organisation",
+    "singular_definite": "organisationen",
+    "plural_indefinite": "organisationer",
+    "plural_definite": "organisationerne",
+    "tags": [
+      "society",
+      "work"
+    ]
+  },
+  {
+    "danish": "institution",
+    "english": "institution",
+    "difficulty": "B1",
+    "singular_indefinite": "en institution",
+    "singular_definite": "institutionen",
+    "plural_indefinite": "institutioner",
+    "plural_definite": "institutionerne",
+    "tags": [
+      "society"
+    ]
+  },
+  {
+    "danish": "myndighed",
+    "english": "authority",
+    "difficulty": "B2",
+    "singular_indefinite": "en myndighed",
+    "singular_definite": "myndigheden",
+    "plural_indefinite": "myndigheder",
+    "plural_definite": "myndighederne",
+    "tags": [
+      "society",
+      "politics"
+    ]
+  },
+  {
+    "danish": "system",
+    "english": "system",
+    "difficulty": "A2",
+    "singular_indefinite": "et system",
+    "singular_definite": "systemet",
+    "plural_indefinite": "systemer",
+    "plural_definite": "systemerne",
+    "tags": [
+      "technology",
+      "abstract"
+    ]
+  },
+  {
+    "danish": "økonomi",
+    "english": "economy",
+    "difficulty": "A2",
+    "singular_indefinite": "økonomi",
+    "singular_definite": "økonomien",
+    "plural_indefinite": "-",
+    "plural_definite": "-",
+    "tags": [
+      "economy"
+    ]
+  },
+  {
+    "danish": "budget",
+    "english": "budget",
+    "difficulty": "A2",
+    "singular_indefinite": "et budget",
+    "singular_definite": "budgettet",
+    "plural_indefinite": "budgetter",
+    "plural_definite": "budgetterne",
+    "tags": [
+      "economy"
+    ]
+  },
+  {
+    "danish": "indtægt",
+    "english": "income",
+    "difficulty": "B1",
+    "singular_indefinite": "en indtægt",
+    "singular_definite": "indtægten",
+    "plural_indefinite": "indtægter",
+    "plural_definite": "indtægterne",
+    "tags": [
+      "economy"
+    ]
+  },
+  {
+    "danish": "udgift",
+    "english": "expense",
+    "difficulty": "B1",
+    "singular_indefinite": "en udgift",
+    "singular_definite": "udgiften",
+    "plural_indefinite": "udgifter",
+    "plural_definite": "udgifterne",
+    "tags": [
+      "economy"
+    ]
+  },
+  {
+    "danish": "investering",
+    "english": "investment",
+    "difficulty": "B1",
+    "singular_indefinite": "en investering",
+    "singular_definite": "investeringen",
+    "plural_indefinite": "investeringer",
+    "plural_definite": "investeringerne",
+    "tags": [
+      "economy"
+    ]
+  },
+  {
+    "danish": "miljø",
+    "english": "environment",
+    "difficulty": "A2",
+    "singular_indefinite": "et miljø",
+    "singular_definite": "miljøet",
+    "plural_indefinite": "miljøer",
+    "plural_definite": "miljøerne",
+    "tags": [
+      "nature"
+    ]
+  },
+  {
+    "danish": "klima",
+    "english": "climate",
+    "difficulty": "A2",
+    "singular_indefinite": "et klima",
+    "singular_definite": "klimaet",
+    "plural_indefinite": "klimaer",
+    "plural_definite": "klimaerne",
+    "tags": [
+      "nature"
+    ]
+  },
+  {
+    "danish": "forurening",
+    "english": "pollution",
+    "difficulty": "B1",
+    "singular_indefinite": "forurening",
+    "singular_definite": "forureningen",
+    "plural_indefinite": "-",
+    "plural_definite": "-",
+    "tags": [
+      "nature"
+    ]
+  },
+  {
+    "danish": "ressource",
+    "english": "resource",
+    "difficulty": "B1",
+    "singular_indefinite": "en ressource",
+    "singular_definite": "ressourcen",
+    "plural_indefinite": "ressourcer",
+    "plural_definite": "ressourcerne",
+    "tags": [
+      "nature",
+      "economy"
+    ]
+  },
+  {
+    "danish": "teknologi",
+    "english": "technology",
+    "difficulty": "A2",
+    "singular_indefinite": "teknologi",
+    "singular_definite": "teknologien",
+    "plural_indefinite": "-",
+    "plural_definite": "-",
+    "tags": [
+      "technology"
+    ]
+  },
+  {
+    "danish": "software",
+    "english": "software",
+    "difficulty": "A2",
+    "singular_indefinite": "software",
+    "singular_definite": "softwaren",
+    "plural_indefinite": "-",
+    "plural_definite": "-",
+    "tags": [
+      "technology"
+    ]
+  },
+  {
+    "danish": "program",
+    "english": "program",
+    "difficulty": "A1",
+    "singular_indefinite": "et program",
+    "singular_definite": "programmet",
+    "plural_indefinite": "programmer",
+    "plural_definite": "programmerne",
+    "tags": [
+      "technology"
+    ]
+  },
+  {
+    "danish": "bruger",
+    "english": "user",
+    "difficulty": "A1",
+    "singular_indefinite": "en bruger",
+    "singular_definite": "brugeren",
+    "plural_indefinite": "brugere",
+    "plural_definite": "brugerne",
+    "tags": [
+      "technology",
+      "people"
+    ]
+  },
+  {
+    "danish": "rettighed",
+    "english": "right (legal)",
+    "difficulty": "B1",
+    "singular_indefinite": "en rettighed",
+    "singular_definite": "rettigheden",
+    "plural_indefinite": "rettigheder",
+    "plural_definite": "rettighederne",
+    "tags": [
+      "society",
+      "law"
+    ]
+  },
+  {
+    "danish": "pligt",
+    "english": "duty",
+    "difficulty": "B1",
+    "singular_indefinite": "en pligt",
+    "singular_definite": "pligten",
+    "plural_indefinite": "pligter",
+    "plural_definite": "pligterne",
+    "tags": [
+      "society"
+    ]
+  },
+  {
+    "danish": "frihed",
+    "english": "freedom",
+    "difficulty": "B1",
+    "singular_indefinite": "frihed",
+    "singular_definite": "friheden",
+    "plural_indefinite": "friheder",
+    "plural_definite": "frihederne",
+    "tags": [
+      "abstract",
+      "society"
+    ]
+  },
+  {
+    "danish": "kultur",
+    "english": "culture",
+    "difficulty": "A2",
+    "singular_indefinite": "en kultur",
+    "singular_definite": "kulturen",
+    "plural_indefinite": "kulturer",
+    "plural_definite": "kulturerne",
+    "tags": [
+      "society"
+    ]
+  },
+  {
+    "danish": "tradition",
+    "english": "tradition",
+    "difficulty": "A2",
+    "singular_indefinite": "en tradition",
+    "singular_definite": "traditionen",
+    "plural_indefinite": "traditioner",
+    "plural_definite": "traditionerne",
+    "tags": [
+      "society"
+    ]
+  },
+  {
+    "danish": "religion",
+    "english": "religion",
+    "difficulty": "A2",
+    "singular_indefinite": "en religion",
+    "singular_definite": "religionen",
+    "plural_indefinite": "religioner",
+    "plural_definite": "religionerne",
+    "tags": [
+      "society"
+    ]
+  },
+  {
+    "danish": "sammenhæng",
+    "english": "context/connection",
+    "difficulty": "B2",
+    "singular_indefinite": "en sammenhæng",
+    "singular_definite": "sammenhængen",
+    "plural_indefinite": "sammenhænge",
+    "plural_definite": "sammenhængene",
+    "tags": [
+      "abstract"
+    ]
+  },
+  {
+    "danish": "forhold",
+    "english": "condition/relationship",
+    "difficulty": "B2",
+    "singular_indefinite": "et forhold",
+    "singular_definite": "forholdet",
+    "plural_indefinite": "forhold",
+    "plural_definite": "forholdene",
+    "tags": [
+      "abstract",
+      "social"
+    ]
+  },
+  {
+    "danish": "indhold",
+    "english": "content",
+    "difficulty": "B1",
+    "singular_indefinite": "et indhold",
+    "singular_definite": "indholdet",
+    "plural_indefinite": "-",
+    "plural_definite": "-",
+    "tags": [
+      "abstract",
+      "media"
+    ]
+  },
+  {
+    "danish": "omfang",
+    "english": "extent/scope",
+    "difficulty": "B2",
+    "singular_indefinite": "et omfang",
+    "singular_definite": "omfanget",
+    "plural_indefinite": "-",
+    "plural_definite": "-",
+    "tags": [
+      "abstract"
+    ]
+  },
+  {
+    "danish": "betydning",
+    "english": "meaning/significance",
+    "difficulty": "B1",
+    "singular_indefinite": "en betydning",
+    "singular_definite": "betydningen",
+    "plural_indefinite": "betydninger",
+    "plural_definite": "betydningerne",
+    "tags": [
+      "language",
+      "abstract"
+    ]
+  },
+  {
+    "danish": "sprogbrug",
+    "english": "language use",
+    "difficulty": "B2",
+    "singular_indefinite": "en sprogbrug",
+    "singular_definite": "sprogbrugen",
+    "plural_indefinite": "-",
+    "plural_definite": "-",
+    "tags": [
+      "language"
+    ]
+  },
+  {
+    "danish": "udtryk",
+    "english": "expression",
+    "difficulty": "B1",
+    "singular_indefinite": "et udtryk",
+    "singular_definite": "udtrykket",
+    "plural_indefinite": "udtryk",
+    "plural_definite": "udtrykkene",
+    "tags": [
+      "language"
+    ]
+  },
+  {
+    "danish": "begreb",
+    "english": "concept",
+    "difficulty": "B2",
+    "singular_indefinite": "et begreb",
+    "singular_definite": "begrebet",
+    "plural_indefinite": "begreber",
+    "plural_definite": "begreberne",
+    "tags": [
+      "academic",
+      "abstract"
+    ]
+  },
+  {
+    "danish": "definition",
+    "english": "definition",
+    "difficulty": "B1",
+    "singular_indefinite": "en definition",
+    "singular_definite": "definitionen",
+    "plural_indefinite": "definitioner",
+    "plural_definite": "definitionerne",
+    "tags": [
+      "academic"
+    ]
+  },
+  {
+    "danish": "ledergruppe",
+    "english": "management team",
+    "difficulty": "B2",
+    "singular_indefinite": "en ledergruppe",
+    "singular_definite": "ledergruppen",
+    "plural_indefinite": "ledergrupper",
+    "plural_definite": "ledergrupperne",
+    "tags": [
+      "work"
+    ]
+  },
+  {
+    "danish": "arbejdskraft",
+    "english": "workforce",
+    "difficulty": "B2",
+    "singular_indefinite": "arbejdskraft",
+    "singular_definite": "arbejdskraften",
+    "plural_indefinite": "-",
+    "plural_definite": "-",
+    "tags": [
+      "economy",
+      "work"
+    ]
+  },
+  {
+    "danish": "ansættelse",
+    "english": "employment",
+    "difficulty": "B1",
+    "singular_indefinite": "en ansættelse",
+    "singular_definite": "ansættelsen",
+    "plural_indefinite": "ansættelser",
+    "plural_definite": "ansættelserne",
+    "tags": [
+      "work"
+    ]
+  },
+  {
+    "danish": "opsigelse",
+    "english": "termination/resignation",
+    "difficulty": "B2",
+    "singular_indefinite": "en opsigelse",
+    "singular_definite": "opsigelsen",
+    "plural_indefinite": "opsigelser",
+    "plural_definite": "opsigelserne",
+    "tags": [
+      "work"
+    ]
+  },
+  {
+    "danish": "borgerrettighed",
+    "english": "civil right",
+    "difficulty": "B2",
+    "singular_indefinite": "en borgerrettighed",
+    "singular_definite": "borgerrettigheden",
+    "plural_indefinite": "borgerrettigheder",
+    "plural_definite": "borgerrettighederne",
+    "tags": [
+      "law",
+      "society"
+    ]
+  },
+  {
+    "danish": "lovgivning",
+    "english": "legislation",
+    "difficulty": "B2",
+    "singular_indefinite": "lovgivning",
+    "singular_definite": "lovgivningen",
+    "plural_indefinite": "-",
+    "plural_definite": "-",
+    "tags": [
+      "law"
+    ]
+  },
+  {
+    "danish": "domstol",
+    "english": "court of law",
+    "difficulty": "B2",
+    "singular_indefinite": "en domstol",
+    "singular_definite": "domstolen",
+    "plural_indefinite": "domstole",
+    "plural_definite": "domstolene",
+    "tags": [
+      "law"
+    ]
+  },
+  {
+    "danish": "befolkning",
+    "english": "population",
+    "difficulty": "A2",
+    "singular_indefinite": "en befolkning",
+    "singular_definite": "befolkningen",
+    "plural_indefinite": "befolkninger",
+    "plural_definite": "befolkningerne",
+    "tags": [
+      "society"
+    ]
+  },
+  {
+    "danish": "indvandring",
+    "english": "immigration",
+    "difficulty": "B1",
+    "singular_indefinite": "indvandring",
+    "singular_definite": "indvandringen",
+    "plural_indefinite": "-",
+    "plural_definite": "-",
+    "tags": [
+      "society"
+    ]
+  },
+  {
+    "danish": "integration",
+    "english": "integration",
+    "difficulty": "B1",
+    "singular_indefinite": "integration",
+    "singular_definite": "integrationen",
+    "plural_indefinite": "-",
+    "plural_definite": "-",
+    "tags": [
+      "society"
+    ]
+  },
+  {
+    "danish": "digitalisering",
+    "english": "digitalization",
+    "difficulty": "B2",
+    "singular_indefinite": "digitalisering",
+    "singular_definite": "digitaliseringen",
+    "plural_indefinite": "-",
+    "plural_definite": "-",
+    "tags": [
+      "technology"
+    ]
+  },
+  {
+    "danish": "datasikkerhed",
+    "english": "data security",
+    "difficulty": "B2",
+    "singular_indefinite": "datasikkerhed",
+    "singular_definite": "datasikkerheden",
+    "plural_indefinite": "-",
+    "plural_definite": "-",
+    "tags": [
+      "technology"
+    ]
+  },
+  {
+    "danish": "netværk",
+    "english": "network",
+    "difficulty": "A2",
+    "singular_indefinite": "et netværk",
+    "singular_definite": "netværket",
+    "plural_indefinite": "netværk",
+    "plural_definite": "netværkene",
+    "tags": [
+      "technology"
+    ]
+  },
+  {
+    "danish": "bæredygtighed",
+    "english": "sustainability",
+    "difficulty": "B2",
+    "singular_indefinite": "bæredygtighed",
+    "singular_definite": "bæredygtigheden",
+    "plural_indefinite": "-",
+    "plural_definite": "-",
+    "tags": [
+      "environment"
+    ]
+  },
+  {
+    "danish": "energiforbrug",
+    "english": "energy consumption",
+    "difficulty": "B2",
+    "singular_indefinite": "et energiforbrug",
+    "singular_definite": "energiforbruget",
+    "plural_indefinite": "-",
+    "plural_definite": "-",
+    "tags": [
+      "environment"
+    ]
+  },
+  {
+    "danish": "affald",
+    "english": "waste",
+    "difficulty": "A2",
+    "singular_indefinite": "affald",
+    "singular_definite": "affaldet",
+    "plural_indefinite": "-",
+    "plural_definite": "-",
+    "tags": [
+      "environment"
+    ]
+  },
+  {
+    "danish": "identitet",
+    "english": "identity",
+    "difficulty": "B1",
+    "singular_indefinite": "en identitet",
+    "singular_definite": "identiteten",
+    "plural_indefinite": "identiteter",
+    "plural_definite": "identiteterne",
+    "tags": [
+      "abstract"
+    ]
+  },
+  {
+    "danish": "selvforståelse",
+    "english": "self-understanding",
+    "difficulty": "C1",
+    "singular_indefinite": "en selvforståelse",
+    "singular_definite": "selvforståelsen",
+    "plural_indefinite": "selvforståelser",
+    "plural_definite": "selvforståelserne",
+    "tags": [
+      "abstract"
+    ]
+  },
+  {
+    "danish": "holdning",
+    "english": "attitude",
+    "difficulty": "A2",
+    "singular_indefinite": "en holdning",
+    "singular_definite": "holdningen",
+    "plural_indefinite": "holdninger",
+    "plural_definite": "holdningerne",
+    "tags": [
+      "abstract"
+    ]
+  },
+  {
+    "danish": "samarbejde",
+    "english": "cooperation",
+    "difficulty": "A2",
+    "singular_indefinite": "et samarbejde",
+    "singular_definite": "samarbejdet",
+    "plural_indefinite": "samarbejder",
+    "plural_definite": "samarbejderne",
+    "tags": [
+      "work",
+      "social"
+    ]
+  },
+  {
+    "danish": "konflikt",
+    "english": "conflict",
+    "difficulty": "A2",
+    "singular_indefinite": "en konflikt",
+    "singular_definite": "konflikten",
+    "plural_indefinite": "konflikter",
+    "plural_definite": "konflikterne",
+    "tags": [
+      "social"
+    ]
+  },
+  {
+    "danish": "forhandling",
+    "english": "negotiation",
+    "difficulty": "B2",
+    "singular_indefinite": "en forhandling",
+    "singular_definite": "forhandlingen",
+    "plural_indefinite": "forhandlinger",
+    "plural_definite": "forhandlingerne",
+    "tags": [
+      "work",
+      "communication"
+    ]
+  },
+  {
+    "danish": "forudsætning",
+    "english": "prerequisite/assumption",
+    "difficulty": "B2",
+    "singular_indefinite": "en forudsætning",
+    "singular_definite": "forudsætningen",
+    "plural_indefinite": "forudsætninger",
+    "plural_definite": "forudsætningerne",
+    "tags": [
+      "abstract",
+      "academic"
+    ]
+  },
+  {
+    "danish": "antagelse",
+    "english": "assumption",
+    "difficulty": "B2",
+    "singular_indefinite": "en antagelse",
+    "singular_definite": "antagelsen",
+    "plural_indefinite": "antagelser",
+    "plural_definite": "antagelserne",
+    "tags": [
+      "academic",
+      "abstract"
+    ]
+  },
+  {
+    "danish": "vurdering",
+    "english": "assessment",
+    "difficulty": "B1",
+    "singular_indefinite": "en vurdering",
+    "singular_definite": "vurderingen",
+    "plural_indefinite": "vurderinger",
+    "plural_definite": "vurderingerne",
+    "tags": [
+      "academic"
+    ]
+  },
+  {
+    "danish": "fortolkning",
+    "english": "interpretation",
+    "difficulty": "B2",
+    "singular_indefinite": "en fortolkning",
+    "singular_definite": "fortolkningen",
+    "plural_indefinite": "fortolkninger",
+    "plural_definite": "fortolkningerne",
+    "tags": [
+      "academic",
+      "language"
+    ]
+  },
+  {
+    "danish": "perspektiv",
+    "english": "perspective",
+    "difficulty": "B2",
+    "singular_indefinite": "et perspektiv",
+    "singular_definite": "perspektivet",
+    "plural_indefinite": "perspektiver",
+    "plural_definite": "perspektiverne",
+    "tags": [
+      "abstract"
+    ]
+  },
+  {
+    "danish": "struktur",
+    "english": "structure",
+    "difficulty": "B1",
+    "singular_indefinite": "en struktur",
+    "singular_definite": "strukturen",
+    "plural_indefinite": "strukturer",
+    "plural_definite": "strukturerne",
+    "tags": [
+      "abstract"
+    ]
+  },
+  {
+    "danish": "funktion",
+    "english": "function",
+    "difficulty": "B1",
+    "singular_indefinite": "en funktion",
+    "singular_definite": "funktionen",
+    "plural_indefinite": "funktioner",
+    "plural_definite": "funktionerne",
+    "tags": [
+      "academic",
+      "technology"
+    ]
+  },
+  {
+    "danish": "proces",
+    "english": "process",
+    "difficulty": "A2",
+    "singular_indefinite": "en proces",
+    "singular_definite": "processen",
+    "plural_indefinite": "processer",
+    "plural_definite": "processerne",
+    "tags": [
+      "abstract"
+    ]
+  },
+  {
+    "danish": "mekanisme",
+    "english": "mechanism",
+    "difficulty": "B2",
+    "singular_indefinite": "en mekanisme",
+    "singular_definite": "mekanismen",
+    "plural_indefinite": "mekanismer",
+    "plural_definite": "mekanismerne",
+    "tags": [
+      "academic"
+    ]
+  },
+  {
+    "danish": "strategi",
+    "english": "strategy",
+    "difficulty": "A2",
+    "singular_indefinite": "en strategi",
+    "singular_definite": "strategien",
+    "plural_indefinite": "strategier",
+    "plural_definite": "strategierne",
+    "tags": [
+      "work",
+      "business"
+    ]
+  },
+  {
+    "danish": "målsætning",
+    "english": "objective/goal setting",
+    "difficulty": "B1",
+    "singular_indefinite": "en målsætning",
+    "singular_definite": "målsætningen",
+    "plural_indefinite": "målsætninger",
+    "plural_definite": "målsætningerne",
+    "tags": [
+      "work"
+    ]
+  },
+  {
+    "danish": "ledelse",
+    "english": "management",
+    "difficulty": "A2",
+    "singular_indefinite": "en ledelse",
+    "singular_definite": "ledelsen",
+    "plural_indefinite": "ledelser",
+    "plural_definite": "ledelserne",
+    "tags": [
+      "work"
+    ]
+  },
+  {
+    "danish": "organisationstruktur",
+    "english": "organizational structure",
+    "difficulty": "B2",
+    "singular_indefinite": "en organisationsstruktur",
+    "singular_definite": "organisationsstrukturen",
+    "plural_indefinite": "organisationsstrukturer",
+    "plural_definite": "organisationsstrukturerne",
+    "tags": [
+      "business"
+    ]
+  },
+  {
+    "danish": "globalisering",
+    "english": "globalization",
+    "difficulty": "B2",
+    "singular_indefinite": "globalisering",
+    "singular_definite": "globaliseringen",
+    "plural_indefinite": "-",
+    "plural_definite": "-",
+    "tags": [
+      "society"
+    ]
+  },
+  {
+    "danish": "urbanisering",
+    "english": "urbanization",
+    "difficulty": "B2",
+    "singular_indefinite": "urbanisering",
+    "singular_definite": "urbaniseringen",
+    "plural_indefinite": "-",
+    "plural_definite": "-",
+    "tags": [
+      "society"
+    ]
+  },
+  {
+    "danish": "arbejdsløshed",
+    "english": "unemployment",
+    "difficulty": "B1",
+    "singular_indefinite": "arbejdsløshed",
+    "singular_definite": "arbejdsløsheden",
+    "plural_indefinite": "-",
+    "plural_definite": "-",
+    "tags": [
+      "economy",
+      "society"
+    ]
+  },
+  {
+    "danish": "innovation",
+    "english": "innovation",
+    "difficulty": "B1",
+    "singular_indefinite": "innovation",
+    "singular_definite": "innovationen",
+    "plural_indefinite": "innovationer",
+    "plural_definite": "innovationerne",
+    "tags": [
+      "business",
+      "technology"
+    ]
+  },
+  {
+    "danish": "iværksætter",
+    "english": "entrepreneur",
+    "difficulty": "B1",
+    "singular_indefinite": "en iværksætter",
+    "singular_definite": "iværksætteren",
+    "plural_indefinite": "iværksættere",
+    "plural_definite": "iværksætterne",
+    "tags": [
+      "business",
+      "people"
+    ]
+  },
+  {
+    "danish": "virksomhed",
+    "english": "company/enterprise",
+    "difficulty": "A1",
+    "singular_indefinite": "en virksomhed",
+    "singular_definite": "virksomheden",
+    "plural_indefinite": "virksomheder",
+    "plural_definite": "virksomhederne",
+    "tags": [
+      "business"
+    ]
+  },
+  {
+    "danish": "lovforslag",
+    "english": "bill (law proposal)",
+    "difficulty": "B2",
+    "singular_indefinite": "et lovforslag",
+    "singular_definite": "lovforslaget",
+    "plural_indefinite": "lovforslag",
+    "plural_definite": "lovforslagene",
+    "tags": [
+      "politics",
+      "law"
+    ]
+  },
+  {
+    "danish": "forfatning",
+    "english": "constitution",
+    "difficulty": "B2",
+    "singular_indefinite": "en forfatning",
+    "singular_definite": "forfatningen",
+    "plural_indefinite": "forfatninger",
+    "plural_definite": "forfatningerne",
+    "tags": [
+      "law",
+      "politics"
+    ]
+  },
+  {
+    "danish": "valgkamp",
+    "english": "election campaign",
+    "difficulty": "B2",
+    "singular_indefinite": "en valgkamp",
+    "singular_definite": "valgkampen",
+    "plural_indefinite": "valgkampe",
+    "plural_definite": "valgkampene",
+    "tags": [
+      "politics"
+    ]
+  },
+  {
+    "danish": "bevidsthed",
+    "english": "consciousness",
+    "difficulty": "C1",
+    "singular_indefinite": "bevidsthed",
+    "singular_definite": "bevidstheden",
+    "plural_indefinite": "bevidstheder",
+    "plural_definite": "bevidsthederne",
+    "tags": [
+      "abstract"
+    ]
+  },
+  {
+    "danish": "erkendelse",
+    "english": "realization/insight",
+    "difficulty": "C1",
+    "singular_indefinite": "en erkendelse",
+    "singular_definite": "erkendelsen",
+    "plural_indefinite": "erkendelser",
+    "plural_definite": "erkendelserne",
+    "tags": [
+      "abstract"
+    ]
+  },
+  {
+    "danish": "opfattelse",
+    "english": "perception",
+    "difficulty": "B2",
+    "singular_indefinite": "en opfattelse",
+    "singular_definite": "opfattelsen",
+    "plural_indefinite": "opfattelser",
+    "plural_definite": "opfattelserne",
+    "tags": [
+      "abstract"
+    ]
+  },
+  {
+    "danish": "fællesskab",
+    "english": "community",
+    "difficulty": "A2",
+    "singular_indefinite": "et fællesskab",
+    "singular_definite": "fællesskabet",
+    "plural_indefinite": "fællesskaber",
+    "plural_definite": "fællesskaberne",
+    "tags": [
+      "social"
+    ]
+  },
+  {
+    "danish": "tilhørsforhold",
+    "english": "sense of belonging",
+    "difficulty": "B2",
+    "singular_indefinite": "et tilhørsforhold",
+    "singular_definite": "tilhørsforholdet",
+    "plural_indefinite": "tilhørsforhold",
+    "plural_definite": "tilhørsforholdene",
+    "tags": [
+      "social",
+      "abstract"
+    ]
+  },
+  {
+    "danish": "relation",
+    "english": "relation",
+    "difficulty": "A2",
+    "singular_indefinite": "en relation",
+    "singular_definite": "relationen",
+    "plural_indefinite": "relationer",
+    "plural_definite": "relationerne",
+    "tags": [
+      "social"
+    ]
+  },
+  {
+    "danish": "forbrug",
+    "english": "consumption",
+    "difficulty": "A2",
+    "singular_indefinite": "et forbrug",
+    "singular_definite": "forbruget",
+    "plural_indefinite": "-",
+    "plural_definite": "-",
+    "tags": [
+      "economy"
+    ]
+  },
+  {
+    "danish": "produktion",
+    "english": "production",
+    "difficulty": "A2",
+    "singular_indefinite": "produktion",
+    "singular_definite": "produktionen",
+    "plural_indefinite": "-",
+    "plural_definite": "-",
+    "tags": [
+      "economy"
+    ]
+  },
+  {
+    "danish": "distribution",
+    "english": "distribution",
+    "difficulty": "B2",
+    "singular_indefinite": "distribution",
+    "singular_definite": "distributionen",
+    "plural_indefinite": "-",
+    "plural_definite": "-",
+    "tags": [
+      "economy"
+    ]
+  },
+  {
+    "danish": "overvejelse",
+    "english": "consideration",
+    "difficulty": "B2",
+    "singular_indefinite": "en overvejelse",
+    "singular_definite": "overvejelsen",
+    "plural_indefinite": "overvejelser",
+    "plural_definite": "overvejelserne",
+    "tags": [
+      "abstract"
+    ]
+  },
+  {
+    "danish": "argumentation",
+    "english": "argumentation",
+    "difficulty": "B2",
+    "singular_indefinite": "argumentation",
+    "singular_definite": "argumentationen",
+    "plural_indefinite": "-",
+    "plural_definite": "-",
+    "tags": [
+      "academic",
+      "language"
+    ]
+  },
+  {
+    "danish": "sandsynlighed",
+    "english": "probability",
+    "difficulty": "B2",
+    "singular_indefinite": "en sandsynlighed",
+    "singular_definite": "sandsynligheden",
+    "plural_indefinite": "sandsynligheder",
+    "plural_definite": "sandsynlighederne",
+    "tags": [
+      "math",
+      "academic"
+    ]
+  },
+  {
+    "danish": "forventning",
+    "english": "expectation",
+    "difficulty": "B1",
+    "singular_indefinite": "en forventning",
+    "singular_definite": "forventningen",
+    "plural_indefinite": "forventninger",
+    "plural_definite": "forventningerne",
+    "tags": [
+      "abstract"
+    ]
+  },
+  {
+    "danish": "opmærksomhed",
+    "english": "attention",
+    "difficulty": "B1",
+    "singular_indefinite": "opmærksomhed",
+    "singular_definite": "opmærksomheden",
+    "plural_indefinite": "-",
+    "plural_definite": "-",
+    "tags": [
+      "abstract"
+    ]
+  },
+  {
+    "danish": "tilstedeværelse",
+    "english": "presence",
+    "difficulty": "C1",
+    "singular_indefinite": "en tilstedeværelse",
+    "singular_definite": "tilstedeværelsen",
+    "plural_indefinite": "tilstedeværelser",
+    "plural_definite": "tilstedeværelserne",
+    "tags": [
+      "abstract"
+    ]
+  },
+  {
+    "danish": "fravær",
+    "english": "absence",
+    "difficulty": "B1",
+    "singular_indefinite": "et fravær",
+    "singular_definite": "fraværet",
+    "plural_indefinite": "fravær",
+    "plural_definite": "fraværene",
+    "tags": [
+      "abstract"
+    ]
+  },
+  {
+    "danish": "indflydelse",
+    "english": "influence",
+    "difficulty": "B1",
+    "singular_indefinite": "en indflydelse",
+    "singular_definite": "indflydelsen",
+    "plural_indefinite": "indflydelser",
+    "plural_definite": "indflydelserne",
+    "tags": [
+      "abstract",
+      "society"
+    ]
+  },
+  {
+    "danish": "autoritet",
+    "english": "authority",
+    "difficulty": "B2",
+    "singular_indefinite": "en autoritet",
+    "singular_definite": "autoriteten",
+    "plural_indefinite": "autoriter",
+    "plural_definite": "autoriterne",
+    "tags": [
+      "society"
+    ]
+  },
+  {
+    "danish": "magt",
+    "english": "power",
+    "difficulty": "B1",
+    "singular_indefinite": "magt",
+    "singular_definite": "magten",
+    "plural_indefinite": "magter",
+    "plural_definite": "magterne",
+    "tags": [
+      "society",
+      "politics"
+    ]
+  },
+  {
+    "danish": "konsekvens",
+    "english": "consequence",
+    "difficulty": "B1",
+    "singular_indefinite": "en konsekvens",
+    "singular_definite": "konsekvensen",
+    "plural_indefinite": "konsekvenser",
+    "plural_definite": "konsekvenserne",
+    "tags": [
+      "abstract"
+    ]
+  },
+  {
+    "danish": "effekt",
+    "english": "effect",
+    "difficulty": "B1",
+    "singular_indefinite": "en effekt",
+    "singular_definite": "effekten",
+    "plural_indefinite": "effekter",
+    "plural_definite": "effekterne",
+    "tags": [
+      "science",
+      "abstract"
+    ]
+  },
+  {
+    "danish": "påvirkning",
+    "english": "impact/influence",
+    "difficulty": "B2",
+    "singular_indefinite": "en påvirkning",
+    "singular_definite": "påvirkningen",
+    "plural_indefinite": "påvirkninger",
+    "plural_definite": "påvirkningerne",
+    "tags": [
+      "abstract"
+    ]
+  },
+  {
+    "danish": "udfordring",
+    "english": "challenge",
+    "difficulty": "A2",
+    "singular_indefinite": "en udfordring",
+    "singular_definite": "udfordringen",
+    "plural_indefinite": "udfordringer",
+    "plural_definite": "udfordringerne",
+    "tags": [
+      "abstract"
+    ]
+  },
+  {
+    "danish": "begrænsning",
+    "english": "limitation",
+    "difficulty": "B2",
+    "singular_indefinite": "en begrænsning",
+    "singular_definite": "begrænsningen",
+    "plural_indefinite": "begrænsninger",
+    "plural_definite": "begrænsningerne",
+    "tags": [
+      "abstract"
+    ]
+  },
+  {
+    "danish": "mulighedsrum",
+    "english": "range of possibilities",
+    "difficulty": "C1",
+    "singular_indefinite": "et mulighedsrum",
+    "singular_definite": "mulighedsrummet",
+    "plural_indefinite": "mulighedsrum",
+    "plural_definite": "mulighedsrummene",
+    "tags": [
+      "abstract"
+    ]
+  },
+  {
+    "danish": "tilgang",
+    "english": "approach",
+    "difficulty": "B1",
+    "singular_indefinite": "en tilgang",
+    "singular_definite": "tilgangen",
+    "plural_indefinite": "tilgange",
+    "plural_definite": "tilgangene",
+    "tags": [
+      "academic"
+    ]
+  },
+  {
+    "danish": "indsigt",
+    "english": "insight",
+    "difficulty": "B2",
+    "singular_indefinite": "en indsigt",
+    "singular_definite": "indsigten",
+    "plural_indefinite": "indsigter",
+    "plural_definite": "indsigterne",
+    "tags": [
+      "academic",
+      "abstract"
+    ]
+  },
+  {
+    "danish": "forståelse",
+    "english": "understanding",
+    "difficulty": "A2",
+    "singular_indefinite": "en forståelse",
+    "singular_definite": "forståelsen",
+    "plural_indefinite": "forståelser",
+    "plural_definite": "forståelserne",
+    "tags": [
+      "abstract"
+    ]
+  },
+  {
+    "danish": "tillid",
+    "english": "trust",
+    "difficulty": "A2",
+    "singular_indefinite": "tillid",
+    "singular_definite": "tilliden",
+    "plural_indefinite": "-",
+    "plural_definite": "-",
+    "tags": [
+      "social",
+      "abstract"
+    ]
+  },
+  {
+    "danish": "mistillid",
+    "english": "distrust",
+    "difficulty": "B2",
+    "singular_indefinite": "mistillid",
+    "singular_definite": "mistilliden",
+    "plural_indefinite": "-",
+    "plural_definite": "-",
+    "tags": [
+      "social"
+    ]
+  },
+  {
+    "danish": "samarbejdspartner",
+    "english": "collaboration partner",
+    "difficulty": "B2",
+    "singular_indefinite": "en samarbejdspartner",
+    "singular_definite": "samarbejdspartneren",
+    "plural_indefinite": "samarbejdspartnere",
+    "plural_definite": "samarbejdspartnerne",
+    "tags": [
+      "work",
+      "social"
+    ]
+  },
+  {
+    "danish": "udgangspunkt",
+    "english": "starting point",
+    "difficulty": "B1",
+    "singular_indefinite": "et udgangspunkt",
+    "singular_definite": "udgangspunktet",
+    "plural_indefinite": "udgangspunkter",
+    "plural_definite": "udgangspunkterne",
+    "tags": [
+      "abstract"
+    ]
+  },
+  {
+    "danish": "slutning",
+    "english": "ending/conclusion",
+    "difficulty": "A2",
+    "singular_indefinite": "en slutning",
+    "singular_definite": "slutningen",
+    "plural_indefinite": "slutninger",
+    "plural_definite": "slutningerne",
+    "tags": [
+      "abstract"
+    ]
+  },
+  {
+    "danish": "videnskab",
+    "english": "science",
+    "difficulty": "A2",
+    "singular_indefinite": "videnskab",
+    "singular_definite": "videnskaben",
+    "plural_indefinite": "-",
+    "plural_definite": "-",
+    "tags": [
+      "academic"
+    ]
+  },
+  {
+    "danish": "disciplin",
+    "english": "discipline",
+    "difficulty": "B1",
+    "singular_indefinite": "en disciplin",
+    "singular_definite": "disciplinen",
+    "plural_indefinite": "discipliner",
+    "plural_definite": "disciplinerne",
+    "tags": [
+      "academic"
+    ]
+  },
+  {
+    "danish": "felt",
+    "english": "field (study area)",
+    "difficulty": "B1",
+    "singular_indefinite": "et felt",
+    "singular_definite": "feltet",
+    "plural_indefinite": "felter",
+    "plural_definite": "felterne",
+    "tags": [
+      "academic"
+    ]
+  },
+  {
+    "danish": "kontekst",
+    "english": "context",
+    "difficulty": "B2",
+    "singular_indefinite": "en kontekst",
+    "singular_definite": "konteksten",
+    "plural_indefinite": "kontekster",
+    "plural_definite": "konteksterne",
+    "tags": [
+      "academic"
+    ]
+  },
+  {
+    "danish": "ramme",
+    "english": "framework",
+    "difficulty": "B1",
+    "singular_indefinite": "en ramme",
+    "singular_definite": "rammen",
+    "plural_indefinite": "rammer",
+    "plural_definite": "rammerne",
+    "tags": [
+      "abstract"
+    ]
+  },
+  {
+    "danish": "diskurs",
+    "english": "discourse",
+    "difficulty": "C1",
+    "singular_indefinite": "en diskurs",
+    "singular_definite": "diskursen",
+    "plural_indefinite": "diskurser",
+    "plural_definite": "diskurserne",
+    "tags": [
+      "language",
+      "academic"
+    ]
+  },
+  {
+    "danish": "repræsentation",
+    "english": "representation",
+    "difficulty": "C1",
+    "singular_indefinite": "en repræsentation",
+    "singular_definite": "repræsentationen",
+    "plural_indefinite": "repræsentationer",
+    "plural_definite": "repræsentationerne",
+    "tags": [
+      "academic"
+    ]
+  }
+]
