@@ -11,6 +11,7 @@ This workspace now contains a small offline practice tool for Danish vocabulary 
 ## Run it
 
 Open [code/danish_practice_tool.html](code/danish_practice_tool.html) in a browser.
+https://manishat9096.github.io/Danish-Practice-Tool/code/danish_practice_tool.html
 
 The page works locally without a build step.
 
