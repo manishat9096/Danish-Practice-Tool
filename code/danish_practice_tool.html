@@ -45,6 +45,7 @@
       grid-template-columns: minmax(0, 1fr) minmax(340px, 380px);
       grid-template-areas:
         "hero upload"
+        "packs translator"
         "controls translator"
         "quiz translator"
         "bank bank";
@@ -680,6 +681,7 @@
         grid-template-areas:
           "hero"
           "upload"
+          "packs"
           "controls"
           "translator"
           "quiz"
@@ -737,6 +739,102 @@
         align-items: stretch;
       }
     }
+
+    .packs {
+      grid-area: packs;
+      width: 100%;
+    }
+
+    .packs-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 8px 4px 8px;
+    }
+
+    .packs-header h2 {
+      margin: 0;
+      font-size: 0.98rem;
+      letter-spacing: -0.03em;
+    }
+
+    .packs-toggle {
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 0.78rem;
+      padding: 4px 10px;
+      border-radius: 999px;
+      cursor: pointer;
+    }
+
+    .packs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(155px, 1fr));
+      gap: 8px;
+      overflow: hidden;
+      max-height: 800px;
+      transition: max-height 0.3s ease, opacity 0.3s ease;
+    }
+
+    .packs-grid.collapsed {
+      max-height: 0;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .pack-card {
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 12px;
+      background: var(--panel);
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .pack-card.active {
+      border-color: var(--accent);
+      background: rgba(36, 84, 79, 0.06);
+    }
+
+    .pack-card strong {
+      font-size: 0.9rem;
+      line-height: 1.2;
+    }
+
+    .pack-card p {
+      font-size: 0.78rem;
+      color: var(--muted);
+      margin: 0;
+      font-family: ui-sans-serif, system-ui, sans-serif;
+      line-height: 1.35;
+      flex: 1;
+    }
+
+    .pack-meta {
+      font-size: 0.72rem;
+      color: var(--muted);
+      font-family: ui-sans-serif, system-ui, sans-serif;
+    }
+
+    .pack-badge {
+      display: inline-block;
+      background: var(--accent);
+      color: #fff;
+      border-radius: 3px;
+      padding: 1px 5px;
+      font-size: 0.68rem;
+      margin-left: 4px;
+      vertical-align: middle;
+    }
+
+    .pack-start-btn {
+      font-size: 0.8rem;
+      padding: 7px 10px;
+      width: 100%;
+      margin-top: 2px;
+    }
   </style>
 </head>
 <body>
@@ -762,6 +860,14 @@
           </div>
         </div>
       </div>
+    </section>
+
+    <section class="packs" id="packs-section">
+      <div class="packs-header">
+        <h2>Exercise Packs</h2>
+        <button class="packs-toggle" id="packsToggle" aria-expanded="true">Hide ▲</button>
+      </div>
+      <div class="packs-grid" id="packs-grid"></div>
     </section>
 
     <section class="controls" aria-label="quiz controls">
@@ -1005,6 +1111,198 @@
       adverbs: ["base", "english"],
       common_phrases: ["danish", "english"]
     };
+
+    const EXERCISE_TEMPLATES = [
+      // VERBS
+      { id: "verb-da-en",
+        category: "verbs", kind: "Translation",
+        prompt: i => `Danish infinitive -> English for '${i.infinitive}'`,
+        answers: i => [i.english] },
+      { id: "verb-en-da-infinitive",
+        category: "verbs", kind: "Form",
+        prompt: i => `English -> Danish infinitive for '${i.english}'`,
+        answers: i => [i.infinitive, i.infinitive.startsWith("at ") ? i.infinitive.slice(3) : i.infinitive] },
+      { id: "verb-en-da-imperative",
+        category: "verbs", kind: "Form",
+        prompt: i => `English -> imperative for '${i.english}'`,
+        answers: i => [i.imperative],
+        condition: i => !!String(i.imperative || "").trim() },
+      { id: "verb-en-da-past",
+        category: "verbs", kind: "Form",
+        prompt: i => `English -> past tense for '${i.english}'`,
+        answers: i => [i.past] },
+      { id: "verb-en-da-pres-perf",
+        category: "verbs", kind: "Form",
+        prompt: i => `English -> present perfect for '${i.english}'`,
+        answers: i => [i.present_perfect] },
+      { id: "verb-en-da-past-perf",
+        category: "verbs", kind: "Form",
+        prompt: i => `English -> past perfect for '${i.english}'`,
+        answers: i => [i.past_perfect] },
+      { id: "verb-table",
+        category: "verbs", kind: "Table",
+        prompt: i => `Verb table for '${i.english}'`,
+        tableBuilder: i => {
+          const fields = [];
+          if (String(i.imperative || "").trim()) {
+            fields.push({ field: "imperative", label: "Imperative", answer: i.imperative });
+          }
+          fields.push(
+            { field: "past", label: "Past", answer: i.past },
+            { field: "present_perfect", label: "Present perfect", answer: i.present_perfect },
+            { field: "past_perfect", label: "Past perfect", answer: i.past_perfect }
+          );
+          return { label: i.english, given: { field: "infinitive", value: i.infinitive }, fields };
+        },
+        answers: (i, t) => t.fields.map(f => f.answer) },
+
+      // NOUNS
+      { id: "noun-da-en",
+        category: "nouns", kind: "Translation",
+        prompt: i => `Danish noun -> English for '${i.singular_indefinite}'`,
+        answers: i => [i.english] },
+      { id: "noun-en-da-base",
+        category: "nouns", kind: "Form",
+        prompt: i => `English -> Danish noun for '${i.english}'`,
+        answers: i => [i.singular_indefinite] },
+      { id: "noun-en-da-def-sg",
+        category: "nouns", kind: "Form",
+        prompt: i => `English -> definite singular for '${i.english}'`,
+        answers: i => [i.singular_definite] },
+      { id: "noun-en-da-pl",
+        category: "nouns", kind: "Form",
+        prompt: i => `English -> plural for '${i.english}'`,
+        answers: i => [i.plural_indefinite] },
+      { id: "noun-en-da-def-pl",
+        category: "nouns", kind: "Form",
+        prompt: i => `English -> definite plural for '${i.english}'`,
+        answers: i => [i.plural_definite] },
+      { id: "noun-gender",
+        category: "nouns", kind: "Form",
+        prompt: i => `English -> gender article for '${i.english}'`,
+        answers: i => [inferNounGender(i)],
+        condition: i => !!inferNounGender(i) },
+
+      // ADJECTIVES
+      { id: "adj-da-en",
+        category: "adjectives", kind: "Translation",
+        prompt: i => `Danish adjective -> English for '${i.base}'`,
+        answers: i => [i.english] },
+      { id: "adj-en-da-base",
+        category: "adjectives", kind: "Form",
+        prompt: i => `English -> base adjective for '${i.english}'`,
+        answers: i => [i.base] },
+      { id: "adj-en-da-common",
+        category: "adjectives", kind: "Form",
+        prompt: i => `English -> common form for '${i.english}'`,
+        answers: i => [i.common],
+        condition: i => !!String(i.common || "").trim() },
+      { id: "adj-en-da-neuter",
+        category: "adjectives", kind: "Form",
+        prompt: i => `English -> neuter form for '${i.english}'`,
+        answers: i => [i.neuter] },
+      { id: "adj-en-da-plural",
+        category: "adjectives", kind: "Form",
+        prompt: i => `English -> plural/definite form for '${i.english}'`,
+        answers: i => [i.plural] },
+      { id: "adj-en-da-comp",
+        category: "adjectives", kind: "Form",
+        prompt: i => `English -> comparative form for '${i.english}'`,
+        answers: i => [i.comparative],
+        condition: i => !!String(i.comparative || "").trim() },
+      { id: "adj-en-da-super",
+        category: "adjectives", kind: "Form",
+        prompt: i => `English -> superlative form for '${i.english}'`,
+        answers: i => [i.superlative],
+        condition: i => !!String(i.superlative || "").trim() },
+
+      // ADVERBS
+      { id: "adv-en-da",
+        category: "adverbs", kind: "Translation",
+        prompt: i => `English -> Danish adverb for '${i.english}'`,
+        answers: i => [i.base] },
+      { id: "adv-da-en",
+        category: "adverbs", kind: "Translation",
+        prompt: i => `Danish adverb -> English for '${i.base}'`,
+        answers: i => [i.english] },
+      { id: "adv-comp",
+        category: "adverbs", kind: "Form",
+        prompt: i => `English -> comparative form for '${i.english}'`,
+        answers: i => [i.comparative],
+        condition: i => !!String(i.comparative || "").trim() },
+      { id: "adv-super",
+        category: "adverbs", kind: "Form",
+        prompt: i => `English -> superlative form for '${i.english}'`,
+        answers: i => [i.superlative],
+        condition: i => !!String(i.superlative || "").trim() },
+
+      // COMMON PHRASES
+      { id: "phrase-en-da",
+        category: "common_phrases", kind: "Translation",
+        prompt: i => `English -> Danish phrase for '${i.english}'`,
+        answers: i => [i.danish] },
+      { id: "phrase-da-en",
+        category: "common_phrases", kind: "Translation",
+        prompt: i => `Danish phrase -> English for '${i.danish}'`,
+        answers: i => [i.english] },
+    ];
+
+    const EXERCISE_PACKS = [
+      {
+        id: "verb-bootcamp",
+        label: "Verb Bootcamp",
+        description: "All tense forms — past, present perfect, past perfect, and imperative.",
+        category: "verbs", mode: "forms", count: 20,
+        templateIds: ["verb-en-da-past", "verb-en-da-pres-perf", "verb-en-da-past-perf", "verb-en-da-imperative"],
+        seed: null,
+      },
+      {
+        id: "verb-tables",
+        label: "Verb Table Drill",
+        description: "Fill out complete conjugation tables.",
+        category: "verbs", mode: "table", count: 10,
+        templateIds: ["verb-table"],
+        seed: null,
+      },
+      {
+        id: "noun-gender-cases",
+        label: "Noun Gender & Cases",
+        description: "Gender (en/et) plus all four case forms.",
+        category: "nouns", mode: "forms", count: 20,
+        templateIds: ["noun-gender", "noun-en-da-base", "noun-en-da-def-sg", "noun-en-da-pl", "noun-en-da-def-pl"],
+        seed: null,
+      },
+      {
+        id: "adjective-agreement",
+        label: "Adjective Agreement",
+        description: "Base, neuter, plural, comparative, and superlative forms.",
+        category: "adjectives", mode: "forms", count: 20,
+        templateIds: ["adj-en-da-base", "adj-en-da-neuter", "adj-en-da-plural", "adj-en-da-comp", "adj-en-da-super"],
+        seed: null,
+      },
+      {
+        id: "daily-20",
+        label: "Daily 20",
+        description: "A different 20-question mixed set every calendar day.",
+        category: "all", mode: "random", count: 20,
+        templateIds: null,
+        seed: "daily",
+      },
+      {
+        id: "vocab-builder",
+        label: "Vocabulary Builder",
+        description: "EN↔DA translation drills across all categories.",
+        category: "all", mode: "translation", count: 25,
+        templateIds: null, seed: null,
+      },
+      {
+        id: "multiple-choice-blitz",
+        label: "Multiple Choice Blitz",
+        description: "Fast 4-option quizzes across everything.",
+        category: "all", mode: "multiple-choice", count: 30,
+        templateIds: null, seed: null,
+      },
+    ];
 
     function normalize(text) {
       return String(text)
@@ -1616,125 +1914,43 @@
       }
     }
 
-    function flattenExercises(category, mode) {
-      const sourceCategories = category === "all" ? ["verbs", "nouns", "adjectives", "adverbs", "common_phrases"] : [category];
+    function flattenExercises(category, mode, templateIds) {
+      const cats = category === "all"
+        ? ["verbs", "nouns", "adjectives", "adverbs", "common_phrases"]
+        : [category];
       const exercises = [];
 
-      for (const group of sourceCategories) {
-        for (const item of vocabulary[group]) {
-          if (group === "verbs") {
-            const verbForms = [
-              { group, kind: "Form", prompt: `English -> Danish infinitive for '${item.english}'`, answers: [item.infinitive, item.infinitive.startsWith("at ") ? item.infinitive.slice(3) : item.infinitive] },
-              { group, kind: "Form", prompt: `English -> past tense for '${item.english}'`, answers: [item.past] },
-              { group, kind: "Form", prompt: `English -> present perfect for '${item.english}'`, answers: [item.present_perfect] },
-              { group, kind: "Form", prompt: `English -> past perfect for '${item.english}'`, answers: [item.past_perfect] },
-              { group, kind: "Translation", prompt: `Danish infinitive -> English for '${item.infinitive}'`, answers: [item.english] }
-            ];
-
-            if (String(item.imperative || "").trim()) {
-              verbForms.splice(1, 0, { group, kind: "Form", prompt: `English -> imperative for '${item.english}'`, answers: [item.imperative] });
+      for (const grp of cats) {
+        const items = vocabulary[grp] || [];
+        const tmpls = EXERCISE_TEMPLATES.filter(t =>
+          t.category === grp &&
+          (!templateIds || templateIds.includes(t.id))
+        );
+        for (const item of items) {
+          for (const t of tmpls) {
+            if (t.condition && !t.condition(item)) continue;
+            if (t.kind === "Table") {
+              const tbl = t.tableBuilder(item);
+              exercises.push({
+                group: grp, kind: "Table",
+                prompt: t.prompt(item), table: tbl,
+                answers: t.answers(item, tbl), templateId: t.id
+              });
+            } else {
+              exercises.push({
+                group: grp, kind: t.kind,
+                prompt: t.prompt(item),
+                answers: t.answers(item), templateId: t.id
+              });
             }
-
-            exercises.push(...verbForms);
-
-            const tableFields = [];
-            if (String(item.imperative || "").trim()) {
-              tableFields.push({ field: "imperative", label: "Imperative", answer: item.imperative });
-            }
-            tableFields.push(
-              { field: "past", label: "Past", answer: item.past },
-              { field: "present_perfect", label: "Present perfect", answer: item.present_perfect },
-              { field: "past_perfect", label: "Past perfect", answer: item.past_perfect }
-            );
-
-            exercises.push({
-              group,
-              kind: "Table",
-              prompt: `Verb table for '${item.english}'`,
-              table: {
-                label: item.english,
-                given: { field: "infinitive", value: item.infinitive },
-                fields: tableFields
-              },
-              answers: tableFields.map((field) => field.answer)
-            });
-          }
-
-          if (group === "nouns") {
-            const nounGender = inferNounGender(item);
-            exercises.push(
-              { group, kind: "Form", prompt: `English -> Danish noun for '${item.english}'`, answers: [item.singular_indefinite] },
-              { group, kind: "Form", prompt: `English -> definite singular for '${item.english}'`, answers: [item.singular_definite] },
-              { group, kind: "Form", prompt: `English -> plural for '${item.english}'`, answers: [item.plural_indefinite] },
-              { group, kind: "Form", prompt: `English -> definite plural for '${item.english}'`, answers: [item.plural_definite] },
-              { group, kind: "Translation", prompt: `Danish noun -> English for '${item.singular_indefinite}'`, answers: [item.english] }
-            );
-
-            if (nounGender) {
-              exercises.push({ group, kind: "Form", prompt: `English -> gender article for '${item.english}'`, answers: [nounGender] });
-            }
-          }
-
-          if (group === "adjectives") {
-            const adjectiveForms = [
-              { group, kind: "Form", prompt: `English -> base adjective for '${item.english}'`, answers: [item.base] },
-              { group, kind: "Form", prompt: `English -> neuter form for '${item.english}'`, answers: [item.neuter] },
-              { group, kind: "Form", prompt: `English -> plural/definite form for '${item.english}'`, answers: [item.plural] }
-            ];
-
-            if (String(item.common || "").trim()) {
-              adjectiveForms.splice(1, 0, { group, kind: "Form", prompt: `English -> common form for '${item.english}'`, answers: [item.common] });
-            }
-
-            if (String(item.comparative || "").trim()) {
-              adjectiveForms.push({ group, kind: "Form", prompt: `English -> comparative form for '${item.english}'`, answers: [item.comparative] });
-            }
-            if (String(item.superlative || "").trim()) {
-              adjectiveForms.push({ group, kind: "Form", prompt: `English -> superlative form for '${item.english}'`, answers: [item.superlative] });
-            }
-
-            adjectiveForms.push({ group, kind: "Translation", prompt: `Danish adjective -> English for '${item.base}'`, answers: [item.english] });
-            exercises.push(...adjectiveForms);
-          }
-
-          if (group === "adverbs") {
-            exercises.push(
-              { group, kind: "Translation", prompt: `English -> Danish adverb for '${item.english}'`, answers: [item.base] },
-              { group, kind: "Translation", prompt: `Danish adverb -> English for '${item.base}'`, answers: [item.english] }
-            );
-            if (item.comparative) {
-              exercises.push({ group, kind: "Form", prompt: `English -> comparative form for '${item.english}'`, answers: [item.comparative] });
-            }
-            if (item.superlative) {
-              exercises.push({ group, kind: "Form", prompt: `English -> superlative form for '${item.english}'`, answers: [item.superlative] });
-            }
-          }
-
-          if (group === "common_phrases") {
-            exercises.push(
-              { group, kind: "Translation", prompt: `English -> Danish phrase for '${item.english}'`, answers: [item.danish] },
-              { group, kind: "Translation", prompt: `Danish phrase -> English for '${item.danish}'`, answers: [item.english] }
-            );
           }
         }
       }
 
-      if (mode === "translation") {
-        return exercises.filter((exercise) => exercise.kind === "Translation");
-      }
-
-      if (mode === "forms") {
-        return exercises.filter((exercise) => exercise.kind === "Form");
-      }
-
-      if (mode === "table") {
-        return exercises.filter((exercise) => exercise.kind === "Table");
-      }
-
-      if (mode === "multiple-choice") {
-        return exercises.filter((exercise) => exercise.kind === "Translation" || exercise.kind === "Form");
-      }
-
+      if (mode === "translation")     return exercises.filter(e => e.kind === "Translation");
+      if (mode === "forms")           return exercises.filter(e => e.kind === "Form");
+      if (mode === "table")           return exercises.filter(e => e.kind === "Table");
+      if (mode === "multiple-choice") return exercises.filter(e => e.kind === "Translation" || e.kind === "Form");
       return exercises;
     }
 
@@ -1902,11 +2118,11 @@
       });
     }
 
-    function buildSession() {
+    function buildSession(templateIds) {
       const seedText = ui.seed.value.trim();
       const seed = seedText ? Array.from(seedText).reduce((sum, char) => sum + char.charCodeAt(0), 0) : null;
       const rng = seed === null ? Math.random : mulberry32(seed);
-      const rawExercises = shuffle(flattenExercises(ui.category.value, ui.mode.value), rng);
+      const rawExercises = shuffle(flattenExercises(ui.category.value, ui.mode.value, templateIds), rng);
       const exercises = ui.mode.value === "multiple-choice"
         ? rawExercises.map((exercise) => ({ ...buildChoiceExercise(exercise, rng), solved: false, revealed: false }))
         : rawExercises.map((exercise) => ({ ...exercise, solved: false, revealed: false }));
@@ -1923,6 +2139,24 @@
       ui.nextBtn.disabled = false;
       ui.revealBtn.disabled = false;
       ui.quizBadge.textContent = `${state.currentIndex + 1} of ${state.exercises.length}`;
+    }
+
+    function buildSessionFromPack(packId) {
+      const pack = EXERCISE_PACKS.find(p => p.id === packId);
+      if (!pack) return;
+      ui.category.value = pack.category;
+      ui.mode.value     = pack.mode;
+      ui.count.value    = pack.count;
+      if (pack.seed === "daily") {
+        const d = new Date();
+        ui.seed.value = `${d.getFullYear()}-${d.getMonth() + 1}-${d.getDate()}`;
+      } else {
+        ui.seed.value = pack.seed || "";
+      }
+      document.querySelectorAll(".pack-card").forEach(c => c.classList.remove("active"));
+      const card = document.querySelector(`.pack-card[data-pack-id="${packId}"]`);
+      if (card) card.classList.add("active");
+      buildSession(pack.templateIds || undefined);
     }
 
     function submitChoice(choice) {
@@ -2173,7 +2407,32 @@
       ui.promptKind.textContent = mode === "table" ? "Table" : mode === "multiple-choice" ? "Multiple choice" : "Prompt";
     });
 
+    function renderPackSelector() {
+      const grid = document.getElementById("packs-grid");
+      if (!grid) return;
+      grid.innerHTML = EXERCISE_PACKS.map(pack => `
+        <article class="pack-card" data-pack-id="${pack.id}">
+          <strong>${pack.label}</strong>
+          <p>${pack.description}</p>
+          <div class="pack-meta">
+            ${labelCase(pack.category === "all" ? "all categories" : pack.category)} &middot; ${labelCase(pack.mode)} &middot; ${pack.count} Qs
+            ${pack.seed === "daily" ? '<span class="pack-badge">&#9733; Daily</span>' : ""}
+          </div>
+          <button class="primary pack-start-btn" onclick="buildSessionFromPack('${pack.id}')">Start &#9654;</button>
+        </article>
+      `).join("");
+
+      document.getElementById("packsToggle")?.addEventListener("click", () => {
+        const btn = document.getElementById("packsToggle");
+        const gridEl = document.getElementById("packs-grid");
+        const collapsed = gridEl.classList.toggle("collapsed");
+        btn.textContent = collapsed ? "Show ▼" : "Hide ▲";
+        btn.setAttribute("aria-expanded", String(!collapsed));
+      });
+    }
+
     async function initializeApp() {
+      renderPackSelector();
       renderBank();
       renderCurrent();
       updateStats();
