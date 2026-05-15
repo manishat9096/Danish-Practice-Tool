@@ -41,58 +41,63 @@
       width: 100%;
       margin: 0;
       padding: 10px 14px 16px;
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) minmax(340px, 380px);
-      grid-template-areas:
-        "hero upload"
-        "packs translator"
-        "controls translator"
-        "quiz translator"
-        "bank bank";
-      gap: 10px 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .layout-split {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+    }
+
+    .main-col {
+      flex: 1 1 0;
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .side-col {
+      flex: 0 0 360px;
+      width: 360px;
+      position: sticky;
+      top: 12px;
+      max-height: calc(100vh - 24px);
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      scrollbar-width: thin;
     }
 
     .hero {
-      grid-area: hero;
       display: grid;
       gap: 10px;
       margin: 0;
     }
 
     .controls {
-      grid-area: controls;
       margin: 0;
       width: 100%;
     }
 
     .quiz {
-      grid-area: quiz;
       width: 100%;
     }
 
     .translator {
-      grid-area: translator;
       width: 100%;
-      align-self: start;
-      position: sticky;
-      top: 12px;
-      max-height: calc(100vh - 24px);
-      overflow: auto;
     }
 
     .upload-manager-corner {
-      grid-area: upload;
       width: 100%;
-      align-self: start;
     }
 
     .bank {
-      grid-area: bank;
       width: 100%;
-    }
-
-    .practice-zone {
-      display: contents;
     }
 
     .title-block {
@@ -676,36 +681,21 @@
     }
 
     @media (max-width: 1200px) {
-      .shell {
-        grid-template-columns: 1fr;
-        grid-template-areas:
-          "hero"
-          "upload"
-          "packs"
-          "controls"
-          "translator"
-          "quiz"
-          "bank";
+      .layout-split {
+        flex-direction: column;
       }
 
-      .upload-manager {
-        width: 100%;
-      }
-
-      .translator {
+      .side-col {
         position: static;
-        top: auto;
         max-height: none;
-        overflow: visible;
+        overflow-y: visible;
+        width: 100%;
+        flex: none;
       }
 
       .bank-list {
         max-height: none;
         overflow: visible;
-      }
-
-      .practice-zone {
-        display: contents;
       }
     }
 
@@ -741,46 +731,52 @@
     }
 
     .packs {
-      grid-area: packs;
       width: 100%;
-    }
-
-    .packs-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 8px 4px 8px;
-    }
-
-    .packs-header h2 {
-      margin: 0;
-      font-size: 0.98rem;
-      letter-spacing: -0.03em;
-    }
-
-    .packs-toggle {
-      background: transparent;
       border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--panel);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .packs-summary {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 16px;
+      cursor: pointer;
+      list-style: none;
+      font-family: ui-sans-serif, system-ui, sans-serif;
+      font-size: 0.88rem;
+      font-weight: 600;
+      user-select: none;
+    }
+
+    .packs-summary::-webkit-details-marker { display: none; }
+    .packs-summary:focus { outline: none; }
+
+    .packs-count {
+      flex: 1;
       color: var(--muted);
       font-size: 0.78rem;
-      padding: 4px 10px;
-      border-radius: 999px;
-      cursor: pointer;
+      font-weight: 400;
+    }
+
+    .packs-arrow {
+      color: var(--muted);
+      font-size: 0.7rem;
+      transition: transform 0.2s;
+    }
+
+    .packs[open] .packs-arrow {
+      transform: rotate(180deg);
     }
 
     .packs-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(155px, 1fr));
       gap: 8px;
-      overflow: hidden;
-      max-height: 800px;
-      transition: max-height 0.3s ease, opacity 0.3s ease;
-    }
-
-    .packs-grid.collapsed {
-      max-height: 0;
-      opacity: 0;
-      pointer-events: none;
+      padding: 0 12px 12px;
     }
 
     .pack-card {
@@ -839,129 +835,159 @@
 </head>
 <body>
   <div class="shell">
-    <section class="hero">
-      <div class="title-block">
-        <p class="eyebrow">Danish practice tool</p>
-        <h1>Shuffle, drill, and repeat.</h1>
-        <p class="summary">Practice Danish vocabulary with guided exercises and quick translation help.</p>
-        <p class="summary">Choose a category, run a quiz mode, and build your fluency one session at a time.</p>
-        <div class="stats" aria-label="practice summary">
-          <div class="stat">
-            <span>Question bank</span>
-            <strong id="statBank">0</strong>
+    <div class="layout-split">
+      <div class="main-col">
+        <section class="hero">
+          <div class="title-block">
+            <p class="eyebrow">Danish practice tool</p>
+            <h1>Shuffle, drill, and repeat.</h1>
+            <p class="summary">Practice Danish vocabulary with guided exercises and quick translation help.</p>
+            <p class="summary">Choose a category, run a quiz mode, and build your fluency one session at a time.</p>
+            <div class="stats" aria-label="practice summary">
+              <div class="stat">
+                <span>Question bank</span>
+                <strong id="statBank">0</strong>
+              </div>
+              <div class="stat">
+                <span>Session score</span>
+                <strong id="statScore">0 / 0</strong>
+              </div>
+              <div class="stat">
+                <span>Current set</span>
+                <strong id="statSet">All</strong>
+              </div>
+            </div>
           </div>
-          <div class="stat">
-            <span>Session score</span>
-            <strong id="statScore">0 / 0</strong>
+        </section>
+
+        <details class="packs" id="packs-section">
+          <summary class="packs-summary">
+            <span>Exercise Packs</span>
+            <span class="packs-count">7 packs — click to browse</span>
+            <span class="packs-arrow">▼</span>
+          </summary>
+          <div class="packs-grid" id="packs-grid"></div>
+        </details>
+
+        <section class="controls" aria-label="quiz controls">
+          <div class="field">
+            <label for="category">Category</label>
+            <select id="category">
+              <option value="all">All</option>
+              <option value="verbs">Verbs</option>
+              <option value="nouns">Nouns</option>
+              <option value="adjectives">Adjectives</option>
+              <option value="adverbs">Adverbs</option>
+              <option value="common_phrases">Common phrases</option>
+            </select>
           </div>
-          <div class="stat">
-            <span>Current set</span>
-            <strong id="statSet">All</strong>
+          <div class="field">
+            <label for="count">Questions</label>
+            <input id="count" type="number" min="1" max="100" value="12" />
           </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="packs" id="packs-section">
-      <div class="packs-header">
-        <h2>Exercise Packs</h2>
-        <button class="packs-toggle" id="packsToggle" aria-expanded="true">Hide ▲</button>
-      </div>
-      <div class="packs-grid" id="packs-grid"></div>
-    </section>
-
-    <section class="controls" aria-label="quiz controls">
-      <div class="field">
-        <label for="category">Category</label>
-        <select id="category">
-          <option value="all">All</option>
-          <option value="verbs">Verbs</option>
-          <option value="nouns">Nouns</option>
-          <option value="adjectives">Adjectives</option>
-          <option value="adverbs">Adverbs</option>
-          <option value="common_phrases">Common phrases</option>
-        </select>
-      </div>
-      <div class="field">
-        <label for="count">Questions</label>
-        <input id="count" type="number" min="1" max="100" value="12" />
-      </div>
-      <div class="field">
-        <label for="seed">Seed</label>
-        <input id="seed" type="text" placeholder="Optional" />
-      </div>
-      <div class="field">
-        <label for="mode">Exercise type</label>
-        <select id="mode">
-          <option value="random">Mixed</option>
-          <option value="translation">Translation</option>
-          <option value="forms">Form practice</option>
-          <option value="table">Verb table</option>
-          <option value="multiple-choice">Multiple choice</option>
-        </select>
-      </div>
-      <div class="actions">
-        <button class="primary" id="startBtn">Start quiz</button>
-        <button class="ghost" id="resetBtn">Reset session</button>
-        <button class="ghost" id="loadGeneratedBtn">Reload data files</button>
-      </div>
-    </section>
-
-    <section class="practice-zone">
-      <article class="quiz">
-        <div class="quiz-header">
-          <h2>Quiz</h2>
-          <div class="badge" id="quizBadge">Ready to start</div>
-        </div>
-
-        <div class="prompt">
-          <span class="kind" id="promptKind">Prompt</span>
-          <div class="text" id="promptText">Choose a category and start the quiz.</div>
-          <div class="table-grid" id="tableGrid" hidden></div>
-        </div>
-
-        <div class="answer-row" id="answerRow">
-          <input id="answerInput" type="text" placeholder="Type your answer here" autocomplete="off" />
-          <button class="primary" id="submitBtn">Submit</button>
-        </div>
-
-        <div class="choice-list" id="choiceList" hidden></div>
-
-        <div class="feedback" id="feedback"></div>
-
-        <div class="actions" style="padding-top: 0;">
-          <button class="secondary" id="nextBtn">Next question</button>
-          <button class="ghost" id="revealBtn">Reveal answer</button>
-        </div>
-
-        <div class="progress" id="progress">No session running.</div>
-      </article>
-
-      <aside class="translator" aria-label="quick translation lookup">
-        <div class="translator-header">
-          <h2>Quick Google Translate</h2>
-          <div class="badge">EN ⇄ DA</div>
-        </div>
-        <div class="field">
-          <label for="translateInput">Word or short phrase</label>
-          <input id="translateInput" type="text" placeholder="Type English or Danish text" autocomplete="off" />
-        </div>
-        <div class="field">
-          <label>Detect mode</label>
-          <div class="translate-tabs" id="translateTabs">
-            <button type="button" class="translate-tab active" data-mode="auto">Auto</button>
-            <button type="button" class="translate-tab" data-mode="en-da">EN → DA</button>
-            <button type="button" class="translate-tab" data-mode="da-en">DA → EN</button>
+          <div class="field">
+            <label for="seed">Seed</label>
+            <input id="seed" type="text" placeholder="Optional" />
           </div>
-        </div>
-        <div class="actions" style="padding-top: 0;">
-          <button class="primary" id="translateBtn">Translate</button>
-          <button class="ghost" id="translateClearBtn">Clear</button>
-        </div>
-        <div class="translator-output" id="translateOutput">Translation appears here.</div>
-        <div class="feedback" id="translateStatus"></div>
-      </aside>
-    </section>
+          <div class="field">
+            <label for="mode">Exercise type</label>
+            <select id="mode">
+              <option value="random">Mixed</option>
+              <option value="translation">Translation</option>
+              <option value="forms">Form practice</option>
+              <option value="table">Verb table</option>
+              <option value="multiple-choice">Multiple choice</option>
+            </select>
+          </div>
+          <div class="actions">
+            <button class="primary" id="startBtn">Start quiz</button>
+            <button class="ghost" id="resetBtn">Reset session</button>
+            <button class="ghost" id="loadGeneratedBtn">Reload data files</button>
+          </div>
+        </section>
+
+        <article class="quiz">
+          <div class="quiz-header">
+            <h2>Quiz</h2>
+            <div class="badge" id="quizBadge">Ready to start</div>
+          </div>
+
+          <div class="prompt">
+            <span class="kind" id="promptKind">Prompt</span>
+            <div class="text" id="promptText">Choose a category and start the quiz.</div>
+            <div class="table-grid" id="tableGrid" hidden></div>
+          </div>
+
+          <div class="answer-row" id="answerRow">
+            <input id="answerInput" type="text" placeholder="Type your answer here" autocomplete="off" />
+            <button class="primary" id="submitBtn">Submit</button>
+          </div>
+
+          <div class="choice-list" id="choiceList" hidden></div>
+
+          <div class="feedback" id="feedback"></div>
+
+          <div class="actions" style="padding-top: 0;">
+            <button class="secondary" id="nextBtn">Next question</button>
+            <button class="ghost" id="revealBtn">Reveal answer</button>
+          </div>
+
+          <div class="progress" id="progress">No session running.</div>
+        </article>
+      </div>
+
+      <div class="side-col">
+        <aside class="upload-manager-corner" aria-label="json upload manager">
+          <section class="upload-manager">
+            <div class="upload-header">
+              <h2>JSON Upload Manager</h2>
+              <div class="badge">Append by category</div>
+            </div>
+            <div class="field">
+              <label for="importCategory">Category</label>
+              <select id="importCategory">
+                <option value="nouns">Nouns</option>
+                <option value="verbs">Verbs</option>
+                <option value="adverbs">Adverbs</option>
+                <option value="adjectives">Adjectives</option>
+                <option value="common_phrases">Common phrases</option>
+              </select>
+            </div>
+            <div class="actions">
+              <button class="primary" id="importFileBtn">Upload & append JSON</button>
+              <button class="ghost" id="connectDataDirBtn">Connect data folder</button>
+            </div>
+            <input id="importFileInput" type="file" accept="application/json,.json" hidden />
+            <div class="feedback" id="importStatus"></div>
+          </section>
+        </aside>
+
+        <aside class="translator" aria-label="quick translation lookup">
+          <div class="translator-header">
+            <h2>Quick Google Translate</h2>
+            <div class="badge">EN ⇄ DA</div>
+          </div>
+          <div class="field">
+            <label for="translateInput">Word or short phrase</label>
+            <input id="translateInput" type="text" placeholder="Type English or Danish text" autocomplete="off" />
+          </div>
+          <div class="field">
+            <label>Detect mode</label>
+            <div class="translate-tabs" id="translateTabs">
+              <button type="button" class="translate-tab active" data-mode="auto">Auto</button>
+              <button type="button" class="translate-tab" data-mode="en-da">EN → DA</button>
+              <button type="button" class="translate-tab" data-mode="da-en">DA → EN</button>
+            </div>
+          </div>
+          <div class="actions" style="padding-top: 0;">
+            <button class="primary" id="translateBtn">Translate</button>
+            <button class="ghost" id="translateClearBtn">Clear</button>
+          </div>
+          <div class="translator-output" id="translateOutput">Translation appears here.</div>
+          <div class="feedback" id="translateStatus"></div>
+        </aside>
+      </div>
+    </div>
 
     <aside class="bank" id="bankPanel">
       <div class="quiz-header">
@@ -986,31 +1012,6 @@
       <div class="bank-pagination" id="bankPagination"></div>
     </aside>
   </div>
-
-  <aside class="upload-manager-corner" aria-label="json upload manager">
-    <section class="upload-manager">
-      <div class="upload-header">
-        <h2>JSON Upload Manager</h2>
-        <div class="badge">Append by category</div>
-      </div>
-      <div class="field">
-        <label for="importCategory">Category</label>
-        <select id="importCategory">
-          <option value="nouns">Nouns</option>
-          <option value="verbs">Verbs</option>
-          <option value="adverbs">Adverbs</option>
-          <option value="adjectives">Adjectives</option>
-          <option value="common_phrases">Common phrases</option>
-        </select>
-      </div>
-      <div class="actions">
-        <button class="primary" id="importFileBtn">Upload & append JSON</button>
-        <button class="ghost" id="connectDataDirBtn">Connect data folder</button>
-      </div>
-      <input id="importFileInput" type="file" accept="application/json,.json" hidden />
-      <div class="feedback" id="importStatus"></div>
-    </section>
-  </aside>
 
   <script>
     const fallbackVocabulary = {
@@ -2421,14 +2422,6 @@
           <button class="primary pack-start-btn" onclick="buildSessionFromPack('${pack.id}')">Start &#9654;</button>
         </article>
       `).join("");
-
-      document.getElementById("packsToggle")?.addEventListener("click", () => {
-        const btn = document.getElementById("packsToggle");
-        const gridEl = document.getElementById("packs-grid");
-        const collapsed = gridEl.classList.toggle("collapsed");
-        btn.textContent = collapsed ? "Show ▼" : "Hide ▲";
-        btn.setAttribute("aria-expanded", String(!collapsed));
-      });
     }
 
     async function initializeApp() {
