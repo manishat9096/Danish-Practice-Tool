@@ -25,6 +25,21 @@ setTimeout(async () => {
  try {
   check('all UI references exist', Object.values(ui).every(Boolean));
   check('split vocabulary loaded', vocabulary.verbs.length > 1);
+  check('Core 500 is the default scope', ui.scope.value === 'core_500');
+  const coreWords = Object.entries(vocabulary).flatMap(([category, entries]) => entries.filter(entry => category !== 'common_phrases' && entryInScope(entry)));
+  check('Core scope contains 500 ranked words', coreWords.length === 500 && coreWords.every(entry => entry.curriculum_rank <= 500));
+  const coreBankCount = Number(ui.statBank.textContent);
+  ui.scope.value = 'full'; ui.scope.dispatchEvent(new Event('change'));
+  const fullEntry = vocabulary.nouns.find(entry => entry.curriculum_tier === 'full');
+  check('Full scope exposes the complete word bank', Number(ui.statBank.textContent) > coreBankCount && fullEntry && entryInScope(fullEntry));
+  ui.scope.value = 'core_500'; ui.scope.dispatchEvent(new Event('change'));
+  ui.bankCategory.value = 'common_phrases'; ui.bankSearch.value = 'transport'; renderBank();
+  check('curated phrases are grouped by practical topic', state.bankItems.length >= 3 && state.bankItems.every(item => item.detail.includes('transport')));
+  ui.bankCategory.value = 'all'; ui.bankSearch.value = ''; renderBank();
+  ui.category.value = 'common_phrases'; ui.category.dispatchEvent(new Event('change')); ui.phraseTopic.value = 'transport';
+  const transportExercises = flattenExercises('common_phrases', 'translation');
+  check('phrase situations filter quiz questions', !ui.phraseTopicField.hidden && transportExercises.length > 1 && transportExercises.every(item => item.record.topic === 'transport'));
+  ui.phraseTopic.value = 'all'; ui.category.value = 'verbs'; ui.category.dispatchEvent(new Event('change'));
   check('hidden answer sections take no space', getComputedStyle(ui.choiceList).display === 'none' && getComputedStyle(ui.tableGrid).display === 'none');
   ui.category.value = 'verbs'; ui.mode.value = 'forms'; ui.count.value = 2;
   ui.startBtn.click();

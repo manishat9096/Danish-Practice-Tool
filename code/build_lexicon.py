@@ -81,7 +81,7 @@ def merge_unique(existing: list[dict], generated: list[dict], key: str) -> list[
 def read_existing_lexicon(path: Path) -> dict[str, list[dict]]:
     if not path.exists():
         return {"verbs": [], "nouns": [], "adjectives": [], "adverbs": []}
-    with path.open("r", encoding="utf-8") as fh:
+    with path.open("r", encoding="utf-8-sig") as fh:
         data = json.load(fh)
     for bucket in ("verbs", "nouns", "adjectives", "adverbs"):
         data.setdefault(bucket, [])
@@ -112,8 +112,8 @@ def load_cor_lookup(cor_path: Path) -> dict[str, dict[str, str]]:
             # Locate gform: first field after lemma (index ≥ 2) that contains "."
             gform = form = None
             for i in range(2, min(len(parts), 5)):
-                if "." in parts[i]:
-                    gform = parts[i].strip()
+                if re.match(r"^(vb|sb|adj)\.", parts[i].strip()):
+                    gform = parts[i].strip().rstrip(".")
                     form = parts[i + 1].strip() if i + 1 < len(parts) else ""
                     break
             if gform and form:
@@ -132,12 +132,7 @@ def enrich_verb_from_cor(entry: dict, cor: dict[str, dict[str, str]]) -> dict:
         entry["imperative"] = forms.get("vb.imp", "")
     if not entry.get("past"):
         entry["past"] = forms.get("vb.præt.akt", "")
-    supine = forms.get("vb.perf.part", "")
-    if supine:
-        if not entry.get("present_perfect"):
-            entry["present_perfect"] = f"har {supine}"
-        if not entry.get("past_perfect"):
-            entry["past_perfect"] = f"havde {supine}"
+    # COR supplies the participle, not the auxiliary. Do not guess har/er.
     return entry
 
 
@@ -221,12 +216,16 @@ def clean_gloss(text: str) -> str:
 def choose_english(entry: dict[str, Any]) -> str | None:
     candidates: list[str] = []
     for sense in entry.get("senses") or []:
+        if sense.get("form_of") or sense.get("alt_of") or set(sense.get("tags", [])) & {
+            "form-of", "obsolete", "archaic", "misspelling", "nonstandard", "rare", "historical"
+        }:
+            continue
         for key in ("glosses", "raw_glosses"):
             for gloss in sense.get(key, []) or []:
                 cleaned = clean_gloss(str(gloss))
                 if cleaned and not cleaned.lower().startswith("inflection of"):
                     candidates.append(cleaned)
-    return min(candidates, key=len) if candidates else None
+    return candidates[0] if candidates else None
 
 
 def is_simple_headword(word: str) -> bool:
@@ -244,17 +243,29 @@ def find_form(
     required_tags: set[str],
     forbidden_tags: set[str] | None = None,
 ) -> str | None:
-    forbidden_tags = forbidden_tags or set()
+    forbidden_tags = (forbidden_tags or set()) | {"genitive", "table-tags", "inflection-template"}
     for form in forms:
         tags = {str(t).lower() for t in form.get("tags", [])}
         if required_tags.issubset(tags) and tags.isdisjoint(forbidden_tags):
             candidate = str(form.get("form", "")).strip()
-            if candidate:
+            if candidate and candidate not in {"-", "—", "?"} and not any(c in candidate for c in "{}<>"):
                 return candidate
     return None
 
 
 def detect_gender(entry: dict[str, Any], forms: list[dict[str, Any]]) -> str | None:
+    genders = set()
+    for sense in entry.get("senses", []):
+        if "common-gender" in sense.get("tags", []):
+            genders.add("en")
+        if "neuter" in sense.get("tags", []):
+            genders.add("et")
+    if len(genders) == 1:
+        return genders.pop()
+    for template in entry.get("head_templates", []):
+        gender = template.get("args", {}).get("g")
+        if gender in {"c", "n"}:
+            return "en" if gender == "c" else "et"
     for container in (entry.get("tags", []), entry.get("head_templates", [])):
         if isinstance(container, list):
             for item in container:
@@ -280,17 +291,25 @@ def build_verb(entry: dict[str, Any]) -> dict[str, str] | None:
     if not english:
         return None
     forms = entry.get("forms") or []
-    imperative = find_form(forms, {"imperative"})
-    past = find_form(forms, {"past"}, forbidden_tags={"participle"})
-    supine = find_form(forms, {"supine"}) or find_form(forms, {"past", "participle"})
+    imperative = find_form(forms, {"imperative"}, {"passive"})
+    past = find_form(forms, {"past"}, forbidden_tags={"participle", "passive"})
+    present_perfect = past_perfect = ""
+    for form in forms:
+        # Wiktextract preserves auxiliary information in conjugation tables.
+        match = re.fullmatch(r"\((have|har|er)\s*/\s*(havde|var)\)\s+([\wæøåÆØÅ-]+)", form.get("form", ""))
+        if match:
+            auxiliary, previous, participle = match.groups()
+            present_perfect = f"{'har' if auxiliary == 'have' else auxiliary} {participle}"
+            past_perfect = f"{previous} {participle}"
+            break
     infinitive = word if word.startswith("at ") else f"at {word}"
     return {
         "infinitive": infinitive,
         "english": english,
         "imperative": imperative or "",
         "past": past or "",
-        "present_perfect": f"har {supine}" if supine else "",
-        "past_perfect": f"havde {supine}" if supine else "",
+        "present_perfect": present_perfect,
+        "past_perfect": past_perfect,
     }
 
 
@@ -327,7 +346,7 @@ def build_noun(entry: dict[str, Any]) -> dict[str, str] | None:
         return None
     forms = entry.get("forms") or []
     gender = detect_gender(entry, forms)
-    singular_definite = find_form(forms, {"definite", "singular"})
+    singular_definite = find_form(forms, {"definite", "singular"}, {"plural"})
     plural_indefinite = find_form(forms, {"plural"}, forbidden_tags={"definite"})
     plural_definite = find_form(forms, {"definite", "plural"})
     return {

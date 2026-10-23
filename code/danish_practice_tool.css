@@ -34,6 +34,8 @@ h2 { font-size: 20px; letter-spacing: -.3px; }
 .danish-flag { width: 34px; height: 26px; border-radius: 3px; background: linear-gradient(90deg, transparent 30%, white 30% 41%, transparent 41%), linear-gradient(transparent 41%, white 41% 59%, transparent 59%), #d9283b; }
 .controls { display: flex; gap: 9px; align-items: center; flex-wrap: wrap; justify-content: end; }
 .controls .field { width: 154px; }
+.controls .scope-field { width: 170px; }
+.controls .phrase-topic-field { width: 190px; }
 .controls .count-field { width: 115px; }
 .controls select, .controls input { font-size: 14px; font-weight: 600; }
 .field { display: grid; gap: 5px; min-width: 0; }
@@ -189,7 +191,7 @@ dialog::backdrop { background: #18352c66; }
 }
 @media (max-width: 600px) {
   .shell { padding: 0 12px 20px; } .studio-strip { padding-left: 20px; } .dashboard-header { padding: 14px 0; gap: 14px; }
-  .controls { width: 100%; display: grid; grid-template-columns: 1fr 1fr 100px; gap: 7px; } .controls .field { width: auto; }
+  .controls { width: 100%; display: grid; grid-template-columns: 1fr 1fr; gap: 7px; } .controls .field, .controls .scope-field, .controls .phrase-topic-field, .controls .count-field { width: auto; }
   .controls > button { grid-column: span 1; font-size: 13px; padding: 8px; } .controls .builder-launch { grid-column: span 2; }
   .header-count input { padding-left: 32px; } .header-count label { font-size: 0; } .header-count label::after { content: 'Qs'; font-size: 13px; }
   .quiz-header { padding: 12px 16px; } .quiz-header h2 { font-size: 25px; gap: 8px; } .quiz-body { padding: 18px 16px 14px; }

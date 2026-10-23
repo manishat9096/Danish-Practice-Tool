@@ -15,6 +15,8 @@
       <div class="brand"><span class="danish-flag" aria-hidden="true"></span><div><h1>Danish Practice</h1></div></div>
       <section class="controls" aria-label="Quiz setup">
         <div class="field"><label class="sr-only" for="category">Category</label><select id="category"><option value="all">All categories</option><option value="verbs" selected>Verbs</option><option value="nouns">Nouns</option><option value="adjectives">Adjectives</option><option value="adverbs">Adverbs</option><option value="common_phrases">Common phrases</option></select></div>
+        <div class="field phrase-topic-field" id="phraseTopicField" hidden><label class="sr-only" for="phraseTopic">Phrase situation</label><select id="phraseTopic" title="Phrase situation"><option value="all">All situations</option><option value="introductions">Introductions</option><option value="everyday">Everyday communication</option><option value="shopping">Shopping</option><option value="food">Food and cafés</option><option value="transport">Transport</option><option value="places">Places and directions</option><option value="healthcare">Healthcare</option><option value="work">Work</option><option value="social">Social</option></select></div>
+        <div class="field scope-field"><label class="sr-only" for="scope">Vocabulary scope</label><select id="scope" title="Vocabulary scope"><option value="core_500" selected>Core 500</option><option value="everyday_1500">Everyday 1,500</option><option value="extended_3000">Extended 3,000</option><option value="full">Full dictionary</option></select></div>
         <div class="field"><label class="sr-only" for="mode">Exercise type</label><select id="mode"><option value="random">Mixed</option><option value="translation">Translation</option><option value="forms">Form practice</option><option value="table">Verb table</option><option value="multiple-choice" selected>Multiple choice</option></select></div>
         <div class="field count-field header-count"><label for="count">Questions</label><input id="count" type="number" min="1" max="100" value="12"></div>
         <button class="primary" id="startBtn">↻ New session</button>
@@ -99,6 +101,9 @@
       translateSpeakBtn: document.getElementById("translateSpeakBtn"),
       translateCopyBtn: document.getElementById("translateCopyBtn"),
       category: document.getElementById("category"),
+      phraseTopic: document.getElementById("phraseTopic"),
+      phraseTopicField: document.getElementById("phraseTopicField"),
+      scope: document.getElementById("scope"),
       count: document.getElementById("count"),
       seed: document.getElementById("seed"),
       mode: document.getElementById("mode"),
@@ -155,6 +160,7 @@
 
     const CHOICE_COUNT = 4;
     const BANK_PAGE_SIZE = 8;
+    const SCOPE_LIMITS = { core_500: 500, everyday_1500: 1500, extended_3000: 3000, full: Infinity };
     const CATEGORY_FILES = {
       verbs: "verbs.json",
       nouns: "nouns.json",
@@ -522,7 +528,7 @@
 
       for (const [key, value] of Object.entries(record)) {
         const text = formatBankValue(value);
-        if (!text || key === "tags") {
+        if (!text || ["tags", "provenance", "frequency", "frequency_rank", "curriculum_rank", "curriculum_tier", "review_status"].includes(key)) {
           continue;
         }
         if (text === title) {
@@ -549,7 +555,7 @@
       const items = [];
 
       for (const group of groups) {
-        const records = Array.isArray(vocabulary[group]) ? vocabulary[group] : [];
+        const records = Array.isArray(vocabulary[group]) ? vocabulary[group].filter(record => entryInScope(record)) : [];
         for (const record of records) {
           items.push({
             group,
@@ -1002,6 +1008,17 @@
       }
     }
 
+    function entryInScope(entry) {
+      const selected = ui.scope?.value || "core_500";
+      if (selected === "full") return true;
+      // Newly added browser entries have no curriculum metadata and remain immediately usable.
+      if (!entry.curriculum_tier && !entry.curriculum_rank) return true;
+      const rank = Number(entry.curriculum_rank);
+      if (Number.isFinite(rank) && rank > 0) return rank <= SCOPE_LIMITS[selected];
+      const tiers = ["core_500", "everyday_1500", "extended_3000"];
+      return tiers.includes(entry.curriculum_tier) && tiers.indexOf(entry.curriculum_tier) <= tiers.indexOf(selected);
+    }
+
     function flattenExercises(category, mode, templateIds) {
       const cats = category === "all"
         ? ["verbs", "nouns", "adjectives", "adverbs", "common_phrases"]
@@ -1009,7 +1026,9 @@
       const exercises = [];
 
       for (const grp of cats) {
-        const items = vocabulary[grp] || [];
+        const selectedTopic = ui.category.value === "common_phrases" ? ui.phraseTopic.value : "all";
+        const items = (vocabulary[grp] || []).filter(entryInScope)
+          .filter(item => grp !== "common_phrases" || selectedTopic === "all" || item.topic === selectedTopic);
         const tmpls = EXERCISE_TEMPLATES.filter(t =>
           t.category === grp &&
           (!templateIds || templateIds.includes(t.id))
@@ -1046,6 +1065,7 @@
     function buildChoiceExercise(exercise, rng) {
       const template = EXERCISE_TEMPLATES.find(item => item.id === exercise.templateId);
       const pool = (vocabulary[exercise.group] || [])
+        .filter(entryInScope)
         .filter(item => !template.condition || template.condition(item))
         .flatMap(item => template.answers(item));
       const correct = exercise.answers[0];
@@ -1177,9 +1197,9 @@
           <details><summary>Forms &amp; details</summary>${escapeHtml(item.detail)}</details>
         </article>
       `).join("");
-      ui.statBank.textContent = String(Object.values(vocabulary).reduce((sum, entries) => sum + entries.length, 0));
+      ui.statBank.textContent = String(Object.values(vocabulary).reduce((sum, entries) => sum + entries.filter(entry => entryInScope(entry)).length, 0));
       ui.bankPageSummary.textContent = items.length
-        ? `Showing ${startIndex + 1}–${endIndex} of ${items.length} matching entries.`
+        ? `Showing ${startIndex + 1}–${endIndex} of ${items.length} matching entries in ${ui.scope.options[ui.scope.selectedIndex].text}.`
         : "No matching words. Try another search or category.";
       renderBankPagination(totalPages);
     }
@@ -1354,6 +1374,7 @@
       const pack = EXERCISE_PACKS.find(p => p.id === packId);
       if (!pack) return;
       ui.category.value = pack.category;
+      updatePhraseTopicVisibility();
       ui.mode.value     = pack.mode;
       ui.count.value    = pack.count;
       if (pack.seed === "daily") {
@@ -1642,7 +1663,24 @@
       }
     });
 
+    function updatePhraseTopicVisibility() {
+      ui.phraseTopicField.hidden = ui.category.value !== "common_phrases";
+    }
+
     ui.category.addEventListener("change", () => {
+      updatePhraseTopicVisibility();
+      refreshBuilderPreview();
+      if (!state.exercises.length) updateStats();
+    });
+
+    ui.phraseTopic.addEventListener("change", refreshBuilderPreview);
+
+    ui.scope.addEventListener("change", () => {
+      state.bankPage = 0;
+      renderBank();
+      renderPackSelector();
+      refreshBuilderPreview();
+      try { localStorage.setItem("danish-practice-scope", ui.scope.value); } catch { /* Optional preference. */ }
       if (!state.exercises.length) updateStats();
     });
 
@@ -1801,6 +1839,11 @@
 
     async function initializeApp() {
       ui.translateSpeakBtn.innerHTML = SPEAKER_ICON;
+      try {
+        const savedScope = localStorage.getItem("danish-practice-scope");
+        if (savedScope && Object.prototype.hasOwnProperty.call(SCOPE_LIMITS, savedScope)) ui.scope.value = savedScope;
+      } catch { /* The default Core 500 remains selected. */ }
+      updatePhraseTopicVisibility();
       refreshVoices();
       if ("speechSynthesis" in window) window.speechSynthesis.addEventListener("voiceschanged", refreshVoices);
       renderPackSelector();

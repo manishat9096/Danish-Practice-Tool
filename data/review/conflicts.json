@@ -1,0 +1,3194 @@
+[
+  {
+    "category": "verbs",
+    "word": "acceptere",
+    "field": "imperative",
+    "kept": "accepter",
+    "imported": "acceptér",
+    "source": "https://en.wiktionary.org/wiki/acceptere#Danish"
+  },
+  {
+    "category": "verbs",
+    "word": "arbejde",
+    "field": "english",
+    "kept": "to work",
+    "imported": "work",
+    "source": "https://en.wiktionary.org/wiki/arbejde#Danish"
+  },
+  {
+    "category": "verbs",
+    "word": "bo",
+    "field": "english",
+    "kept": "to live (reside)",
+    "imported": "to live",
+    "source": "https://en.wiktionary.org/wiki/bo#Danish"
+  },
+  {
+    "category": "verbs",
+    "word": "dele",
+    "field": "english",
+    "kept": "to share / divide",
+    "imported": "divide",
+    "source": "https://en.wiktionary.org/wiki/dele#Danish"
+  },
+  {
+    "category": "verbs",
+    "word": "drikke",
+    "field": "english",
+    "kept": "to drink",
+    "imported": "drink",
+    "source": "https://en.wiktionary.org/wiki/drikke#Danish"
+  },
+  {
+    "category": "verbs",
+    "word": "fastslå",
+    "field": "imperative",
+    "kept": "slå fast",
+    "imported": "fastslå",
+    "source": "https://en.wiktionary.org/wiki/fastsl%C3%A5#Danish"
+  },
+  {
+    "category": "verbs",
+    "word": "flygte",
+    "field": "present_perfect",
+    "kept": "er flygtet",
+    "imported": "har flygtet",
+    "source": "https://en.wiktionary.org/wiki/flygte#Danish"
+  },
+  {
+    "category": "verbs",
+    "word": "flygte",
+    "field": "past_perfect",
+    "kept": "var flygtet",
+    "imported": "havde flygtet",
+    "source": "https://en.wiktionary.org/wiki/flygte#Danish"
+  },
+  {
+    "category": "verbs",
+    "word": "gennemføre",
+    "field": "english",
+    "kept": "to carry out / complete",
+    "imported": "to process",
+    "source": "https://en.wiktionary.org/wiki/gennemf%C3%B8re#Danish"
+  },
+  {
+    "category": "verbs",
+    "word": "grine",
+    "field": "past",
+    "kept": "grinede",
+    "imported": "grinte",
+    "source": "https://en.wiktionary.org/wiki/grine#Danish"
+  },
+  {
+    "category": "verbs",
+    "word": "gå",
+    "field": "english",
+    "kept": "to go / walk",
+    "imported": "to go",
+    "source": "https://en.wiktionary.org/wiki/g%C3%A5#Danish"
+  },
+  {
+    "category": "verbs",
+    "word": "gå",
+    "field": "present_perfect",
+    "kept": "har gået",
+    "imported": "er gået",
+    "source": "https://en.wiktionary.org/wiki/g%C3%A5#Danish"
+  },
+  {
+    "category": "verbs",
+    "word": "gå",
+    "field": "past_perfect",
+    "kept": "havde gået",
+    "imported": "var gået",
+    "source": "https://en.wiktionary.org/wiki/g%C3%A5#Danish"
+  },
+  {
+    "category": "verbs",
+    "word": "gøre",
+    "field": "english",
+    "kept": "to do / make",
+    "imported": "to do",
+    "source": "https://en.wiktionary.org/wiki/g%C3%B8re#Danish"
+  },
+  {
+    "category": "verbs",
+    "word": "indebære",
+    "field": "present_perfect",
+    "kept": "har inde båret",
+    "imported": "har indebåret",
+    "source": "https://en.wiktionary.org/wiki/indeb%C3%A6re#Danish"
+  },
+  {
+    "category": "verbs",
+    "word": "indebære",
+    "field": "past_perfect",
+    "kept": "havde inde båret",
+    "imported": "havde indebåret",
+    "source": "https://en.wiktionary.org/wiki/indeb%C3%A6re#Danish"
+  },
+  {
+    "category": "verbs",
+    "word": "komme",
+    "field": "present_perfect",
+    "kept": "har kommet",
+    "imported": "er kommet",
+    "source": "https://en.wiktionary.org/wiki/komme#Danish"
+  },
+  {
+    "category": "verbs",
+    "word": "komme",
+    "field": "past_perfect",
+    "kept": "havde kommet",
+    "imported": "var kommet",
+    "source": "https://en.wiktionary.org/wiki/komme#Danish"
+  },
+  {
+    "category": "verbs",
+    "word": "købe",
+    "field": "english",
+    "kept": "to buy",
+    "imported": "buy",
+    "source": "https://en.wiktionary.org/wiki/k%C3%B8be#Danish"
+  },
+  {
+    "category": "verbs",
+    "word": "lede",
+    "field": "past",
+    "kept": "ledte",
+    "imported": "ledede",
+    "source": "https://en.wiktionary.org/wiki/lede#Danish"
+  },
+  {
+    "category": "verbs",
+    "word": "lede",
+    "field": "present_perfect",
+    "kept": "har ledt",
+    "imported": "har ledet",
+    "source": "https://en.wiktionary.org/wiki/lede#Danish"
+  },
+  {
+    "category": "verbs",
+    "word": "lede",
+    "field": "past_perfect",
+    "kept": "havde ledt",
+    "imported": "havde ledet",
+    "source": "https://en.wiktionary.org/wiki/lede#Danish"
+  },
+  {
+    "category": "verbs",
+    "word": "lære",
+    "field": "english",
+    "kept": "to learn",
+    "imported": "to teach",
+    "source": "https://en.wiktionary.org/wiki/l%C3%A6re#Danish"
+  },
+  {
+    "category": "verbs",
+    "word": "løbe",
+    "field": "english",
+    "kept": "to run",
+    "imported": "to curdle",
+    "source": "https://en.wiktionary.org/wiki/l%C3%B8be#Danish"
+  },
+  {
+    "category": "verbs",
+    "word": "løbe",
+    "field": "past",
+    "kept": "løb",
+    "imported": "løbede",
+    "source": "https://en.wiktionary.org/wiki/l%C3%B8be#Danish"
+  },
+  {
+    "category": "verbs",
+    "word": "løbe",
+    "field": "present_perfect",
+    "kept": "har / er løbet",
+    "imported": "har løbet",
+    "source": "https://en.wiktionary.org/wiki/l%C3%B8be#Danish"
+  },
+  {
+    "category": "verbs",
+    "word": "løbe",
+    "field": "past_perfect",
+    "kept": "havde / var løbet",
+    "imported": "havde løbet",
+    "source": "https://en.wiktionary.org/wiki/l%C3%B8be#Danish"
+  },
+  {
+    "category": "verbs",
+    "word": "medvirke",
+    "field": "imperative",
+    "kept": "medvirk",
+    "imported": "medvirke",
+    "source": "https://en.wiktionary.org/wiki/medvirke#Danish"
+  },
+  {
+    "category": "verbs",
+    "word": "mærke",
+    "field": "english",
+    "kept": "to notice / feel",
+    "imported": "to mark",
+    "source": "https://en.wiktionary.org/wiki/m%C3%A6rke#Danish"
+  },
+  {
+    "category": "verbs",
+    "word": "oplyse",
+    "field": "english",
+    "kept": "to inform / state",
+    "imported": "to light up",
+    "source": "https://en.wiktionary.org/wiki/oplyse#Danish"
+  },
+  {
+    "category": "verbs",
+    "word": "overføre",
+    "field": "past",
+    "kept": "overførte",
+    "imported": "overførde",
+    "source": "https://en.wiktionary.org/wiki/overf%C3%B8re#Danish"
+  },
+  {
+    "category": "verbs",
+    "word": "regne",
+    "field": "english",
+    "kept": "to calculate / rain",
+    "imported": "to rain",
+    "source": "https://en.wiktionary.org/wiki/regne#Danish"
+  },
+  {
+    "category": "verbs",
+    "word": "rejse",
+    "field": "english",
+    "kept": "to travel",
+    "imported": "rise",
+    "source": "https://en.wiktionary.org/wiki/rejse#Danish"
+  },
+  {
+    "category": "verbs",
+    "word": "ringe",
+    "field": "english",
+    "kept": "to call",
+    "imported": "To call",
+    "source": "https://en.wiktionary.org/wiki/ringe#Danish"
+  },
+  {
+    "category": "verbs",
+    "word": "se",
+    "field": "present_perfect",
+    "kept": "har set",
+    "imported": "har sets",
+    "source": "https://en.wiktionary.org/wiki/se#Danish"
+  },
+  {
+    "category": "verbs",
+    "word": "se",
+    "field": "past_perfect",
+    "kept": "havde set",
+    "imported": "havde sets",
+    "source": "https://en.wiktionary.org/wiki/se#Danish"
+  },
+  {
+    "category": "verbs",
+    "word": "ske",
+    "field": "english",
+    "kept": "to happen",
+    "imported": "be",
+    "source": "https://en.wiktionary.org/wiki/ske#Danish"
+  },
+  {
+    "category": "verbs",
+    "word": "standse",
+    "field": "present_perfect",
+    "kept": "har / er standset",
+    "imported": "har standset",
+    "source": "https://en.wiktionary.org/wiki/standse#Danish"
+  },
+  {
+    "category": "verbs",
+    "word": "standse",
+    "field": "past_perfect",
+    "kept": "havde / var standset",
+    "imported": "havde standset",
+    "source": "https://en.wiktionary.org/wiki/standse#Danish"
+  },
+  {
+    "category": "verbs",
+    "word": "starte",
+    "field": "present_perfect",
+    "kept": "har / er startet",
+    "imported": "har startet",
+    "source": "https://en.wiktionary.org/wiki/starte#Danish"
+  },
+  {
+    "category": "verbs",
+    "word": "starte",
+    "field": "past_perfect",
+    "kept": "havde / var startet",
+    "imported": "havde startet",
+    "source": "https://en.wiktionary.org/wiki/starte#Danish"
+  },
+  {
+    "category": "verbs",
+    "word": "stoppe",
+    "field": "present_perfect",
+    "kept": "har / er stoppet",
+    "imported": "har stoppet",
+    "source": "https://en.wiktionary.org/wiki/stoppe#Danish"
+  },
+  {
+    "category": "verbs",
+    "word": "stoppe",
+    "field": "past_perfect",
+    "kept": "havde / var stoppet",
+    "imported": "havde stoppet",
+    "source": "https://en.wiktionary.org/wiki/stoppe#Danish"
+  },
+  {
+    "category": "verbs",
+    "word": "støtte",
+    "field": "past",
+    "kept": "støttede",
+    "imported": "støtta",
+    "source": "https://en.wiktionary.org/wiki/st%C3%B8tte#Danish"
+  },
+  {
+    "category": "verbs",
+    "word": "svigte",
+    "field": "present_perfect",
+    "kept": "har sviget",
+    "imported": "har svigtet",
+    "source": "https://en.wiktionary.org/wiki/svigte#Danish"
+  },
+  {
+    "category": "verbs",
+    "word": "tale",
+    "field": "english",
+    "kept": "to speak / talk",
+    "imported": "to make a speech",
+    "source": "https://en.wiktionary.org/wiki/tale#Danish"
+  },
+  {
+    "category": "verbs",
+    "word": "vente",
+    "field": "english",
+    "kept": "to wait",
+    "imported": "wait",
+    "source": "https://en.wiktionary.org/wiki/vente#Danish"
+  },
+  {
+    "category": "verbs",
+    "word": "vide",
+    "field": "english",
+    "kept": "to know",
+    "imported": "to know )",
+    "source": "https://en.wiktionary.org/wiki/vide#Danish"
+  },
+  {
+    "category": "verbs",
+    "word": "virke",
+    "field": "english",
+    "kept": "to work / function",
+    "imported": "function properly",
+    "source": "https://en.wiktionary.org/wiki/virke#Danish"
+  },
+  {
+    "category": "verbs",
+    "word": "vokse",
+    "field": "present_perfect",
+    "kept": "er vokset",
+    "imported": "har vokset",
+    "source": "https://en.wiktionary.org/wiki/vokse#Danish"
+  },
+  {
+    "category": "verbs",
+    "word": "vokse",
+    "field": "past_perfect",
+    "kept": "var vokset",
+    "imported": "havde vokset",
+    "source": "https://en.wiktionary.org/wiki/vokse#Danish"
+  },
+  {
+    "category": "verbs",
+    "word": "vågne",
+    "field": "present_perfect",
+    "kept": "er vågnet",
+    "imported": "har vågnet",
+    "source": "https://en.wiktionary.org/wiki/v%C3%A5gne#Danish"
+  },
+  {
+    "category": "verbs",
+    "word": "vågne",
+    "field": "past_perfect",
+    "kept": "var vågnet",
+    "imported": "havde vågnet",
+    "source": "https://en.wiktionary.org/wiki/v%C3%A5gne#Danish"
+  },
+  {
+    "category": "nouns",
+    "word": "affald",
+    "field": "english",
+    "kept": "waste",
+    "imported": "trash",
+    "source": "https://en.wiktionary.org/wiki/affald#Danish"
+  },
+  {
+    "category": "nouns",
+    "word": "arbejdsplads",
+    "field": "english",
+    "kept": "workplace",
+    "imported": "a workplace",
+    "source": "https://en.wiktionary.org/wiki/arbejdsplads#Danish"
+  },
+  {
+    "category": "nouns",
+    "word": "argumentation",
+    "field": "plural_indefinite",
+    "kept": "-",
+    "imported": "argumentationer",
+    "source": "https://en.wiktionary.org/wiki/argumentation#Danish"
+  },
+  {
+    "category": "nouns",
+    "word": "argumentation",
+    "field": "plural_definite",
+    "kept": "-",
+    "imported": "argumentationerne",
+    "source": "https://en.wiktionary.org/wiki/argumentation#Danish"
+  },
+  {
+    "category": "nouns",
+    "word": "autoritet",
+    "field": "plural_indefinite",
+    "kept": "autoriter",
+    "imported": "autoriteter",
+    "source": "https://en.wiktionary.org/wiki/autoritet#Danish"
+  },
+  {
+    "category": "nouns",
+    "word": "autoritet",
+    "field": "plural_definite",
+    "kept": "autoriterne",
+    "imported": "autoriteterne",
+    "source": "https://en.wiktionary.org/wiki/autoritet#Danish"
+  },
+  {
+    "category": "nouns",
+    "word": "bad",
+    "field": "english",
+    "kept": "bathroom",
+    "imported": "bath",
+    "source": "https://en.wiktionary.org/wiki/bad#Danish"
+  },
+  {
+    "category": "nouns",
+    "word": "begreb",
+    "field": "english",
+    "kept": "concept",
+    "imported": "A concept",
+    "source": "https://en.wiktionary.org/wiki/begreb#Danish"
+  },
+  {
+    "category": "nouns",
+    "word": "bestyrelse",
+    "field": "english",
+    "kept": "board of directors",
+    "imported": "management",
+    "source": "https://en.wiktionary.org/wiki/bestyrelse#Danish"
+  },
+  {
+    "category": "nouns",
+    "word": "betydning",
+    "field": "english",
+    "kept": "meaning/significance",
+    "imported": "meaning",
+    "source": "https://en.wiktionary.org/wiki/betydning#Danish"
+  },
+  {
+    "category": "nouns",
+    "word": "bruger",
+    "field": "english",
+    "kept": "user",
+    "imported": "A user",
+    "source": "https://en.wiktionary.org/wiki/bruger#Danish"
+  },
+  {
+    "category": "nouns",
+    "word": "butik",
+    "field": "english",
+    "kept": "shop",
+    "imported": "store",
+    "source": "https://en.wiktionary.org/wiki/butik#Danish"
+  },
+  {
+    "category": "nouns",
+    "word": "butikscenter",
+    "field": "singular_definite",
+    "kept": "butikscenteret",
+    "imported": "butikscentret",
+    "source": "https://en.wiktionary.org/wiki/butikscenter#Danish"
+  },
+  {
+    "category": "nouns",
+    "word": "butikscenter",
+    "field": "english",
+    "kept": "shopping mall",
+    "imported": "shopping centre",
+    "source": "https://en.wiktionary.org/wiki/butikscenter#Danish"
+  },
+  {
+    "category": "nouns",
+    "word": "data",
+    "field": "singular_definite",
+    "kept": "dataene",
+    "imported": "dataet",
+    "source": "https://en.wiktionary.org/wiki/data#Danish"
+  },
+  {
+    "category": "nouns",
+    "word": "data",
+    "field": "plural_indefinite",
+    "kept": "-",
+    "imported": "data",
+    "source": "https://en.wiktionary.org/wiki/data#Danish"
+  },
+  {
+    "category": "nouns",
+    "word": "data",
+    "field": "plural_definite",
+    "kept": "-",
+    "imported": "dataene",
+    "source": "https://en.wiktionary.org/wiki/data#Danish"
+  },
+  {
+    "category": "nouns",
+    "word": "data",
+    "field": "english",
+    "kept": "data",
+    "imported": "datum",
+    "source": "https://en.wiktionary.org/wiki/data#Danish"
+  },
+  {
+    "category": "nouns",
+    "word": "diskussion",
+    "field": "english",
+    "kept": "discussion",
+    "imported": "an argument",
+    "source": "https://en.wiktionary.org/wiki/diskussion#Danish"
+  },
+  {
+    "category": "nouns",
+    "word": "distribution",
+    "field": "plural_indefinite",
+    "kept": "-",
+    "imported": "distributioner",
+    "source": "https://en.wiktionary.org/wiki/distribution#Danish"
+  },
+  {
+    "category": "nouns",
+    "word": "distribution",
+    "field": "plural_definite",
+    "kept": "-",
+    "imported": "distributionerne",
+    "source": "https://en.wiktionary.org/wiki/distribution#Danish"
+  },
+  {
+    "category": "nouns",
+    "word": "domstol",
+    "field": "english",
+    "kept": "court of law",
+    "imported": "a court",
+    "source": "https://en.wiktionary.org/wiki/domstol#Danish"
+  },
+  {
+    "category": "nouns",
+    "word": "effekt",
+    "field": "english",
+    "kept": "effect",
+    "imported": "power",
+    "source": "https://en.wiktionary.org/wiki/effekt#Danish"
+  },
+  {
+    "category": "nouns",
+    "word": "eksamen",
+    "field": "plural_indefinite",
+    "kept": "eksamener",
+    "imported": "eksaminer",
+    "source": "https://en.wiktionary.org/wiki/eksamen#Danish"
+  },
+  {
+    "category": "nouns",
+    "word": "eksamen",
+    "field": "plural_definite",
+    "kept": "eksamenerne",
+    "imported": "eksaminerne",
+    "source": "https://en.wiktionary.org/wiki/eksamen#Danish"
+  },
+  {
+    "category": "nouns",
+    "word": "eksamen",
+    "field": "english",
+    "kept": "exam",
+    "imported": "examination",
+    "source": "https://en.wiktionary.org/wiki/eksamen#Danish"
+  },
+  {
+    "category": "nouns",
+    "word": "energi",
+    "field": "plural_indefinite",
+    "kept": "-",
+    "imported": "energier",
+    "source": "https://en.wiktionary.org/wiki/energi#Danish"
+  },
+  {
+    "category": "nouns",
+    "word": "energi",
+    "field": "plural_definite",
+    "kept": "-",
+    "imported": "energierne",
+    "source": "https://en.wiktionary.org/wiki/energi#Danish"
+  },
+  {
+    "category": "nouns",
+    "word": "erkendelse",
+    "field": "english",
+    "kept": "realization/insight",
+    "imported": "acknowledgment",
+    "source": "https://en.wiktionary.org/wiki/erkendelse#Danish"
+  },
+  {
+    "category": "nouns",
+    "word": "felt",
+    "field": "english",
+    "kept": "field (study area)",
+    "imported": "field",
+    "source": "https://en.wiktionary.org/wiki/felt#Danish"
+  },
+  {
+    "category": "nouns",
+    "word": "film",
+    "field": "english",
+    "kept": "movie",
+    "imported": "a movie",
+    "source": "https://en.wiktionary.org/wiki/film#Danish"
+  },
+  {
+    "category": "nouns",
+    "word": "forfatning",
+    "field": "english",
+    "kept": "constitution",
+    "imported": "condition",
+    "source": "https://en.wiktionary.org/wiki/forfatning#Danish"
+  },
+  {
+    "category": "nouns",
+    "word": "forhandling",
+    "field": "english",
+    "kept": "negotiation",
+    "imported": "a negotiation",
+    "source": "https://en.wiktionary.org/wiki/forhandling#Danish"
+  },
+  {
+    "category": "nouns",
+    "word": "forhold",
+    "field": "english",
+    "kept": "condition/relationship",
+    "imported": "relation",
+    "source": "https://en.wiktionary.org/wiki/forhold#Danish"
+  },
+  {
+    "category": "nouns",
+    "word": "form",
+    "field": "english",
+    "kept": "shape",
+    "imported": "form",
+    "source": "https://en.wiktionary.org/wiki/form#Danish"
+  },
+  {
+    "category": "nouns",
+    "word": "forsøg",
+    "field": "english",
+    "kept": "attempt",
+    "imported": "an attempt",
+    "source": "https://en.wiktionary.org/wiki/fors%C3%B8g#Danish"
+  },
+  {
+    "category": "nouns",
+    "word": "fortolkning",
+    "field": "english",
+    "kept": "interpretation",
+    "imported": "an interpretation",
+    "source": "https://en.wiktionary.org/wiki/fortolkning#Danish"
+  },
+  {
+    "category": "nouns",
+    "word": "forudsætning",
+    "field": "english",
+    "kept": "prerequisite/assumption",
+    "imported": "assumption",
+    "source": "https://en.wiktionary.org/wiki/foruds%C3%A6tning#Danish"
+  },
+  {
+    "category": "nouns",
+    "word": "forurening",
+    "field": "plural_indefinite",
+    "kept": "-",
+    "imported": "forureninger",
+    "source": "https://en.wiktionary.org/wiki/forurening#Danish"
+  },
+  {
+    "category": "nouns",
+    "word": "forurening",
+    "field": "plural_definite",
+    "kept": "-",
+    "imported": "forureningerne",
+    "source": "https://en.wiktionary.org/wiki/forurening#Danish"
+  },
+  {
+    "category": "nouns",
+    "word": "fællesskab",
+    "field": "english",
+    "kept": "community",
+    "imported": "a community",
+    "source": "https://en.wiktionary.org/wiki/f%C3%A6llesskab#Danish"
+  },
+  {
+    "category": "nouns",
+    "word": "gang",
+    "field": "english",
+    "kept": "time / occasion",
+    "imported": "the act of walking",
+    "source": "https://en.wiktionary.org/wiki/gang#Danish"
+  },
+  {
+    "category": "nouns",
+    "word": "globalisering",
+    "field": "english",
+    "kept": "globalization",
+    "imported": "globalisation",
+    "source": "https://en.wiktionary.org/wiki/globalisering#Danish"
+  },
+  {
+    "category": "nouns",
+    "word": "glæde",
+    "field": "plural_indefinite",
+    "kept": "-",
+    "imported": "glæder",
+    "source": "https://en.wiktionary.org/wiki/gl%C3%A6de#Danish"
+  },
+  {
+    "category": "nouns",
+    "word": "glæde",
+    "field": "plural_definite",
+    "kept": "-",
+    "imported": "glæderne",
+    "source": "https://en.wiktionary.org/wiki/gl%C3%A6de#Danish"
+  },
+  {
+    "category": "nouns",
+    "word": "historie",
+    "field": "english",
+    "kept": "story",
+    "imported": "history",
+    "source": "https://en.wiktionary.org/wiki/historie#Danish"
+  },
+  {
+    "category": "nouns",
+    "word": "hjem",
+    "field": "english",
+    "kept": "home (state)",
+    "imported": "home",
+    "source": "https://en.wiktionary.org/wiki/hjem#Danish"
+  },
+  {
+    "category": "nouns",
+    "word": "holdning",
+    "field": "english",
+    "kept": "attitude",
+    "imported": "posture",
+    "source": "https://en.wiktionary.org/wiki/holdning#Danish"
+  },
+  {
+    "category": "nouns",
+    "word": "hud",
+    "field": "plural_indefinite",
+    "kept": "-",
+    "imported": "huder",
+    "source": "https://en.wiktionary.org/wiki/hud#Danish"
+  },
+  {
+    "category": "nouns",
+    "word": "hud",
+    "field": "plural_definite",
+    "kept": "-",
+    "imported": "huderne",
+    "source": "https://en.wiktionary.org/wiki/hud#Danish"
+  },
+  {
+    "category": "nouns",
+    "word": "hår",
+    "field": "plural_indefinite",
+    "kept": "-",
+    "imported": "hår",
+    "source": "https://en.wiktionary.org/wiki/h%C3%A5r#Danish"
+  },
+  {
+    "category": "nouns",
+    "word": "hår",
+    "field": "plural_definite",
+    "kept": "-",
+    "imported": "hårene",
+    "source": "https://en.wiktionary.org/wiki/h%C3%A5r#Danish"
+  },
+  {
+    "category": "nouns",
+    "word": "indhold",
+    "field": "plural_indefinite",
+    "kept": "-",
+    "imported": "indhold",
+    "source": "https://en.wiktionary.org/wiki/indhold#Danish"
+  },
+  {
+    "category": "nouns",
+    "word": "indhold",
+    "field": "plural_definite",
+    "kept": "-",
+    "imported": "indholdene",
+    "source": "https://en.wiktionary.org/wiki/indhold#Danish"
+  },
+  {
+    "category": "nouns",
+    "word": "indvandring",
+    "field": "plural_indefinite",
+    "kept": "-",
+    "imported": "indvandringer",
+    "source": "https://en.wiktionary.org/wiki/indvandring#Danish"
+  },
+  {
+    "category": "nouns",
+    "word": "indvandring",
+    "field": "plural_definite",
+    "kept": "-",
+    "imported": "indvandringerne",
+    "source": "https://en.wiktionary.org/wiki/indvandring#Danish"
+  },
+  {
+    "category": "nouns",
+    "word": "karakter",
+    "field": "english",
+    "kept": "grade",
+    "imported": "character",
+    "source": "https://en.wiktionary.org/wiki/karakter#Danish"
+  },
+  {
+    "category": "nouns",
+    "word": "klokke",
+    "field": "english",
+    "kept": "clock / bell",
+    "imported": "bell",
+    "source": "https://en.wiktionary.org/wiki/klokke#Danish"
+  },
+  {
+    "category": "nouns",
+    "word": "kraft",
+    "field": "english",
+    "kept": "power/force",
+    "imported": "strength",
+    "source": "https://en.wiktionary.org/wiki/kraft#Danish"
+  },
+  {
+    "category": "nouns",
+    "word": "kvinde",
+    "field": "english",
+    "kept": "woman",
+    "imported": "A woman",
+    "source": "https://en.wiktionary.org/wiki/kvinde#Danish"
+  },
+  {
+    "category": "nouns",
+    "word": "køkken",
+    "field": "english",
+    "kept": "kitchen",
+    "imported": "a kitchen",
+    "source": "https://en.wiktionary.org/wiki/k%C3%B8kken#Danish"
+  },
+  {
+    "category": "nouns",
+    "word": "ledelse",
+    "field": "english",
+    "kept": "management",
+    "imported": "leadership",
+    "source": "https://en.wiktionary.org/wiki/ledelse#Danish"
+  },
+  {
+    "category": "nouns",
+    "word": "lejlighed",
+    "field": "english",
+    "kept": "apartment / opportunity",
+    "imported": "apartment",
+    "source": "https://en.wiktionary.org/wiki/lejlighed#Danish"
+  },
+  {
+    "category": "nouns",
+    "word": "løsning",
+    "field": "english",
+    "kept": "solution",
+    "imported": "an answer",
+    "source": "https://en.wiktionary.org/wiki/l%C3%B8sning#Danish"
+  },
+  {
+    "category": "nouns",
+    "word": "mad",
+    "field": "english",
+    "kept": "food",
+    "imported": "a slice of bread with something on top",
+    "source": "https://en.wiktionary.org/wiki/mad#Danish"
+  },
+  {
+    "category": "nouns",
+    "word": "medie",
+    "field": "english",
+    "kept": "media",
+    "imported": "medium",
+    "source": "https://en.wiktionary.org/wiki/medie#Danish"
+  },
+  {
+    "category": "nouns",
+    "word": "mistillid",
+    "field": "english",
+    "kept": "distrust",
+    "imported": "mistrust",
+    "source": "https://en.wiktionary.org/wiki/mistillid#Danish"
+  },
+  {
+    "category": "nouns",
+    "word": "mål",
+    "field": "english",
+    "kept": "goal",
+    "imported": "language",
+    "source": "https://en.wiktionary.org/wiki/m%C3%A5l#Danish"
+  },
+  {
+    "category": "nouns",
+    "word": "nyhed",
+    "field": "english",
+    "kept": "news item",
+    "imported": "A report of current events",
+    "source": "https://en.wiktionary.org/wiki/nyhed#Danish"
+  },
+  {
+    "category": "nouns",
+    "word": "omfang",
+    "field": "english",
+    "kept": "extent/scope",
+    "imported": "extent",
+    "source": "https://en.wiktionary.org/wiki/omfang#Danish"
+  },
+  {
+    "category": "nouns",
+    "word": "opfattelse",
+    "field": "english",
+    "kept": "perception",
+    "imported": "conception",
+    "source": "https://en.wiktionary.org/wiki/opfattelse#Danish"
+  },
+  {
+    "category": "nouns",
+    "word": "opmærksomhed",
+    "field": "plural_indefinite",
+    "kept": "-",
+    "imported": "opmærksomheder",
+    "source": "https://en.wiktionary.org/wiki/opm%C3%A6rksomhed#Danish"
+  },
+  {
+    "category": "nouns",
+    "word": "opmærksomhed",
+    "field": "plural_definite",
+    "kept": "-",
+    "imported": "opmærksomhederne",
+    "source": "https://en.wiktionary.org/wiki/opm%C3%A6rksomhed#Danish"
+  },
+  {
+    "category": "nouns",
+    "word": "opsigelse",
+    "field": "english",
+    "kept": "termination/resignation",
+    "imported": "dismissal",
+    "source": "https://en.wiktionary.org/wiki/opsigelse#Danish"
+  },
+  {
+    "category": "nouns",
+    "word": "parti",
+    "field": "english",
+    "kept": "political party / batch",
+    "imported": "lot",
+    "source": "https://en.wiktionary.org/wiki/parti#Danish"
+  },
+  {
+    "category": "nouns",
+    "word": "plan",
+    "field": "english",
+    "kept": "plan",
+    "imported": "a plan",
+    "source": "https://en.wiktionary.org/wiki/plan#Danish"
+  },
+  {
+    "category": "nouns",
+    "word": "produktion",
+    "field": "plural_indefinite",
+    "kept": "-",
+    "imported": "produktioner",
+    "source": "https://en.wiktionary.org/wiki/produktion#Danish"
+  },
+  {
+    "category": "nouns",
+    "word": "produktion",
+    "field": "plural_definite",
+    "kept": "-",
+    "imported": "produktionerne",
+    "source": "https://en.wiktionary.org/wiki/produktion#Danish"
+  },
+  {
+    "category": "nouns",
+    "word": "påvirkning",
+    "field": "plural_indefinite",
+    "kept": "påvirkninger",
+    "imported": "påvirkningerne",
+    "source": "https://en.wiktionary.org/wiki/p%C3%A5virkning#Danish"
+  },
+  {
+    "category": "nouns",
+    "word": "påvirkning",
+    "field": "english",
+    "kept": "impact/influence",
+    "imported": "an influence",
+    "source": "https://en.wiktionary.org/wiki/p%C3%A5virkning#Danish"
+  },
+  {
+    "category": "nouns",
+    "word": "ramme",
+    "field": "english",
+    "kept": "framework",
+    "imported": "a frame",
+    "source": "https://en.wiktionary.org/wiki/ramme#Danish"
+  },
+  {
+    "category": "nouns",
+    "word": "rapport",
+    "field": "english",
+    "kept": "report",
+    "imported": "a report",
+    "source": "https://en.wiktionary.org/wiki/rapport#Danish"
+  },
+  {
+    "category": "nouns",
+    "word": "rejse",
+    "field": "english",
+    "kept": "trip",
+    "imported": "journey",
+    "source": "https://en.wiktionary.org/wiki/rejse#Danish"
+  },
+  {
+    "category": "nouns",
+    "word": "restaurant",
+    "field": "plural_definite",
+    "kept": "restauranterne",
+    "imported": "restaurantene",
+    "source": "https://en.wiktionary.org/wiki/restaurant#Danish"
+  },
+  {
+    "category": "nouns",
+    "word": "ret",
+    "field": "english",
+    "kept": "dish (food)",
+    "imported": "justice",
+    "source": "https://en.wiktionary.org/wiki/ret#Danish"
+  },
+  {
+    "category": "nouns",
+    "word": "rettighed",
+    "field": "english",
+    "kept": "right (legal)",
+    "imported": "rights",
+    "source": "https://en.wiktionary.org/wiki/rettighed#Danish"
+  },
+  {
+    "category": "nouns",
+    "word": "risiko",
+    "field": "english",
+    "kept": "risk",
+    "imported": "A risk",
+    "source": "https://en.wiktionary.org/wiki/risiko#Danish"
+  },
+  {
+    "category": "nouns",
+    "word": "råd",
+    "field": "english",
+    "kept": "advice / council",
+    "imported": "council",
+    "source": "https://en.wiktionary.org/wiki/r%C3%A5d#Danish"
+  },
+  {
+    "category": "nouns",
+    "word": "sammenhæng",
+    "field": "english",
+    "kept": "context/connection",
+    "imported": "connection",
+    "source": "https://en.wiktionary.org/wiki/sammenh%C3%A6ng#Danish"
+  },
+  {
+    "category": "nouns",
+    "word": "sandsynlighed",
+    "field": "english",
+    "kept": "probability",
+    "imported": "likelihood",
+    "source": "https://en.wiktionary.org/wiki/sandsynlighed#Danish"
+  },
+  {
+    "category": "nouns",
+    "word": "selvforståelse",
+    "field": "english",
+    "kept": "self-understanding",
+    "imported": "the way a person or a people understands itself",
+    "source": "https://en.wiktionary.org/wiki/selvforst%C3%A5else#Danish"
+  },
+  {
+    "category": "nouns",
+    "word": "skat",
+    "field": "english",
+    "kept": "tax / treasure",
+    "imported": "treasure",
+    "source": "https://en.wiktionary.org/wiki/skat#Danish"
+  },
+  {
+    "category": "nouns",
+    "word": "slutning",
+    "field": "english",
+    "kept": "ending/conclusion",
+    "imported": "end",
+    "source": "https://en.wiktionary.org/wiki/slutning#Danish"
+  },
+  {
+    "category": "nouns",
+    "word": "spil",
+    "field": "english",
+    "kept": "game",
+    "imported": "A game",
+    "source": "https://en.wiktionary.org/wiki/spil#Danish"
+  },
+  {
+    "category": "nouns",
+    "word": "sprogbrug",
+    "field": "plural_indefinite",
+    "kept": "-",
+    "imported": "sprogbrug",
+    "source": "https://en.wiktionary.org/wiki/sprogbrug#Danish"
+  },
+  {
+    "category": "nouns",
+    "word": "sprogbrug",
+    "field": "plural_definite",
+    "kept": "-",
+    "imported": "sprogbrugene",
+    "source": "https://en.wiktionary.org/wiki/sprogbrug#Danish"
+  },
+  {
+    "category": "nouns",
+    "word": "strategi",
+    "field": "english",
+    "kept": "strategy",
+    "imported": "a strategy",
+    "source": "https://en.wiktionary.org/wiki/strategi#Danish"
+  },
+  {
+    "category": "nouns",
+    "word": "supermarked",
+    "field": "english",
+    "kept": "supermarket",
+    "imported": "a supermarket",
+    "source": "https://en.wiktionary.org/wiki/supermarked#Danish"
+  },
+  {
+    "category": "nouns",
+    "word": "sygdom",
+    "field": "english",
+    "kept": "disease",
+    "imported": "illness",
+    "source": "https://en.wiktionary.org/wiki/sygdom#Danish"
+  },
+  {
+    "category": "nouns",
+    "word": "sæson",
+    "field": "english",
+    "kept": "season",
+    "imported": "the time in which something is done",
+    "source": "https://en.wiktionary.org/wiki/s%C3%A6son#Danish"
+  },
+  {
+    "category": "nouns",
+    "word": "telefon",
+    "field": "english",
+    "kept": "phone",
+    "imported": "telephone",
+    "source": "https://en.wiktionary.org/wiki/telefon#Danish"
+  },
+  {
+    "category": "nouns",
+    "word": "tilgang",
+    "field": "english",
+    "kept": "approach",
+    "imported": "growth",
+    "source": "https://en.wiktionary.org/wiki/tilgang#Danish"
+  },
+  {
+    "category": "nouns",
+    "word": "tilhørsforhold",
+    "field": "english",
+    "kept": "sense of belonging",
+    "imported": "affiliation",
+    "source": "https://en.wiktionary.org/wiki/tilh%C3%B8rsforhold#Danish"
+  },
+  {
+    "category": "nouns",
+    "word": "tillid",
+    "field": "english",
+    "kept": "trust",
+    "imported": "confidence",
+    "source": "https://en.wiktionary.org/wiki/tillid#Danish"
+  },
+  {
+    "category": "nouns",
+    "word": "tur",
+    "field": "english",
+    "kept": "trip / turn",
+    "imported": "turn",
+    "source": "https://en.wiktionary.org/wiki/tur#Danish"
+  },
+  {
+    "category": "nouns",
+    "word": "udfordring",
+    "field": "english",
+    "kept": "challenge",
+    "imported": "a challenge",
+    "source": "https://en.wiktionary.org/wiki/udfordring#Danish"
+  },
+  {
+    "category": "nouns",
+    "word": "undersøgelse",
+    "field": "english",
+    "kept": "study / examination",
+    "imported": "examination",
+    "source": "https://en.wiktionary.org/wiki/unders%C3%B8gelse#Danish"
+  },
+  {
+    "category": "nouns",
+    "word": "valg",
+    "field": "english",
+    "kept": "choice/election",
+    "imported": "choice",
+    "source": "https://en.wiktionary.org/wiki/valg#Danish"
+  },
+  {
+    "category": "nouns",
+    "word": "verden",
+    "field": "singular_definite",
+    "kept": "verdenen",
+    "imported": "verden",
+    "source": "https://en.wiktionary.org/wiki/verden#Danish"
+  },
+  {
+    "category": "nouns",
+    "word": "verden",
+    "field": "plural_definite",
+    "kept": "verdenerne",
+    "imported": "verdnerne",
+    "source": "https://en.wiktionary.org/wiki/verden#Danish"
+  },
+  {
+    "category": "nouns",
+    "word": "viden",
+    "field": "singular_definite",
+    "kept": "viden",
+    "imported": "videnen",
+    "source": "https://en.wiktionary.org/wiki/viden#Danish"
+  },
+  {
+    "category": "nouns",
+    "word": "videnskab",
+    "field": "plural_indefinite",
+    "kept": "-",
+    "imported": "videnskaber",
+    "source": "https://en.wiktionary.org/wiki/videnskab#Danish"
+  },
+  {
+    "category": "nouns",
+    "word": "videnskab",
+    "field": "plural_definite",
+    "kept": "-",
+    "imported": "videnskaberne",
+    "source": "https://en.wiktionary.org/wiki/videnskab#Danish"
+  },
+  {
+    "category": "nouns",
+    "word": "vind",
+    "field": "plural_indefinite",
+    "kept": "-",
+    "imported": "vinde",
+    "source": "https://en.wiktionary.org/wiki/vind#Danish"
+  },
+  {
+    "category": "nouns",
+    "word": "vind",
+    "field": "plural_definite",
+    "kept": "-",
+    "imported": "vindene",
+    "source": "https://en.wiktionary.org/wiki/vind#Danish"
+  },
+  {
+    "category": "nouns",
+    "word": "virksomhed",
+    "field": "english",
+    "kept": "company/enterprise",
+    "imported": "company",
+    "source": "https://en.wiktionary.org/wiki/virksomhed#Danish"
+  },
+  {
+    "category": "nouns",
+    "word": "øjeblik",
+    "field": "english",
+    "kept": "moment",
+    "imported": "blink of an eye",
+    "source": "https://en.wiktionary.org/wiki/%C3%B8jeblik#Danish"
+  },
+  {
+    "category": "nouns",
+    "word": "økonomi",
+    "field": "plural_indefinite",
+    "kept": "-",
+    "imported": "økonomier",
+    "source": "https://en.wiktionary.org/wiki/%C3%B8konomi#Danish"
+  },
+  {
+    "category": "nouns",
+    "word": "økonomi",
+    "field": "plural_definite",
+    "kept": "-",
+    "imported": "økonomierne",
+    "source": "https://en.wiktionary.org/wiki/%C3%B8konomi#Danish"
+  },
+  {
+    "category": "adjectives",
+    "word": "aktiv",
+    "field": "comparative",
+    "kept": "mere aktiv",
+    "imported": "aktivere",
+    "source": "https://en.wiktionary.org/wiki/aktiv#Danish"
+  },
+  {
+    "category": "adjectives",
+    "word": "aktiv",
+    "field": "superlative",
+    "kept": "mest aktiv",
+    "imported": "aktivest",
+    "source": "https://en.wiktionary.org/wiki/aktiv#Danish"
+  },
+  {
+    "category": "adjectives",
+    "word": "almindelig",
+    "field": "comparative",
+    "kept": "mere almindelig",
+    "imported": "almindeligere",
+    "source": "https://en.wiktionary.org/wiki/almindelig#Danish"
+  },
+  {
+    "category": "adjectives",
+    "word": "almindelig",
+    "field": "superlative",
+    "kept": "mest almindelig",
+    "imported": "almindeligst",
+    "source": "https://en.wiktionary.org/wiki/almindelig#Danish"
+  },
+  {
+    "category": "adjectives",
+    "word": "almindelig",
+    "field": "english",
+    "kept": "common",
+    "imported": "ordinary",
+    "source": "https://en.wiktionary.org/wiki/almindelig#Danish"
+  },
+  {
+    "category": "adjectives",
+    "word": "alvorlig",
+    "field": "comparative",
+    "kept": "mere alvorlig",
+    "imported": "alvorligere",
+    "source": "https://en.wiktionary.org/wiki/alvorlig#Danish"
+  },
+  {
+    "category": "adjectives",
+    "word": "alvorlig",
+    "field": "superlative",
+    "kept": "mest alvorlig",
+    "imported": "alvorligst",
+    "source": "https://en.wiktionary.org/wiki/alvorlig#Danish"
+  },
+  {
+    "category": "adjectives",
+    "word": "ansvarlig",
+    "field": "comparative",
+    "kept": "mere ansvarlig",
+    "imported": "ansvarligere",
+    "source": "https://en.wiktionary.org/wiki/ansvarlig#Danish"
+  },
+  {
+    "category": "adjectives",
+    "word": "ansvarlig",
+    "field": "superlative",
+    "kept": "mest ansvarlig",
+    "imported": "ansvarligst",
+    "source": "https://en.wiktionary.org/wiki/ansvarlig#Danish"
+  },
+  {
+    "category": "adjectives",
+    "word": "bred",
+    "field": "english",
+    "kept": "wide",
+    "imported": "broad",
+    "source": "https://en.wiktionary.org/wiki/bred#Danish"
+  },
+  {
+    "category": "adjectives",
+    "word": "brun",
+    "field": "comparative",
+    "kept": "mere brun",
+    "imported": "brunere",
+    "source": "https://en.wiktionary.org/wiki/brun#Danish"
+  },
+  {
+    "category": "adjectives",
+    "word": "brun",
+    "field": "superlative",
+    "kept": "mest brun",
+    "imported": "brunest",
+    "source": "https://en.wiktionary.org/wiki/brun#Danish"
+  },
+  {
+    "category": "adjectives",
+    "word": "bæredygtig",
+    "field": "comparative",
+    "kept": "mere bæredygtig",
+    "imported": "bæredygtigere",
+    "source": "https://en.wiktionary.org/wiki/b%C3%A6redygtig#Danish"
+  },
+  {
+    "category": "adjectives",
+    "word": "bæredygtig",
+    "field": "superlative",
+    "kept": "mest bæredygtig",
+    "imported": "bæredygtigst",
+    "source": "https://en.wiktionary.org/wiki/b%C3%A6redygtig#Danish"
+  },
+  {
+    "category": "adjectives",
+    "word": "dejlig",
+    "field": "english",
+    "kept": "lovely",
+    "imported": "delightful",
+    "source": "https://en.wiktionary.org/wiki/dejlig#Danish"
+  },
+  {
+    "category": "adjectives",
+    "word": "effektiv",
+    "field": "comparative",
+    "kept": "mere effektiv",
+    "imported": "effektivere",
+    "source": "https://en.wiktionary.org/wiki/effektiv#Danish"
+  },
+  {
+    "category": "adjectives",
+    "word": "effektiv",
+    "field": "superlative",
+    "kept": "mest effektiv",
+    "imported": "effektivest",
+    "source": "https://en.wiktionary.org/wiki/effektiv#Danish"
+  },
+  {
+    "category": "adjectives",
+    "word": "effektiv",
+    "field": "english",
+    "kept": "efficient",
+    "imported": "effective",
+    "source": "https://en.wiktionary.org/wiki/effektiv#Danish"
+  },
+  {
+    "category": "adjectives",
+    "word": "egenrådig",
+    "field": "english",
+    "kept": "stubborn",
+    "imported": "headstrong",
+    "source": "https://en.wiktionary.org/wiki/egenr%C3%A5dig#Danish"
+  },
+  {
+    "category": "adjectives",
+    "word": "enig",
+    "field": "english",
+    "kept": "in agreement",
+    "imported": "united",
+    "source": "https://en.wiktionary.org/wiki/enig#Danish"
+  },
+  {
+    "category": "adjectives",
+    "word": "ens",
+    "field": "comparative",
+    "kept": "mere ens",
+    "imported": "ensere",
+    "source": "https://en.wiktionary.org/wiki/ens#Danish"
+  },
+  {
+    "category": "adjectives",
+    "word": "ens",
+    "field": "superlative",
+    "kept": "mest ens",
+    "imported": "ensest",
+    "source": "https://en.wiktionary.org/wiki/ens#Danish"
+  },
+  {
+    "category": "adjectives",
+    "word": "ens",
+    "field": "english",
+    "kept": "same",
+    "imported": "identical",
+    "source": "https://en.wiktionary.org/wiki/ens#Danish"
+  },
+  {
+    "category": "adjectives",
+    "word": "falsk",
+    "field": "neuter",
+    "kept": "falskt",
+    "imported": "falsk",
+    "source": "https://en.wiktionary.org/wiki/falsk#Danish"
+  },
+  {
+    "category": "adjectives",
+    "word": "fantastisk",
+    "field": "english",
+    "kept": "fantastic",
+    "imported": "incredible",
+    "source": "https://en.wiktionary.org/wiki/fantastisk#Danish"
+  },
+  {
+    "category": "adjectives",
+    "word": "fej",
+    "field": "comparative",
+    "kept": "mere fej",
+    "imported": "fejere",
+    "source": "https://en.wiktionary.org/wiki/fej#Danish"
+  },
+  {
+    "category": "adjectives",
+    "word": "fej",
+    "field": "superlative",
+    "kept": "mest fej",
+    "imported": "fejest",
+    "source": "https://en.wiktionary.org/wiki/fej#Danish"
+  },
+  {
+    "category": "adjectives",
+    "word": "flov",
+    "field": "comparative",
+    "kept": "mere flov",
+    "imported": "flovere",
+    "source": "https://en.wiktionary.org/wiki/flov#Danish"
+  },
+  {
+    "category": "adjectives",
+    "word": "flov",
+    "field": "superlative",
+    "kept": "mest flov",
+    "imported": "flovest",
+    "source": "https://en.wiktionary.org/wiki/flov#Danish"
+  },
+  {
+    "category": "adjectives",
+    "word": "forfærdelig",
+    "field": "comparative",
+    "kept": "værre",
+    "imported": "forfærdeligere",
+    "source": "https://en.wiktionary.org/wiki/forf%C3%A6rdelig#Danish"
+  },
+  {
+    "category": "adjectives",
+    "word": "forfærdelig",
+    "field": "superlative",
+    "kept": "værst",
+    "imported": "forfærdeligst",
+    "source": "https://en.wiktionary.org/wiki/forf%C3%A6rdelig#Danish"
+  },
+  {
+    "category": "adjectives",
+    "word": "forkert",
+    "field": "comparative",
+    "kept": "mere forkert",
+    "imported": "forkertere",
+    "source": "https://en.wiktionary.org/wiki/forkert#Danish"
+  },
+  {
+    "category": "adjectives",
+    "word": "forkert",
+    "field": "superlative",
+    "kept": "mest forkert",
+    "imported": "forkertest",
+    "source": "https://en.wiktionary.org/wiki/forkert#Danish"
+  },
+  {
+    "category": "adjectives",
+    "word": "forskellig",
+    "field": "comparative",
+    "kept": "mere forskellig",
+    "imported": "forskelligere",
+    "source": "https://en.wiktionary.org/wiki/forskellig#Danish"
+  },
+  {
+    "category": "adjectives",
+    "word": "forskellig",
+    "field": "superlative",
+    "kept": "mest forskellig",
+    "imported": "forskelligst",
+    "source": "https://en.wiktionary.org/wiki/forskellig#Danish"
+  },
+  {
+    "category": "adjectives",
+    "word": "frisk",
+    "field": "neuter",
+    "kept": "friskt",
+    "imported": "frisk",
+    "source": "https://en.wiktionary.org/wiki/frisk#Danish"
+  },
+  {
+    "category": "adjectives",
+    "word": "frygtelig",
+    "field": "comparative",
+    "kept": "mere frygtelig",
+    "imported": "frygteligere",
+    "source": "https://en.wiktionary.org/wiki/frygtelig#Danish"
+  },
+  {
+    "category": "adjectives",
+    "word": "frygtelig",
+    "field": "superlative",
+    "kept": "mest frygtelig",
+    "imported": "frygteligst",
+    "source": "https://en.wiktionary.org/wiki/frygtelig#Danish"
+  },
+  {
+    "category": "adjectives",
+    "word": "frygtelig",
+    "field": "english",
+    "kept": "horrible",
+    "imported": "terrible",
+    "source": "https://en.wiktionary.org/wiki/frygtelig#Danish"
+  },
+  {
+    "category": "adjectives",
+    "word": "fuld",
+    "field": "comparative",
+    "kept": "fyldigere",
+    "imported": "fuldere",
+    "source": "https://en.wiktionary.org/wiki/fuld#Danish"
+  },
+  {
+    "category": "adjectives",
+    "word": "fuld",
+    "field": "superlative",
+    "kept": "fyldigst",
+    "imported": "fuldest",
+    "source": "https://en.wiktionary.org/wiki/fuld#Danish"
+  },
+  {
+    "category": "adjectives",
+    "word": "følsom",
+    "field": "comparative",
+    "kept": "mere følsom",
+    "imported": "følsommere",
+    "source": "https://en.wiktionary.org/wiki/f%C3%B8lsom#Danish"
+  },
+  {
+    "category": "adjectives",
+    "word": "følsom",
+    "field": "superlative",
+    "kept": "mest følsom",
+    "imported": "følsomst",
+    "source": "https://en.wiktionary.org/wiki/f%C3%B8lsom#Danish"
+  },
+  {
+    "category": "adjectives",
+    "word": "gammeldags",
+    "field": "comparative",
+    "kept": "mere gammeldags",
+    "imported": "gammeldagsere",
+    "source": "https://en.wiktionary.org/wiki/gammeldags#Danish"
+  },
+  {
+    "category": "adjectives",
+    "word": "gammeldags",
+    "field": "superlative",
+    "kept": "mest gammeldags",
+    "imported": "gammeldagsest",
+    "source": "https://en.wiktionary.org/wiki/gammeldags#Danish"
+  },
+  {
+    "category": "adjectives",
+    "word": "glad",
+    "field": "neuter",
+    "kept": "gladt",
+    "imported": "glad",
+    "source": "https://en.wiktionary.org/wiki/glad#Danish"
+  },
+  {
+    "category": "adjectives",
+    "word": "godhjertet",
+    "field": "english",
+    "kept": "kind-hearted",
+    "imported": "good-hearted",
+    "source": "https://en.wiktionary.org/wiki/godhjertet#Danish"
+  },
+  {
+    "category": "adjectives",
+    "word": "gratis",
+    "field": "comparative",
+    "kept": "gratis",
+    "imported": "gratisere",
+    "source": "https://en.wiktionary.org/wiki/gratis#Danish"
+  },
+  {
+    "category": "adjectives",
+    "word": "gratis",
+    "field": "superlative",
+    "kept": "gratis",
+    "imported": "gratisest",
+    "source": "https://en.wiktionary.org/wiki/gratis#Danish"
+  },
+  {
+    "category": "adjectives",
+    "word": "gratis",
+    "field": "english",
+    "kept": "free",
+    "imported": "gratis",
+    "source": "https://en.wiktionary.org/wiki/gratis#Danish"
+  },
+  {
+    "category": "adjectives",
+    "word": "grå",
+    "field": "comparative",
+    "kept": "mere grå",
+    "imported": "gråere",
+    "source": "https://en.wiktionary.org/wiki/gr%C3%A5#Danish"
+  },
+  {
+    "category": "adjectives",
+    "word": "grå",
+    "field": "superlative",
+    "kept": "mest grå",
+    "imported": "gråest",
+    "source": "https://en.wiktionary.org/wiki/gr%C3%A5#Danish"
+  },
+  {
+    "category": "adjectives",
+    "word": "grøn",
+    "field": "comparative",
+    "kept": "mere grøn",
+    "imported": "grønnere",
+    "source": "https://en.wiktionary.org/wiki/gr%C3%B8n#Danish"
+  },
+  {
+    "category": "adjectives",
+    "word": "grøn",
+    "field": "superlative",
+    "kept": "mest grøn",
+    "imported": "grønnest",
+    "source": "https://en.wiktionary.org/wiki/gr%C3%B8n#Danish"
+  },
+  {
+    "category": "adjectives",
+    "word": "gul",
+    "field": "comparative",
+    "kept": "mere gul",
+    "imported": "gulere",
+    "source": "https://en.wiktionary.org/wiki/gul#Danish"
+  },
+  {
+    "category": "adjectives",
+    "word": "gul",
+    "field": "superlative",
+    "kept": "mest gul",
+    "imported": "gulest",
+    "source": "https://en.wiktionary.org/wiki/gul#Danish"
+  },
+  {
+    "category": "adjectives",
+    "word": "historisk",
+    "field": "english",
+    "kept": "historical",
+    "imported": "historic",
+    "source": "https://en.wiktionary.org/wiki/historisk#Danish"
+  },
+  {
+    "category": "adjectives",
+    "word": "hurtig",
+    "field": "english",
+    "kept": "fast",
+    "imported": "quick",
+    "source": "https://en.wiktionary.org/wiki/hurtig#Danish"
+  },
+  {
+    "category": "adjectives",
+    "word": "hvid",
+    "field": "comparative",
+    "kept": "mere hvid",
+    "imported": "hvidere",
+    "source": "https://en.wiktionary.org/wiki/hvid#Danish"
+  },
+  {
+    "category": "adjectives",
+    "word": "hvid",
+    "field": "superlative",
+    "kept": "mest hvid",
+    "imported": "hvidest",
+    "source": "https://en.wiktionary.org/wiki/hvid#Danish"
+  },
+  {
+    "category": "adjectives",
+    "word": "høj",
+    "field": "english",
+    "kept": "tall / high",
+    "imported": "high",
+    "source": "https://en.wiktionary.org/wiki/h%C3%B8j#Danish"
+  },
+  {
+    "category": "adjectives",
+    "word": "højlydt",
+    "field": "comparative",
+    "kept": "mere højlydt",
+    "imported": "højlydtere",
+    "source": "https://en.wiktionary.org/wiki/h%C3%B8jlydt#Danish"
+  },
+  {
+    "category": "adjectives",
+    "word": "højlydt",
+    "field": "superlative",
+    "kept": "mest højlydt",
+    "imported": "højlydtest",
+    "source": "https://en.wiktionary.org/wiki/h%C3%B8jlydt#Danish"
+  },
+  {
+    "category": "adjectives",
+    "word": "ineffektiv",
+    "field": "english",
+    "kept": "inefficient",
+    "imported": "ineffective",
+    "source": "https://en.wiktionary.org/wiki/ineffektiv#Danish"
+  },
+  {
+    "category": "adjectives",
+    "word": "interessant",
+    "field": "comparative",
+    "kept": "mere interessant",
+    "imported": "interessantere",
+    "source": "https://en.wiktionary.org/wiki/interessant#Danish"
+  },
+  {
+    "category": "adjectives",
+    "word": "interessant",
+    "field": "superlative",
+    "kept": "mest interessant",
+    "imported": "interessantest",
+    "source": "https://en.wiktionary.org/wiki/interessant#Danish"
+  },
+  {
+    "category": "adjectives",
+    "word": "kedelig",
+    "field": "comparative",
+    "kept": "mere kedelig",
+    "imported": "kedeligere",
+    "source": "https://en.wiktionary.org/wiki/kedelig#Danish"
+  },
+  {
+    "category": "adjectives",
+    "word": "kedelig",
+    "field": "superlative",
+    "kept": "mest kedelig",
+    "imported": "kedeligst",
+    "source": "https://en.wiktionary.org/wiki/kedelig#Danish"
+  },
+  {
+    "category": "adjectives",
+    "word": "kendt",
+    "field": "comparative",
+    "kept": "mere kendt",
+    "imported": "kendtere",
+    "source": "https://en.wiktionary.org/wiki/kendt#Danish"
+  },
+  {
+    "category": "adjectives",
+    "word": "kendt",
+    "field": "superlative",
+    "kept": "mest kendt",
+    "imported": "kendtest",
+    "source": "https://en.wiktionary.org/wiki/kendt#Danish"
+  },
+  {
+    "category": "adjectives",
+    "word": "klog",
+    "field": "english",
+    "kept": "smart",
+    "imported": "sensible",
+    "source": "https://en.wiktionary.org/wiki/klog#Danish"
+  },
+  {
+    "category": "adjectives",
+    "word": "korrekt",
+    "field": "comparative",
+    "kept": "mere korrekt",
+    "imported": "korrektere",
+    "source": "https://en.wiktionary.org/wiki/korrekt#Danish"
+  },
+  {
+    "category": "adjectives",
+    "word": "korrekt",
+    "field": "superlative",
+    "kept": "mest korrekt",
+    "imported": "korrektest",
+    "source": "https://en.wiktionary.org/wiki/korrekt#Danish"
+  },
+  {
+    "category": "adjectives",
+    "word": "kulturel",
+    "field": "comparative",
+    "kept": "mere kulturel",
+    "imported": "kulturellere",
+    "source": "https://en.wiktionary.org/wiki/kulturel#Danish"
+  },
+  {
+    "category": "adjectives",
+    "word": "kulturel",
+    "field": "superlative",
+    "kept": "mest kulturel",
+    "imported": "kulturellest",
+    "source": "https://en.wiktionary.org/wiki/kulturel#Danish"
+  },
+  {
+    "category": "adjectives",
+    "word": "kærlig",
+    "field": "comparative",
+    "kept": "mere kærlig",
+    "imported": "kærligere",
+    "source": "https://en.wiktionary.org/wiki/k%C3%A6rlig#Danish"
+  },
+  {
+    "category": "adjectives",
+    "word": "kærlig",
+    "field": "superlative",
+    "kept": "mest kærlig",
+    "imported": "kærligst",
+    "source": "https://en.wiktionary.org/wiki/k%C3%A6rlig#Danish"
+  },
+  {
+    "category": "adjectives",
+    "word": "langsommelig",
+    "field": "neuter",
+    "kept": "langsommelig",
+    "imported": "langsommeligt",
+    "source": "https://en.wiktionary.org/wiki/langsommelig#Danish"
+  },
+  {
+    "category": "adjectives",
+    "word": "langsommelig",
+    "field": "plural",
+    "kept": "langsomme",
+    "imported": "langsommelige",
+    "source": "https://en.wiktionary.org/wiki/langsommelig#Danish"
+  },
+  {
+    "category": "adjectives",
+    "word": "langsommelig",
+    "field": "definite",
+    "kept": "langsomme",
+    "imported": "langsommelige",
+    "source": "https://en.wiktionary.org/wiki/langsommelig#Danish"
+  },
+  {
+    "category": "adjectives",
+    "word": "langsommelig",
+    "field": "comparative",
+    "kept": "mere langsommelig",
+    "imported": "langsommeligere",
+    "source": "https://en.wiktionary.org/wiki/langsommelig#Danish"
+  },
+  {
+    "category": "adjectives",
+    "word": "langsommelig",
+    "field": "superlative",
+    "kept": "mest langsommelig",
+    "imported": "langsommeligst",
+    "source": "https://en.wiktionary.org/wiki/langsommelig#Danish"
+  },
+  {
+    "category": "adjectives",
+    "word": "langsommelig",
+    "field": "english",
+    "kept": "slow-moving",
+    "imported": "tedious",
+    "source": "https://en.wiktionary.org/wiki/langsommelig#Danish"
+  },
+  {
+    "category": "adjectives",
+    "word": "lav",
+    "field": "english",
+    "kept": "low / short",
+    "imported": "low",
+    "source": "https://en.wiktionary.org/wiki/lav#Danish"
+  },
+  {
+    "category": "adjectives",
+    "word": "let",
+    "field": "english",
+    "kept": "light / easy",
+    "imported": "light",
+    "source": "https://en.wiktionary.org/wiki/let#Danish"
+  },
+  {
+    "category": "adjectives",
+    "word": "ligegyldig",
+    "field": "english",
+    "kept": "irrelevant / indifferent",
+    "imported": "making no difference",
+    "source": "https://en.wiktionary.org/wiki/ligegyldig#Danish"
+  },
+  {
+    "category": "adjectives",
+    "word": "lilla",
+    "field": "comparative",
+    "kept": "mere lilla",
+    "imported": "lillaere",
+    "source": "https://en.wiktionary.org/wiki/lilla#Danish"
+  },
+  {
+    "category": "adjectives",
+    "word": "lilla",
+    "field": "superlative",
+    "kept": "mest lilla",
+    "imported": "lillaest",
+    "source": "https://en.wiktionary.org/wiki/lilla#Danish"
+  },
+  {
+    "category": "adjectives",
+    "word": "lykkelig",
+    "field": "comparative",
+    "kept": "mere lykkelig",
+    "imported": "lykkeligere",
+    "source": "https://en.wiktionary.org/wiki/lykkelig#Danish"
+  },
+  {
+    "category": "adjectives",
+    "word": "lykkelig",
+    "field": "superlative",
+    "kept": "mest lykkelig",
+    "imported": "lykkeligst",
+    "source": "https://en.wiktionary.org/wiki/lykkelig#Danish"
+  },
+  {
+    "category": "adjectives",
+    "word": "lys",
+    "field": "superlative",
+    "kept": "lystest",
+    "imported": "lysest",
+    "source": "https://en.wiktionary.org/wiki/lys#Danish"
+  },
+  {
+    "category": "adjectives",
+    "word": "lys",
+    "field": "english",
+    "kept": "bright",
+    "imported": "light",
+    "source": "https://en.wiktionary.org/wiki/lys#Danish"
+  },
+  {
+    "category": "adjectives",
+    "word": "middelmådig",
+    "field": "comparative",
+    "kept": "mere middelmådig",
+    "imported": "middelmådigere",
+    "source": "https://en.wiktionary.org/wiki/middelm%C3%A5dig#Danish"
+  },
+  {
+    "category": "adjectives",
+    "word": "middelmådig",
+    "field": "superlative",
+    "kept": "mest middelmådig",
+    "imported": "middelmådigst",
+    "source": "https://en.wiktionary.org/wiki/middelm%C3%A5dig#Danish"
+  },
+  {
+    "category": "adjectives",
+    "word": "miljøvenlig",
+    "field": "comparative",
+    "kept": "mere miljøvenlig",
+    "imported": "miljøvenligere",
+    "source": "https://en.wiktionary.org/wiki/milj%C3%B8venlig#Danish"
+  },
+  {
+    "category": "adjectives",
+    "word": "miljøvenlig",
+    "field": "superlative",
+    "kept": "mest miljøvenlig",
+    "imported": "miljøvenligst",
+    "source": "https://en.wiktionary.org/wiki/milj%C3%B8venlig#Danish"
+  },
+  {
+    "category": "adjectives",
+    "word": "moderne",
+    "field": "comparative",
+    "kept": "mere moderne",
+    "imported": "modernere",
+    "source": "https://en.wiktionary.org/wiki/moderne#Danish"
+  },
+  {
+    "category": "adjectives",
+    "word": "moderne",
+    "field": "superlative",
+    "kept": "mest moderne",
+    "imported": "modernest",
+    "source": "https://en.wiktionary.org/wiki/moderne#Danish"
+  },
+  {
+    "category": "adjectives",
+    "word": "modig",
+    "field": "comparative",
+    "kept": "mere modig",
+    "imported": "modigere",
+    "source": "https://en.wiktionary.org/wiki/modig#Danish"
+  },
+  {
+    "category": "adjectives",
+    "word": "modig",
+    "field": "superlative",
+    "kept": "mest modig",
+    "imported": "modigst",
+    "source": "https://en.wiktionary.org/wiki/modig#Danish"
+  },
+  {
+    "category": "adjectives",
+    "word": "mulig",
+    "field": "comparative",
+    "kept": "mere mulig",
+    "imported": "muligere",
+    "source": "https://en.wiktionary.org/wiki/mulig#Danish"
+  },
+  {
+    "category": "adjectives",
+    "word": "mulig",
+    "field": "superlative",
+    "kept": "mest mulig",
+    "imported": "muligst",
+    "source": "https://en.wiktionary.org/wiki/mulig#Danish"
+  },
+  {
+    "category": "adjectives",
+    "word": "ny",
+    "field": "plural",
+    "kept": "nye",
+    "imported": "ny",
+    "source": "https://en.wiktionary.org/wiki/ny#Danish"
+  },
+  {
+    "category": "adjectives",
+    "word": "ny",
+    "field": "definite",
+    "kept": "nye",
+    "imported": "ny",
+    "source": "https://en.wiktionary.org/wiki/ny#Danish"
+  },
+  {
+    "category": "adjectives",
+    "word": "nyttig",
+    "field": "comparative",
+    "kept": "mere nyttig",
+    "imported": "nyttigere",
+    "source": "https://en.wiktionary.org/wiki/nyttig#Danish"
+  },
+  {
+    "category": "adjectives",
+    "word": "nyttig",
+    "field": "superlative",
+    "kept": "mest nyttig",
+    "imported": "nyttigst",
+    "source": "https://en.wiktionary.org/wiki/nyttig#Danish"
+  },
+  {
+    "category": "adjectives",
+    "word": "nærig",
+    "field": "comparative",
+    "kept": "mere nærig",
+    "imported": "nærigere",
+    "source": "https://en.wiktionary.org/wiki/n%C3%A6rig#Danish"
+  },
+  {
+    "category": "adjectives",
+    "word": "nærig",
+    "field": "superlative",
+    "kept": "mest nærig",
+    "imported": "nærigst",
+    "source": "https://en.wiktionary.org/wiki/n%C3%A6rig#Danish"
+  },
+  {
+    "category": "adjectives",
+    "word": "nærig",
+    "field": "english",
+    "kept": "stingy",
+    "imported": "mean",
+    "source": "https://en.wiktionary.org/wiki/n%C3%A6rig#Danish"
+  },
+  {
+    "category": "adjectives",
+    "word": "ordentlig",
+    "field": "comparative",
+    "kept": "mere ordentlig",
+    "imported": "ordentligere",
+    "source": "https://en.wiktionary.org/wiki/ordentlig#Danish"
+  },
+  {
+    "category": "adjectives",
+    "word": "ordentlig",
+    "field": "superlative",
+    "kept": "mest ordentlig",
+    "imported": "ordentligst",
+    "source": "https://en.wiktionary.org/wiki/ordentlig#Danish"
+  },
+  {
+    "category": "adjectives",
+    "word": "ordentlig",
+    "field": "english",
+    "kept": "tidy",
+    "imported": "correct",
+    "source": "https://en.wiktionary.org/wiki/ordentlig#Danish"
+  },
+  {
+    "category": "adjectives",
+    "word": "pink",
+    "field": "comparative",
+    "kept": "mere pink",
+    "imported": "pinkere",
+    "source": "https://en.wiktionary.org/wiki/pink#Danish"
+  },
+  {
+    "category": "adjectives",
+    "word": "pink",
+    "field": "superlative",
+    "kept": "mest pink",
+    "imported": "pinkest",
+    "source": "https://en.wiktionary.org/wiki/pink#Danish"
+  },
+  {
+    "category": "adjectives",
+    "word": "populær",
+    "field": "comparative",
+    "kept": "mere populær",
+    "imported": "populærere",
+    "source": "https://en.wiktionary.org/wiki/popul%C3%A6r#Danish"
+  },
+  {
+    "category": "adjectives",
+    "word": "populær",
+    "field": "superlative",
+    "kept": "mest populær",
+    "imported": "populærest",
+    "source": "https://en.wiktionary.org/wiki/popul%C3%A6r#Danish"
+  },
+  {
+    "category": "adjectives",
+    "word": "praktisk",
+    "field": "english",
+    "kept": "practical",
+    "imported": "convenient",
+    "source": "https://en.wiktionary.org/wiki/praktisk#Danish"
+  },
+  {
+    "category": "adjectives",
+    "word": "renlig",
+    "field": "english",
+    "kept": "cleanly / tidy",
+    "imported": "cleanly",
+    "source": "https://en.wiktionary.org/wiki/renlig#Danish"
+  },
+  {
+    "category": "adjectives",
+    "word": "respektløs",
+    "field": "comparative",
+    "kept": "mere respektløs",
+    "imported": "respektløsere",
+    "source": "https://en.wiktionary.org/wiki/respektl%C3%B8s#Danish"
+  },
+  {
+    "category": "adjectives",
+    "word": "respektløs",
+    "field": "superlative",
+    "kept": "mest respektløs",
+    "imported": "respektløsest",
+    "source": "https://en.wiktionary.org/wiki/respektl%C3%B8s#Danish"
+  },
+  {
+    "category": "adjectives",
+    "word": "rigelig",
+    "field": "english",
+    "kept": "plentiful",
+    "imported": "ample",
+    "source": "https://en.wiktionary.org/wiki/rigelig#Danish"
+  },
+  {
+    "category": "adjectives",
+    "word": "rød",
+    "field": "comparative",
+    "kept": "mere rød",
+    "imported": "rødere",
+    "source": "https://en.wiktionary.org/wiki/r%C3%B8d#Danish"
+  },
+  {
+    "category": "adjectives",
+    "word": "rød",
+    "field": "superlative",
+    "kept": "mest rød",
+    "imported": "rødest",
+    "source": "https://en.wiktionary.org/wiki/r%C3%B8d#Danish"
+  },
+  {
+    "category": "adjectives",
+    "word": "sand",
+    "field": "comparative",
+    "kept": "mere sand",
+    "imported": "sandere",
+    "source": "https://en.wiktionary.org/wiki/sand#Danish"
+  },
+  {
+    "category": "adjectives",
+    "word": "sand",
+    "field": "superlative",
+    "kept": "mest sand",
+    "imported": "sandest",
+    "source": "https://en.wiktionary.org/wiki/sand#Danish"
+  },
+  {
+    "category": "adjectives",
+    "word": "sjælden",
+    "field": "comparative",
+    "kept": "mere sjælden",
+    "imported": "sjældnere",
+    "source": "https://en.wiktionary.org/wiki/sj%C3%A6lden#Danish"
+  },
+  {
+    "category": "adjectives",
+    "word": "sjælden",
+    "field": "superlative",
+    "kept": "mest sjælden",
+    "imported": "sjældnest",
+    "source": "https://en.wiktionary.org/wiki/sj%C3%A6lden#Danish"
+  },
+  {
+    "category": "adjectives",
+    "word": "skrøbelig",
+    "field": "comparative",
+    "kept": "mere skrøbelig",
+    "imported": "skrøbeligere",
+    "source": "https://en.wiktionary.org/wiki/skr%C3%B8belig#Danish"
+  },
+  {
+    "category": "adjectives",
+    "word": "skrøbelig",
+    "field": "superlative",
+    "kept": "mest skrøbelig",
+    "imported": "skrøbeligst",
+    "source": "https://en.wiktionary.org/wiki/skr%C3%B8belig#Danish"
+  },
+  {
+    "category": "adjectives",
+    "word": "slank",
+    "field": "english",
+    "kept": "slim",
+    "imported": "slender",
+    "source": "https://en.wiktionary.org/wiki/slank#Danish"
+  },
+  {
+    "category": "adjectives",
+    "word": "smart",
+    "field": "english",
+    "kept": "smart",
+    "imported": "well thought-out",
+    "source": "https://en.wiktionary.org/wiki/smart#Danish"
+  },
+  {
+    "category": "adjectives",
+    "word": "social",
+    "field": "comparative",
+    "kept": "mere social",
+    "imported": "socialere",
+    "source": "https://en.wiktionary.org/wiki/social#Danish"
+  },
+  {
+    "category": "adjectives",
+    "word": "social",
+    "field": "superlative",
+    "kept": "mest social",
+    "imported": "socialest",
+    "source": "https://en.wiktionary.org/wiki/social#Danish"
+  },
+  {
+    "category": "adjectives",
+    "word": "sort",
+    "field": "comparative",
+    "kept": "mere sort",
+    "imported": "sortere",
+    "source": "https://en.wiktionary.org/wiki/sort#Danish"
+  },
+  {
+    "category": "adjectives",
+    "word": "sort",
+    "field": "superlative",
+    "kept": "mest sort",
+    "imported": "sortest",
+    "source": "https://en.wiktionary.org/wiki/sort#Danish"
+  },
+  {
+    "category": "adjectives",
+    "word": "stabil",
+    "field": "comparative",
+    "kept": "mere stabil",
+    "imported": "stabilere",
+    "source": "https://en.wiktionary.org/wiki/stabil#Danish"
+  },
+  {
+    "category": "adjectives",
+    "word": "stabil",
+    "field": "superlative",
+    "kept": "mest stabil",
+    "imported": "stabilest",
+    "source": "https://en.wiktionary.org/wiki/stabil#Danish"
+  },
+  {
+    "category": "adjectives",
+    "word": "stabil",
+    "field": "english",
+    "kept": "stable",
+    "imported": "steady",
+    "source": "https://en.wiktionary.org/wiki/stabil#Danish"
+  },
+  {
+    "category": "adjectives",
+    "word": "stille",
+    "field": "english",
+    "kept": "quiet",
+    "imported": "still",
+    "source": "https://en.wiktionary.org/wiki/stille#Danish"
+  },
+  {
+    "category": "adjectives",
+    "word": "stolt",
+    "field": "comparative",
+    "kept": "mere stolt",
+    "imported": "stoltere",
+    "source": "https://en.wiktionary.org/wiki/stolt#Danish"
+  },
+  {
+    "category": "adjectives",
+    "word": "stolt",
+    "field": "superlative",
+    "kept": "mest stolt",
+    "imported": "stoltest",
+    "source": "https://en.wiktionary.org/wiki/stolt#Danish"
+  },
+  {
+    "category": "adjectives",
+    "word": "stor",
+    "field": "english",
+    "kept": "big",
+    "imported": "large",
+    "source": "https://en.wiktionary.org/wiki/stor#Danish"
+  },
+  {
+    "category": "adjectives",
+    "word": "storladen",
+    "field": "comparative",
+    "kept": "mere storladen",
+    "imported": "storladnere",
+    "source": "https://en.wiktionary.org/wiki/storladen#Danish"
+  },
+  {
+    "category": "adjectives",
+    "word": "storladen",
+    "field": "superlative",
+    "kept": "mest storladen",
+    "imported": "storladnest",
+    "source": "https://en.wiktionary.org/wiki/storladen#Danish"
+  },
+  {
+    "category": "adjectives",
+    "word": "sur",
+    "field": "english",
+    "kept": "angry / sour",
+    "imported": "sour",
+    "source": "https://en.wiktionary.org/wiki/sur#Danish"
+  },
+  {
+    "category": "adjectives",
+    "word": "tam",
+    "field": "comparative",
+    "kept": "mere tam",
+    "imported": "tammere",
+    "source": "https://en.wiktionary.org/wiki/tam#Danish"
+  },
+  {
+    "category": "adjectives",
+    "word": "tam",
+    "field": "superlative",
+    "kept": "mest tam",
+    "imported": "tammest",
+    "source": "https://en.wiktionary.org/wiki/tam#Danish"
+  },
+  {
+    "category": "adjectives",
+    "word": "tom",
+    "field": "comparative",
+    "kept": "mere tom",
+    "imported": "tommere",
+    "source": "https://en.wiktionary.org/wiki/tom#Danish"
+  },
+  {
+    "category": "adjectives",
+    "word": "tom",
+    "field": "superlative",
+    "kept": "mest tom",
+    "imported": "tommest",
+    "source": "https://en.wiktionary.org/wiki/tom#Danish"
+  },
+  {
+    "category": "adjectives",
+    "word": "traditionel",
+    "field": "comparative",
+    "kept": "mere traditionel",
+    "imported": "traditionellere",
+    "source": "https://en.wiktionary.org/wiki/traditionel#Danish"
+  },
+  {
+    "category": "adjectives",
+    "word": "traditionel",
+    "field": "superlative",
+    "kept": "mest traditionel",
+    "imported": "traditionellest",
+    "source": "https://en.wiktionary.org/wiki/traditionel#Danish"
+  },
+  {
+    "category": "adjectives",
+    "word": "trist",
+    "field": "comparative",
+    "kept": "tristere",
+    "imported": "mere trist",
+    "source": "https://en.wiktionary.org/wiki/trist#Danish"
+  },
+  {
+    "category": "adjectives",
+    "word": "trist",
+    "field": "superlative",
+    "kept": "tristest",
+    "imported": "mest trist",
+    "source": "https://en.wiktionary.org/wiki/trist#Danish"
+  },
+  {
+    "category": "adjectives",
+    "word": "troværdig",
+    "field": "comparative",
+    "kept": "mere troværdig",
+    "imported": "troværdigere",
+    "source": "https://en.wiktionary.org/wiki/trov%C3%A6rdig#Danish"
+  },
+  {
+    "category": "adjectives",
+    "word": "troværdig",
+    "field": "superlative",
+    "kept": "mest troværdig",
+    "imported": "troværdigst",
+    "source": "https://en.wiktionary.org/wiki/trov%C3%A6rdig#Danish"
+  },
+  {
+    "category": "adjectives",
+    "word": "troværdig",
+    "field": "english",
+    "kept": "credible",
+    "imported": "reliable",
+    "source": "https://en.wiktionary.org/wiki/trov%C3%A6rdig#Danish"
+  },
+  {
+    "category": "adjectives",
+    "word": "tydelig",
+    "field": "english",
+    "kept": "clear / evident",
+    "imported": "clear",
+    "source": "https://en.wiktionary.org/wiki/tydelig#Danish"
+  },
+  {
+    "category": "adjectives",
+    "word": "tyk",
+    "field": "english",
+    "kept": "thick / fat",
+    "imported": "thick",
+    "source": "https://en.wiktionary.org/wiki/tyk#Danish"
+  },
+  {
+    "category": "adjectives",
+    "word": "tålmodig",
+    "field": "comparative",
+    "kept": "mere tålmodig",
+    "imported": "tålmodigere",
+    "source": "https://en.wiktionary.org/wiki/t%C3%A5lmodig#Danish"
+  },
+  {
+    "category": "adjectives",
+    "word": "tålmodig",
+    "field": "superlative",
+    "kept": "mest tålmodig",
+    "imported": "tålmodigst",
+    "source": "https://en.wiktionary.org/wiki/t%C3%A5lmodig#Danish"
+  },
+  {
+    "category": "adjectives",
+    "word": "tæt",
+    "field": "english",
+    "kept": "close / dense",
+    "imported": "close",
+    "source": "https://en.wiktionary.org/wiki/t%C3%A6t#Danish"
+  },
+  {
+    "category": "adjectives",
+    "word": "tør",
+    "field": "comparative",
+    "kept": "tørre",
+    "imported": "tørrere",
+    "source": "https://en.wiktionary.org/wiki/t%C3%B8r#Danish"
+  },
+  {
+    "category": "adjectives",
+    "word": "ubehagelig",
+    "field": "comparative",
+    "kept": "mere ubehagelig",
+    "imported": "ubehageligere",
+    "source": "https://en.wiktionary.org/wiki/ubehagelig#Danish"
+  },
+  {
+    "category": "adjectives",
+    "word": "ubehagelig",
+    "field": "superlative",
+    "kept": "mest ubehagelig",
+    "imported": "ubehageligst",
+    "source": "https://en.wiktionary.org/wiki/ubehagelig#Danish"
+  },
+  {
+    "category": "adjectives",
+    "word": "ubehagelig",
+    "field": "english",
+    "kept": "uncomfortable",
+    "imported": "unpleasant",
+    "source": "https://en.wiktionary.org/wiki/ubehagelig#Danish"
+  },
+  {
+    "category": "adjectives",
+    "word": "ukendt",
+    "field": "comparative",
+    "kept": "mere ukendt",
+    "imported": "ukendtere",
+    "source": "https://en.wiktionary.org/wiki/ukendt#Danish"
+  },
+  {
+    "category": "adjectives",
+    "word": "ukendt",
+    "field": "superlative",
+    "kept": "mest ukendt",
+    "imported": "ukendtest",
+    "source": "https://en.wiktionary.org/wiki/ukendt#Danish"
+  },
+  {
+    "category": "adjectives",
+    "word": "uklar",
+    "field": "comparative",
+    "kept": "mere uklar",
+    "imported": "uklarere",
+    "source": "https://en.wiktionary.org/wiki/uklar#Danish"
+  },
+  {
+    "category": "adjectives",
+    "word": "uklar",
+    "field": "superlative",
+    "kept": "mest uklar",
+    "imported": "uklarest",
+    "source": "https://en.wiktionary.org/wiki/uklar#Danish"
+  },
+  {
+    "category": "adjectives",
+    "word": "ulykkelig",
+    "field": "comparative",
+    "kept": "mere ulykkelig",
+    "imported": "ulykkeligere",
+    "source": "https://en.wiktionary.org/wiki/ulykkelig#Danish"
+  },
+  {
+    "category": "adjectives",
+    "word": "ulykkelig",
+    "field": "superlative",
+    "kept": "mest ulykkelig",
+    "imported": "ulykkeligst",
+    "source": "https://en.wiktionary.org/wiki/ulykkelig#Danish"
+  },
+  {
+    "category": "adjectives",
+    "word": "umulig",
+    "field": "comparative",
+    "kept": "mere umulig",
+    "imported": "umuligere",
+    "source": "https://en.wiktionary.org/wiki/umulig#Danish"
+  },
+  {
+    "category": "adjectives",
+    "word": "umulig",
+    "field": "superlative",
+    "kept": "mest umulig",
+    "imported": "umuligst",
+    "source": "https://en.wiktionary.org/wiki/umulig#Danish"
+  },
+  {
+    "category": "adjectives",
+    "word": "unyttig",
+    "field": "comparative",
+    "kept": "mere unyttig",
+    "imported": "unyttigere",
+    "source": "https://en.wiktionary.org/wiki/unyttig#Danish"
+  },
+  {
+    "category": "adjectives",
+    "word": "unyttig",
+    "field": "superlative",
+    "kept": "mest unyttig",
+    "imported": "unyttigst",
+    "source": "https://en.wiktionary.org/wiki/unyttig#Danish"
+  },
+  {
+    "category": "adjectives",
+    "word": "upopulær",
+    "field": "comparative",
+    "kept": "mere upopulær",
+    "imported": "upopulærere",
+    "source": "https://en.wiktionary.org/wiki/upopul%C3%A6r#Danish"
+  },
+  {
+    "category": "adjectives",
+    "word": "upopulær",
+    "field": "superlative",
+    "kept": "mest upopulær",
+    "imported": "upopulærest",
+    "source": "https://en.wiktionary.org/wiki/upopul%C3%A6r#Danish"
+  },
+  {
+    "category": "adjectives",
+    "word": "uretfærdig",
+    "field": "english",
+    "kept": "unfair",
+    "imported": "unjust",
+    "source": "https://en.wiktionary.org/wiki/uretf%C3%A6rdig#Danish"
+  },
+  {
+    "category": "adjectives",
+    "word": "utroværdig",
+    "field": "english",
+    "kept": "incredible / not credible",
+    "imported": "unreliable",
+    "source": "https://en.wiktionary.org/wiki/utrov%C3%A6rdig#Danish"
+  },
+  {
+    "category": "adjectives",
+    "word": "uvenlig",
+    "field": "comparative",
+    "kept": "mere uvenlig",
+    "imported": "uvenligere",
+    "source": "https://en.wiktionary.org/wiki/uvenlig#Danish"
+  },
+  {
+    "category": "adjectives",
+    "word": "uvenlig",
+    "field": "superlative",
+    "kept": "mest uvenlig",
+    "imported": "uvenligst",
+    "source": "https://en.wiktionary.org/wiki/uvenlig#Danish"
+  },
+  {
+    "category": "adjectives",
+    "word": "uvenlig",
+    "field": "english",
+    "kept": "unfriendly",
+    "imported": "unkind",
+    "source": "https://en.wiktionary.org/wiki/uvenlig#Danish"
+  },
+  {
+    "category": "adjectives",
+    "word": "venlig",
+    "field": "english",
+    "kept": "friendly",
+    "imported": "kind",
+    "source": "https://en.wiktionary.org/wiki/venlig#Danish"
+  },
+  {
+    "category": "adjectives",
+    "word": "vis",
+    "field": "english",
+    "kept": "certain / particular",
+    "imported": "wise",
+    "source": "https://en.wiktionary.org/wiki/vis#Danish"
+  },
+  {
+    "category": "adjectives",
+    "word": "voldsom",
+    "field": "english",
+    "kept": "violent / intense",
+    "imported": "forceful",
+    "source": "https://en.wiktionary.org/wiki/voldsom#Danish"
+  },
+  {
+    "category": "adjectives",
+    "word": "åben",
+    "field": "comparative",
+    "kept": "mere åben",
+    "imported": "åbnere",
+    "source": "https://en.wiktionary.org/wiki/%C3%A5ben#Danish"
+  },
+  {
+    "category": "adjectives",
+    "word": "åben",
+    "field": "superlative",
+    "kept": "mest åben",
+    "imported": "åbnest",
+    "source": "https://en.wiktionary.org/wiki/%C3%A5ben#Danish"
+  },
+  {
+    "category": "adjectives",
+    "word": "åbenlys",
+    "field": "comparative",
+    "kept": "mere åbenlys",
+    "imported": "åbenlysere",
+    "source": "https://en.wiktionary.org/wiki/%C3%A5benlys#Danish"
+  },
+  {
+    "category": "adjectives",
+    "word": "åbenlys",
+    "field": "superlative",
+    "kept": "mest åbenlys",
+    "imported": "åbenlysest",
+    "source": "https://en.wiktionary.org/wiki/%C3%A5benlys#Danish"
+  },
+  {
+    "category": "adjectives",
+    "word": "ædel",
+    "field": "comparative",
+    "kept": "mere ædel",
+    "imported": "ædlere",
+    "source": "https://en.wiktionary.org/wiki/%C3%A6del#Danish"
+  },
+  {
+    "category": "adjectives",
+    "word": "ædel",
+    "field": "superlative",
+    "kept": "mest ædel",
+    "imported": "ædlest",
+    "source": "https://en.wiktionary.org/wiki/%C3%A6del#Danish"
+  },
+  {
+    "category": "adjectives",
+    "word": "ældre",
+    "field": "english",
+    "kept": "elder / older",
+    "imported": "elderly",
+    "source": "https://en.wiktionary.org/wiki/%C3%A6ldre#Danish"
+  },
+  {
+    "category": "adjectives",
+    "word": "ærlig",
+    "field": "comparative",
+    "kept": "mere ærlig",
+    "imported": "ærligere",
+    "source": "https://en.wiktionary.org/wiki/%C3%A6rlig#Danish"
+  },
+  {
+    "category": "adjectives",
+    "word": "ærlig",
+    "field": "superlative",
+    "kept": "mest ærlig",
+    "imported": "ærligst",
+    "source": "https://en.wiktionary.org/wiki/%C3%A6rlig#Danish"
+  },
+  {
+    "category": "adverbs",
+    "word": "alene",
+    "field": "english",
+    "kept": "alone",
+    "imported": "only",
+    "source": "https://en.wiktionary.org/wiki/alene#Danish"
+  },
+  {
+    "category": "adverbs",
+    "word": "alligevel",
+    "field": "english",
+    "kept": "anyway / still",
+    "imported": "nonetheless",
+    "source": "https://en.wiktionary.org/wiki/alligevel#Danish"
+  },
+  {
+    "category": "adverbs",
+    "word": "derefter",
+    "field": "english",
+    "kept": "afterwards",
+    "imported": "after that",
+    "source": "https://en.wiktionary.org/wiki/derefter#Danish"
+  },
+  {
+    "category": "adverbs",
+    "word": "derimod",
+    "field": "english",
+    "kept": "on the other hand",
+    "imported": "however",
+    "source": "https://en.wiktionary.org/wiki/derimod#Danish"
+  },
+  {
+    "category": "adverbs",
+    "word": "desuden",
+    "field": "english",
+    "kept": "besides / furthermore",
+    "imported": "furthermore",
+    "source": "https://en.wiktionary.org/wiki/desuden#Danish"
+  },
+  {
+    "category": "adverbs",
+    "word": "dog",
+    "field": "english",
+    "kept": "however / nevertheless",
+    "imported": "however",
+    "source": "https://en.wiktionary.org/wiki/dog#Danish"
+  },
+  {
+    "category": "adverbs",
+    "word": "dårligt",
+    "field": "english",
+    "kept": "badly",
+    "imported": "bad",
+    "source": "https://en.wiktionary.org/wiki/d%C3%A5rligt#Danish"
+  },
+  {
+    "category": "adverbs",
+    "word": "dårligt",
+    "field": "comparative",
+    "kept": "værre",
+    "imported": "dårligere",
+    "source": "https://en.wiktionary.org/wiki/d%C3%A5rligt#Danish"
+  },
+  {
+    "category": "adverbs",
+    "word": "dårligt",
+    "field": "superlative",
+    "kept": "værst",
+    "imported": "dårligst",
+    "source": "https://en.wiktionary.org/wiki/d%C3%A5rligt#Danish"
+  },
+  {
+    "category": "adverbs",
+    "word": "efter",
+    "field": "english",
+    "kept": "after",
+    "imported": "later",
+    "source": "https://en.wiktionary.org/wiki/efter#Danish"
+  },
+  {
+    "category": "adverbs",
+    "word": "efterhånden",
+    "field": "english",
+    "kept": "gradually / over time",
+    "imported": "pointing out a change that has happened gradually or in small intervals",
+    "source": "https://en.wiktionary.org/wiki/efterh%C3%A5nden#Danish"
+  },
+  {
+    "category": "adverbs",
+    "word": "endnu",
+    "field": "english",
+    "kept": "still / yet",
+    "imported": "yet",
+    "source": "https://en.wiktionary.org/wiki/endnu#Danish"
+  },
+  {
+    "category": "adverbs",
+    "word": "fortsat",
+    "field": "english",
+    "kept": "still / continuously",
+    "imported": "constantly",
+    "source": "https://en.wiktionary.org/wiki/fortsat#Danish"
+  },
+  {
+    "category": "adverbs",
+    "word": "fuldstændig",
+    "field": "english",
+    "kept": "completely / entirely",
+    "imported": "completely",
+    "source": "https://en.wiktionary.org/wiki/fuldst%C3%A6ndig#Danish"
+  },
+  {
+    "category": "adverbs",
+    "word": "gerne",
+    "field": "english",
+    "kept": "gladly / preferably",
+    "imported": "with pleasure",
+    "source": "https://en.wiktionary.org/wiki/gerne#Danish"
+  },
+  {
+    "category": "adverbs",
+    "word": "hen",
+    "field": "english",
+    "kept": "over (towards)",
+    "imported": "Used with a verb",
+    "source": "https://en.wiktionary.org/wiki/hen#Danish"
+  },
+  {
+    "category": "adverbs",
+    "word": "hurtigt",
+    "field": "english",
+    "kept": "quickly",
+    "imported": "rapidly",
+    "source": "https://en.wiktionary.org/wiki/hurtigt#Danish"
+  },
+  {
+    "category": "adverbs",
+    "word": "lige",
+    "field": "english",
+    "kept": "just / right now",
+    "imported": "just",
+    "source": "https://en.wiktionary.org/wiki/lige#Danish"
+  },
+  {
+    "category": "adverbs",
+    "word": "meget",
+    "field": "english",
+    "kept": "much / very",
+    "imported": "very",
+    "source": "https://en.wiktionary.org/wiki/meget#Danish"
+  },
+  {
+    "category": "adverbs",
+    "word": "måske",
+    "field": "english",
+    "kept": "maybe / perhaps",
+    "imported": "perhaps",
+    "source": "https://en.wiktionary.org/wiki/m%C3%A5ske#Danish"
+  },
+  {
+    "category": "adverbs",
+    "word": "nede",
+    "field": "english",
+    "kept": "down / downstairs",
+    "imported": "down",
+    "source": "https://en.wiktionary.org/wiki/nede#Danish"
+  },
+  {
+    "category": "adverbs",
+    "word": "netop",
+    "field": "english",
+    "kept": "exactly / precisely",
+    "imported": "precisely [this]",
+    "source": "https://en.wiktionary.org/wiki/netop#Danish"
+  },
+  {
+    "category": "adverbs",
+    "word": "næsten",
+    "field": "english",
+    "kept": "almost",
+    "imported": "nearly",
+    "source": "https://en.wiktionary.org/wiki/n%C3%A6sten#Danish"
+  },
+  {
+    "category": "adverbs",
+    "word": "også",
+    "field": "english",
+    "kept": "also / too",
+    "imported": "too",
+    "source": "https://en.wiktionary.org/wiki/ogs%C3%A5#Danish"
+  },
+  {
+    "category": "adverbs",
+    "word": "ret",
+    "field": "english",
+    "kept": "quite / fairly",
+    "imported": "straight",
+    "source": "https://en.wiktionary.org/wiki/ret#Danish"
+  },
+  {
+    "category": "adverbs",
+    "word": "samtidig",
+    "field": "english",
+    "kept": "at the same time",
+    "imported": "also",
+    "source": "https://en.wiktionary.org/wiki/samtidig#Danish"
+  },
+  {
+    "category": "adverbs",
+    "word": "sandsynligvis",
+    "field": "english",
+    "kept": "probably",
+    "imported": "likely",
+    "source": "https://en.wiktionary.org/wiki/sandsynligvis#Danish"
+  },
+  {
+    "category": "adverbs",
+    "word": "stadig",
+    "field": "english",
+    "kept": "still",
+    "imported": "constantly",
+    "source": "https://en.wiktionary.org/wiki/stadig#Danish"
+  },
+  {
+    "category": "adverbs",
+    "word": "således",
+    "field": "english",
+    "kept": "thus / in this way",
+    "imported": "thus",
+    "source": "https://en.wiktionary.org/wiki/s%C3%A5ledes#Danish"
+  },
+  {
+    "category": "adverbs",
+    "word": "tilsyneladende",
+    "field": "english",
+    "kept": "apparently",
+    "imported": "seemingly",
+    "source": "https://en.wiktionary.org/wiki/tilsyneladende#Danish"
+  },
+  {
+    "category": "adverbs",
+    "word": "ude",
+    "field": "english",
+    "kept": "outside",
+    "imported": "out",
+    "source": "https://en.wiktionary.org/wiki/ude#Danish"
+  },
+  {
+    "category": "adverbs",
+    "word": "videre",
+    "field": "english",
+    "kept": "further / onward",
+    "imported": "farther",
+    "source": "https://en.wiktionary.org/wiki/videre#Danish"
+  },
+  {
+    "category": "adverbs",
+    "word": "åbenbart",
+    "field": "english",
+    "kept": "obviously / apparently",
+    "imported": "apparently",
+    "source": "https://en.wiktionary.org/wiki/%C3%A5benbart#Danish"
+  }
+]

@@ -1,0 +1,66 @@
+{
+  "frequency_source": {
+    "source": "DSL 30,000 most frequent Danish lemmas, excluding proper nouns and numerals",
+    "url": "https://korpus.dsl.dk/resources/details/freq-lemmas.html",
+    "terms": "https://korpus.dsl.dk/resources/licences/dsl-open.html"
+  },
+  "ranked_entries": 10734,
+  "scope_word_counts": {
+    "core_500": 500,
+    "everyday_1500": 1500,
+    "extended_3000": 3000
+  },
+  "unranked_entries": 5966,
+  "curated_phrases": 78,
+  "phrase_topics": [
+    "everyday",
+    "food",
+    "healthcare",
+    "introductions",
+    "places",
+    "shopping",
+    "social",
+    "transport",
+    "work"
+  ],
+  "reviewed_core_entries": 500,
+  "manual_core_corrections": 26,
+  "manual_override_entries": [
+    "nouns/gang",
+    "verbs/ske",
+    "verbs/tale",
+    "nouns/parti",
+    "nouns/klokke",
+    "adverbs/samtidig",
+    "verbs/oplyse",
+    "adverbs/alene",
+    "nouns/undersøgelse",
+    "adverbs/fortsat",
+    "verbs/virke",
+    "verbs/løbe",
+    "nouns/sæson",
+    "nouns/tur",
+    "nouns/øjeblik",
+    "adjectives/enig",
+    "nouns/lejlighed",
+    "nouns/skat",
+    "nouns/råd",
+    "verbs/dele",
+    "verbs/regne",
+    "verbs/gennemføre",
+    "adjectives/vis",
+    "nouns/bestyrelse",
+    "verbs/mærke",
+    "nouns/mad"
+  ],
+  "core_quality_review": {
+    "translations_present": 500,
+    "noun_genders_present": 209,
+    "noun_entries": 209,
+    "verb_auxiliaries_present": 137,
+    "verb_entries": 137,
+    "translated_examples_present": 56,
+    "entries_without_examples": 444
+  },
+  "review_method": "Schema, English-gloss, POS-frequency match, and COR/Wiktionary-form checks; not native-speaker review."
+}
