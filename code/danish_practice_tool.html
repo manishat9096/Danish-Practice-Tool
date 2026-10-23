@@ -2058,7 +2058,6 @@
       if (exercise.kind === "Table") {
         renderTableExercise(exercise);
         ui.answerInput.disabled = true;
-        ui.submitBtn.disabled = true;
       } else if (exercise.kind === "MultipleChoice") {
         renderMultipleChoice(exercise);
         ui.answerInput.disabled = true;
@@ -2132,14 +2131,21 @@
       state.currentIndex = 0;
       state.score = 0;
       state.answered = false;
-      renderCurrent();
-      setFeedback("Session started. Type your answer and press Enter.");
       ui.answerInput.value = "";
-      ui.answerInput.disabled = false;
-      ui.submitBtn.disabled = false;
-      ui.nextBtn.disabled = false;
-      ui.revealBtn.disabled = false;
-      ui.quizBadge.textContent = `${state.currentIndex + 1} of ${state.exercises.length}`;
+      renderCurrent();
+      if (!state.exercises.length) {
+        ui.quizBadge.textContent = "No exercises available";
+        ui.promptText.textContent = "No exercises available for this category and mode. Choose another combination.";
+        setFeedback("Choose another category or exercise mode, then start a new quiz.");
+        return;
+      }
+      if (currentExercise().kind === "Table") {
+        setFeedback("Type one answer into each blank, then press Submit.");
+      } else if (currentExercise().kind === "MultipleChoice") {
+        setFeedback("Tap a choice to answer.");
+      } else {
+        setFeedback("Session started. Type your answer and press Enter.");
+      }
     }
 
     function buildSessionFromPack(packId) {
@@ -2345,7 +2351,7 @@
       }
     }
 
-    ui.startBtn.addEventListener("click", buildSession);
+    ui.startBtn.addEventListener("click", () => buildSession());
     ui.submitBtn.addEventListener("click", submitAnswer);
     ui.nextBtn.addEventListener("click", nextQuestion);
     ui.revealBtn.addEventListener("click", revealAnswer);
