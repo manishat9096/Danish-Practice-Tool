@@ -29,6 +29,7 @@ setTimeout(async () => {
   ui.category.value = 'verbs'; ui.mode.value = 'forms'; ui.count.value = 2;
   ui.startBtn.click();
   check('Start button creates session', state.exercises.length === 2);
+  buildSession(['verb-en-da-infinitive']);
   check('revision hidden before answering', ui.revisionPanel.hidden);
   check('reverse prompt hides Danish text and audio', !ui.promptWord.querySelector('[data-speak]') && ui.promptWord.textContent === currentExercise().record.english);
   ui.answerInput.value = currentExercise().answers[0]; ui.submitBtn.click();
@@ -84,7 +85,58 @@ setTimeout(async () => {
    stopSpeech(); check('stopping speech clears playing state', !button.classList.contains('speaking'));
    window.speechSynthesis.speak = originalSpeak;
   }
-  for (const pack of EXERCISE_PACKS) { buildSessionFromPack(pack.id); check(`pack: ${pack.id}`, state.exercises.length > 0); }
+  for (const pack of EXERCISE_PACKS) {
+   buildSessionFromPack(pack.id);
+   const expected = Math.min(pack.count, flattenExercises(pack.category, pack.mode, pack.templateIds).length);
+   if (!expected) {
+    check(`empty pack is disabled: ${pack.id}`, document.querySelector(`[data-pack-id="${pack.id}"]`).disabled && ui.nextBtn.disabled && ui.promptText.textContent.includes('No exercises available'));
+    continue;
+   }
+   check(`pack count: ${pack.id}`, state.exercises.length === expected && expected > 1);
+   const visited = new Set();
+   for (let step = 0; !state.complete && step < 101; step++) { visited.add(state.currentIndex); revealAnswer(); nextQuestion(); }
+   check(`pack completes all questions: ${pack.id}`, state.complete && visited.size === expected);
+   await new Promise(resolve => setTimeout(resolve, 0));
+  }
+  document.getElementById('openBuilderBtn').click();
+  check('custom builder opens', document.getElementById('builderDialog').open);
+  document.getElementById('builderMode').value = 'random'; document.getElementById('builderMode').dispatchEvent(new Event('change'));
+  document.getElementById('builderClear').click();
+  check('builder prevents empty quiz', document.getElementById('startCustomBtn').disabled);
+  for (const id of ['verb-en-da-past','noun-en-da-pl']) document.querySelector(`[data-template="${id}"]`).checked = true;
+  document.getElementById('builderCount').value = 7;
+  document.getElementById('builderCount').dispatchEvent(new Event('input'));
+  check('builder previews matching pool', !document.getElementById('startCustomBtn').disabled && document.getElementById('builderPreview').textContent.includes('7 in your session'));
+  document.getElementById('saveBuilderBtn').click();
+  check('builder saves selected forms', JSON.parse(localStorage.getItem('danish-practice-builder')).ids.length === 2);
+  document.getElementById('startCustomBtn').click();
+  check('custom quiz has requested count and only selected forms', !document.getElementById('builderDialog').open && state.exercises.length === 7 && state.exercises.every(e => ['verb-en-da-past','noun-en-da-pl'].includes(e.templateId)));
+  const customVisited = new Set(); for (let step = 0; !state.complete && step < 101; step++) { customVisited.add(state.currentIndex); nextQuestion(); }
+  check('custom quiz advances through all seven questions', state.complete && customVisited.size === 7);
+  document.getElementById('openBuilderBtn').click();
+  document.getElementById('builderMode').value = 'table'; document.getElementById('builderMode').dispatchEvent(new Event('change')); document.getElementById('builderSelectAll').click();
+  document.getElementById('builderCount').value = 5; refreshBuilderPreview(); document.getElementById('startCustomBtn').click();
+  check('custom table quiz has five tables', state.exercises.length === 5 && state.exercises.every(e => e.kind === 'Table'));
+  check('all bundled categories loaded', Object.keys(window.DANISH_LEXICON).every(c => vocabulary[c].length >= window.DANISH_LEXICON[c].length));
+  initializeBuilder();
+  check('saved custom setup restores', builderTemplateIds().length === 2 && document.getElementById('builderCount').value === '7');
+  document.getElementById('addWordBtn').click();
+  document.getElementById('wordCategory').value = 'adverbs'; document.getElementById('wordCategory').dispatchEvent(new Event('change'));
+  document.getElementById('word-base').value = 'browser-test-word'; document.getElementById('word-english').value = 'test translation';
+  document.getElementById('wordForm').requestSubmit();
+  check('Add word saves and closes', !document.getElementById('wordDialog').open && vocabulary.adverbs.some(e => e.base === 'browser-test-word'));
+  vocabulary.adverbs = vocabulary.adverbs.filter(e => e.base !== 'browser-test-word'); restoreAddedWords();
+  check('added word survives vocabulary reload', vocabulary.adverbs.some(e => e.base === 'browser-test-word'));
+  vocabulary.adverbs = vocabulary.adverbs.filter(e => e.base !== 'browser-test-word'); localStorage.removeItem('danish-practice-added-words');
+  ui.bankSearch.value = ''; ui.bankCategory.value = 'all'; renderBank();
+  check('dashboard stylesheet loaded', getComputedStyle(document.querySelector('.score-ring')).borderRadius === '50%');
+  const beforeImport = vocabulary;
+  applyImportedLexicon({...vocabulary, common_phrases:[{danish:'God morgen',english:'Good morning'}]});
+  check('new phrases enable their pack', !document.querySelector('[data-pack-id="phrases"]').disabled);
+  buildSessionFromPack('phrases');
+  check('short sets report actual size', state.exercises.length === 2 && ui.feedback.textContent.includes('Only 2 matching questions'));
+  nextQuestion(); nextQuestion(); check('short sets still complete', state.complete);
+  applyImportedLexicon(beforeImport);
   const saved = vocabulary.nouns;
   vocabulary.nouns = [{singular_indefinite: '<img src=x onerror="window.injection=true">', english: '<b>bad</b>', singular_definite:'x', plural_indefinite:'x', plural_definite:'x', gender:'en'}];
   ui.bankCategory.value = 'nouns'; renderBank(); check('imported text is escaped', !ui.bankList.querySelector('img, b') && !window.injection);
@@ -92,8 +144,11 @@ setTimeout(async () => {
   renderBank();
   resetSession(); check('reset clears session and revision', !state.exercises.length && ui.revisionPanel.hidden && ui.sessionProgress.value === 0 && ui.statScore.textContent === '0 / 0');
   // Capture a representative answered multiple-choice state.
-  ui.category.value = 'verbs'; ui.mode.value = 'multiple-choice'; ui.count.value = 12; ui.seed.value = 'preview'; buildSession(); submitChoice(currentExercise().answers[0]);
-  document.getElementById('packs-section').open = false;
+  ui.category.value = 'verbs'; ui.mode.value = 'multiple-choice'; ui.count.value = 12; ui.seed.value = 'preview'; buildSession(['verb-en-da-past']);
+  const previewRecord = vocabulary.verbs.find(item => item.infinitive === 'at være');
+  const previewQuestion = flattenExercises('verbs','forms',['verb-en-da-past']).find(item => item.record === previewRecord);
+  state.exercises[0] = buildChoiceExercise(previewQuestion, mulberry32(2)); renderCurrent(); submitChoice(currentExercise().answers[0]);
+  setTranslateMode('en-da'); setTranslateOutput('i går','da'); ui.translateStatus.textContent = ''; ui.translateStatus.className = 'feedback';
   ui.nextBtn.blur(); window.scrollTo(0, 0);
   check('viewport matches requested size', innerWidth === EXPECTED_WIDTH);
   check('no horizontal document overflow', document.documentElement.scrollWidth <= window.innerWidth);
@@ -155,7 +210,7 @@ browser = shutil.which('google-chrome') or shutil.which('chromium') or shutil.wh
 if not browser: raise SystemExit('Install Chrome, Chromium or Edge to run the browser checks.')
 failures = 0
 with tempfile.TemporaryDirectory(prefix='danish-quiz-') as scratch:
-    for label, width, height in [('desktop', 1440, 1000), ('mobile', 390, 844)]:
+    for label, width, height in [('desktop', 1536, 1024), ('mobile', 390, 844), ('local-file', 1536, 1024)]:
         screenshot = Path(tempfile.gettempdir()) / f'danish-quiz-{label}.png'
         profile = Path(scratch) / label
         args = [browser, '--headless=new', '--disable-gpu', '--no-first-run', '--no-default-browser-check', f'--user-data-dir={profile}', '--remote-debugging-port=0', '--hide-scrollbars', 'about:blank']
@@ -163,16 +218,29 @@ with tempfile.TemporaryDirectory(prefix='danish-quiz-') as scratch:
         client = None
         try:
             active_port = profile / 'DevToolsActivePort'
+            port = None
             for _ in range(100):
-                if active_port.exists(): break
+                try:
+                    port = int(active_port.read_text().splitlines()[0])
+                    break
+                except (OSError, ValueError, IndexError):
+                    pass
                 time.sleep(.1)
-            port = int(active_port.read_text().splitlines()[0])
+            assert port, 'Browser debugging endpoint did not become ready'
             with urllib.request.urlopen(f'http://127.0.0.1:{port}/json/list') as response: pages = json.load(response)
             client = CDP(next(page['webSocketDebuggerUrl'] for page in pages if page['type'] == 'page'))
             client.call('Page.enable')
             client.call('Emulation.setDeviceMetricsOverride', width=width, height=height, deviceScaleFactor=1, mobile=label == 'mobile')
             client.call('Page.addScriptToEvaluateOnNewDocument', source=f'window.EXPECTED_WIDTH = {width};')
-            client.call('Page.navigate', url=f'http://127.0.0.1:{server.server_port}/code/__quiz_check.html')
+            if label == 'local-file':
+                client.call('Page.navigate', url=(ROOT / 'code/danish_practice_tool.html').as_uri())
+                for _ in range(100):
+                    ready = client.call('Runtime.evaluate', expression="document.readyState === 'complete' && typeof ui !== 'undefined'", returnByValue=True)
+                    if ready.get('result', {}).get('value'): break
+                    time.sleep(.1)
+                client.call('Runtime.evaluate', expression=TEST.replace('<script>', '').replace('</script>', ''))
+            else:
+                client.call('Page.navigate', url=f'http://127.0.0.1:{server.server_port}/code/__quiz_check.html')
             checks = None
             for _ in range(100):
                 result = client.call('Runtime.evaluate', expression="document.getElementById('verification-result')?.textContent", returnByValue=True)
@@ -181,14 +249,22 @@ with tempfile.TemporaryDirectory(prefix='danish-quiz-') as scratch:
                 time.sleep(.1)
             assert checks, 'No test results'
             failures += sum(not check['passed'] for check in checks)
+            time.sleep(.2)
             image = client.call('Page.captureScreenshot', format='png', captureBeyondViewport=True)
             screenshot.write_bytes(base64.b64decode(image['data']))
+            client.call('Runtime.evaluate', expression="document.getElementById('openBuilderBtn').click()")
+            time.sleep(.1)
+            builder_image = client.call('Page.captureScreenshot', format='png', captureBeyondViewport=False)
+            (Path(tempfile.gettempdir()) / f'danish-builder-{label}.png').write_bytes(base64.b64decode(builder_image['data']))
             print(json.dumps({'view':label, 'passed':sum(c['passed'] for c in checks), 'total':len(checks), 'failures':[c for c in checks if not c['passed']], 'screenshot':str(screenshot)}, ensure_ascii=False), flush=True)
         finally:
             if client:
                 try: client.call('Browser.close')
                 except (OSError, ConnectionError): pass
                 client.sock.close()
-            process.wait(timeout=15)
+            try: process.wait(timeout=10)
+            except subprocess.TimeoutExpired:
+                process.terminate()
+                process.wait(timeout=10)
 server.shutdown()
 raise SystemExit(bool(failures))

@@ -4,171 +4,66 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Danish Practice Tool</title>
-  <style>
-
-    :root { color-scheme: light; --bg: #f4f1e9; --panel: #fffcf7; --text: #172d37; --muted: #627177; --accent: #075952; --success: #16764e; --danger: #a33737; --border: #deded5; }
-    * { box-sizing: border-box; }
-    [hidden] { display: none !important; }
-    body { margin: 0; background: var(--bg); color: var(--text); font: 15px/1.45 system-ui, sans-serif; }
-    button, input, select { font: inherit; }
-    button, select, input { border: 1px solid var(--border); border-radius: 8px; color: inherit; background: var(--panel); }
-    input, select { min-width: 0; width: 100%; padding: 10px 12px; min-height: 44px; }
-    button { min-height: 44px; padding: 9px 15px; cursor: pointer; transition: background .15s, border-color .15s, box-shadow .15s; }
-    button:hover:not(:disabled) { border-color: var(--accent); background: #eaf2ed; }
-    button:disabled { cursor: default; opacity: .55; }
-    :focus-visible { outline: 3px solid #d89345; outline-offset: 3px; }
-    .primary { background: var(--accent); color: white; border-color: var(--accent); font-weight: 650; }
-    .primary:hover:not(:disabled) { background: #06433e; color: white; }
-    .secondary { background: #e8eee7; color: var(--accent); }
-    .ghost { background: transparent; }
-    h1, h2, p { margin: 0; }
-    h1 { font-size: 23px; letter-spacing: -.7px; }
-    h2 { font-size: 18px; }
-    .shell { max-width: 1600px; margin: auto; padding: 18px 24px 28px; display: grid; gap: 14px; }
-    .dashboard-header { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 18px; border-bottom: 1px solid var(--border); padding-bottom: 16px; }
-    .brand { display: flex; align-items: center; gap: 12px; }
-    .danish-flag { width: 34px; height: 26px; border-radius: 3px; background: linear-gradient(90deg, transparent 30%, white 30% 40%, transparent 40%), linear-gradient(transparent 42%, white 42% 58%, transparent 58%), #c62b3a; }
-    .brand small { display: block; color: var(--muted); font-size: 12px; }
-    .controls { display: flex; flex-wrap: wrap; gap: 8px; align-items: end; }
-    .field { display: grid; gap: 5px; min-width: 0; }
-    .field label { font-size: 12px; font-weight: 650; color: var(--muted); }
-    .controls .field { width: 155px; }
-    .controls .count-field { width: 95px; }
-    .packs { border-bottom: 1px solid var(--border); padding-bottom: 12px; }
-    .packs-summary { cursor: pointer; font-size: 13px; font-weight: 650; padding: 2px 0 10px; }
-    .packs-count { color: var(--muted); font-weight: 400; margin-left: 8px; }
-    .packs-grid { display: flex; gap: 8px; overflow-x: auto; padding: 2px 2px 8px; }
-    .pack-card { flex: 0 0 188px; border: 1px solid var(--border); border-radius: 9px; padding: 10px 12px; background: var(--panel); display: grid; gap: 5px; }
-    .pack-card.active { border-color: #ba7536; background: #fff0df; }
-    .pack-card strong { font-size: 14px; }
-    .pack-card p { font-size: 12px; color: var(--muted); }
-    .pack-meta { font-size: 11px; color: var(--muted); }
-    .pack-start-btn { padding: 5px 10px; width: 100%; margin-top: 4px; }
-    .pack-badge { margin-left: 4px; }
-    .layout-split { display: grid; grid-template-columns: minmax(0, 1fr) 310px; gap: 16px; align-items: start; }
-    .main-col, .side-col { display: grid; gap: 12px; min-width: 0; }
-    .quiz, .session-panel, .translator, .settings-panel, .bank, .revision { background: var(--panel); border: 1px solid var(--border); border-radius: 10px; }
-    .quiz { overflow: hidden; }
-    .quiz-header { display: flex; justify-content: space-between; align-items: center; gap: 10px; padding: 12px 18px; border-bottom: 1px solid var(--border); }
-    .badge { border-radius: 20px; background: #e8f0ed; color: var(--accent); padding: 4px 10px; font-size: 12px; }
-    .quiz-body { padding: 18px; }
-    .prompt { margin-bottom: 14px; }
-    .kind { display: block; color: var(--muted); font-size: 11px; letter-spacing: .12em; text-transform: uppercase; font-weight: 700; margin-bottom: 8px; }
-    .word-heading { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; margin-bottom: 8px; }
-    .word-heading strong { font: 600 clamp(28px, 4vw, 44px)/1.15 Georgia, serif; overflow-wrap: anywhere; }
-    .word-heading span { color: var(--muted); }
-    .prompt .text { font-size: 20px; font-weight: 600; line-height: 1.35; }
-    .answer-row { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 8px; margin-bottom: 10px; }
-    .choice-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; margin-bottom: 12px; }
-    .choice-button { text-align: left; padding: 12px 15px; display: flex; align-items: center; gap: 12px; font-size: 18px; min-height: 56px; overflow-wrap: anywhere; }
-    .choice-key { border-radius: 5px; background: #eaece6; font: 650 12px system-ui, sans-serif; padding: 4px 7px; }
-    .choice-mark { margin-left: auto; }
-    .choice-button:disabled { opacity: 1; }
-    .choice-button.correct, .table-input.correct { border-color: var(--success); background: #e7f3e9; }
-    .choice-button.wrong, .table-input.wrong { border-color: var(--danger); background: #faeae6; }
-    .table-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px 16px; margin-top: 14px; }
-    .table-card { display: grid; gap: 5px; }
-    .table-given { grid-column: 1 / -1; padding-bottom: 4px; }
-    .mini-title { font-size: 12px; color: var(--muted); }
-    .table-submit { grid-column: 1 / -1; justify-self: end; }
-    .feedback { font-size: 13px; color: var(--muted); }
-    .quiz .feedback { min-height: 38px; display: flex; align-items: center; border-radius: 7px; padding: 8px 10px; margin-bottom: 10px; }
-    .feedback.good { color: var(--success); background: #e7f3e9; }
-    .feedback.bad { color: var(--danger); background: #faeae6; }
-    .actions { display: flex; gap: 8px; flex-wrap: wrap; }
-    .quiz-actions { justify-content: space-between; }
-    .session-panel, .translator { padding: 14px; display: grid; gap: 12px; }
-    .session-numbers { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-    .session-numbers span { color: var(--muted); font-size: 12px; display: block; }
-    .session-numbers strong { font-size: 23px; }
-    progress { width: 100%; height: 8px; border: 0; border-radius: 20px; overflow: hidden; accent-color: var(--accent); background: #e1e7df; }
-    progress::-webkit-progress-bar { background: #e1e7df; }
-    progress::-webkit-progress-value { background: var(--accent); border-radius: 20px; }
-    .progress { font-size: 12px; color: var(--muted); }
-    .translate-tabs { display: flex; }
-    .translate-tab { flex: 1; font-size: 12px; border-radius: 0; padding: 8px; }
-    .translate-tab:first-child { border-radius: 7px 0 0 7px; }
-    .translate-tab:last-child { border-radius: 0 7px 7px 0; }
-    .translate-tab.active { background: var(--accent); color: white; }
-    .translate-entry { display: flex; gap: 6px; }
-    .translator-result { background: #eef2e9; border-radius: 8px; padding: 12px; display: flex; align-items: center; gap: 8px; }
-    .translator-output { flex: 1; overflow-wrap: anywhere; font-size: 18px; }
-    .icon-button { width: 40px; min-height: 40px; padding: 7px; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; }
-    .icon-button svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 1.8; }
-    .icon-button.speaking { background: #d6e9df; border-color: var(--accent); }
-    .settings-panel > summary { padding: 12px 14px; cursor: pointer; font-weight: 650; }
-    .settings-body { display: grid; gap: 12px; padding: 0 14px 14px; }
-    .upload-manager { display: grid; gap: 10px; }
-    .settings-body button { font-size: 12px; }
-    .speech-status { font-size: 12px; color: var(--muted); padding: 0 2px; }
-    .revision { padding: 12px 16px; }
-    .revision h2 { font-size: 14px; margin-bottom: 8px; }
-    .revision-items { display: flex; flex-wrap: wrap; gap: 8px; }
-    .revision-item { display: flex; align-items: center; gap: 8px; border: 1px solid var(--border); border-radius: 7px; padding: 6px 10px; }
-    .revision-item small { display: block; color: var(--muted); font-size: 11px; }
-    .revision-item strong { font-family: Georgia, serif; font-size: 18px; }
-    .example { margin-top: 10px; font-size: 13px; }
-    .bank { padding: 16px; }
-    .bank-toolbar { display: flex; justify-content: space-between; gap: 12px; align-items: center; flex-wrap: wrap; }
-    .bank-filters { display: flex; gap: 8px; }
-    .bank-filters .field { max-width: 240px; }
-    .bank-count { color: var(--muted); font-size: 12px; }
-    .bank-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 8px; margin-top: 12px; }
-    .card { padding: 10px 12px; border: 1px solid var(--border); border-radius: 8px; min-width: 0; }
-    .card-header { display: flex; gap: 6px; align-items: center; }
-    .card strong { font: 600 20px Georgia, serif; overflow-wrap: anywhere; }
-    .card .badge { margin-left: auto; font-size: 10px; }
-    .card small { display: block; color: var(--muted); margin-top: 3px; }
-    .card details { font-size: 12px; margin-top: 6px; color: var(--muted); }
-    .card summary { cursor: pointer; }
-    .bank-pagination { display: flex; gap: 5px; flex-wrap: wrap; margin-top: 12px; }
-    .bank-page-button { min-width: 38px; min-height: 38px; padding: 6px 9px; font-size: 12px; }
-    .bank-page-button.active { background: var(--accent); color: white; }
-    .bank-page-summary { color: var(--muted); font-size: 12px; margin-top: 10px; }
-    .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0; }
-    @media (max-width: 1000px) { .layout-split { grid-template-columns: minmax(0, 1fr) 275px; } .dashboard-header { align-items: start; } .controls { flex: 1; } }
-    @media (max-width: 760px) { .shell { padding: 12px; gap: 12px; } .layout-split { grid-template-columns: 1fr; } .controls { width: 100%; } .controls .field { flex: 1 1 130px; } .controls .count-field { flex: 0 1 85px; } .controls .primary { flex: 1; } .quiz-body { padding: 14px; } .bank-filters { width: 100%; } .bank-filters .field { flex: 1; max-width: none; } }
-    @media (max-width: 440px) { .choice-list, .table-grid { grid-template-columns: 1fr; } .prompt .text { font-size: 18px; } .bank-filters { flex-direction: column; } .answer-row { grid-template-columns: 1fr auto; } }
-    @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
-  </style>
+  <link rel="stylesheet" href="danish_practice_tool.css">
 </head>
 <body>
+<svg class="sr-only" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><defs><symbol id="i-book" viewBox="0 0 24 24"><path d="M12 5C8 2 4 3 2 4v16c4-2 7-1 10 1m0-16c4-3 8-2 10-1v16c-4-2-7-1-10 1V5Z"/></symbol><symbol id="i-stats" viewBox="0 0 24 24"><path d="M4 20V12h3v8Zm7 0V7h3v13Zm7 0V2h3v18Z"/></symbol><symbol id="i-translate" viewBox="0 0 24 24"><path d="M2 3h12M8 1v3m-4 3c2 5 5 7 9 9M12 3c-1 7-4 11-10 14m11 5 5-13 5 13m-8-5h6"/></symbol><symbol id="i-gear" viewBox="0 0 24 24"><path d="m9 3 1-2h4l1 2 3 2 2 0 2 4-2 2v3l2 2-2 4-3-1-2 2h-5l-1-2-3-1-2 1-2-4 2-2v-3L2 8l2-4 3 1 2-2Z M16 12a4 4 0 1 1-8 0 4 4 0 0 1 8 0"/></symbol><symbol id="i-leaf" viewBox="0 0 24 24"><path d="M21 3C5 1 1 9 5 17c8 6 17-1 16-14ZM3 22 17 7"/></symbol><symbol id="i-chat" viewBox="0 0 24 24"><path d="M4 3h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H8l-6 4V5a2 2 0 0 1 2-2Z"/></symbol><symbol id="i-light" viewBox="0 0 24 24"><path d="M9 20h6m-5 3h4M8 16c-7-7-3-14 4-14s11 7 4 14l-1 2H9l-1-2Z"/></symbol><symbol id="i-runner" viewBox="0 0 24 24"><path d="M16 3a2 2 0 1 1-4 0 2 2 0 0 1 4 0M4 10l5-4 5 2 4 4 4-1M13 8l-4 6 5 3-2 6M9 14l-4 5H1"/></symbol></defs></svg>
+  <div class="studio-strip">DANISH PRACTICE · A little practice, every day</div>
 
   <div class="shell">
     <header class="dashboard-header">
-      <div class="brand"><span class="danish-flag" aria-hidden="true"></span><div><h1>Danish Practice</h1><small>A little practice, every day.</small></div></div>
+      <div class="brand"><span class="danish-flag" aria-hidden="true"></span><div><h1>Danish Practice</h1></div></div>
       <section class="controls" aria-label="Quiz setup">
-        <div class="field"><label for="category">Category</label><select id="category"><option value="all">All categories</option><option value="verbs">Verbs</option><option value="nouns">Nouns</option><option value="adjectives">Adjectives</option><option value="adverbs">Adverbs</option><option value="common_phrases">Common phrases</option></select></div>
-        <div class="field"><label for="mode">Exercise type</label><select id="mode"><option value="random">Mixed</option><option value="translation">Translation</option><option value="forms">Form practice</option><option value="table">Verb table</option><option value="multiple-choice">Multiple choice</option></select></div>
-        <div class="field count-field"><label for="count">Questions</label><input id="count" type="number" min="1" max="100" value="12"></div>
-        <button class="primary" id="startBtn">New session ↻</button>
+        <div class="field"><label class="sr-only" for="category">Category</label><select id="category"><option value="all">All categories</option><option value="verbs" selected>Verbs</option><option value="nouns">Nouns</option><option value="adjectives">Adjectives</option><option value="adverbs">Adverbs</option><option value="common_phrases">Common phrases</option></select></div>
+        <div class="field"><label class="sr-only" for="mode">Exercise type</label><select id="mode"><option value="random">Mixed</option><option value="translation">Translation</option><option value="forms">Form practice</option><option value="table">Verb table</option><option value="multiple-choice" selected>Multiple choice</option></select></div>
+        <div class="field count-field header-count"><label for="count">Questions</label><input id="count" type="number" min="1" max="100" value="12"></div>
+        <button class="primary" id="startBtn">↻ New session</button>
+        <button class="builder-launch" id="openBuilderBtn">＋ Custom exercise builder</button>
       </section>
     </header>
-    <details class="packs" id="packs-section" open><summary class="packs-summary">Exercise packs <span class="packs-count">7 ways to practise</span></summary><div class="packs-grid" id="packs-grid"></div></details>
+    <section class="packs" id="packs-section" aria-label="Exercise packs"><h2>Exercise Packs</h2><div class="packs-grid" id="packs-grid"></div></section>
     <div class="layout-split">
       <div class="main-col">
         <article class="quiz" aria-labelledby="quizTitle">
-          <div class="quiz-header"><h2 id="quizTitle">Quiz <span class="badge" id="statSet">All categories</span></h2><span class="badge" id="quizBadge">Ready to start</span></div>
+          <div class="quiz-header"><h2 id="quizTitle"><svg class="ui-icon" aria-hidden="true"><use href="#i-book"></use></svg> Quiz <span class="badge" id="statSet">All categories</span></h2><span class="badge" id="quizBadge">Ready to start</span></div>
           <div class="quiz-body">
             <div class="prompt"><span class="kind" id="promptKind">Prompt</span><div class="word-heading" id="promptWord" hidden></div><div class="text" id="promptText">Choose a category and start the quiz.</div><div class="table-grid" id="tableGrid" hidden></div></div>
             <div class="answer-row" id="answerRow" hidden><label class="sr-only" for="answerInput">Your answer</label><input id="answerInput" type="text" placeholder="Your answer…" autocomplete="off"><button class="primary" id="submitBtn">Check ↵</button></div>
             <div class="choice-list" id="choiceList" hidden></div>
             <button class="primary table-submit" id="tableSubmitBtn" hidden>Check table ↵</button>
             <div class="feedback" id="feedback" role="status" aria-live="polite"></div>
-            <div class="actions quiz-actions"><button class="ghost" id="revealBtn">Reveal answer</button><button class="secondary" id="nextBtn">Next question →</button></div>
+            <div class="example" id="exampleSentence" hidden></div><div class="actions quiz-actions"><button class="ghost" id="revealBtn">Reveal answer</button><button class="secondary" id="nextBtn">Next question →</button></div>
           </div>
         </article>
-        <section class="revision" id="revisionPanel" aria-labelledby="revisionTitle" hidden><h2 id="revisionTitle">Quick revision</h2><div class="revision-items" id="revisionItems"></div><div class="example" id="exampleSentence" hidden></div></section>
+
       </div>
       <aside class="side-col" aria-label="Practice tools">
-        <section class="session-panel" aria-labelledby="sessionTitle"><h2 id="sessionTitle">Your session</h2><div class="session-numbers"><div><span>Correct / answered</span><strong id="statScore">0 / 0</strong></div><div><span>Question</span><strong id="sessionQuestion">— / —</strong></div></div><progress id="sessionProgress" max="100" value="0" aria-label="Session completion"></progress><p class="progress" id="progress">No session running.</p></section>
-        <section class="translator" aria-labelledby="translatorTitle"><h2 id="translatorTitle">Translate</h2><div class="translate-tabs" id="translateTabs" aria-label="Translation direction"><button class="translate-tab active" data-mode="auto" aria-pressed="true">Auto</button><button class="translate-tab" data-mode="en-da" aria-pressed="false">EN → DA</button><button class="translate-tab" data-mode="da-en" aria-pressed="false">DA → EN</button></div><label class="sr-only" for="translateInput">Word or short phrase to translate</label><div class="translate-entry"><input id="translateInput" placeholder="Word or short phrase…"><button class="primary" id="translateBtn">Translate</button></div><div class="translator-result"><div class="translator-output" id="translateOutput">Translation appears here.</div><button class="icon-button" id="translateSpeakBtn" aria-label="Listen to Danish translation" title="Listen to Danish translation" hidden></button><button class="icon-button" id="translateCopyBtn" aria-label="Copy translation" title="Copy translation" disabled>⧉</button></div><div class="actions"><button class="ghost" id="translateClearBtn">Clear</button></div><p class="feedback" id="translateStatus" role="status"></p></section>
-        <details class="settings-panel"><summary>Settings / Data</summary><div class="settings-body"><div class="field"><label for="seed">Repeatable session seed</label><input id="seed" placeholder="Optional"></div><div class="actions"><button class="ghost" id="resetBtn">Reset session</button><button class="ghost" id="loadGeneratedBtn">Reload data files</button></div><section class="upload-manager" aria-label="Vocabulary import"><div class="field"><label for="importCategory">Import category</label><select id="importCategory"><option value="verbs">Verbs</option><option value="nouns">Nouns</option><option value="adjectives">Adjectives</option><option value="adverbs">Adverbs</option><option value="common_phrases">Common phrases</option></select></div><div class="actions"><button class="secondary" id="importFileBtn">Upload &amp; append JSON</button><button class="ghost" id="connectDataDirBtn">Connect data folder</button></div><input id="importFileInput" type="file" accept="application/json,.json" hidden><p class="feedback" id="importStatus" role="status"></p></section></div></details>
+        <section class="session-panel" aria-labelledby="sessionTitle">
+          <h2 class="panel-title" id="sessionTitle"><svg class="ui-icon" aria-hidden="true"><use href="#i-stats"></use></svg> Your session</h2>
+          <div class="session-numbers"><div class="score-ring" id="scoreRing"><div class="ring-inner"><strong id="statScore" aria-label="Correct answers out of attempted questions">0 / 0</strong><span>correct</span></div></div><div class="question-stats"><span>Question</span><strong id="sessionQuestion">— / —</strong><span id="completionPercent">0% complete</span></div></div>
+          <progress class="sr-only" id="sessionProgress" max="100" value="0" aria-label="Session completion"></progress><p class="progress" id="progress">Start a pack or build your own session.</p>
+        </section>
+        <section class="translator" aria-labelledby="translatorTitle"><h2 class="panel-title" id="translatorTitle"><svg class="ui-icon" aria-hidden="true"><use href="#i-translate"></use></svg> Translate</h2><div class="translate-tabs" id="translateTabs" aria-label="Translation direction"><button class="translate-tab" data-mode="auto" aria-pressed="false" hidden>Auto</button><button class="translate-tab active" data-mode="en-da" aria-pressed="true">EN → DA</button><button class="translate-tab" data-mode="da-en" aria-pressed="false">DA → EN</button></div><label class="sr-only" for="translateInput">Word or short phrase to translate</label><div class="translate-entry"><input id="translateInput" placeholder="Word or short phrase…"><button class="icon-button ghost" id="translateClearBtn" aria-label="Clear translation" title="Clear">&times;</button><button class="primary" id="translateBtn">Translate</button></div><div class="translator-result"><div class="translator-output" id="translateOutput">Translation appears here.</div><button class="icon-button" id="translateSpeakBtn" aria-label="Listen to Danish translation" title="Listen to Danish translation" hidden></button><button class="icon-button" id="translateCopyBtn" aria-label="Copy translation" title="Copy translation" disabled>⧉</button></div><p class="feedback" id="translateStatus" role="status"></p></section>
+        <details class="settings-panel" id="settingsPanel"><summary><svg class="ui-icon" aria-hidden="true"><use href="#i-gear"></use></svg> Settings / Data<span class="settings-hint">Seed · JSON import · Export · Reset session</span></summary><div class="settings-body"><div class="field"><label for="seed">Repeatable session seed</label><input id="seed" placeholder="Optional"></div><div class="actions"><button class="ghost" id="resetBtn">Reset session</button><button class="ghost" id="loadGeneratedBtn">Reload data files</button><button class="ghost" id="exportBtn">Export vocabulary</button></div><section class="upload-manager" aria-label="Vocabulary import"><div class="field"><label for="importCategory">Import category</label><select id="importCategory"><option value="verbs">Verbs</option><option value="nouns">Nouns</option><option value="adjectives">Adjectives</option><option value="adverbs">Adverbs</option><option value="common_phrases">Common phrases</option></select></div><div class="actions"><button class="secondary" id="importFileBtn">Upload &amp; append JSON</button><button class="ghost" id="connectDataDirBtn">Connect data folder</button></div><input id="importFileInput" type="file" accept="application/json,.json" hidden><p class="feedback" id="importStatus" role="status"></p></section></div></details>
         <p class="speech-status" id="speechStatus" role="status"></p>
       </aside>
     </div>
-    <section class="bank" id="bankPanel" aria-labelledby="bankTitle"><div class="bank-toolbar"><div><h2 id="bankTitle">Word bank</h2><span class="bank-count"><span id="statBank">0</span> entries in your vocabulary</span></div><div class="bank-filters"><div class="field"><label for="bankCategory">Category</label><select id="bankCategory"><option value="all">All categories</option><option value="verbs">Verbs</option><option value="nouns">Nouns</option><option value="adjectives">Adjectives</option><option value="adverbs">Adverbs</option><option value="common_phrases">Common phrases</option></select></div><div class="field"><label for="bankSearch">Find a word</label><input id="bankSearch" type="search" placeholder="Danish or English…"></div></div></div><div class="bank-list" id="bankList"></div><p class="bank-page-summary" id="bankPageSummary" role="status"></p><nav class="bank-pagination" id="bankPagination" aria-label="Word bank pages"></nav></section>
+    <section class="revision" id="revisionPanel" aria-labelledby="revisionTitle" hidden><h2 id="revisionTitle"><svg class="ui-icon" aria-hidden="true"><use href="#i-light"></use></svg> Quick revision</h2><div class="revision-items" id="revisionItems"></div></section>
+    <section class="bank" id="bankPanel" aria-labelledby="bankTitle"><div class="bank-toolbar"><div><h2 id="bankTitle"><svg class="ui-icon" aria-hidden="true"><use href="#i-book"></use></svg> Word bank</h2><span class="bank-count"><span id="statBank">0</span> entries in your vocabulary</span></div><div class="bank-filters"><div class="field"><label class="sr-only" for="bankCategory">Category</label><select id="bankCategory"><option value="all" selected>All categories</option><option value="verbs">Verbs</option><option value="nouns">Nouns</option><option value="adjectives">Adjectives</option><option value="adverbs">Adverbs</option><option value="common_phrases">Common phrases</option></select></div><div class="field"><label class="sr-only" for="bankSearch">Find a word</label><input id="bankSearch" type="search" placeholder="⌕ Find a word…"></div><button class="primary" id="addWordBtn">＋ Add word</button></div></div><div class="bank-list" id="bankList"></div><p class="bank-page-summary" id="bankPageSummary" role="status"></p><nav class="bank-pagination" id="bankPagination" aria-label="Word bank pages"></nav></section>
   </div>
+
+
+  <dialog id="builderDialog" aria-labelledby="builderTitle">
+    <div class="dialog-head"><div><h2 id="builderTitle">Custom exercise builder</h2><p>Choose the categories and forms you want to practise.</p></div><button id="closeBuilderBtn" class="icon-button" aria-label="Close exercise builder">✕</button></div>
+    <div class="builder-body">
+      <div class="builder-options"><div class="field"><label for="builderMode">Answer style</label><select id="builderMode"><option value="random">Mixed / written answers</option><option value="multiple-choice">Multiple choice</option><option value="translation">Translations only</option><option value="forms">Word forms only</option><option value="table">Verb tables only</option></select></div><div class="field"><label for="builderCount">Questions</label><input id="builderCount" type="number" min="1" max="100" value="12"></div><div class="field"><label for="builderSeed">Seed (optional)</label><input id="builderSeed" placeholder="Repeat a session"></div></div>
+      <div class="builder-selection"><div class="actions"><button id="builderSelectAll" class="ghost">Select all</button><button id="builderClear" class="ghost">Clear selection</button></div><p id="builderPreview" role="status"></p></div>
+      <div class="builder-groups" id="builderGroups"></div>
+    </div>
+    <div class="builder-footer"><div><button id="saveBuilderBtn" class="ghost">Save setup</button><p id="builderStatus" role="status"></p></div><button id="startCustomBtn" class="primary">Start custom quiz →</button></div>
+  </dialog>
+  <dialog id="wordDialog" aria-labelledby="wordTitle"><div class="dialog-head"><h2 id="wordTitle">Add a word</h2><button id="closeWordBtn" class="icon-button" aria-label="Close add word">✕</button></div><form id="wordForm"><div class="builder-body"><div class="field"><label for="wordCategory">Category</label><select id="wordCategory"><option value="verbs">Verbs</option><option value="nouns">Nouns</option><option value="adjectives">Adjectives</option><option value="adverbs">Adverbs</option><option value="common_phrases">Common phrases</option></select></div><div class="builder-groups" id="wordFields"></div><p id="wordStatus" class="feedback" role="status"></p></div><div class="builder-footer"><p>Stored in this browser. Export vocabulary to keep a file copy.</p><button class="primary" type="submit">Add to word bank</button></div></form></dialog>
+  <script src="../data/lexicon.browser.js"></script>
 
   <script>
     const fallbackVocabulary = {
@@ -189,7 +84,7 @@
       ]
     };
 
-    let vocabulary = JSON.parse(JSON.stringify(fallbackVocabulary));
+    let vocabulary = JSON.parse(JSON.stringify(window.DANISH_LEXICON || fallbackVocabulary));
 
     const ui = {
       promptWord: document.getElementById("promptWord"),
@@ -251,14 +146,15 @@
       complete: false,
       translationText: "",
       prompt: null,
-      translateMode: "auto",
+      translateMode: "en-da",
+      sessionTemplates: null,
       dataDirHandle: null,
       bankPage: 0,
       bankItems: []
     };
 
     const CHOICE_COUNT = 4;
-    const BANK_PAGE_SIZE = 12;
+    const BANK_PAGE_SIZE = 8;
     const CATEGORY_FILES = {
       verbs: "verbs.json",
       nouns: "nouns.json",
@@ -419,6 +315,7 @@
     ];
 
     const EXERCISE_PACKS = [
+      { id: "phrases", label: "Common phrases", description: "Everyday phrases in both directions.", category: "common_phrases", mode: "translation", count: 12, templateIds: null, seed: null },
       {
         id: "verb-bootcamp",
         label: "Verb Bootcamp",
@@ -924,9 +821,12 @@
     function applyImportedLexicon(lexicon, options = {}) {
       const { silent = false, message = null, tone = "good" } = options;
       vocabulary = lexicon;
+      restoreAddedWords();
       resetSession();
       renderBank();
       updateStats();
+      renderPackSelector();
+      refreshBuilderPreview();
       if (!silent) {
         setImportStatus(
           message || `Loaded data: ${lexicon.verbs.length} verbs, ${lexicon.adjectives.length} adjectives, ${lexicon.nouns.length} nouns, ${lexicon.adverbs.length} adverbs, ${lexicon.common_phrases.length} phrases.`,
@@ -998,6 +898,10 @@
     }
 
     async function loadBaseLexiconOnStartup() {
+      if (window.DANISH_LEXICON) {
+        applyImportedLexicon(normalizeLexiconShape(window.DANISH_LEXICON));
+        return;
+      }
       try {
         const splitResult = await loadSplitLexiconFiles();
         if (splitResult) {
@@ -1010,6 +914,7 @@
 
         const result = await fetchLexiconFile("lexicon.json");
         if (!result) {
+          setFeedback("Full vocabulary could not load. Keep the data folder beside code, or import vocabulary in Settings / Data.", "bad");
           return;
         }
 
@@ -1024,6 +929,10 @@
     }
 
     async function loadGeneratedLexicon() {
+      if (location.protocol === "file:" && window.DANISH_LEXICON) {
+        applyImportedLexicon(normalizeLexiconShape(window.DANISH_LEXICON));
+        return;
+      }
       ui.loadGeneratedBtn.disabled = true;
       setImportStatus("Reloading data files...", "");
       try {
@@ -1072,6 +981,8 @@
         resetSession();
         renderBank();
         updateStats();
+        renderPackSelector();
+        refreshBuilderPreview();
 
         if (persistResult.persisted) {
           setImportStatus(
@@ -1106,6 +1017,7 @@
         for (const item of items) {
           for (const t of tmpls) {
             if (t.condition && !t.condition(item)) continue;
+            if (t.kind !== "Table" && !t.answers(item).some(answer => String(answer || "").trim())) continue;
             if (t.kind === "Table") {
               const tbl = t.tableBuilder(item);
               exercises.push({
@@ -1190,18 +1102,31 @@
       window.speechSynthesis.speak(utterance);
     }
 
+    function templateLabel(template) {
+      if (template.id === "verb-table") return "Complete verb table";
+      if (template.id.includes("-da-en")) return "Danish → English";
+      const text = template.prompt({ english: "", infinitive: "", singular_indefinite: "", base: "", danish: "" });
+      const label = text.split(" -> ")[1]?.split(" for '")[0] || template.kind;
+      return label.charAt(0).toUpperCase() + label.slice(1);
+    }
+
     function renderPromptWord(exercise) {
       const record = exercise.record;
       if (!record) return;
-      const danishPrompt = exercise.kind === "Table" || exercise.templateId.includes("-da-en");
-      // Reverse translation must not show (or speak) the hidden Danish answer.
-      const word = danishPrompt ? getBankTitle(exercise.group, record) : record.english;
-      ui.promptWord.innerHTML = `<strong>${escapeHtml(word || "")}</strong>${danishPrompt ? speechButton(word) : ""}`;
+      const toEnglish = exercise.templateId.includes("-da-en");
+      const inflection = (exercise.group === "verbs" && exercise.templateId !== "verb-en-da-infinitive" && !toEnglish)
+        || (exercise.group === "adjectives" && !["adj-en-da-base", "adj-da-en"].includes(exercise.templateId));
+      const showDanish = toEnglish || inflection || exercise.kind === "Table";
+      const word = showDanish ? getBankTitle(exercise.group, record) : record.english;
+      const meaning = inflection && record.english && normalize(word) !== normalize(record.english) ? record.english : "";
+      ui.promptWord.innerHTML = `<strong>${escapeHtml(word || "")}</strong>${showDanish ? speechButton(word) : ""}${meaning ? `<span class="meaning">${escapeHtml(meaning)}</span>` : ""}`;
       ui.promptWord.hidden = false;
-      const target = exercise.prompt.split(" -> ")[1]?.split(" for '")[0];
-      ui.promptKind.textContent = `${labelCase(exercise.group)} · ${exercise.kind === "Table" ? "Verb table" : danishPrompt ? "DA → EN" : "EN → DA"}`;
-      if (exercise.kind !== "Table" && target) {
-        ui.promptText.textContent = `${exercise.kind === "MultipleChoice" ? "Choose" : "Write"} ${target === "English" ? "the English translation" : `the ${target.toLowerCase()}`}.`;
+      const template = EXERCISE_TEMPLATES.find(t => t.id === exercise.templateId);
+      const target = templateLabel(template);
+      ui.promptKind.textContent = `${target} · ${labelCase(exercise.group)}`;
+      if (exercise.kind !== "Table") {
+        const label = toEnglish ? "English translation" : target.toLowerCase();
+        ui.promptText.textContent = `${exercise.kind === "MultipleChoice" ? "Choose" : "Write"} the ${label}${inflection ? ` of “${word}”` : ""}.`;
       }
     }
 
@@ -1272,6 +1197,8 @@
       ui.nextBtn.className = state.answered ? "primary" : "secondary";
       ui.nextBtn.textContent = state.answered ? "Next question →" : "Skip question →";
       ui.tableSubmitBtn.disabled = state.answered;
+      document.getElementById("scoreRing").style.setProperty("--score-angle", `${answered ? state.score / answered * 360 : 0}deg`);
+      document.getElementById("completionPercent").textContent = `${Math.round(ui.sessionProgress.value)}% complete`;
     }
 
     function setFeedback(text, tone = "") {
@@ -1286,13 +1213,16 @@
     function renderCurrent() {
       const exercise = currentExercise();
       stopSpeech();
+      ui.exampleSentence.hidden = true;
       ui.promptWord.hidden = true;
       ui.promptWord.innerHTML = "";
       ui.revisionPanel.hidden = true;
       ui.tableSubmitBtn.hidden = true;
       if (!exercise) {
         ui.promptKind.textContent = "Prompt";
-        ui.promptText.textContent = "Choose a category and start the quiz.";
+        ui.promptWord.hidden = false;
+        ui.promptWord.innerHTML = "<strong>Ready to practise?</strong>";
+        ui.promptText.textContent = "Choose an exercise pack or build your own quiz.";
         ui.quizBadge.textContent = "Ready to start";
         ui.progress.textContent = "No session running.";
         ui.answerRow.hidden = true;
@@ -1387,11 +1317,15 @@
       const seed = seedText ? Array.from(seedText).reduce((sum, char) => sum + char.charCodeAt(0), 0) : null;
       const rng = seed === null ? Math.random : mulberry32(seed);
       document.querySelectorAll(".pack-card").forEach(card => card.classList.remove("active"));
+      const requested = Math.max(1, Math.min(100, parseInt(ui.count.value, 10) || 12));
       const rawExercises = shuffle(flattenExercises(ui.category.value, ui.mode.value, templateIds), rng);
+      const selected = rawExercises.slice(0, requested);
       const exercises = ui.mode.value === "multiple-choice"
-        ? rawExercises.map((exercise) => ({ ...buildChoiceExercise(exercise, rng), solved: false, revealed: false }))
-        : rawExercises.map((exercise) => ({ ...exercise, solved: false, revealed: false }));
-      const count = Math.max(1, Math.min(parseInt(ui.count.value, 10) || 1, exercises.length));
+        ? selected.map((exercise) => ({ ...buildChoiceExercise(exercise, rng), solved: false, revealed: false }))
+        : selected.map((exercise) => ({ ...exercise, solved: false, revealed: false }));
+      ui.count.value = requested;
+      const count = Math.min(requested, exercises.length);
+      state.sessionTemplates = templateIds || null;
       state.exercises = exercises.slice(0, count).map((exercise) => ({ ...exercise, solved: false, revealed: false }));
       state.currentIndex = 0;
       state.score = 0;
@@ -1410,8 +1344,10 @@
       } else if (currentExercise().kind === "MultipleChoice") {
         setFeedback("Tap a choice to answer.");
       } else {
-        setFeedback("Session started. Type your answer and press Enter.");
+        setFeedback("Type your answer and press Enter to check.");
       }
+      if (count < requested) setFeedback(`Only ${count} matching questions are available. This session has ${count} questions.`);
+      refreshBuilderPreview();
     }
 
     function buildSessionFromPack(packId) {
@@ -1556,6 +1492,7 @@
         ui.tableGrid.hidden = true;
         ui.tableSubmitBtn.hidden = true;
         ui.promptWord.hidden = true;
+        ui.exampleSentence.hidden = true;
         ui.revisionPanel.hidden = true;
         ui.quizBadge.textContent = "Session complete";
         ui.promptKind.textContent = "Done";
@@ -1715,24 +1652,151 @@
     });
 
     ui.mode.addEventListener("change", () => {
-      const mode = ui.mode.value;
-      ui.promptKind.textContent = mode === "table" ? "Table" : mode === "multiple-choice" ? "Multiple choice" : "Prompt";
+      if (!state.exercises.length) updateStats();
     });
 
-    function renderPackSelector() {
-      const grid = document.getElementById("packs-grid");
-      if (!grid) return;
-      grid.innerHTML = EXERCISE_PACKS.map(pack => `
-        <article class="pack-card" data-pack-id="${pack.id}">
-          <strong>${pack.label}</strong>
-          <p>${pack.description}</p>
-          <div class="pack-meta">
-            ${labelCase(pack.category === "all" ? "all categories" : pack.category)} &middot; ${labelCase(pack.mode)} &middot; ${pack.count} Qs
-            ${pack.seed === "daily" ? '<span class="pack-badge">&#9733; Daily</span>' : ""}
-          </div>
-          <button class="primary pack-start-btn" onclick="buildSessionFromPack('${pack.id}')">Start &#9654;</button>
-        </article>
+    function builderTemplateIds() {
+      return Array.from(document.querySelectorAll('#builderGroups input[data-template]:checked:not(:disabled)'), input => input.dataset.template);
+    }
+
+    function refreshBuilderPreview() {
+      const mode = document.getElementById("builderMode").value;
+      document.querySelectorAll('#builderGroups input[data-template]').forEach(input => {
+        const template = EXERCISE_TEMPLATES.find(item => item.id === input.dataset.template);
+        input.disabled = !flattenExercises(template.category, "random", [template.id]).length || (mode === "table" && template.kind !== "Table")
+          || (mode === "translation" && template.kind !== "Translation")
+          || (mode === "forms" && template.kind !== "Form")
+          || (mode === "multiple-choice" && template.kind === "Table");
+      });
+      const ids = builderTemplateIds();
+      const available = flattenExercises("all", mode, ids).length;
+      const countInput = document.getElementById("builderCount");
+      const requested = Number(countInput.value);
+      const validCount = countInput.checkValidity() && Number.isInteger(requested) && requested >= 1;
+      document.getElementById("builderPreview").textContent = available
+        ? `${available.toLocaleString()} matching questions · ${Math.min(validCount ? requested : 0, available)} in your session`
+        : "Select at least one available exercise type.";
+      document.getElementById("startCustomBtn").disabled = !available || !validCount;
+    }
+
+    function initializeBuilder() {
+      document.getElementById("builderGroups").innerHTML = Object.keys(CATEGORY_FILES).map(category => `
+        <fieldset><legend>${escapeHtml(labelCase(category))}</legend>${EXERCISE_TEMPLATES.filter(t => t.category === category).map(t => `<label><input type="checkbox" data-template="${t.id}" checked><span>${escapeHtml(templateLabel(t))}</span></label>`).join("")}</fieldset>
       `).join("");
+      try {
+        const saved = JSON.parse(localStorage.getItem("danish-practice-builder") || "null");
+        if (saved && Array.isArray(saved.ids)) {
+          document.querySelectorAll('[data-template]').forEach(input => { input.checked = saved.ids.includes(input.dataset.template); });
+          if (["random", "multiple-choice", "translation", "forms", "table"].includes(saved.mode)) document.getElementById("builderMode").value = saved.mode;
+          document.getElementById("builderCount").value = Math.max(1, Math.min(100, Number(saved.count) || 12));
+          document.getElementById("builderSeed").value = String(saved.seed || "");
+        }
+      } catch { /* Settings remain usable when browser storage is unavailable. */ }
+      refreshBuilderPreview();
+    }
+
+    const builderDialog = document.getElementById("builderDialog");
+    document.getElementById("openBuilderBtn").addEventListener("click", () => { refreshBuilderPreview(); builderDialog.showModal(); });
+    document.getElementById("closeBuilderBtn").addEventListener("click", () => builderDialog.close());
+    document.getElementById("builderGroups").addEventListener("change", refreshBuilderPreview);
+    document.getElementById("builderMode").addEventListener("change", refreshBuilderPreview);
+    document.getElementById("builderCount").addEventListener("input", refreshBuilderPreview);
+    document.getElementById("builderSelectAll").addEventListener("click", () => {
+      document.querySelectorAll('#builderGroups input:not(:disabled)').forEach(input => { input.checked = true; }); refreshBuilderPreview();
+    });
+    document.getElementById("builderClear").addEventListener("click", () => {
+      document.querySelectorAll('#builderGroups input').forEach(input => { input.checked = false; }); refreshBuilderPreview();
+    });
+    document.getElementById("startCustomBtn").addEventListener("click", () => {
+      refreshBuilderPreview();
+      if (document.getElementById("startCustomBtn").disabled) return;
+      const ids = builderTemplateIds();
+      const categories = [...new Set(EXERCISE_TEMPLATES.filter(t => ids.includes(t.id)).map(t => t.category))];
+      ui.category.value = categories.length === 1 ? categories[0] : "all";
+      ui.mode.value = document.getElementById("builderMode").value;
+      ui.count.value = document.getElementById("builderCount").value;
+      ui.seed.value = document.getElementById("builderSeed").value;
+      builderDialog.close();
+      buildSession(ids);
+      document.getElementById("quizTitle").scrollIntoView({ block: "nearest" });
+    });
+    document.getElementById("saveBuilderBtn").addEventListener("click", () => {
+      try {
+        localStorage.setItem("danish-practice-builder", JSON.stringify({
+          ids: Array.from(document.querySelectorAll('[data-template]:checked'), input => input.dataset.template),
+          mode: document.getElementById("builderMode").value,
+          count: document.getElementById("builderCount").value,
+          seed: document.getElementById("builderSeed").value
+        }));
+        document.getElementById("builderStatus").textContent = "Setup saved in this browser.";
+      } catch { document.getElementById("builderStatus").textContent = "Browser storage is unavailable. You can still start this quiz."; }
+    });
+
+    function restoreAddedWords() {
+      try {
+        const added = JSON.parse(localStorage.getItem("danish-practice-added-words") || "{}");
+        for (const category of Object.keys(CATEGORY_FILES)) {
+          if (Array.isArray(added[category])) appendCategoryEntries(category, normalizeIncomingEntries(category, added[category]));
+        }
+        renderBank();
+      } catch { /* A bad saved file must not prevent practice. */ }
+    }
+
+    function renderWordFields() {
+      const category = document.getElementById("wordCategory").value;
+      const fields = [...new Set([...REQUIRED_CATEGORY_FIELDS[category], ...(category === "verbs" ? ["imperative"] : []), ...(category === "adjectives" ? ["common", "comparative", "superlative"] : [])])];
+      document.getElementById("wordFields").innerHTML = fields.map(field => `<div class="field"><label for="word-${field}">${escapeHtml(labelCase(field))}${REQUIRED_CATEGORY_FIELDS[category].includes(field) ? " *" : ""}</label><input id="word-${field}" name="${field}" ${REQUIRED_CATEGORY_FIELDS[category].includes(field) ? "required" : ""}></div>`).join("");
+      document.getElementById("wordStatus").textContent = "";
+    }
+    const wordDialog = document.getElementById("wordDialog");
+    document.getElementById("addWordBtn").addEventListener("click", () => { renderWordFields(); wordDialog.showModal(); });
+    document.getElementById("closeWordBtn").addEventListener("click", () => wordDialog.close());
+    document.getElementById("wordCategory").addEventListener("change", renderWordFields);
+    document.getElementById("wordForm").addEventListener("submit", event => {
+      event.preventDefault();
+      const category = document.getElementById("wordCategory").value;
+      try {
+        const entry = normalizeIncomingEntries(category, [Object.fromEntries(new FormData(event.target))])[0];
+        validateCategoryEntries(category, [entry]);
+        if (category === "nouns" && !inferNounGender(entry)) throw new Error("Use en or et at the start of the singular indefinite noun.");
+        const result = appendCategoryEntries(category, [entry]);
+        if (!result.appended) throw new Error("This word is already in your vocabulary.");
+        let saved = false;
+        try {
+          const added = JSON.parse(localStorage.getItem("danish-practice-added-words") || "{}");
+          added[category] = [...(added[category] || []), entry];
+          localStorage.setItem("danish-practice-added-words", JSON.stringify(added)); saved = true;
+        } catch { /* Keep the new word available in memory and allow export. */ }
+        ui.bankCategory.value = category;
+        ui.bankSearch.value = getBankTitle(category, entry);
+        state.bankPage = 0; renderBank(); renderPackSelector(); refreshBuilderPreview();
+        document.getElementById("wordStatus").textContent = saved ? "Word added and saved in this browser." : "Word added for this visit. Export vocabulary to save it.";
+        event.target.reset(); renderWordFields();
+        wordDialog.close();
+        setImportStatus(saved ? "Word added and saved in this browser." : "Word added for this visit. Export vocabulary to save it.");
+      } catch (error) { document.getElementById("wordStatus").textContent = error.message; }
+    });
+    document.getElementById("exportBtn").addEventListener("click", () => {
+      const url = URL.createObjectURL(new Blob([JSON.stringify(vocabulary, null, 2)], { type: "application/json" }));
+      const link = document.createElement("a"); link.href = url; link.download = "danish-vocabulary.json"; link.click();
+      setTimeout(() => URL.revokeObjectURL(url), 1000);
+    });
+
+    function icon(name) { return `<svg class="ui-icon" aria-hidden="true"><use href="#i-${name}"></use></svg>`; }
+    function renderPackSelector() {
+      const display = [
+        ["daily-20", "Everyday Danish", "runner"], ["verb-bootcamp", "Verb forms", "book"],
+        ["noun-gender-cases", "Noun forms", "leaf"], ["phrases", "Common phrases", "chat"],
+        ["adjective-agreement", "Adjective practice", "leaf"], ["verb-tables", "Verb tables", "book"],
+        ["vocab-builder", "Vocabulary", "book"], ["multiple-choice-blitz", "Quick choices", "light"]
+      ];
+      document.getElementById("packs-grid").innerHTML = display.map(([id, name, symbol]) => {
+        const pack = EXERCISE_PACKS.find(p => p.id === id);
+        const available = flattenExercises(pack.category, pack.mode, pack.templateIds).length;
+        const description = available ? `${Math.min(pack.count, available)} questions · ${pack.mode === "random" ? "Mixed" : labelCase(pack.mode)}` : "No phrases yet · Add words";
+        return `<button class="pack-card" data-pack-id="${id}" title="${available ? escapeHtml(pack.description) : "Use Add word or JSON import to add common phrases."}" ${available ? "" : "disabled"}><span class="pack-icon">${icon(symbol)}</span><span><strong>${name}</strong><small>${description}</small></span><span class="pack-arrow">›</span></button>`;
+      }).join("");
+      document.querySelectorAll("[data-pack-id]").forEach(button => button.addEventListener("click", () => buildSessionFromPack(button.dataset.packId)));
     }
 
     async function initializeApp() {
@@ -1744,6 +1808,7 @@
       renderCurrent();
       updateStats();
       await loadBaseLexiconOnStartup();
+      initializeBuilder();
     }
 
     initializeApp();
