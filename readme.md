@@ -15,6 +15,25 @@ https://manishat9096.github.io/Danish-Practice-Tool/code/danish_practice_tool.ht
 
 The page works locally without a build step.
 
+The dashboard keeps quiz setup in the header, session progress and translation beside the quiz, and the searchable word bank at the bottom. On phones, these sections stack vertically. Vocabulary import, the session seed, and reset/reload controls are under **Settings / Data**.
+
+- Translation answers use an inline input; multiple-choice answers and verb-table fields use compact grids.
+- Quick revision appears after checking or revealing an answer. Optional `example_da` and `example_en` fields add an example sentence.
+- Speaker buttons use browser text-to-speech with a Danish voice (`da-DK`). Buttons are disabled if a Danish voice is unavailable on the device. Translation requires an internet connection.
+- A new session resets the score; correct answers and attempted questions are counted separately from session completion. Revealing an answer earns no points.
+
+For automatic vocabulary loading, use the hosted page or serve the repository over HTTP; browsers may block JSON loading when opening the HTML directly. The built-in starter vocabulary and manual JSON import remain available.
+
+### Browser checks
+
+With Chrome, Chromium, or Edge installed, run from the repository root:
+
+```powershell
+python tests/check_quiz_browser.py
+```
+
+This uses Python's standard library to serve the app locally and checks quiz interactions, search, pronunciation controls, and desktop/phone layouts in a headless browser. Screenshots are saved in the system temporary directory. Speech requests and translation responses are checked without requiring audible playback or an external translation request.
+
 If you want a Windows app later, the simplest route is to wrap the same HTML in a WebView2 or Electron shell. For now, the browser version is the lightest local option.
 
 ## Data files
@@ -112,7 +131,3 @@ Automatic Kaikki extraction is no longer part of the default refresh workflow.
 - Missing-letter quiz: hide one part of the word and ask you to complete it.
 - Sentence completion: insert the correct form into a short example sentence.
 - Timed review mode: rapid-fire questions for exam-style practice.
-
-## Next useful step
-
-If you want, the next upgrade should be a simple UI so you can click through quizzes instead of using the terminal.

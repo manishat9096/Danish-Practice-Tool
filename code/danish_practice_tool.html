@@ -5,1012 +5,169 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Danish Practice Tool</title>
   <style>
-    :root {
-      color-scheme: light;
-      --bg: #f4efe4;
-      --panel: rgba(255, 252, 246, 0.88);
-      --panel-strong: #fffaf1;
-      --text: #1c1d1f;
-      --muted: #5f625d;
-      --accent: #24544f;
-      --accent-2: #8a5a2b;
-      --success: #1f7a4f;
-      --danger: #a33a3a;
-      --border: rgba(28, 29, 31, 0.12);
-      --shadow: 0 22px 60px rgba(20, 28, 24, 0.16);
-      --radius: 24px;
-    }
 
-    * {
-      box-sizing: border-box;
-    }
-
-    body {
-      margin: 0;
-      min-height: 100vh;
-      font-family: Georgia, "Times New Roman", serif;
-      color: var(--text);
-      background:
-        radial-gradient(circle at top left, rgba(36, 84, 79, 0.18), transparent 35%),
-        radial-gradient(circle at right top, rgba(138, 90, 43, 0.16), transparent 30%),
-        linear-gradient(180deg, #f8f3e9 0%, #efe7d8 100%);
-    }
-
-    .shell {
-      max-width: none;
-      width: 100%;
-      margin: 0;
-      padding: 10px 14px 16px;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-
-    .layout-split {
-      display: flex;
-      gap: 12px;
-      align-items: flex-start;
-    }
-
-    .main-col {
-      flex: 1 1 0;
-      min-width: 0;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-
-    .side-col {
-      flex: 0 0 360px;
-      width: 360px;
-      position: sticky;
-      top: 12px;
-      max-height: calc(100vh - 24px);
-      overflow-y: auto;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      scrollbar-width: thin;
-    }
-
-    .hero {
-      display: grid;
-      gap: 10px;
-      margin: 0;
-    }
-
-    .controls {
-      margin: 0;
-      width: 100%;
-    }
-
-    .quiz {
-      width: 100%;
-    }
-
-    .translator {
-      width: 100%;
-    }
-
-    .upload-manager-corner {
-      width: 100%;
-    }
-
-    .bank {
-      width: 100%;
-    }
-
-    .title-block {
-      padding: 18px;
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      background: linear-gradient(135deg, rgba(255, 255, 255, 0.82), rgba(255, 250, 241, 0.94));
-      box-shadow: var(--shadow);
-    }
-
-    .eyebrow {
-      margin: 0 0 8px;
-      font-family: ui-sans-serif, system-ui, sans-serif;
-      text-transform: uppercase;
-      letter-spacing: 0.18em;
-      font-size: 0.74rem;
-      color: var(--accent-2);
-    }
-
-    h1 {
-      margin: 0;
-      font-size: clamp(2.1rem, 8vw, 4rem);
-      line-height: 0.95;
-      letter-spacing: -0.04em;
-    }
-
-    .summary {
-      margin: 8px 0 0;
-      color: var(--muted);
-      font-family: ui-sans-serif, system-ui, sans-serif;
-      font-size: 0.9rem;
-      line-height: 1.4;
-    }
-
-    .stats {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 8px;
-      margin-top: 12px;
-    }
-
-    .stat {
-      padding: 12px 12px 10px;
-      border-radius: 16px;
-      border: 1px solid var(--border);
-      background: rgba(255, 255, 255, 0.74);
-      box-shadow: var(--shadow);
-    }
-
-    .stat span {
-      display: block;
-      font-family: ui-sans-serif, system-ui, sans-serif;
-      color: var(--muted);
-      font-size: 0.78rem;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      margin-bottom: 6px;
-    }
-
-    .stat strong {
-      display: block;
-      font-size: 1.25rem;
-      letter-spacing: -0.04em;
-    }
-
-    .controls,
-    .upload-manager,
-    .translator,
-    .quiz,
-    .bank {
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      background: var(--panel);
-      box-shadow: var(--shadow);
-      min-width: 0;
-    }
-
-    .translator {
-      padding: 14px;
-      display: grid;
-      gap: 10px;
-      align-content: start;
-    }
-
-    .translator-header {
-      display: flex;
-      justify-content: space-between;
-      gap: 12px;
-      align-items: center;
-      flex-wrap: wrap;
-    }
-
-    .translator-header h2 {
-      margin: 0;
-      font-size: 1rem;
-      letter-spacing: -0.03em;
-    }
-
-    .translate-tabs {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 8px;
-    }
-
-    .translate-tab {
-      border: 1px solid rgba(28, 29, 31, 0.14);
-      border-radius: 999px;
-      padding: 9px 10px;
-      background: rgba(255, 255, 255, 0.9);
-      color: var(--muted);
-      font-family: ui-sans-serif, system-ui, sans-serif;
-      font-size: 0.78rem;
-      text-align: center;
-    }
-
-    .translate-tab.active {
-      background: #1f2a29;
-      color: #fff;
-      border-color: #1f2a29;
-    }
-
-    .translator-output {
-      padding: 14px 16px;
-      border-radius: 18px;
-      background: rgba(255, 255, 255, 0.78);
-      border: 1px solid rgba(28, 29, 31, 0.08);
-      min-height: 56px;
-      font-family: ui-sans-serif, system-ui, sans-serif;
-      line-height: 1.45;
-    }
-
-    .controls {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 10px;
-      padding: 12px;
-      margin-bottom: 0;
-    }
-
-    .upload-manager {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 10px;
-      padding: 12px;
-      margin-bottom: 0;
-      width: 100%;
-    }
-
-    .upload-manager .actions {
-      width: 100%;
-    }
-
-    .upload-manager .actions button {
-      flex: 1 1 0;
-      min-width: 0;
-    }
-
-    .upload-manager .field,
-    .upload-manager .feedback {
-      width: 100%;
-    }
-
-    .upload-header {
-      display: flex;
-      justify-content: space-between;
-      gap: 12px;
-      align-items: center;
-      flex-wrap: wrap;
-    }
-
-    .upload-header h2 {
-      margin: 0;
-      font-size: 0.98rem;
-      letter-spacing: -0.03em;
-    }
-
-    .field {
-      display: grid;
-      gap: 7px;
-    }
-
-    .field label {
-      font-family: ui-sans-serif, system-ui, sans-serif;
-      font-size: 0.83rem;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      color: var(--muted);
-    }
-
-    input,
-    select,
-    button {
-      font: inherit;
-    }
-
-    input,
-    select {
-      width: 100%;
-      padding: 10px 12px;
-      border-radius: 14px;
-      border: 1px solid rgba(28, 29, 31, 0.14);
-      background: rgba(255, 255, 255, 0.92);
-      color: var(--text);
-    }
-
-    input:focus,
-    select:focus,
-    button:focus {
-      outline: 3px solid rgba(36, 84, 79, 0.18);
-      outline-offset: 2px;
-    }
-
-    .actions {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-      align-items: end;
-      grid-column: 1 / -1;
-      padding-top: 4px;
-    }
-
-    button {
-      border: 0;
-      border-radius: 999px;
-      padding: 10px 14px;
-      cursor: pointer;
-      transition: transform 120ms ease, box-shadow 120ms ease, opacity 120ms ease;
-    }
-
-    button:hover {
-      transform: translateY(-1px);
-    }
-
-    .primary {
-      background: var(--accent);
-      color: white;
-      box-shadow: 0 12px 28px rgba(36, 84, 79, 0.22);
-    }
-
-    .secondary {
-      background: rgba(138, 90, 43, 0.11);
-      color: var(--accent-2);
-    }
-
-    .ghost {
-      background: transparent;
-      color: var(--muted);
-      border: 1px solid var(--border);
-    }
-
-    .layout {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 14px;
-    }
-
-    .bank-list {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 8px;
-      margin-top: 12px;
-      max-height: none;
-      overflow: visible;
-    }
-
-    .bank-pagination {
-      margin-top: 10px;
-    }
-
-    .bank-page-button {
-      padding: 7px 10px;
-      font-size: 0.78rem;
-    }
-
-    .feedback {
-      font-size: 0.9rem;
-      margin-bottom: 10px;
-    }
-
-    .translate-tabs {
-      gap: 6px;
-    }
-
-    .translate-tab {
-      padding: 8px 8px;
-      font-size: 0.75rem;
-    }
-
-    .translator-output {
-      padding: 11px 12px;
-      border-radius: 14px;
-      min-height: 48px;
-      font-size: 0.92rem;
-    }
-
-    .quiz,
-    .bank {
-      padding: 14px;
-    }
-
-    .quiz-header {
-      display: flex;
-      justify-content: space-between;
-      gap: 12px;
-      align-items: center;
-      margin-bottom: 12px;
-    }
-
-    .quiz-header h2,
-    .bank h2 {
-      margin: 0;
-      font-size: 1.05rem;
-      letter-spacing: -0.03em;
-    }
-
-    .badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 8px 12px;
-      border-radius: 999px;
-      background: rgba(36, 84, 79, 0.08);
-      color: var(--accent);
-      font-family: ui-sans-serif, system-ui, sans-serif;
-      font-size: 0.82rem;
-      white-space: nowrap;
-    }
-
-    .prompt {
-      padding: 14px;
-      border-radius: 16px;
-      background: var(--panel-strong);
-      border: 1px solid rgba(28, 29, 31, 0.08);
-      margin-bottom: 14px;
-    }
-
-    .prompt .kind {
-      display: block;
-      font-family: ui-sans-serif, system-ui, sans-serif;
-      color: var(--accent-2);
-      text-transform: uppercase;
-      letter-spacing: 0.14em;
-      font-size: 0.72rem;
-      margin-bottom: 8px;
-    }
-
-    .prompt .text {
-      font-size: clamp(1.2rem, 5vw, 1.5rem);
-      line-height: 1.25;
-      letter-spacing: -0.03em;
-    }
-
-    .answer-row,
-    .choice-list,
-    .table-grid {
-      display: grid;
-      gap: 12px;
-      margin-bottom: 14px;
-    }
-
-    .answer-row {
-      grid-template-columns: 1fr;
-    }
-
-    .choice-list {
-      grid-template-columns: 1fr;
-    }
-
-    .choice-button {
-      width: 100%;
-      text-align: left;
-      border: 1px solid rgba(28, 29, 31, 0.14);
-      background: rgba(255, 255, 255, 0.88);
-      color: var(--text);
-      padding: 14px 16px;
-      border-radius: 18px;
-    }
-
-    .choice-button.selected {
-      border-color: rgba(36, 84, 79, 0.45);
-      background: rgba(36, 84, 79, 0.1);
-    }
-
-    .choice-button.correct {
-      border-color: rgba(31, 122, 79, 0.5);
-      background: rgba(31, 122, 79, 0.12);
-    }
-
-    .choice-button.wrong {
-      border-color: rgba(163, 58, 58, 0.5);
-      background: rgba(163, 58, 58, 0.08);
-    }
-
-    .table-grid {
-      grid-template-columns: 1fr;
-    }
-
-    .table-card {
-      padding: 16px;
-      border-radius: 18px;
-      border: 1px solid rgba(28, 29, 31, 0.08);
-      background: rgba(255, 255, 255, 0.72);
-    }
-
-    .table-card.blank-card {
-      display: grid;
-      gap: 8px;
-    }
-
-    .table-card .mini-title {
-      display: block;
-      color: var(--accent-2);
-      font-family: ui-sans-serif, system-ui, sans-serif;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      font-size: 0.7rem;
-      margin-bottom: 6px;
-    }
-
-    .table-input {
-      width: 100%;
-      border-radius: 14px;
-      border: 1px solid rgba(28, 29, 31, 0.14);
-      background: rgba(255, 255, 255, 0.96);
-      padding: 12px 13px;
-      font-family: ui-sans-serif, system-ui, sans-serif;
-      font-size: 0.98rem;
-    }
-
-    .table-input.correct {
-      border-color: rgba(31, 122, 79, 0.55);
-      background: rgba(31, 122, 79, 0.08);
-    }
-
-    .table-input.wrong {
-      border-color: rgba(163, 58, 58, 0.55);
-      background: rgba(163, 58, 58, 0.08);
-    }
-
-    .table-note {
-      color: var(--muted);
-      font-family: ui-sans-serif, system-ui, sans-serif;
-      font-size: 0.85rem;
-      margin: 0;
-    }
-
-    .table-row {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 8px;
-      margin-top: 12px;
-    }
-
-    .feedback {
-      min-height: 1.5rem;
-      font-family: ui-sans-serif, system-ui, sans-serif;
-      font-size: 0.96rem;
-      margin-bottom: 14px;
-    }
-
-    .feedback.good {
-      color: var(--success);
-    }
-
-    .feedback.bad {
-      color: var(--danger);
-    }
-
-    .progress {
-      font-family: ui-sans-serif, system-ui, sans-serif;
-      color: var(--muted);
-      font-size: 0.92rem;
-      margin-top: 10px;
-    }
-
-    .bank-list {
-      display: grid;
-      gap: 10px;
-      margin-top: 16px;
-      max-height: none;
-      overflow: auto;
-      padding-right: 4px;
-    }
-
-    .bank-toolbar {
-      display: flex;
-      justify-content: space-between;
-      gap: 12px;
-      align-items: end;
-      flex-wrap: wrap;
-    }
-
-    .bank-pagination {
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
-      margin-top: 14px;
-    }
-
-    .bank-page-button {
-      border: 1px solid rgba(28, 29, 31, 0.12);
-      background: rgba(255, 255, 255, 0.84);
-      color: var(--muted);
-      padding: 9px 12px;
-      border-radius: 999px;
-      font-family: ui-sans-serif, system-ui, sans-serif;
-      font-size: 0.82rem;
-    }
-
-    .bank-page-button.active {
-      background: var(--accent);
-      color: #fff;
-      border-color: var(--accent);
-    }
-
-    .bank-page-summary {
-      margin-top: 10px;
-      color: var(--muted);
-      font-family: ui-sans-serif, system-ui, sans-serif;
-      font-size: 0.88rem;
-    }
-
-    .card {
-      padding: 10px 12px;
-      border-radius: 14px;
-      border: 1px solid rgba(28, 29, 31, 0.09);
-      background: rgba(255, 255, 255, 0.72);
-    }
-
-    .card strong {
-      display: block;
-      margin-bottom: 4px;
-      font-size: 0.95rem;
-    }
-
-    .card small {
-      display: block;
-      color: var(--muted);
-      font-family: ui-sans-serif, system-ui, sans-serif;
-      line-height: 1.35;
-      font-size: 0.8rem;
-    }
-
-    .footer-note {
-      margin-top: 18px;
-      color: var(--muted);
-      font-family: ui-sans-serif, system-ui, sans-serif;
-      font-size: 0.9rem;
-    }
-
-    @media (max-width: 960px) {
-      .controls {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-
-      .upload-manager {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-
-      .actions {
-        grid-column: 1 / -1;
-      }
-    }
-
-    @media (min-width: 961px) {
-      .controls {
-        grid-template-columns: repeat(4, minmax(0, 1fr));
-      }
-
-      .upload-manager {
-        grid-template-columns: repeat(4, minmax(0, 1fr));
-      }
-
-      .stats {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-      }
-
-      .bank-list {
-        max-height: 620px;
-      }
-    }
-
-    @media (max-width: 1200px) {
-      .layout-split {
-        flex-direction: column;
-      }
-
-      .side-col {
-        position: static;
-        max-height: none;
-        overflow-y: visible;
-        width: 100%;
-        flex: none;
-      }
-
-      .bank-list {
-        max-height: none;
-        overflow: visible;
-      }
-    }
-
-    @media (max-width: 720px) {
-      .shell {
-        padding: 14px;
-      }
-
-      .stats {
-        grid-template-columns: 1fr;
-      }
-
-      .answer-row {
-        grid-template-columns: 1fr;
-      }
-
-      .quiz-header {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .controls {
-        grid-template-columns: 1fr;
-      }
-
-      .upload-manager {
-        grid-template-columns: 1fr;
-      }
-
-      .bank-toolbar {
-        align-items: stretch;
-      }
-    }
-
-    .packs {
-      width: 100%;
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      background: var(--panel);
-      box-shadow: var(--shadow);
-      overflow: hidden;
-    }
-
-    .packs-summary {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      padding: 10px 16px;
-      cursor: pointer;
-      list-style: none;
-      font-family: ui-sans-serif, system-ui, sans-serif;
-      font-size: 0.88rem;
-      font-weight: 600;
-      user-select: none;
-    }
-
-    .packs-summary::-webkit-details-marker { display: none; }
-    .packs-summary:focus { outline: none; }
-
-    .packs-count {
-      flex: 1;
-      color: var(--muted);
-      font-size: 0.78rem;
-      font-weight: 400;
-    }
-
-    .packs-arrow {
-      color: var(--muted);
-      font-size: 0.7rem;
-      transition: transform 0.2s;
-    }
-
-    .packs[open] .packs-arrow {
-      transform: rotate(180deg);
-    }
-
-    .packs-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(155px, 1fr));
-      gap: 8px;
-      padding: 0 12px 12px;
-    }
-
-    .pack-card {
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 12px;
-      background: var(--panel);
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-    }
-
-    .pack-card.active {
-      border-color: var(--accent);
-      background: rgba(36, 84, 79, 0.06);
-    }
-
-    .pack-card strong {
-      font-size: 0.9rem;
-      line-height: 1.2;
-    }
-
-    .pack-card p {
-      font-size: 0.78rem;
-      color: var(--muted);
-      margin: 0;
-      font-family: ui-sans-serif, system-ui, sans-serif;
-      line-height: 1.35;
-      flex: 1;
-    }
-
-    .pack-meta {
-      font-size: 0.72rem;
-      color: var(--muted);
-      font-family: ui-sans-serif, system-ui, sans-serif;
-    }
-
-    .pack-badge {
-      display: inline-block;
-      background: var(--accent);
-      color: #fff;
-      border-radius: 3px;
-      padding: 1px 5px;
-      font-size: 0.68rem;
-      margin-left: 4px;
-      vertical-align: middle;
-    }
-
-    .pack-start-btn {
-      font-size: 0.8rem;
-      padding: 7px 10px;
-      width: 100%;
-      margin-top: 2px;
-    }
+    :root { color-scheme: light; --bg: #f4f1e9; --panel: #fffcf7; --text: #172d37; --muted: #627177; --accent: #075952; --success: #16764e; --danger: #a33737; --border: #deded5; }
+    * { box-sizing: border-box; }
+    [hidden] { display: none !important; }
+    body { margin: 0; background: var(--bg); color: var(--text); font: 15px/1.45 system-ui, sans-serif; }
+    button, input, select { font: inherit; }
+    button, select, input { border: 1px solid var(--border); border-radius: 8px; color: inherit; background: var(--panel); }
+    input, select { min-width: 0; width: 100%; padding: 10px 12px; min-height: 44px; }
+    button { min-height: 44px; padding: 9px 15px; cursor: pointer; transition: background .15s, border-color .15s, box-shadow .15s; }
+    button:hover:not(:disabled) { border-color: var(--accent); background: #eaf2ed; }
+    button:disabled { cursor: default; opacity: .55; }
+    :focus-visible { outline: 3px solid #d89345; outline-offset: 3px; }
+    .primary { background: var(--accent); color: white; border-color: var(--accent); font-weight: 650; }
+    .primary:hover:not(:disabled) { background: #06433e; color: white; }
+    .secondary { background: #e8eee7; color: var(--accent); }
+    .ghost { background: transparent; }
+    h1, h2, p { margin: 0; }
+    h1 { font-size: 23px; letter-spacing: -.7px; }
+    h2 { font-size: 18px; }
+    .shell { max-width: 1600px; margin: auto; padding: 18px 24px 28px; display: grid; gap: 14px; }
+    .dashboard-header { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 18px; border-bottom: 1px solid var(--border); padding-bottom: 16px; }
+    .brand { display: flex; align-items: center; gap: 12px; }
+    .danish-flag { width: 34px; height: 26px; border-radius: 3px; background: linear-gradient(90deg, transparent 30%, white 30% 40%, transparent 40%), linear-gradient(transparent 42%, white 42% 58%, transparent 58%), #c62b3a; }
+    .brand small { display: block; color: var(--muted); font-size: 12px; }
+    .controls { display: flex; flex-wrap: wrap; gap: 8px; align-items: end; }
+    .field { display: grid; gap: 5px; min-width: 0; }
+    .field label { font-size: 12px; font-weight: 650; color: var(--muted); }
+    .controls .field { width: 155px; }
+    .controls .count-field { width: 95px; }
+    .packs { border-bottom: 1px solid var(--border); padding-bottom: 12px; }
+    .packs-summary { cursor: pointer; font-size: 13px; font-weight: 650; padding: 2px 0 10px; }
+    .packs-count { color: var(--muted); font-weight: 400; margin-left: 8px; }
+    .packs-grid { display: flex; gap: 8px; overflow-x: auto; padding: 2px 2px 8px; }
+    .pack-card { flex: 0 0 188px; border: 1px solid var(--border); border-radius: 9px; padding: 10px 12px; background: var(--panel); display: grid; gap: 5px; }
+    .pack-card.active { border-color: #ba7536; background: #fff0df; }
+    .pack-card strong { font-size: 14px; }
+    .pack-card p { font-size: 12px; color: var(--muted); }
+    .pack-meta { font-size: 11px; color: var(--muted); }
+    .pack-start-btn { padding: 5px 10px; width: 100%; margin-top: 4px; }
+    .pack-badge { margin-left: 4px; }
+    .layout-split { display: grid; grid-template-columns: minmax(0, 1fr) 310px; gap: 16px; align-items: start; }
+    .main-col, .side-col { display: grid; gap: 12px; min-width: 0; }
+    .quiz, .session-panel, .translator, .settings-panel, .bank, .revision { background: var(--panel); border: 1px solid var(--border); border-radius: 10px; }
+    .quiz { overflow: hidden; }
+    .quiz-header { display: flex; justify-content: space-between; align-items: center; gap: 10px; padding: 12px 18px; border-bottom: 1px solid var(--border); }
+    .badge { border-radius: 20px; background: #e8f0ed; color: var(--accent); padding: 4px 10px; font-size: 12px; }
+    .quiz-body { padding: 18px; }
+    .prompt { margin-bottom: 14px; }
+    .kind { display: block; color: var(--muted); font-size: 11px; letter-spacing: .12em; text-transform: uppercase; font-weight: 700; margin-bottom: 8px; }
+    .word-heading { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; margin-bottom: 8px; }
+    .word-heading strong { font: 600 clamp(28px, 4vw, 44px)/1.15 Georgia, serif; overflow-wrap: anywhere; }
+    .word-heading span { color: var(--muted); }
+    .prompt .text { font-size: 20px; font-weight: 600; line-height: 1.35; }
+    .answer-row { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 8px; margin-bottom: 10px; }
+    .choice-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; margin-bottom: 12px; }
+    .choice-button { text-align: left; padding: 12px 15px; display: flex; align-items: center; gap: 12px; font-size: 18px; min-height: 56px; overflow-wrap: anywhere; }
+    .choice-key { border-radius: 5px; background: #eaece6; font: 650 12px system-ui, sans-serif; padding: 4px 7px; }
+    .choice-mark { margin-left: auto; }
+    .choice-button:disabled { opacity: 1; }
+    .choice-button.correct, .table-input.correct { border-color: var(--success); background: #e7f3e9; }
+    .choice-button.wrong, .table-input.wrong { border-color: var(--danger); background: #faeae6; }
+    .table-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px 16px; margin-top: 14px; }
+    .table-card { display: grid; gap: 5px; }
+    .table-given { grid-column: 1 / -1; padding-bottom: 4px; }
+    .mini-title { font-size: 12px; color: var(--muted); }
+    .table-submit { grid-column: 1 / -1; justify-self: end; }
+    .feedback { font-size: 13px; color: var(--muted); }
+    .quiz .feedback { min-height: 38px; display: flex; align-items: center; border-radius: 7px; padding: 8px 10px; margin-bottom: 10px; }
+    .feedback.good { color: var(--success); background: #e7f3e9; }
+    .feedback.bad { color: var(--danger); background: #faeae6; }
+    .actions { display: flex; gap: 8px; flex-wrap: wrap; }
+    .quiz-actions { justify-content: space-between; }
+    .session-panel, .translator { padding: 14px; display: grid; gap: 12px; }
+    .session-numbers { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .session-numbers span { color: var(--muted); font-size: 12px; display: block; }
+    .session-numbers strong { font-size: 23px; }
+    progress { width: 100%; height: 8px; border: 0; border-radius: 20px; overflow: hidden; accent-color: var(--accent); background: #e1e7df; }
+    progress::-webkit-progress-bar { background: #e1e7df; }
+    progress::-webkit-progress-value { background: var(--accent); border-radius: 20px; }
+    .progress { font-size: 12px; color: var(--muted); }
+    .translate-tabs { display: flex; }
+    .translate-tab { flex: 1; font-size: 12px; border-radius: 0; padding: 8px; }
+    .translate-tab:first-child { border-radius: 7px 0 0 7px; }
+    .translate-tab:last-child { border-radius: 0 7px 7px 0; }
+    .translate-tab.active { background: var(--accent); color: white; }
+    .translate-entry { display: flex; gap: 6px; }
+    .translator-result { background: #eef2e9; border-radius: 8px; padding: 12px; display: flex; align-items: center; gap: 8px; }
+    .translator-output { flex: 1; overflow-wrap: anywhere; font-size: 18px; }
+    .icon-button { width: 40px; min-height: 40px; padding: 7px; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .icon-button svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 1.8; }
+    .icon-button.speaking { background: #d6e9df; border-color: var(--accent); }
+    .settings-panel > summary { padding: 12px 14px; cursor: pointer; font-weight: 650; }
+    .settings-body { display: grid; gap: 12px; padding: 0 14px 14px; }
+    .upload-manager { display: grid; gap: 10px; }
+    .settings-body button { font-size: 12px; }
+    .speech-status { font-size: 12px; color: var(--muted); padding: 0 2px; }
+    .revision { padding: 12px 16px; }
+    .revision h2 { font-size: 14px; margin-bottom: 8px; }
+    .revision-items { display: flex; flex-wrap: wrap; gap: 8px; }
+    .revision-item { display: flex; align-items: center; gap: 8px; border: 1px solid var(--border); border-radius: 7px; padding: 6px 10px; }
+    .revision-item small { display: block; color: var(--muted); font-size: 11px; }
+    .revision-item strong { font-family: Georgia, serif; font-size: 18px; }
+    .example { margin-top: 10px; font-size: 13px; }
+    .bank { padding: 16px; }
+    .bank-toolbar { display: flex; justify-content: space-between; gap: 12px; align-items: center; flex-wrap: wrap; }
+    .bank-filters { display: flex; gap: 8px; }
+    .bank-filters .field { max-width: 240px; }
+    .bank-count { color: var(--muted); font-size: 12px; }
+    .bank-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 8px; margin-top: 12px; }
+    .card { padding: 10px 12px; border: 1px solid var(--border); border-radius: 8px; min-width: 0; }
+    .card-header { display: flex; gap: 6px; align-items: center; }
+    .card strong { font: 600 20px Georgia, serif; overflow-wrap: anywhere; }
+    .card .badge { margin-left: auto; font-size: 10px; }
+    .card small { display: block; color: var(--muted); margin-top: 3px; }
+    .card details { font-size: 12px; margin-top: 6px; color: var(--muted); }
+    .card summary { cursor: pointer; }
+    .bank-pagination { display: flex; gap: 5px; flex-wrap: wrap; margin-top: 12px; }
+    .bank-page-button { min-width: 38px; min-height: 38px; padding: 6px 9px; font-size: 12px; }
+    .bank-page-button.active { background: var(--accent); color: white; }
+    .bank-page-summary { color: var(--muted); font-size: 12px; margin-top: 10px; }
+    .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0; }
+    @media (max-width: 1000px) { .layout-split { grid-template-columns: minmax(0, 1fr) 275px; } .dashboard-header { align-items: start; } .controls { flex: 1; } }
+    @media (max-width: 760px) { .shell { padding: 12px; gap: 12px; } .layout-split { grid-template-columns: 1fr; } .controls { width: 100%; } .controls .field { flex: 1 1 130px; } .controls .count-field { flex: 0 1 85px; } .controls .primary { flex: 1; } .quiz-body { padding: 14px; } .bank-filters { width: 100%; } .bank-filters .field { flex: 1; max-width: none; } }
+    @media (max-width: 440px) { .choice-list, .table-grid { grid-template-columns: 1fr; } .prompt .text { font-size: 18px; } .bank-filters { flex-direction: column; } .answer-row { grid-template-columns: 1fr auto; } }
+    @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
   </style>
 </head>
 <body>
+
   <div class="shell">
+    <header class="dashboard-header">
+      <div class="brand"><span class="danish-flag" aria-hidden="true"></span><div><h1>Danish Practice</h1><small>A little practice, every day.</small></div></div>
+      <section class="controls" aria-label="Quiz setup">
+        <div class="field"><label for="category">Category</label><select id="category"><option value="all">All categories</option><option value="verbs">Verbs</option><option value="nouns">Nouns</option><option value="adjectives">Adjectives</option><option value="adverbs">Adverbs</option><option value="common_phrases">Common phrases</option></select></div>
+        <div class="field"><label for="mode">Exercise type</label><select id="mode"><option value="random">Mixed</option><option value="translation">Translation</option><option value="forms">Form practice</option><option value="table">Verb table</option><option value="multiple-choice">Multiple choice</option></select></div>
+        <div class="field count-field"><label for="count">Questions</label><input id="count" type="number" min="1" max="100" value="12"></div>
+        <button class="primary" id="startBtn">New session ↻</button>
+      </section>
+    </header>
+    <details class="packs" id="packs-section" open><summary class="packs-summary">Exercise packs <span class="packs-count">7 ways to practise</span></summary><div class="packs-grid" id="packs-grid"></div></details>
     <div class="layout-split">
       <div class="main-col">
-        <section class="hero">
-          <div class="title-block">
-            <p class="eyebrow">Danish practice tool</p>
-            <h1>Shuffle, drill, and repeat.</h1>
-            <p class="summary">Practice Danish vocabulary with guided exercises and quick translation help.</p>
-            <p class="summary">Choose a category, run a quiz mode, and build your fluency one session at a time.</p>
-            <div class="stats" aria-label="practice summary">
-              <div class="stat">
-                <span>Question bank</span>
-                <strong id="statBank">0</strong>
-              </div>
-              <div class="stat">
-                <span>Session score</span>
-                <strong id="statScore">0 / 0</strong>
-              </div>
-              <div class="stat">
-                <span>Current set</span>
-                <strong id="statSet">All</strong>
-              </div>
-            </div>
+        <article class="quiz" aria-labelledby="quizTitle">
+          <div class="quiz-header"><h2 id="quizTitle">Quiz <span class="badge" id="statSet">All categories</span></h2><span class="badge" id="quizBadge">Ready to start</span></div>
+          <div class="quiz-body">
+            <div class="prompt"><span class="kind" id="promptKind">Prompt</span><div class="word-heading" id="promptWord" hidden></div><div class="text" id="promptText">Choose a category and start the quiz.</div><div class="table-grid" id="tableGrid" hidden></div></div>
+            <div class="answer-row" id="answerRow" hidden><label class="sr-only" for="answerInput">Your answer</label><input id="answerInput" type="text" placeholder="Your answer…" autocomplete="off"><button class="primary" id="submitBtn">Check ↵</button></div>
+            <div class="choice-list" id="choiceList" hidden></div>
+            <button class="primary table-submit" id="tableSubmitBtn" hidden>Check table ↵</button>
+            <div class="feedback" id="feedback" role="status" aria-live="polite"></div>
+            <div class="actions quiz-actions"><button class="ghost" id="revealBtn">Reveal answer</button><button class="secondary" id="nextBtn">Next question →</button></div>
           </div>
-        </section>
-
-        <details class="packs" id="packs-section">
-          <summary class="packs-summary">
-            <span>Exercise Packs</span>
-            <span class="packs-count">7 packs — click to browse</span>
-            <span class="packs-arrow">▼</span>
-          </summary>
-          <div class="packs-grid" id="packs-grid"></div>
-        </details>
-
-        <section class="controls" aria-label="quiz controls">
-          <div class="field">
-            <label for="category">Category</label>
-            <select id="category">
-              <option value="all">All</option>
-              <option value="verbs">Verbs</option>
-              <option value="nouns">Nouns</option>
-              <option value="adjectives">Adjectives</option>
-              <option value="adverbs">Adverbs</option>
-              <option value="common_phrases">Common phrases</option>
-            </select>
-          </div>
-          <div class="field">
-            <label for="count">Questions</label>
-            <input id="count" type="number" min="1" max="100" value="12" />
-          </div>
-          <div class="field">
-            <label for="seed">Seed</label>
-            <input id="seed" type="text" placeholder="Optional" />
-          </div>
-          <div class="field">
-            <label for="mode">Exercise type</label>
-            <select id="mode">
-              <option value="random">Mixed</option>
-              <option value="translation">Translation</option>
-              <option value="forms">Form practice</option>
-              <option value="table">Verb table</option>
-              <option value="multiple-choice">Multiple choice</option>
-            </select>
-          </div>
-          <div class="actions">
-            <button class="primary" id="startBtn">Start quiz</button>
-            <button class="ghost" id="resetBtn">Reset session</button>
-            <button class="ghost" id="loadGeneratedBtn">Reload data files</button>
-          </div>
-        </section>
-
-        <article class="quiz">
-          <div class="quiz-header">
-            <h2>Quiz</h2>
-            <div class="badge" id="quizBadge">Ready to start</div>
-          </div>
-
-          <div class="prompt">
-            <span class="kind" id="promptKind">Prompt</span>
-            <div class="text" id="promptText">Choose a category and start the quiz.</div>
-            <div class="table-grid" id="tableGrid" hidden></div>
-          </div>
-
-          <div class="answer-row" id="answerRow">
-            <input id="answerInput" type="text" placeholder="Type your answer here" autocomplete="off" />
-            <button class="primary" id="submitBtn">Submit</button>
-          </div>
-
-          <div class="choice-list" id="choiceList" hidden></div>
-
-          <div class="feedback" id="feedback"></div>
-
-          <div class="actions" style="padding-top: 0;">
-            <button class="secondary" id="nextBtn">Next question</button>
-            <button class="ghost" id="revealBtn">Reveal answer</button>
-          </div>
-
-          <div class="progress" id="progress">No session running.</div>
         </article>
+        <section class="revision" id="revisionPanel" aria-labelledby="revisionTitle" hidden><h2 id="revisionTitle">Quick revision</h2><div class="revision-items" id="revisionItems"></div><div class="example" id="exampleSentence" hidden></div></section>
       </div>
-
-      <div class="side-col">
-        <aside class="upload-manager-corner" aria-label="json upload manager">
-          <section class="upload-manager">
-            <div class="upload-header">
-              <h2>JSON Upload Manager</h2>
-              <div class="badge">Append by category</div>
-            </div>
-            <div class="field">
-              <label for="importCategory">Category</label>
-              <select id="importCategory">
-                <option value="nouns">Nouns</option>
-                <option value="verbs">Verbs</option>
-                <option value="adverbs">Adverbs</option>
-                <option value="adjectives">Adjectives</option>
-                <option value="common_phrases">Common phrases</option>
-              </select>
-            </div>
-            <div class="actions">
-              <button class="primary" id="importFileBtn">Upload & append JSON</button>
-              <button class="ghost" id="connectDataDirBtn">Connect data folder</button>
-            </div>
-            <input id="importFileInput" type="file" accept="application/json,.json" hidden />
-            <div class="feedback" id="importStatus"></div>
-          </section>
-        </aside>
-
-        <aside class="translator" aria-label="quick translation lookup">
-          <div class="translator-header">
-            <h2>Quick Google Translate</h2>
-            <div class="badge">EN ⇄ DA</div>
-          </div>
-          <div class="field">
-            <label for="translateInput">Word or short phrase</label>
-            <input id="translateInput" type="text" placeholder="Type English or Danish text" autocomplete="off" />
-          </div>
-          <div class="field">
-            <label>Detect mode</label>
-            <div class="translate-tabs" id="translateTabs">
-              <button type="button" class="translate-tab active" data-mode="auto">Auto</button>
-              <button type="button" class="translate-tab" data-mode="en-da">EN → DA</button>
-              <button type="button" class="translate-tab" data-mode="da-en">DA → EN</button>
-            </div>
-          </div>
-          <div class="actions" style="padding-top: 0;">
-            <button class="primary" id="translateBtn">Translate</button>
-            <button class="ghost" id="translateClearBtn">Clear</button>
-          </div>
-          <div class="translator-output" id="translateOutput">Translation appears here.</div>
-          <div class="feedback" id="translateStatus"></div>
-        </aside>
-      </div>
+      <aside class="side-col" aria-label="Practice tools">
+        <section class="session-panel" aria-labelledby="sessionTitle"><h2 id="sessionTitle">Your session</h2><div class="session-numbers"><div><span>Correct / answered</span><strong id="statScore">0 / 0</strong></div><div><span>Question</span><strong id="sessionQuestion">— / —</strong></div></div><progress id="sessionProgress" max="100" value="0" aria-label="Session completion"></progress><p class="progress" id="progress">No session running.</p></section>
+        <section class="translator" aria-labelledby="translatorTitle"><h2 id="translatorTitle">Translate</h2><div class="translate-tabs" id="translateTabs" aria-label="Translation direction"><button class="translate-tab active" data-mode="auto" aria-pressed="true">Auto</button><button class="translate-tab" data-mode="en-da" aria-pressed="false">EN → DA</button><button class="translate-tab" data-mode="da-en" aria-pressed="false">DA → EN</button></div><label class="sr-only" for="translateInput">Word or short phrase to translate</label><div class="translate-entry"><input id="translateInput" placeholder="Word or short phrase…"><button class="primary" id="translateBtn">Translate</button></div><div class="translator-result"><div class="translator-output" id="translateOutput">Translation appears here.</div><button class="icon-button" id="translateSpeakBtn" aria-label="Listen to Danish translation" title="Listen to Danish translation" hidden></button><button class="icon-button" id="translateCopyBtn" aria-label="Copy translation" title="Copy translation" disabled>⧉</button></div><div class="actions"><button class="ghost" id="translateClearBtn">Clear</button></div><p class="feedback" id="translateStatus" role="status"></p></section>
+        <details class="settings-panel"><summary>Settings / Data</summary><div class="settings-body"><div class="field"><label for="seed">Repeatable session seed</label><input id="seed" placeholder="Optional"></div><div class="actions"><button class="ghost" id="resetBtn">Reset session</button><button class="ghost" id="loadGeneratedBtn">Reload data files</button></div><section class="upload-manager" aria-label="Vocabulary import"><div class="field"><label for="importCategory">Import category</label><select id="importCategory"><option value="verbs">Verbs</option><option value="nouns">Nouns</option><option value="adjectives">Adjectives</option><option value="adverbs">Adverbs</option><option value="common_phrases">Common phrases</option></select></div><div class="actions"><button class="secondary" id="importFileBtn">Upload &amp; append JSON</button><button class="ghost" id="connectDataDirBtn">Connect data folder</button></div><input id="importFileInput" type="file" accept="application/json,.json" hidden><p class="feedback" id="importStatus" role="status"></p></section></div></details>
+        <p class="speech-status" id="speechStatus" role="status"></p>
+      </aside>
     </div>
-
-    <aside class="bank" id="bankPanel">
-      <div class="quiz-header">
-        <h2>Word bank</h2>
-        <div class="field" style="min-width: 220px;">
-          <label for="bankCategory">Readup category</label>
-          <select id="bankCategory">
-            <option value="all">All categories</option>
-            <option value="verbs">Verbs</option>
-            <option value="nouns">Nouns</option>
-            <option value="adjectives">Adjectives</option>
-            <option value="adverbs">Adverbs</option>
-            <option value="common_phrases">Common phrases</option>
-          </select>
-        </div>
-      </div>
-      <div class="footer-note">
-        Read and review by category here while your quiz settings stay focused above.
-      </div>
-      <div class="bank-list" id="bankList"></div>
-      <div class="bank-page-summary" id="bankPageSummary"></div>
-      <div class="bank-pagination" id="bankPagination"></div>
-    </aside>
+    <section class="bank" id="bankPanel" aria-labelledby="bankTitle"><div class="bank-toolbar"><div><h2 id="bankTitle">Word bank</h2><span class="bank-count"><span id="statBank">0</span> entries in your vocabulary</span></div><div class="bank-filters"><div class="field"><label for="bankCategory">Category</label><select id="bankCategory"><option value="all">All categories</option><option value="verbs">Verbs</option><option value="nouns">Nouns</option><option value="adjectives">Adjectives</option><option value="adverbs">Adverbs</option><option value="common_phrases">Common phrases</option></select></div><div class="field"><label for="bankSearch">Find a word</label><input id="bankSearch" type="search" placeholder="Danish or English…"></div></div></div><div class="bank-list" id="bankList"></div><p class="bank-page-summary" id="bankPageSummary" role="status"></p><nav class="bank-pagination" id="bankPagination" aria-label="Word bank pages"></nav></section>
   </div>
 
   <script>
@@ -1035,6 +192,17 @@
     let vocabulary = JSON.parse(JSON.stringify(fallbackVocabulary));
 
     const ui = {
+      promptWord: document.getElementById("promptWord"),
+      tableSubmitBtn: document.getElementById("tableSubmitBtn"),
+      revisionPanel: document.getElementById("revisionPanel"),
+      revisionItems: document.getElementById("revisionItems"),
+      exampleSentence: document.getElementById("exampleSentence"),
+      sessionQuestion: document.getElementById("sessionQuestion"),
+      sessionProgress: document.getElementById("sessionProgress"),
+      bankSearch: document.getElementById("bankSearch"),
+      speechStatus: document.getElementById("speechStatus"),
+      translateSpeakBtn: document.getElementById("translateSpeakBtn"),
+      translateCopyBtn: document.getElementById("translateCopyBtn"),
       category: document.getElementById("category"),
       count: document.getElementById("count"),
       seed: document.getElementById("seed"),
@@ -1080,6 +248,8 @@
       currentIndex: -1,
       answered: false,
       score: 0,
+      complete: false,
+      translationText: "",
       prompt: null,
       translateMode: "auto",
       dataDirHandle: null,
@@ -1487,16 +657,15 @@
           items.push({
             group,
             title: getBankTitle(group, record),
-            detail: getBankDetail(group, record)
+            detail: getBankDetail(group, record),
+            english: record.english || ""
           });
         }
       }
 
-      if (selectedCategory === "all") {
-        return shuffle(items, mulberry32(getBankItemSeed(items)));
-      }
-
-      return items;
+      const query = normalize(ui.bankSearch.value);
+      const matching = items.filter(item => !query || normalize(`${item.title} ${item.detail}`).includes(query));
+      return selectedCategory === "all" ? shuffle(matching, mulberry32(getBankItemSeed(matching))) : matching;
     }
 
     function renderBankPagination(totalPages) {
@@ -1505,10 +674,12 @@
         return;
       }
 
-      ui.bankPagination.innerHTML = Array.from({ length: totalPages }, (_, index) => {
-        const pageNumber = index + 1;
-        const active = index === state.bankPage ? "active" : "";
-        return `<button class="bank-page-button ${active}" type="button" data-bank-page="${index}">${pageNumber}</button>`;
+      const pages = [...new Set([0, ...Array.from({ length: 5 }, (_, i) => state.bankPage + i - 2), totalPages - 1])]
+        .filter(page => page >= 0 && page < totalPages).sort((a, b) => a - b);
+      ui.bankPagination.innerHTML = pages.map((index, position) => {
+        const gap = position && index - pages[position - 1] > 1 ? '<span aria-hidden="true">…</span>' : '';
+        const active = index === state.bankPage;
+        return `${gap}<button class="bank-page-button ${active ? "active" : ""}" type="button" data-bank-page="${index}" aria-label="Page ${index + 1}" ${active ? 'aria-current="page"' : ''}>${index + 1}</button>`;
       }).join("");
 
       ui.bankPagination.querySelectorAll("[data-bank-page]").forEach((button) => {
@@ -1587,14 +758,19 @@
       return { translated, detectedSource };
     }
 
-    function setTranslateOutput(translatedText) {
-      ui.translateOutput.textContent = translatedText || "No translation returned.";
+    function setTranslateOutput(translatedText, language) {
+      state.translationText = translatedText || "";
+      ui.translateOutput.textContent = state.translationText || "No translation returned.";
+      ui.translateCopyBtn.disabled = !state.translationText;
+      ui.translateSpeakBtn.hidden = language !== "da" || !state.translationText;
+      ui.translateSpeakBtn.dataset.speak = state.translationText;
     }
 
     function setTranslateMode(mode) {
       state.translateMode = mode;
       ui.translateTabs.forEach((tab) => {
         tab.classList.toggle("active", tab.dataset.mode === mode);
+        tab.setAttribute("aria-pressed", String(tab.dataset.mode === mode));
       });
     }
 
@@ -1933,13 +1109,13 @@
             if (t.kind === "Table") {
               const tbl = t.tableBuilder(item);
               exercises.push({
-                group: grp, kind: "Table",
+                group: grp, record: item, kind: "Table",
                 prompt: t.prompt(item), table: tbl,
                 answers: t.answers(item, tbl), templateId: t.id
               });
             } else {
               exercises.push({
-                group: grp, kind: t.kind,
+                group: grp, record: item, kind: t.kind,
                 prompt: t.prompt(item),
                 answers: t.answers(item), templateId: t.id
               });
@@ -1956,31 +1132,104 @@
     }
 
     function buildChoiceExercise(exercise, rng) {
-      const pool = [];
-      for (const group of Object.values(vocabulary)) {
-        for (const item of group) {
-          if (item.english) {
-            pool.push(item.english);
-          }
-          if (item.infinitive) {
-            pool.push(item.infinitive);
-          }
-          if (item.singular_indefinite) {
-            pool.push(item.singular_indefinite);
-          }
-          if (item.base) {
-            pool.push(item.base);
-          }
-          if (item.danish) {
-            pool.push(item.danish);
-          }
-        }
-      }
-
+      const template = EXERCISE_TEMPLATES.find(item => item.id === exercise.templateId);
+      const pool = (vocabulary[exercise.group] || [])
+        .filter(item => !template.condition || template.condition(item))
+        .flatMap(item => template.answers(item));
       const correct = exercise.answers[0];
-      const choices = pickRandom(pool, rng, CHOICE_COUNT - 1, [correct]);
+      const accepted = new Set(exercise.answers.map(normalize));
+      const unique = new Map(pool.filter(value => value && !accepted.has(normalize(value))).map(value => [normalize(value), value]));
+      const choices = pickRandom([...unique.values()], rng, CHOICE_COUNT - 1);
       choices.push(correct);
       return { ...exercise, kind: "MultipleChoice", choices: shuffle(choices, rng) };
+    }
+
+    const SPEAKER_ICON = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4V5Z"/><path d="M15 8a6 6 0 0 1 0 8m3-11a10 10 0 0 1 0 14"/></svg>';
+    let danishVoice = null;
+    let activeSpeechButton = null;
+    let speechGeneration = 0;
+
+    function refreshVoices() {
+      const supported = "speechSynthesis" in window && "SpeechSynthesisUtterance" in window;
+      const voices = supported ? window.speechSynthesis.getVoices() : [];
+      danishVoice = voices.find(voice => voice.lang.toLowerCase() === "da-dk") || voices.find(voice => voice.lang.toLowerCase().startsWith("da"));
+      ui.speechStatus.textContent = !supported ? "Pronunciation is unavailable in this browser." : danishVoice ? "Danish pronunciation ready." : "Danish voice unavailable on this device.";
+      document.querySelectorAll("[data-speak]").forEach(button => {
+        button.disabled = !danishVoice;
+        button.title = danishVoice ? "Listen in Danish" : ui.speechStatus.textContent;
+      });
+    }
+
+    function speechButton(text) {
+      if (!text) return "";
+      return `<button type="button" class="icon-button" data-speak="${escapeHtml(text)}" aria-label="Listen in Danish: ${escapeHtml(text)}" title="${danishVoice ? "Listen in Danish" : "Danish voice unavailable on this device"}" ${danishVoice ? "" : "disabled"}>${SPEAKER_ICON}</button>`;
+    }
+
+    function stopSpeech() {
+      speechGeneration += 1;
+      if ("speechSynthesis" in window) window.speechSynthesis.cancel();
+      activeSpeechButton?.classList.remove("speaking");
+      activeSpeechButton = null;
+    }
+
+    function speakDanish(text, button) {
+      if (!danishVoice || !text) { refreshVoices(); return; }
+      stopSpeech();
+      const generation = speechGeneration;
+      const utterance = new SpeechSynthesisUtterance(text);
+      utterance.lang = "da-DK";
+      utterance.voice = danishVoice;
+      utterance.rate = 0.85;
+      activeSpeechButton = button;
+      button.classList.add("speaking");
+      utterance.onend = utterance.onerror = event => {
+        if (generation !== speechGeneration) return;
+        button.classList.remove("speaking"); activeSpeechButton = null;
+        ui.speechStatus.textContent = event.type === "error" ? "Pronunciation could not play. Try again." : "Danish pronunciation ready.";
+      };
+      window.speechSynthesis.speak(utterance);
+    }
+
+    function renderPromptWord(exercise) {
+      const record = exercise.record;
+      if (!record) return;
+      const danishPrompt = exercise.kind === "Table" || exercise.templateId.includes("-da-en");
+      // Reverse translation must not show (or speak) the hidden Danish answer.
+      const word = danishPrompt ? getBankTitle(exercise.group, record) : record.english;
+      ui.promptWord.innerHTML = `<strong>${escapeHtml(word || "")}</strong>${danishPrompt ? speechButton(word) : ""}`;
+      ui.promptWord.hidden = false;
+      const target = exercise.prompt.split(" -> ")[1]?.split(" for '")[0];
+      ui.promptKind.textContent = `${labelCase(exercise.group)} · ${exercise.kind === "Table" ? "Verb table" : danishPrompt ? "DA → EN" : "EN → DA"}`;
+      if (exercise.kind !== "Table" && target) {
+        ui.promptText.textContent = `${exercise.kind === "MultipleChoice" ? "Choose" : "Write"} ${target === "English" ? "the English translation" : `the ${target.toLowerCase()}`}.`;
+      }
+    }
+
+    function finishAnswer(exercise) {
+      ui.answerInput.disabled = true;
+      ui.submitBtn.disabled = true;
+      ui.tableSubmitBtn.disabled = true;
+      ui.revealBtn.disabled = true;
+      ui.choiceList.querySelectorAll("button").forEach(button => {
+        const value = exercise.choices?.[Number(button.dataset.choice)];
+        const correct = exercise.answers.some(answer => normalize(answer) === normalize(value));
+        if (correct) { button.classList.add("correct"); button.querySelector(".choice-mark").textContent = "✓"; }
+        button.disabled = true;
+      });
+      ui.tableGrid.querySelectorAll("input").forEach(input => { input.disabled = true; });
+      const record = exercise.record;
+      if (record) {
+        const fields = exercise.group === "verbs" ? [["Infinitive", record.infinitive], ["Past", record.past], ["Present perfect", record.present_perfect], ["Past perfect", record.past_perfect]]
+          : exercise.group === "nouns" ? [["Singular", record.singular_indefinite], ["Definite", record.singular_definite], ["Plural", record.plural_indefinite], ["Definite plural", record.plural_definite]]
+          : exercise.group === "adjectives" ? [["Base", record.base], ["Neuter", record.neuter], ["Plural", record.plural], ["Comparative", record.comparative], ["Superlative", record.superlative]]
+          : [["Danish", record.base || record.danish], ["Comparative", record.comparative], ["Superlative", record.superlative]];
+        ui.revisionItems.innerHTML = fields.filter(([, value]) => value).map(([label, value]) => `<div class="revision-item"><div><small>${label}</small><strong>${escapeHtml(value)}</strong></div>${speechButton(value)}</div>`).join("");
+        ui.exampleSentence.hidden = !record.example_da;
+        ui.exampleSentence.innerHTML = record.example_da ? `<p><b>Example:</b> ${escapeHtml(record.example_da)} ${speechButton(record.example_da)}</p><p>${escapeHtml(record.example_en || "")}</p>` : "";
+        ui.revisionPanel.hidden = false;
+      }
+      // Move keyboard focus to the next action after grading.
+      ui.nextBtn.focus();
     }
 
     function renderBank() {
@@ -1998,25 +1247,35 @@
 
       ui.bankList.innerHTML = pageItems.map((item) => `
         <article class="card">
-          <strong>${item.title}</strong>
-          <small>${item.detail}</small>
+          <div class="card-header"><strong>${escapeHtml(item.title)}</strong>${speechButton(item.title)}<span class="badge">${escapeHtml(labelCase(item.group))}</span></div>
+          <small>${escapeHtml(item.english)}</small>
+          <details><summary>Forms &amp; details</summary>${escapeHtml(item.detail)}</details>
         </article>
       `).join("");
-
-      ui.statBank.textContent = String(items.length);
+      ui.statBank.textContent = String(Object.values(vocabulary).reduce((sum, entries) => sum + entries.length, 0));
       ui.bankPageSummary.textContent = items.length
-        ? `Showing ${startIndex + 1}-${endIndex} of ${items.length} entries.`
-        : "No entries available.";
+        ? `Showing ${startIndex + 1}–${endIndex} of ${items.length} matching entries.`
+        : "No matching words. Try another search or category.";
       renderBankPagination(totalPages);
     }
 
     function updateStats() {
-      ui.statScore.textContent = `${state.score} / ${state.exercises.length}`;
-      ui.statSet.textContent = labelCase(ui.category.value === "all" ? "all categories" : ui.category.value);
+      const total = state.exercises.length;
+      const answered = state.exercises.filter(exercise => exercise.attempted).length;
+      const completed = state.complete ? total : Math.max(0, state.currentIndex) + (state.answered ? 1 : 0);
+      ui.statScore.textContent = `${state.score} / ${answered}`;
+      ui.sessionQuestion.textContent = total ? `${Math.min(state.currentIndex + 1, total)} / ${total}` : "— / —";
+      ui.sessionProgress.value = total ? completed / total * 100 : 0;
+      ui.progress.textContent = total ? `${Math.round(ui.sessionProgress.value)}% complete · ${total - completed} remaining` : "No session running.";
+      const group = currentExercise()?.group;
+      ui.statSet.textContent = labelCase(group || (ui.category.value === "all" ? "all categories" : ui.category.value));
+      ui.nextBtn.className = state.answered ? "primary" : "secondary";
+      ui.nextBtn.textContent = state.answered ? "Next question →" : "Skip question →";
+      ui.tableSubmitBtn.disabled = state.answered;
     }
 
     function setFeedback(text, tone = "") {
-      ui.feedback.textContent = text;
+      ui.feedback.textContent = `${tone === "good" ? "✓ " : tone === "bad" ? "! " : ""}${text}`;
       ui.feedback.className = `feedback ${tone}`.trim();
     }
 
@@ -2026,6 +1285,11 @@
 
     function renderCurrent() {
       const exercise = currentExercise();
+      stopSpeech();
+      ui.promptWord.hidden = true;
+      ui.promptWord.innerHTML = "";
+      ui.revisionPanel.hidden = true;
+      ui.tableSubmitBtn.hidden = true;
       if (!exercise) {
         ui.promptKind.textContent = "Prompt";
         ui.promptText.textContent = "Choose a category and start the quiz.";
@@ -2047,6 +1311,7 @@
 
       ui.promptKind.textContent = exercise.kind;
       ui.promptText.textContent = exercise.prompt;
+      renderPromptWord(exercise);
       ui.quizBadge.textContent = `${state.currentIndex + 1} of ${state.exercises.length}`;
       ui.progress.textContent = `Question ${state.currentIndex + 1} of ${state.exercises.length}. Score: ${state.score} correct.`;
       ui.nextBtn.disabled = false;
@@ -2058,6 +1323,8 @@
       if (exercise.kind === "Table") {
         renderTableExercise(exercise);
         ui.answerInput.disabled = true;
+        ui.submitBtn.disabled = true;
+        ui.tableSubmitBtn.hidden = false;
       } else if (exercise.kind === "MultipleChoice") {
         renderMultipleChoice(exercise);
         ui.answerInput.disabled = true;
@@ -2072,28 +1339,28 @@
 
     function renderTableExercise(exercise) {
       const rows = exercise.table.fields.map((field, index) => `
-        <div class="table-card blank-card">
-          <span class="mini-title">${field.label}</span>
+        <label class="table-card blank-card">
+          <span class="mini-title">${escapeHtml(field.label)}</span>
           <input
             class="table-input"
             type="text"
             data-table-answer="${index}"
-            placeholder="Type the ${field.label.toLowerCase()} form"
+            placeholder="${escapeHtml(field.label)}"
             autocomplete="off"
           />
-        </div>
+        </label>
       `).join("");
 
       ui.tableGrid.innerHTML = `
-        <div class="table-card">
-          <span class="mini-title">Given</span>
-          <strong>${exercise.table.given.value}</strong>
+        <div class="table-card table-given">
+          <span class="mini-title">Given · ${escapeHtml(exercise.table.given.field)}</span>
+          <strong>${escapeHtml(exercise.table.given.value)}</strong>
         </div>
         ${rows}
       `;
       ui.tableGrid.hidden = false;
       ui.promptText.textContent = `Fill the verb table for '${exercise.table.label}'.`;
-      setFeedback("Type one answer into each blank, then press Submit.");
+      setFeedback("Complete each field, then choose Check table or press Enter.");
       ui.answerInput.disabled = true;
       ui.answerInput.value = "";
       ui.submitBtn.disabled = false;
@@ -2104,17 +1371,14 @@
     function renderMultipleChoice(exercise) {
       const choices = exercise.choices ?? [exercise.answers[0]];
       ui.choiceList.innerHTML = choices.map((choice, index) => `
-        <button class="choice-button" type="button" data-choice="${index}">${choice}</button>
+        <button class="choice-button" type="button" data-choice="${index}"><span class="choice-key" aria-hidden="true">${String.fromCharCode(65 + index)}</span><span>${escapeHtml(choice)}</span><span class="choice-mark" aria-hidden="true"></span></button>
       `).join("");
       ui.choiceList.hidden = false;
-      ui.promptText.textContent = exercise.prompt;
-      ui.feedback.textContent = "Tap a choice to answer.";
-      ui.feedback.className = "feedback";
+      setFeedback("Choose an answer.");
       ui.answerInput.disabled = true;
-      ui.answerInput.placeholder = "Type your answer here";
       ui.submitBtn.disabled = true;
       ui.choiceList.querySelectorAll(".choice-button").forEach((button) => {
-        button.addEventListener("click", () => submitChoice(button.textContent ?? ""));
+        button.addEventListener("click", () => submitChoice(choices[Number(button.dataset.choice)]));
       });
     }
 
@@ -2122,6 +1386,7 @@
       const seedText = ui.seed.value.trim();
       const seed = seedText ? Array.from(seedText).reduce((sum, char) => sum + char.charCodeAt(0), 0) : null;
       const rng = seed === null ? Math.random : mulberry32(seed);
+      document.querySelectorAll(".pack-card").forEach(card => card.classList.remove("active"));
       const rawExercises = shuffle(flattenExercises(ui.category.value, ui.mode.value, templateIds), rng);
       const exercises = ui.mode.value === "multiple-choice"
         ? rawExercises.map((exercise) => ({ ...buildChoiceExercise(exercise, rng), solved: false, revealed: false }))
@@ -2130,6 +1395,7 @@
       state.exercises = exercises.slice(0, count).map((exercise) => ({ ...exercise, solved: false, revealed: false }));
       state.currentIndex = 0;
       state.score = 0;
+      state.complete = false;
       state.answered = false;
       ui.answerInput.value = "";
       renderCurrent();
@@ -2140,7 +1406,7 @@
         return;
       }
       if (currentExercise().kind === "Table") {
-        setFeedback("Type one answer into each blank, then press Submit.");
+        setFeedback("Complete each field, then choose Check table or press Enter.");
       } else if (currentExercise().kind === "MultipleChoice") {
         setFeedback("Tap a choice to answer.");
       } else {
@@ -2162,8 +1428,8 @@
       }
       document.querySelectorAll(".pack-card").forEach(c => c.classList.remove("active"));
       const card = document.querySelector(`.pack-card[data-pack-id="${packId}"]`);
-      if (card) card.classList.add("active");
       buildSession(pack.templateIds || undefined);
+      if (card) card.classList.add("active");
     }
 
     function submitChoice(choice) {
@@ -2182,19 +1448,25 @@
       }
 
       state.answered = true;
+      exercise.attempted = true;
       ui.choiceList.querySelectorAll(".choice-button").forEach((button) => {
-        const isCorrect = exercise.answers.some((item) => normalize(item) === normalize(button.textContent ?? ""));
+        const value = exercise.choices[Number(button.dataset.choice)];
+        const isCorrect = exercise.answers.some((item) => normalize(item) === normalize(value));
+        const isWrong = !isCorrect && value === choice;
         button.classList.toggle("correct", isCorrect);
-        button.classList.toggle("wrong", !isCorrect && button.textContent === choice);
+        button.classList.toggle("wrong", isWrong);
+        button.querySelector(".choice-mark").textContent = isCorrect ? "✓" : isWrong ? "✕" : "";
+        button.setAttribute("aria-label", `${value}${isCorrect ? ", correct answer" : isWrong ? ", incorrect answer" : ""}`);
         button.disabled = true;
       });
+      finishAnswer(exercise);
       ui.progress.textContent = `Question ${state.currentIndex + 1} of ${state.exercises.length}. Score: ${state.score} correct.`;
       updateStats();
     }
 
     function revealAnswer() {
       const exercise = currentExercise();
-      if (!exercise) {
+      if (!exercise || state.answered || state.complete) {
         return;
       }
       if (exercise.kind === "Table") {
@@ -2204,6 +1476,8 @@
       }
       exercise.revealed = true;
       state.answered = true;
+      finishAnswer(exercise);
+      updateStats();
     }
 
     function submitAnswer() {
@@ -2232,6 +1506,8 @@
         }
 
         state.answered = true;
+        exercise.attempted = true;
+        finishAnswer(exercise);
         ui.submitBtn.disabled = true;
         ui.progress.textContent = `Question ${state.currentIndex + 1} of ${state.exercises.length}. Score: ${state.score} correct.`;
         updateStats();
@@ -2250,6 +1526,8 @@
       }
 
       state.answered = true;
+      exercise.attempted = true;
+      finishAnswer(exercise);
       ui.submitBtn.disabled = true;
       ui.answerInput.disabled = true;
       ui.progress.textContent = `Question ${state.currentIndex + 1} of ${state.exercises.length}. Score: ${state.score} correct.`;
@@ -2271,6 +1549,14 @@
         renderCurrent();
       } else {
         const total = state.exercises.length;
+        state.complete = true;
+        stopSpeech();
+        ui.answerRow.hidden = true;
+        ui.choiceList.hidden = true;
+        ui.tableGrid.hidden = true;
+        ui.tableSubmitBtn.hidden = true;
+        ui.promptWord.hidden = true;
+        ui.revisionPanel.hidden = true;
         ui.quizBadge.textContent = "Session complete";
         ui.promptKind.textContent = "Done";
         ui.promptText.textContent = `You finished ${total} question(s). Final score: ${state.score} / ${total}.`;
@@ -2290,6 +1576,7 @@
       state.currentIndex = -1;
       state.answered = false;
       state.score = 0;
+      state.complete = false;
       renderCurrent();
       ui.answerRow.hidden = true;
       setFeedback("Session reset.");
@@ -2340,7 +1627,7 @@
           }
         }
 
-        setTranslateOutput(result.translated);
+        setTranslateOutput(result.translated, targetLang);
         ui.translateStatus.textContent = `Detected ${sourceLang || "unknown"}.`;
         ui.translateStatus.className = "feedback good";
       } catch (error) {
@@ -2351,6 +1638,23 @@
       }
     }
 
+    ui.bankSearch.addEventListener("input", () => { state.bankPage = 0; renderBank(); });
+    ui.tableSubmitBtn.addEventListener("click", submitAnswer);
+    ui.tableGrid.addEventListener("keydown", (event) => {
+      if (event.key === "Enter") { event.preventDefault(); if (state.answered) nextQuestion(); else submitAnswer(); }
+    });
+    ui.translateCopyBtn.addEventListener("click", async () => {
+      try { await navigator.clipboard.writeText(state.translationText); ui.translateStatus.textContent = "Translation copied."; }
+      catch { ui.translateStatus.textContent = "Copy unavailable. Select the translation to copy it."; }
+    });
+    document.addEventListener("click", event => {
+      const button = event.target.closest("[data-speak]");
+      if (button) speakDanish(button.dataset.speak, button);
+    });
+    document.addEventListener("keydown", event => {
+      if (event.key !== "Enter" || !state.answered || state.complete || event.target.closest("button, input, select, summary")) return;
+      event.preventDefault(); nextQuestion();
+    });
     ui.startBtn.addEventListener("click", () => buildSession());
     ui.submitBtn.addEventListener("click", submitAnswer);
     ui.nextBtn.addEventListener("click", nextQuestion);
@@ -2364,6 +1668,7 @@
     });
     ui.translateClearBtn.addEventListener("click", () => {
       ui.translateInput.value = "";
+      setTranslateOutput("", "");
       ui.translateOutput.textContent = "Translation appears here.";
       ui.translateStatus.textContent = "";
       ui.translateStatus.className = "feedback";
@@ -2401,7 +1706,7 @@
     });
 
     ui.category.addEventListener("change", () => {
-      ui.statSet.textContent = labelCase(ui.category.value === "all" ? "all categories" : ui.category.value);
+      if (!state.exercises.length) updateStats();
     });
 
     ui.bankCategory.addEventListener("change", () => {
@@ -2431,6 +1736,9 @@
     }
 
     async function initializeApp() {
+      ui.translateSpeakBtn.innerHTML = SPEAKER_ICON;
+      refreshVoices();
+      if ("speechSynthesis" in window) window.speechSynthesis.addEventListener("voiceschanged", refreshVoices);
       renderPackSelector();
       renderBank();
       renderCurrent();
